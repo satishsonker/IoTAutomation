@@ -1,8 +1,6 @@
 ﻿using System;
 using IoT.DataLayer.Models;
-using IoT.DataLayer.Repository;
 using IoT.DataLayer.Interface;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace IoT.BusinessLayer
 {
@@ -22,6 +20,14 @@ namespace IoT.BusinessLayer
             }
             _users.Add(user);
             return user;
+        }
+        public User GetAPIKey(string userKey)
+        {
+            return _users.APIKeyGet(userKey);
+        }
+        public User ResetAPIKey(string userKey)
+        {
+            return _users.APIKeyReset(userKey);
         }
     }
 }

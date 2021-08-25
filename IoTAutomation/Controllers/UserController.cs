@@ -49,6 +49,20 @@ namespace IoT.WebAPI.Controllers
                 user.CreatedDate = DateTime.Now;
             _userBL.AddUser(user);
         }
+        [HttpGet]
+        [Route("GetAPIKey")]
+        public User GetAPIKey([FromHeader] string userKey)
+        {
+            
+           return _userBL.GetAPIKey(userKey);
+        }
+        [HttpGet]
+        [Route("ResetAPIKey")]
+        public User ResetAPIKey([FromHeader] string userKey)
+        {
+
+           return _userBL.ResetAPIKey(userKey);
+        }
 
         // DELETE: api/ApiWithActions/5
         [HttpDelete("{id}")]

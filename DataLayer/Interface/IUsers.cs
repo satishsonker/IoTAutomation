@@ -12,6 +12,8 @@ namespace IoT.DataLayer.Interface
         User Delete(string userKey);
         IEnumerable<User> GetAllUsers();
         User GetUser(string userKey);
+        User APIKeyGet(string userKey);
+        User APIKeyReset(string userKey);
         IEnumerable<User> SearchUsers(string searchTerm);
     }
 }

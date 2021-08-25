@@ -22,8 +22,7 @@ namespace IoT.WebAPI
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args)
         {
-            Thread thread = new Thread(new ThreadStart(BrokerMQTT.StartBroker));
-            thread.Start();
+           
           return  WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>();
         }

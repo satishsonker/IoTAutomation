@@ -50,7 +50,7 @@ namespace IoT.DataLayer.Repository
                 DeviceTypeName = x.DeviceType.DeviceTypeName,
                 RoomId = x.RoomId,
                 RoomKey = x.Room.RoomKey
-            }).ToList().OrderBy(x=>x.DeviceName);
+            }).ToList().OrderBy(x => x.DeviceName);
         }
 
         public DeviceExt GetDevice(int DeviceId)
@@ -89,17 +89,18 @@ namespace IoT.DataLayer.Repository
                 .Select(x => new DeviceExt
                 {
                     ConnectionCount = x.ConnectionCount,
-                    DeviceDesc=x.DeviceDesc,
-                    DeviceName=x.DeviceName,
-                    DeviceKey=x.DeviceKey,
-                    DeviceId=x.DeviceId,
-                    LastConnected=x.LastConnected,
-                    RoomName=x.Room.RoomName,
-                    DeviceTypeName=x.DeviceType.DeviceTypeName,
-                    RoomId=x.RoomId,
-                    RoomKey=x.Room.RoomKey,
-                    DeviceType=x.DeviceType
+                    DeviceDesc = x.DeviceDesc,
+                    DeviceName = x.DeviceName,
+                    DeviceKey = x.DeviceKey,
+                    DeviceId = x.DeviceId,
+                    LastConnected = x.LastConnected,
+                    RoomName = x.Room.RoomName,
+                    DeviceTypeName = x.DeviceType.DeviceTypeName,
+                    RoomId = x.RoomId,
+                    RoomKey = x.Room.RoomKey,
+                    DeviceType = x.DeviceType
                 }).ToList().Where(x => searchTerm == "All" || x.DeviceName.ToUpper().Contains(searchTerm) || x.DeviceKey.Contains(searchTerm) || x.DeviceType.DeviceTypeName.ToUpper().Contains(searchTerm) || x.DeviceDesc.ToUpper().Contains(searchTerm)).OrderBy(x => x.DeviceName);
+           
         }
 
         public Device Update(Device updateDevice)

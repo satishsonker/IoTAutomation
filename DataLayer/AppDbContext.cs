@@ -1,11 +1,10 @@
 ﻿using IoT.DataLayer.Models;
 using Microsoft.EntityFrameworkCore;
-
 namespace IoT.DataLayer
 {
-   public class AppDbContext:DbContext
+    public class AppDbContext : DbContext
     {
-        public AppDbContext(DbContextOptions<AppDbContext> options):base(options)
+        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
 
         }

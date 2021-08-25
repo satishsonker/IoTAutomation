@@ -85,6 +85,11 @@ namespace IoT.WebAPI.Controllers
         {
             try
             {
+                var headerValue = Request.Headers["UserKey"];
+                if (headerValue.Any() == true)
+                {
+                    _userKey = headerValue.ToString();
+                }
                 return Ok(_roomBL.GetRoomDropdown(_userKey));
             }
             catch (Exception ex)

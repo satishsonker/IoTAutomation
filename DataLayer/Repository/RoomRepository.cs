@@ -16,7 +16,7 @@ namespace IoT.DataLayer.Repository
         }
         public Room Add(Room newRoom, string userKey)
         {
-            var room = context.Rooms.Where(x => x.RoomId == newRoom.RoomId && x.UserKey==userKey).FirstOrDefault();
+            var room = context.Rooms.Where(x => x.RoomId == newRoom.RoomId && x.UserKey == userKey).FirstOrDefault();
             if (room == null)
             {
                 newRoom.CreatedDate = DateTime.Now;
@@ -28,7 +28,7 @@ namespace IoT.DataLayer.Repository
 
         public Room Delete(string roomKey, string userKey)
         {
-            var deleteRoom = context.Rooms.Where(x => x.RoomKey == roomKey && x.UserKey==userKey).FirstOrDefault();
+            var deleteRoom = context.Rooms.Where(x => x.RoomKey == roomKey && x.UserKey == userKey).FirstOrDefault();
             var room = context.Rooms.Attach(deleteRoom);
             room.State = Microsoft.EntityFrameworkCore.EntityState.Deleted;
             context.SaveChangesAsync();
