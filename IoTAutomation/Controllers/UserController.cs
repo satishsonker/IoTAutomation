@@ -22,25 +22,12 @@ namespace IoT.WebAPI.Controllers
         }
         // GET: api/User
         [HttpGet]
-        public IEnumerable<string> Get()
+        [Route("GetUser")]
+        public User GetUser([FromHeader] string userKey)
         {
-            return new string[] { "value1", "value2" };
+           return _userBL.GetUser(userKey);
         }
 
-        // GET: api/User/5
-        [HttpGet("{id}", Name = "Get")]
-        public string Get(int id)
-        {
-            return "value";
-        }
-
-        // POST: api/User
-        [HttpPost]
-        public void Post([FromBody] string value)
-        {
-        }
-
-        // PUT: api/User/5
         [HttpPost]
         [Route("AddUser")]
         public void AddUser([FromBody] User user)
@@ -49,6 +36,16 @@ namespace IoT.WebAPI.Controllers
                 user.CreatedDate = DateTime.Now;
             _userBL.AddUser(user);
         }
+
+        [HttpPost]
+        [Route("UpdateUser")]
+        public void UpdateUser([FromBody] User user)
+        {
+            if (user != null)
+                user.ModifiedDate = DateTime.Now;
+            _userBL.UpdateUser(user);
+        }
+
         [HttpGet]
         [Route("GetAPIKey")]
         public User GetAPIKey([FromHeader] string userKey)
@@ -62,12 +59,6 @@ namespace IoT.WebAPI.Controllers
         {
 
            return _userBL.ResetAPIKey(userKey);
-        }
-
-        // DELETE: api/ApiWithActions/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
         }
     }
 }

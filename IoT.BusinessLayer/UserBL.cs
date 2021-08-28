@@ -29,5 +29,13 @@ namespace IoT.BusinessLayer
         {
             return _users.APIKeyReset(userKey);
         }
+        public User GetUser(string userKey)
+        {
+            return _users.GetUser(userKey);
+        }
+        public User UpdateUser(User user)
+        {
+            return _users.Update(user);
+        }
     }
 }
