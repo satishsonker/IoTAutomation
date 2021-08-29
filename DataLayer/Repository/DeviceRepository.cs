@@ -15,36 +15,40 @@ namespace IoT.DataLayer.Repository
         {
             this.context = context;
         }
-        public Device Add(Device newDevice)
+        public Device Add(Device newDevice, string userKey)
         {
-            var Device = context.Devices.Where(x => x.DeviceId == newDevice.DeviceId).FirstOrDefault();
-            if (Device == null)
+            if (context.Users.Where(x => x.UserKey == userKey).Count() > 0)
             {
-                newDevice.CreatedDate = DateTime.Now;
-                context.Devices.Add(newDevice);
-                context.SaveChanges();
+                var Device = context.Devices.Where(x => x.DeviceId == newDevice.DeviceId).FirstOrDefault();
+                if (Device == null)
+                {
+                    newDevice.CreatedDate = DateTime.Now;
+                    context.Devices.Add(newDevice);
+                    context.SaveChanges();
+                }
             }
             return newDevice;
         }
 
-        public Device Delete(string DeviceKey)
+        public Device Delete(string DeviceKey, string userKey)
         {
-            var deleteDevice = context.Devices.Where(x => x.DeviceKey == DeviceKey).FirstOrDefault();
+            var deleteDevice = context.Devices.Where(x => x.DeviceKey == DeviceKey && x.UserKey==userKey).FirstOrDefault();
             var Device = context.Devices.Attach(deleteDevice);
             Device.State = Microsoft.EntityFrameworkCore.EntityState.Deleted;
             context.SaveChangesAsync();
             return deleteDevice;
         }
 
-        public IEnumerable<DeviceExt> GetAllDevices()
+        public IEnumerable<DeviceExt> GetAllDevices(string userKey,string deviceKey="")
         {
-            return context.Devices.Select(x => new DeviceExt
+            return context.Devices.Include(x=>x.DeviceType).Where(x=>x.UserKey==userKey &&( deviceKey==string.Empty || x.DeviceKey==deviceKey)).Select(x => new DeviceExt
             {
                 ConnectionCount = x.ConnectionCount,
                 DeviceDesc = x.DeviceDesc,
                 DeviceName = x.DeviceName,
                 DeviceKey = x.DeviceKey,
                 DeviceId = x.DeviceId,
+                DeviceTypeId=x.DeviceType.DeviceTypeId,
                 LastConnected = x.LastConnected,
                 RoomName = x.Room.RoomName,
                 DeviceTypeName = x.DeviceType.DeviceTypeName,
@@ -53,9 +57,9 @@ namespace IoT.DataLayer.Repository
             }).ToList().OrderBy(x => x.DeviceName);
         }
 
-        public DeviceExt GetDevice(int DeviceId)
+        public DeviceExt GetDevice(string userKey,int DeviceId)
         {
-            return context.Devices.Select(x => new DeviceExt
+            return context.Devices.Where(x=>x.UserKey==userKey).Select(x => new DeviceExt
             {
                 ConnectionCount = x.ConnectionCount,
                 DeviceDesc = x.DeviceDesc,
@@ -70,9 +74,9 @@ namespace IoT.DataLayer.Repository
             }).Where(x => x.DeviceId == DeviceId).FirstOrDefault();
         }
 
-        public IEnumerable<object> GetDeviceDropdown()
+        public IEnumerable<object> GetDeviceDropdown(string userKey)
         {
-            return context.Devices.Select(x => new { x.DeviceId, x.DeviceName, x.DeviceKey }).OrderBy(x => x.DeviceName).ToList();
+            return context.Devices.Where(x => x.UserKey == userKey).Select(x => new { x.DeviceId, x.DeviceName, x.DeviceKey }).OrderBy(x => x.DeviceName).ToList();
         }
 
         public IEnumerable<object> GetDeviceTypeDropdown()
@@ -80,10 +84,11 @@ namespace IoT.DataLayer.Repository
             return context.DeviceTypes.Select(x => new { x.DeviceTypeId, x.DeviceTypeName }).OrderBy(x => x.DeviceTypeName).ToList();
         }
 
-        public IEnumerable<DeviceExt> SearchDevices(string searchTerm)
+        public IEnumerable<DeviceExt> SearchDevices(string userKey,string searchTerm)
         {
             searchTerm = searchTerm.ToUpper();
             return context.Devices
+                .Where(x => x.UserKey == userKey)
                 .Include(x => x.Room)
                 .Include(x => x.DeviceType)
                 .Select(x => new DeviceExt
@@ -103,11 +108,15 @@ namespace IoT.DataLayer.Repository
            
         }
 
-        public Device Update(Device updateDevice)
+        public Device Update(Device updateDevice,string userKey)
         {
-            var Device = context.Devices.Attach(updateDevice);
-            Device.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
-            context.SaveChangesAsync();
+            if (context.Devices.Where(x => x.UserKey == userKey).Count() > 0)
+            {
+                updateDevice.ModifiedDate = DateTime.Now;
+                var Device = context.Devices.Attach(updateDevice);
+                Device.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+                context.SaveChangesAsync();
+            }
             return updateDevice;
         }
     }
