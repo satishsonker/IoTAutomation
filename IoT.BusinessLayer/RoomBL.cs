@@ -24,6 +24,10 @@ namespace IoT.BusinessLayer
             _rooms.Add(room,userKey);
             return room;
         }
+        public Room GetRoom(string roomKey, string userKey)
+        {
+            return _rooms.GetRoom(roomKey, userKey);
+        }
         public IEnumerable<Room> GetAllRoom(string userKey)
         {
           return  _rooms.GetAllRooms(userKey);
@@ -40,6 +44,10 @@ namespace IoT.BusinessLayer
         public Room DeleteRoom(string roomKey, string userKey)
         {
             return _rooms.Delete(roomKey,userKey);
+        }
+        public Room UpdateRoom(Room room, string userKey)
+        {
+            return _rooms.Update(room, userKey);
         }
     }
 }

@@ -16,12 +16,15 @@ namespace IoT.DataLayer.Repository
         }
         public Room Add(Room newRoom, string userKey)
         {
-            var room = context.Rooms.Where(x => x.RoomId == newRoom.RoomId && x.UserKey == userKey).FirstOrDefault();
-            if (room == null)
+            if (context.Users.Where(x => x.UserKey == userKey).Count() > 0)
             {
-                newRoom.CreatedDate = DateTime.Now;
-                context.Rooms.Add(newRoom);
-                context.SaveChanges();
+                var room = context.Rooms.Where(x => x.RoomId == newRoom.RoomId && x.UserKey == userKey).FirstOrDefault();
+                if (room == null)
+                {
+                    newRoom.CreatedDate = DateTime.Now;
+                    context.Rooms.Add(newRoom);
+                    context.SaveChanges();
+                }
             }
             return newRoom;
         }
@@ -40,9 +43,9 @@ namespace IoT.DataLayer.Repository
             return context.Rooms.Where(x=>x.UserKey==userKey).OrderBy(x=>x.RoomName);
         }
 
-        public Room GetRoom(int roomId, string userKey)
+        public Room GetRoom(string roomKey, string userKey)
         {
-            return context.Rooms.Where(x => x.RoomId == roomId && x.UserKey==userKey).FirstOrDefault();
+            return context.Rooms.Where(x => x.RoomKey == roomKey && x.UserKey==userKey).FirstOrDefault();
         }
 
         public IEnumerable<object> GetRoomDropdown(string userKey)
@@ -55,11 +58,14 @@ namespace IoT.DataLayer.Repository
             return context.Rooms.Where(x => x.UserKey==userKey &&( searchTerm == "All" ||  x.RoomName.Contains(searchTerm) || x.RoomKey.Contains(searchTerm) || x.RoomDesc.Contains(searchTerm))).OrderBy(x => x.RoomName);
         }
 
-        public Room Update(Room updateRoom)
+        public Room Update(Room updateRoom,string userKey)
         {
-            var room = context.Rooms.Attach(updateRoom);
-            room.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
-            context.SaveChangesAsync();
+            if (context.Users.Where(x => x.UserKey == userKey).Count() > 0)
+            {
+                var room = context.Rooms.Attach(updateRoom);
+                room.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+                context.SaveChangesAsync();
+            }
             return updateRoom;
         }
     }

@@ -15,7 +15,6 @@ namespace IoT.WebAPI.Controllers
     public class RoomController : ControllerBase
     {
         private RoomBL _roomBL;
-        private string _userKey = string.Empty;
         public RoomController(IRooms rooms)
         {
             _roomBL = new RoomBL(rooms);
@@ -24,13 +23,13 @@ namespace IoT.WebAPI.Controllers
 
         [HttpPost]
         [Route("AddRoom")]
-        public IActionResult AddRoom([FromBody] Room room)
+        public IActionResult AddRoom([FromBody] Room room, [FromHeader] string userKey)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    var newRoom = _roomBL.AddRoom(room,_userKey);
+                    var newRoom = _roomBL.AddRoom(room,userKey);
                     if (newRoom.RoomId > 0)
                         return Ok();
                     return BadRequest(ModelState);
@@ -48,16 +47,25 @@ namespace IoT.WebAPI.Controllers
 
         [HttpGet]
         [Route("GetAllRoom")]
-        public IActionResult GetAllRoom()
+        public IActionResult GetAllRoom([FromHeader]string userKey)
         {
             try
             {
-                var headerValue = Request.Headers["UserKey"];
-                if (headerValue.Any() == true)
-                {
-                    _userKey = headerValue.ToString();
-                }
-                return Ok(_roomBL.GetAllRoom(_userKey));
+                return Ok(_roomBL.GetAllRoom(userKey));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
+        }
+        [HttpGet]
+        [Route("GetRoom")]
+        public IActionResult GetAllRoom([FromQuery]string roomKey, [FromHeader] string userKey)
+        {
+            try
+            {
+                return Ok(_roomBL.GetRoom(roomKey,userKey));
             }
             catch (Exception ex)
             {
@@ -67,11 +75,11 @@ namespace IoT.WebAPI.Controllers
         }
         [HttpGet]
         [Route("SearchRoom")]
-        public IActionResult SearchRoom([FromQuery] string searchTerm)
+        public IActionResult SearchRoom([FromQuery] string searchTerm, [FromHeader] string userKey)
         {
             try
             {
-                return Ok(_roomBL.SearchRoom(searchTerm, _userKey));
+                return Ok(_roomBL.SearchRoom(searchTerm, userKey));
             }
             catch (Exception ex)
             {
@@ -81,16 +89,11 @@ namespace IoT.WebAPI.Controllers
         }
         [HttpGet]
         [Route("GetRoomDropdown")]
-        public IActionResult GetRoomDropdown()
+        public IActionResult GetRoomDropdown([FromHeader] string userKey)
         {
             try
             {
-                var headerValue = Request.Headers["UserKey"];
-                if (headerValue.Any() == true)
-                {
-                    _userKey = headerValue.ToString();
-                }
-                return Ok(_roomBL.GetRoomDropdown(_userKey));
+                return Ok(_roomBL.GetRoomDropdown(userKey));
             }
             catch (Exception ex)
             {
@@ -100,11 +103,26 @@ namespace IoT.WebAPI.Controllers
         }
         [HttpDelete]
         [Route("DeleteRoom")]
-        public IActionResult DeleteRoom([FromQuery] string roomKey)
+        public IActionResult DeleteRoom([FromQuery] string roomKey, [FromHeader] string userKey)
         {
             try
             {
-                return Ok(_roomBL.DeleteRoom(roomKey, _userKey));
+                return Ok(_roomBL.DeleteRoom(roomKey, userKey));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
+        }
+
+        [HttpPost]
+        [Route("UpdateRoom")]
+        public IActionResult UpdateRoom([FromBody] Room room, [FromHeader] string userKey)
+        {
+            try
+            {
+                return Ok(_roomBL.UpdateRoom(room, userKey));
             }
             catch (Exception ex)
             {

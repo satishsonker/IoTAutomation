@@ -59,7 +59,7 @@ namespace IoT.DataLayer.Repository
 
         public DeviceExt GetDevice(string userKey,int DeviceId)
         {
-            return context.Devices.Where(x=>x.UserKey==userKey).Select(x => new DeviceExt
+            return context.Devices.Where(x=>x.UserKey==userKey && x.DeviceId == DeviceId).Select(x => new DeviceExt
             {
                 ConnectionCount = x.ConnectionCount,
                 DeviceDesc = x.DeviceDesc,
@@ -71,7 +71,7 @@ namespace IoT.DataLayer.Repository
                 DeviceTypeName = x.DeviceType.DeviceTypeName,
                 RoomId = x.RoomId,
                 RoomKey = x.Room.RoomKey
-            }).Where(x => x.DeviceId == DeviceId).FirstOrDefault();
+            }).FirstOrDefault();
         }
 
         public IEnumerable<object> GetDeviceDropdown(string userKey)
