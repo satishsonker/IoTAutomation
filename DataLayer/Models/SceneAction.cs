@@ -12,13 +12,12 @@ namespace IoT.DataLayer.Models
         [Key]
         public int SceneActionId { get; set; }
         public string SceneActionKey { get; set; }
-        public int SceneId { get; set; }
+        public Device Device { get; set; }
         public int DeviceId { get; set; }
         public string Action{ get; set; }
         public string? Value { get; set; }
         public string UserKey { get; set; }
         public DateTime CreatedDate { get; set; }
-        public Scene Scene { get; set; }
         public DateTime? ModifiedDate { get; set; }
     }
 }

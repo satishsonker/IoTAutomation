@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace IoT.DataLayer.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20210829173035_AddSceneTable")]
-    partial class AddSceneTable
+    [Migration("20210829191411_UpdateSceneTable2")]
+    partial class UpdateSceneTable2
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -122,10 +122,15 @@ namespace IoT.DataLayer.Migrations
             modelBuilder.Entity("IoT.DataLayer.Models.Scene", b =>
                 {
                     b.Property<int>("SceneId")
-                        .HasColumnType("int");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<int?>("DeviceId")
+                        .HasColumnType("int");
 
                     b.Property<DateTime?>("ModifiedDate")
                         .HasColumnType("datetime2");
@@ -144,6 +149,8 @@ namespace IoT.DataLayer.Migrations
 
                     b.HasKey("SceneId");
 
+                    b.HasIndex("DeviceId");
+
                     b.ToTable("Scenes");
                 });
 
@@ -160,8 +167,8 @@ namespace IoT.DataLayer.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("DeviceKey")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("DeviceId")
+                        .HasColumnType("int");
 
                     b.Property<DateTime?>("ModifiedDate")
                         .HasColumnType("datetime2");
@@ -179,6 +186,8 @@ namespace IoT.DataLayer.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("SceneActionId");
+
+                    b.HasIndex("SceneId");
 
                     b.ToTable("SceneActions");
                 });
@@ -252,13 +261,22 @@ namespace IoT.DataLayer.Migrations
 
             modelBuilder.Entity("IoT.DataLayer.Models.Scene", b =>
                 {
-                    b.HasOne("IoT.DataLayer.Models.SceneAction", "SceneAction")
-                        .WithMany("Scenes")
+                    b.HasOne("IoT.DataLayer.Models.Device", "Device")
+                        .WithMany()
+                        .HasForeignKey("DeviceId");
+
+                    b.Navigation("Device");
+                });
+
+            modelBuilder.Entity("IoT.DataLayer.Models.SceneAction", b =>
+                {
+                    b.HasOne("IoT.DataLayer.Models.Scene", "Scene")
+                        .WithMany("SceneActions")
                         .HasForeignKey("SceneId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("SceneAction");
+                    b.Navigation("Scene");
                 });
 
             modelBuilder.Entity("IoT.DataLayer.Models.DeviceType", b =>
@@ -271,9 +289,9 @@ namespace IoT.DataLayer.Migrations
                     b.Navigation("Devices");
                 });
 
-            modelBuilder.Entity("IoT.DataLayer.Models.SceneAction", b =>
+            modelBuilder.Entity("IoT.DataLayer.Models.Scene", b =>
                 {
-                    b.Navigation("Scenes");
+                    b.Navigation("SceneActions");
                 });
 #pragma warning restore 612, 618
         }

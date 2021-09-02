@@ -6,13 +6,18 @@ using System.Text;
 
 namespace IoT.DataLayer.Models
 {
-    [Table("DeviceType")]
-    public class DeviceType
+    [Table("ActivityLog")]
+    public class ActivityLog
     {
         [Key]
-        public int DeviceTypeId { get; set; }
-        public string DeviceTypeName { get; set; }
+        public int ActivityLogId { get; set; }
+        public string UserKey { get; set; }
+        public string IPAddress { get; set; }
+        public string Location { get; set; }
+        public string AppName { get; set; }
+        public string Activity { get; set; }
         public DateTime CreatedDate { get; set; }
         public DateTime ModifiedDate { get; set; }
+
     }
 }

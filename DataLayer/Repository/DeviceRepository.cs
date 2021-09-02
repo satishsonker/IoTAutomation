@@ -54,7 +54,7 @@ namespace IoT.DataLayer.Repository
                 DeviceTypeName = x.DeviceType.DeviceTypeName,
                 RoomId = x.RoomId,
                 RoomKey = x.Room.RoomKey
-            }).ToList().OrderBy(x => x.DeviceName);
+            }).ToList().OrderBy(x => x.DeviceName).ThenBy(x=>x.RoomName);
         }
 
         public DeviceExt GetDevice(string userKey,int DeviceId)

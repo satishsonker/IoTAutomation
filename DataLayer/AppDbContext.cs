@@ -12,17 +12,13 @@ namespace IoT.DataLayer
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Device>()
-                .HasOne<DeviceType>(s => s.DeviceType)
-                .WithMany(g => g.Devices)
-                .HasForeignKey(s => s.DeviceTypeId);
+                .HasOne<DeviceType>(s => s.DeviceType);
             modelBuilder.Entity<Device>()
                 .HasOne<Room>(s => s.Room)
                 .WithMany(g => g.Devices)
                 .HasForeignKey(s => s.RoomId);
             modelBuilder.Entity<Scene>()
-                 .HasMany<SceneAction>(s => s.SceneActions)
-                 .WithOne(s=>s.Scene)
-                .HasForeignKey(s => s.SceneId);
+                 .HasMany<SceneAction>(s => s.SceneActions);
         }
         public DbSet<User> Users { get; set; }
         public DbSet<DeviceType> DeviceTypes { get; set; }
@@ -30,5 +26,6 @@ namespace IoT.DataLayer
         public DbSet<Room> Rooms { get; set; }
         public DbSet<Scene> Scenes { get; set; }
         public DbSet<SceneAction> SceneActions { get; set; }
+        public DbSet<ActivityLog> ActivityLogs { get; set; }
     }
 }

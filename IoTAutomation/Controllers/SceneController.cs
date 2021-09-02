@@ -35,9 +35,9 @@ namespace IoT.WebAPI.Controllers
                 }
                 return BadRequest(ModelState);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
 
 
@@ -45,29 +45,30 @@ namespace IoT.WebAPI.Controllers
 
         [HttpGet]
         [Route("GetAllScene")]
-        public IActionResult GetAllScene([FromHeader] string userKey)
+        public IEnumerable<Scene> GetAllScene([FromHeader] string userKey)
         {
             try
             {
-                return Ok(_sceneBL.GetAll(userKey));
+              return  _sceneBL.GetAll(userKey);
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return new List<Scene>();
             }
 
         }
+
         [HttpGet]
         [Route("GetScene")]
-        public IActionResult GetAllScene([FromQuery] string SceneKey, [FromHeader] string userKey)
+        public Scene GetScene([FromQuery] string SceneKey, [FromHeader] string userKey)
         {
             try
             {
-                return Ok(_sceneBL.Get(SceneKey, userKey));
+                return _sceneBL.Get(userKey,SceneKey);
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return new Scene();
             }
 
         }

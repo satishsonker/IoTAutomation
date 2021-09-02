@@ -24,24 +24,18 @@ namespace IoT.DataLayer.Repository
                 {
                     newScene.CreatedDate = DateTime.Now;
                     newScene.SceneKey = Guid.NewGuid().ToString();
-                    context.Scenes.Add(newScene);
-                    if (context.SaveChanges() > 0)
+                    newScene.UserKey = userKey;
+                    foreach (SceneAction item in newScene.SceneActions)
                     {
-                        if (newScene.SceneActions != null)
-                        {
-                            foreach (SceneAction item in newScene.SceneActions)
-                            {
-                                item.CreatedDate = DateTime.Now;
-                                item.UserKey = userKey;
-                                item.SceneActionKey = Guid.NewGuid().ToString();
-                            }
-                            context.SceneActions.AddRange(newScene.SceneActions);
-                            context.SaveChanges();
-                            return newScene;
-                        }
-                        return new Scene();
+                        item.CreatedDate = DateTime.Now;
+                        item.UserKey = userKey;
+                        item.SceneActionKey = Guid.NewGuid().ToString();
+                        item.SceneActionId = 0;
                     }
-                    return new Scene();
+                    context.Scenes.Add(newScene);
+                    context.SaveChanges();
+                   
+                    return newScene;
                 }
                 return new Scene();
             }
@@ -63,12 +57,12 @@ namespace IoT.DataLayer.Repository
 
         public IEnumerable<Scene> GetAll(string userKey)
         {
-            return context.Scenes.Include(x => x.SceneActions).Where(x => x.UserKey == userKey).Select(x => x).ToList().OrderBy(x => x.SceneName);
+            return context.Scenes.Where(x => x.UserKey == userKey).Include(x => x.SceneActions).Select(x => x).ToList().OrderBy(x => x.SceneName);
         }
 
         public Scene Get(string userKey, string sceneKey)
         {
-            return context.Scenes.Where(x => x.UserKey == userKey && x.SceneKey==sceneKey).Select(x => x).FirstOrDefault();
+            return context.Scenes.Where(x => x.UserKey == userKey && x.SceneKey==sceneKey).Include(x=>x.SceneActions).ThenInclude(x=>x.Device).ThenInclude(x=>x.DeviceType).Select(x => x).FirstOrDefault();
         }
 
         public IEnumerable<Scene> Search(string searchTerm, string userKey)

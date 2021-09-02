@@ -1,5 +1,6 @@
 ﻿using IoT.DataLayer.Interface;
 using IoT.DataLayer.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,7 +34,7 @@ namespace IoT.DataLayer.Repository
         {
             var deleteRoom = context.Rooms.Where(x => x.RoomKey == roomKey && x.UserKey == userKey).FirstOrDefault();
             var room = context.Rooms.Attach(deleteRoom);
-            room.State = Microsoft.EntityFrameworkCore.EntityState.Deleted;
+            room.State = EntityState.Deleted;
             context.SaveChangesAsync();
             return deleteRoom;
         }

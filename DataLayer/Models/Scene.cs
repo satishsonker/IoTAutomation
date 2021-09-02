@@ -15,7 +15,6 @@ namespace IoT.DataLayer.Models
         public string SceneName { get; set; }
         public string? SceneDesc { get; set; }
         public string UserKey { get; set; }
-        public Device Device { get; set; }
         public ICollection<SceneAction> SceneActions { get; set; }
         public DateTime CreatedDate { get; set; }
         public DateTime? ModifiedDate { get; set; }
