@@ -12,6 +12,7 @@ namespace IoT.DataLayer.Models
         [Key]
         public int DeviceTypeId { get; set; }
         public string DeviceTypeName { get; set; }
+        public ICollection<DeviceAction> DeviceActions { get; set; }
         public DateTime CreatedDate { get; set; }
         public DateTime ModifiedDate { get; set; }
     }

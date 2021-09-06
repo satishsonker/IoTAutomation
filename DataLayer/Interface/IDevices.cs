@@ -15,6 +15,7 @@ namespace IoT.DataLayer.Interface
         IEnumerable<DeviceExt> SearchDevices(string searchTerm, string userKey);
         IEnumerable<object> GetDeviceDropdown(string userKey);
         IEnumerable<object> GetDeviceTypeDropdown();
+        IEnumerable<DeviceType> GetDeviceTypeAction();
 
     }
 }

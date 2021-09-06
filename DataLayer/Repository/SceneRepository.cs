@@ -29,7 +29,7 @@ namespace IoT.DataLayer.Repository
                     {
                         item.CreatedDate = DateTime.Now;
                         item.UserKey = userKey;
-                        item.SceneActionKey = Guid.NewGuid().ToString();
+                        item.SceneActionKey = Guid.NewGuid().ToString().Replace("-", "").ToUpper();
                         item.SceneActionId = 0;
                     }
                     context.Scenes.Add(newScene);
@@ -75,15 +75,24 @@ namespace IoT.DataLayer.Repository
 
         }
 
-        public Scene Update(Scene updateScene, string userKey)
+        public Scene Update(Scene updateScene,Scene newScene, string userKey)
         {
-            if (context.Scenes.Where(x => x.UserKey == userKey).Count() > 0)
+            if (context.Users.Where(x => x.UserKey == userKey).Count() > 0)
             {
-                updateScene.ModifiedDate = DateTime.Now;
+
                 var scene = context.Scenes.Attach(updateScene);
-                context.SceneActions.AttachRange(updateScene.SceneActions);
-                scene.State = EntityState.Modified;
-                context.SaveChangesAsync();
+                var oldAction = context.SceneActions.Where(x => updateScene.SceneActions.Select(y=>y.SceneId).ToList().Contains(x.SceneId)).ToList();
+                
+                context.SceneActions.RemoveRange(oldAction);
+
+                context.SaveChanges();
+                updateScene.SceneActions = null;
+                context.Scenes.Remove(updateScene);
+
+                context.SaveChanges();
+                newScene.SceneId = 0;
+                context.Scenes.Add(newScene);
+                context.SaveChanges();
             }
             return updateScene;
         }

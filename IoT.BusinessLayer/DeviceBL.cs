@@ -51,5 +51,9 @@ namespace IoT.BusinessLayer
         {
             return _device.Update(device,userKey);
         }
+        public IEnumerable<DeviceType> GetDeviceTypeAction()
+        {
+            return _device.GetDeviceTypeAction();
+        }
     }
 }

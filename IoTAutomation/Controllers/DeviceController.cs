@@ -134,5 +134,19 @@ namespace IoT.WebAPI.Controllers
             }
 
         }
+        [HttpGet]
+        [Route("GetDeviceTypeAction")]
+        public IActionResult GetDeviceAction()
+        {
+            try
+            {
+                return Ok(_deviceBL.GetDeviceTypeAction());
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
+        }
     }
 }

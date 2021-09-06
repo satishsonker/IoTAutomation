@@ -18,6 +18,7 @@ namespace IoT.BusinessLayer
             if(activityLog != null)
             {
                 activityLog.CreatedDate = DateTime.Now;
+                activityLog.UserKey = userKey;
             }
             _áctivityLogs.Add(activityLog,userKey);
             return activityLog;

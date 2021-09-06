@@ -41,7 +41,28 @@ namespace IoT.BusinessLayer
 
         public Scene Update(Scene updateScene, string userKey)
         {
-            return _scenes.Update(updateScene, userKey);
+            var newScene = new Scene();
+            newScene.CreatedDate = updateScene.CreatedDate;
+            newScene.SceneDesc = updateScene.SceneDesc;
+            newScene.SceneName = updateScene.SceneName;
+            newScene.UserKey = userKey;
+            newScene.SceneKey = Guid.NewGuid().ToString().Replace("-", "").ToUpper();
+            var newSceneList = new List<SceneAction>();
+            foreach (var item in updateScene.SceneActions)
+            {
+                SceneAction newSceneAction = new SceneAction();
+                newSceneAction.CreatedDate = newScene.CreatedDate;
+                newSceneAction.SceneActionKey = Guid.NewGuid().ToString().Replace("-", "").ToUpper();
+                newSceneAction.UserKey = userKey;
+                newSceneAction.Action = item.Action;
+                newSceneAction.Value = item.Value;
+                newSceneAction.SceneId = item.SceneId;
+                newSceneAction.DeviceId = item.DeviceId;
+                newSceneList.Add(newSceneAction);
+                item.Device = null;
+            }
+            newScene.SceneActions = newSceneList;
+            return _scenes.Update(updateScene,newScene, userKey);
         }
     }
 }

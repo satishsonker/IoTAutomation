@@ -34,6 +34,7 @@ namespace IoT.WebAPI
             services.AddScoped<IDevices, DeviceRepository>();
             services.AddScoped<IDashboard, DashBoardRepository>();
             services.AddScoped<IScenes, SceneRepository>();
+            services.AddScoped<IActivityLogs, ActivityLogRepository>();
             services.Configure<CookiePolicyOptions>(options =>
             {
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.

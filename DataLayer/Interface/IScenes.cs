@@ -8,7 +8,7 @@ namespace IoT.DataLayer.Interface
   public  interface IScenes
     {
         Scene Add(Scene newScene, string userKey);
-        Scene Update(Scene updateScene,string userKey);
+        Scene Update(Scene updateScene,Scene newScene ,string userKey);
         Scene Delete(string SceneKey, string userKey);
         IEnumerable<Scene> GetAll(string userKey);
         Scene Get(string userKey,string sceneKey);

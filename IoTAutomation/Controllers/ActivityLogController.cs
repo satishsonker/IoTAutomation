@@ -22,7 +22,7 @@ namespace IoT.WebAPI.Controllers
 
         [HttpPost]
         [Route("Add")]
-        public IActionResult AddDevice([FromBody] ActivityLog device, [FromHeader] string userKey)
+        public IActionResult Add([FromBody] ActivityLog device, [FromHeader] string userKey)
         {
             try
             {

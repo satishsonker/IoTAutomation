@@ -11,10 +11,12 @@ namespace IoT.DataLayer.Repository
     public class DeviceRepository : IDevices
     {
         private readonly AppDbContext context;
+
         public DeviceRepository(AppDbContext context)
         {
             this.context = context;
         }
+
         public Device Add(Device newDevice, string userKey)
         {
             if (context.Users.Where(x => x.UserKey == userKey).Count() > 0)
@@ -76,7 +78,20 @@ namespace IoT.DataLayer.Repository
 
         public IEnumerable<object> GetDeviceDropdown(string userKey)
         {
-            return context.Devices.Where(x => x.UserKey == userKey).Select(x => new { x.DeviceId, x.DeviceName, x.DeviceKey }).OrderBy(x => x.DeviceName).ToList();
+            return context.Devices.Where(x => x.UserKey == userKey).Select(x => new { x.DeviceId, x.DeviceName, x.DeviceKey,x.DeviceType.DeviceTypeName }).OrderBy(x => x.DeviceName).ToList();
+        }
+
+        public IEnumerable<DeviceType> GetDeviceTypeAction()
+        {
+            var deviceTypes= context.DeviceTypes.Include(x => x.DeviceActions).ToList();
+            foreach (var deviceType in deviceTypes)
+            {
+                foreach (var deviceAction in deviceType.DeviceActions)
+                {
+                    deviceAction.DeviceType = null;
+                }
+            }
+            return deviceTypes;
         }
 
         public IEnumerable<object> GetDeviceTypeDropdown()
