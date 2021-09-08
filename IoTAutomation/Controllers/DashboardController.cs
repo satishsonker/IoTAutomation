@@ -11,24 +11,20 @@ namespace IoT.WebAPI.Controllers
     public class DashboardController : ControllerBase
     {
         private DashboardBL _dashboardBL;
-        private string _userKey = "100965730392215373474";
         public DashboardController(IDashboard dashboard)
         {
             _dashboardBL = new DashboardBL(dashboard);
         }
         [HttpGet]
         [Route("GetDashboardData")]
-        public IActionResult GetDashboardData()
+        public IActionResult GetDashboardData([FromHeader] string userKey)
         {
             try
             {
 
-                //var headerValue = Request.Headers["UserKey"];
-                //if (headerValue.Any() == true)
-                //{
-                //    _userKey = headerValue.ToString();
-                //}
-                return Ok(_dashboardBL.GetDashboardData(_userKey));
+                if (string.IsNullOrEmpty(userKey))
+                    return Unauthorized(new object());
+                return Ok(_dashboardBL.GetDashboardData(userKey));
             }
             catch (Exception ex)
             {

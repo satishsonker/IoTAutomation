@@ -54,7 +54,7 @@ namespace IoT.DataLayer.Repository
 
         public IEnumerable<ActivityLog> GetAll(string userKey)
         {
-            return context.ActivityLogs.Where(x => x.UserKey == userKey).ToList();
+            return context.ActivityLogs.Where(x => x.UserKey == userKey).OrderByDescending(x => x.CreatedDate).ToList();
         }
     }
 }

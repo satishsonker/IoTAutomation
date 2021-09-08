@@ -4,14 +4,16 @@ using IoT.DataLayer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace IoT.DataLayer.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210906103818_AddPermistionTable")]
+    partial class AddPermistionTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -150,6 +152,43 @@ namespace IoT.DataLayer.Migrations
                     b.HasKey("DeviceTypeId");
 
                     b.ToTable("DeviceType");
+                });
+
+            modelBuilder.Entity("IoT.DataLayer.Models.Permission", b =>
+                {
+                    b.Property<int>("PermissionId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("CanCreate")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("CanDelete")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("CanUpdate")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("CanView")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsAdmin")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("ModifiedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UserKey")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("PermissionId");
+
+                    b.ToTable("Permission");
                 });
 
             modelBuilder.Entity("IoT.DataLayer.Models.Room", b =>
@@ -301,43 +340,6 @@ namespace IoT.DataLayer.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("IoT.DataLayer.Models.UserPermission", b =>
-                {
-                    b.Property<int>("UserPermissionId")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("CanCreate")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("CanDelete")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("CanUpdate")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("CanView")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("IsAdmin")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTime>("ModifiedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("UserKey")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("UserPermissionId");
-
-                    b.ToTable("UserPermission");
-                });
-
             modelBuilder.Entity("IoT.DataLayer.Models.Device", b =>
                 {
                     b.HasOne("IoT.DataLayer.Models.DeviceType", "DeviceType")
@@ -368,6 +370,17 @@ namespace IoT.DataLayer.Migrations
                     b.Navigation("DeviceType");
                 });
 
+            modelBuilder.Entity("IoT.DataLayer.Models.Permission", b =>
+                {
+                    b.HasOne("IoT.DataLayer.Models.User", "User")
+                        .WithMany("Permissions")
+                        .HasForeignKey("PermissionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("IoT.DataLayer.Models.SceneAction", b =>
                 {
                     b.HasOne("IoT.DataLayer.Models.Device", "Device")
@@ -383,17 +396,6 @@ namespace IoT.DataLayer.Migrations
                         .IsRequired();
 
                     b.Navigation("Device");
-                });
-
-            modelBuilder.Entity("IoT.DataLayer.Models.UserPermission", b =>
-                {
-                    b.HasOne("IoT.DataLayer.Models.User", "User")
-                        .WithMany("UserPermissions")
-                        .HasForeignKey("UserPermissionId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("IoT.DataLayer.Models.DeviceType", b =>
@@ -413,7 +415,7 @@ namespace IoT.DataLayer.Migrations
 
             modelBuilder.Entity("IoT.DataLayer.Models.User", b =>
                 {
-                    b.Navigation("UserPermissions");
+                    b.Navigation("Permissions");
                 });
 #pragma warning restore 612, 618
         }

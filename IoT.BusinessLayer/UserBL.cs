@@ -37,5 +37,9 @@ namespace IoT.BusinessLayer
         {
             return _users.Update(user);
         }
+        public UserPermission GetUserPermission(string userKey)
+        {
+            return _users.GetUserPermission(userKey);
+        }
     }
 }

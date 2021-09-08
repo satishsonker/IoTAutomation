@@ -33,9 +33,12 @@ namespace IoT.DataLayer.Repository
         public Room Delete(string roomKey, string userKey)
         {
             var deleteRoom = context.Rooms.Where(x => x.RoomKey == roomKey && x.UserKey == userKey).FirstOrDefault();
-            var room = context.Rooms.Attach(deleteRoom);
-            room.State = EntityState.Deleted;
-            context.SaveChangesAsync();
+            if (deleteRoom!=null)
+            {
+                var room = context.Rooms.Attach(deleteRoom);
+                room.State = EntityState.Deleted;
+                context.SaveChanges(); 
+            }
             return deleteRoom;
         }
 

@@ -21,8 +21,35 @@ namespace IoT.DataLayer.Repository
             var user = context.Users.Where(x => x.UserKey == newUser.UserKey).FirstOrDefault();
             if (user == null)
             {
-                context.Users.AddAsync(newUser);
-                context.SaveChanges();
+                try
+                {
+                    newUser.UserKey = newUser.UserKey.ToUpper();
+                    context.Users.AddAsync(newUser);
+                    if (context.SaveChanges() > 0)
+                    {
+                        UserPermission permission = new UserPermission()
+                        {
+                            UserId = newUser.UserId,
+                            UserKey = newUser.UserKey.ToUpper(),
+                            CanView = true,
+                            CreatedDate = DateTime.Now,
+                            ModifiedDate = DateTime.Now
+                        };
+                        int permissionId = 0;
+                        var allPermisiionIds = context.UserPermissions.Select(x => x.UserPermissionId).ToList();
+                        if (allPermisiionIds != null && allPermisiionIds.Count() > 0)
+                        {
+                            permissionId = allPermisiionIds.Max(x => x);
+                        }
+                        permission.UserPermissionId = permissionId + 1;
+                        context.UserPermissions.Add(permission);
+                        context.SaveChanges();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
             }
             else
             {
@@ -31,6 +58,7 @@ namespace IoT.DataLayer.Repository
                 updatedUser.State = EntityState.Modified;
                 context.SaveChanges();
             }
+            newUser.UserPermissions = context.UserPermissions.Where(x => x.UserKey == newUser.UserKey).ToList();
             return newUser;
         }
 
@@ -76,6 +104,11 @@ namespace IoT.DataLayer.Repository
         public User GetUser(string userKey)
         {
             return context.Users.FirstOrDefault(x => x.UserKey == userKey);
+        }
+
+        public UserPermission GetUserPermission(string userKey)
+        {
+          return  context.UserPermissions.Where(x => x.UserKey == userKey).FirstOrDefault();
         }
 
         public IEnumerable<User> SearchUsers(string searchTerm)
