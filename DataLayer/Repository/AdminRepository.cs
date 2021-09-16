@@ -67,7 +67,7 @@ namespace IoT.DataLayer.Repository
 
         public DeviceAction GetDeviceAction(int deviceActionId)
         {
-            var data =context.DeviceActions.Where(x => x.DeciveActionId==deviceActionId).FirstOrDefault();
+            var data =context.DeviceActions.Include(x=>x.DeviceType).Where(x => x.DeciveActionId==deviceActionId).FirstOrDefault();
             if(data!=null)
             {
                 data.DeviceType.DeviceActions = null;

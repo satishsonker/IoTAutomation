@@ -44,6 +44,11 @@ namespace IoT.BusinessLayer
 
         public int AddDeviceAction(DeviceAction deviceAction)
         {
+            if(deviceAction!=null)
+            {
+                deviceAction.CreatedDate = DateTime.Now;
+                deviceAction.ModifiedDate = DateTime.Now;
+            }
             return _adminBL.AddDeviceAction(deviceAction);
         }
 
