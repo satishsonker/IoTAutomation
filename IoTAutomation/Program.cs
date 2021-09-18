@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Logging;
 
 namespace IoT.WebAPI
 {
@@ -15,6 +16,12 @@ namespace IoT.WebAPI
         {
            
           return  WebHost.CreateDefaultBuilder(args)
+    .ConfigureLogging(logBuilder =>
+    {
+        logBuilder.ClearProviders(); // removes all providers from LoggerFactory
+        logBuilder.AddConsole();
+        logBuilder.AddTraceSource("Information, ActivityTracing"); // Add Trace listener provider
+    })
                 .UseStartup<Startup>();
         }
 

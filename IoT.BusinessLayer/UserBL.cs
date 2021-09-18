@@ -1,6 +1,7 @@
 ﻿using System;
 using IoT.DataLayer.Models;
 using IoT.DataLayer.Interface;
+using System.Collections.Generic;
 
 namespace IoT.BusinessLayer
 {
@@ -40,6 +41,10 @@ namespace IoT.BusinessLayer
         public UserPermission GetUserPermission(string userKey)
         {
             return _users.GetUserPermission(userKey);
+        }
+        public IEnumerable<UserPermission> GetAllUserPermissions(string userKey)
+        {
+            return _users.GetAllUserPermissions(userKey);
         }
     }
 }

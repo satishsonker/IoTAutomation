@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using IoT.BusinessLayer;
+﻿using IoT.BusinessLayer;
 using IoT.DataLayer.Interface;
 using IoT.DataLayer.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using System;
 
 namespace IoT.WebAPI.Controllers
 {
@@ -15,48 +12,48 @@ namespace IoT.WebAPI.Controllers
     public class DeviceController : ControllerBase
     {
         private DeviceBL _deviceBL;
-        public DeviceController(IDevices devices)
+        private readonly ILogger _logger;
+        public DeviceController(IDevices devices, ILogger<DeviceController> logger)
         {
             _deviceBL = new DeviceBL(devices);
+            _logger = logger;
         }
 
         [HttpPost]
         [Route("AddDevice")]
-        public IActionResult AddDevice([FromBody] Device device,[FromHeader] string userKey)
+        public IActionResult AddDevice([FromBody] Device device, [FromHeader] string userKey)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    var newdevice = _deviceBL.AddDevice(device,userKey);
+                    var newdevice = _deviceBL.AddDevice(device, userKey);
                     if (newdevice.DeviceId > 0)
                         return Ok();
                     return BadRequest(ModelState);
                 }
                 return BadRequest(ModelState);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                _logger.LogError(ex, "Error occured while Adding Device {0}", device.DeviceName);
+                return BadRequest(ModelState);
             }
-
-
         }
 
         [HttpGet]
         [Route("GetAllDevice")]
-        public IActionResult GetAllDevice([FromHeader] string userKey,[FromQuery] string deviceKey="")
+        public IActionResult GetAllDevice([FromHeader] string userKey, [FromQuery] string deviceKey = "")
         {
             try
             {
-                return Ok(_deviceBL.GetAllDevice(userKey,deviceKey));
+                return Ok(_deviceBL.GetAllDevice(userKey, deviceKey));
             }
             catch (Exception ex)
             {
+                _logger.LogError(ex, "Error occured while getting all Devices");
                 return BadRequest(ex.Message);
             }
-
         }
 
         [HttpGet]
@@ -65,13 +62,13 @@ namespace IoT.WebAPI.Controllers
         {
             try
             {
-                return Ok(_deviceBL.SearchDevice(searchTerm,userKey));
+                return Ok(_deviceBL.SearchDevice(searchTerm, userKey));
             }
             catch (Exception ex)
             {
+                _logger.LogError(ex, "Error occured while serching Device with keyword {0}", searchTerm);
                 return BadRequest(ex.Message);
             }
-
         }
 
         [HttpGet]
@@ -84,9 +81,9 @@ namespace IoT.WebAPI.Controllers
             }
             catch (Exception ex)
             {
+                _logger.LogError(ex, "Error occured while getting device dropdown data");
                 return BadRequest(ex.Message);
             }
-
         }
 
         [HttpGet]
@@ -99,25 +96,39 @@ namespace IoT.WebAPI.Controllers
             }
             catch (Exception ex)
             {
+                _logger.LogError(ex, "Error occured while getting device type dropdown data");
                 return BadRequest(ex.Message);
             }
-
         }
 
         [HttpPost]
         [Route("UpdateDevice")]
-        public Device UpdateDevice([FromBody] Device device,[FromHeader] string userKey)
+        public Device UpdateDevice([FromBody] Device device, [FromHeader] string userKey)
         {
             try
             {
                 device.UserKey = userKey;
-                return _deviceBL.UpdateDevice(device,userKey);
+                return _deviceBL.UpdateDevice(device, userKey);
             }
             catch (Exception ex)
             {
+                _logger.LogError(ex, "Error occured while updating device {0}",device.DeviceName);
                 return new Device();
             }
-
+        }
+        [HttpPost]
+        [Route("UpdateDeviceHistory")]
+        public bool UpdateDeviceHistory([FromQuery] string deviceKey,[FromQuery] bool isConnected, [FromHeader] string userKey)
+        {
+            try
+            {                
+                return _deviceBL.UpdateDeviceHistory(userKey,deviceKey,isConnected);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error occured while updating device history with device Key {0}, Userkey {1}", deviceKey,userKey);
+                return false;
+            }
         }
 
         [HttpDelete]
@@ -126,13 +137,13 @@ namespace IoT.WebAPI.Controllers
         {
             try
             {
-                return Ok(_deviceBL.DeleteDevice(deviceKey,userKey));
+                return Ok(_deviceBL.DeleteDevice(deviceKey, userKey));
             }
             catch (Exception ex)
             {
+                _logger.LogError(ex, "Error occured while deleting device with key{0}", deviceKey);
                 return BadRequest(ex.Message);
             }
-
         }
         [HttpGet]
         [Route("GetDeviceTypeAction")]
@@ -144,9 +155,9 @@ namespace IoT.WebAPI.Controllers
             }
             catch (Exception ex)
             {
+                _logger.LogError(ex, "Error occured while getting device action");
                 return BadRequest(ex.Message);
             }
-
         }
     }
 }

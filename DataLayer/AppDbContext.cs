@@ -17,7 +17,7 @@ namespace IoT.DataLayer
                 .HasOne<Room>(s => s.Room)
                 .WithMany(g => g.Devices)
                 .HasForeignKey(s => s.RoomId);
-            modelBuilder.Entity<UserPermission>().HasOne<User>(x => x.User).WithMany(x => x.UserPermissions).HasForeignKey(x => x.UserPermissionId);
+            modelBuilder.Entity<UserPermission>().HasOne<User>(x => x.User);
             modelBuilder.Entity<Scene>()
                  .HasMany<SceneAction>(s => s.SceneActions);
             modelBuilder.Entity<DeviceAction>().HasOne<DeviceType>(x => x.DeviceType).WithMany(x => x.DeviceActions).HasForeignKey(x => x.DeviceTypeId);

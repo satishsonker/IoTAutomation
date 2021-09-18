@@ -65,7 +65,7 @@ namespace IoT.DataLayer.Repository
         public User APIKeyGet(string userKey)
         {
             var user = context.Users.Where(x => x.UserKey == userKey).FirstOrDefault();
-            if(user!=null)
+            if (user != null)
             {
                 return new User() { APIKey = user.APIKey, ModifiedDate = user.ModifiedDate };
             }
@@ -83,7 +83,7 @@ namespace IoT.DataLayer.Repository
                 var updateduser = context.Users.Attach(user);
                 updateduser.State = EntityState.Modified;
                 context.SaveChanges();
-                return new User() { APIKey=user.APIKey,ModifiedDate=user.ModifiedDate};
+                return new User() { APIKey = user.APIKey, ModifiedDate = user.ModifiedDate };
             }
             return new User();
         }
@@ -94,6 +94,20 @@ namespace IoT.DataLayer.Repository
             context.Users.Remove(user);
             context.SaveChangesAsync();
             return user;
+        }
+
+        public IEnumerable<UserPermission> GetAllUserPermissions(string userKey)
+        {
+            if (GetUserPermission(userKey) != null)
+            {
+                var data=context.UserPermissions.Include(x => x.User).OrderBy(x => x.User.FirstName).ToList();
+                foreach (UserPermission userPermission in data)
+                {
+                    userPermission.User.UserPermissions = null;
+                }
+                return data;
+            }
+            return new List<UserPermission>();
         }
 
         public IEnumerable<User> GetAllUsers()
@@ -108,7 +122,8 @@ namespace IoT.DataLayer.Repository
 
         public UserPermission GetUserPermission(string userKey)
         {
-          return  context.UserPermissions.Where(x => x.UserKey == userKey).FirstOrDefault();
+            var data = context.UserPermissions.Where(x => x.UserKey == userKey).FirstOrDefault();
+            return data;
         }
 
         public IEnumerable<User> SearchUsers(string searchTerm)
@@ -118,13 +133,13 @@ namespace IoT.DataLayer.Repository
                 return context.Users;
             }
             return context.Users.Where(x => x.FirstName.Contains(searchTerm) || x.Email.Contains(searchTerm) || x.UserKey.Contains(searchTerm));
-            
+
         }
 
         public User Update(User updateUser)
         {
             var user = context.Users.Attach(updateUser);
-            user.State =EntityState.Modified;
+            user.State = EntityState.Modified;
             context.SaveChangesAsync();
             return updateUser;
         }

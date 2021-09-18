@@ -55,5 +55,9 @@ namespace IoT.BusinessLayer
         {
             return _device.GetDeviceTypeAction();
         }
+        public bool UpdateDeviceHistory(string userKey,string deviceKey,bool isConnected)
+        {
+            return _device.UpdateDeviceHistory(userKey,deviceKey,isConnected);
+        }
     }
 }
