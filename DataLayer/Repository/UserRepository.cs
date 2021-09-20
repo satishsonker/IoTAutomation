@@ -18,11 +18,12 @@ namespace IoT.DataLayer.Repository
         }
         public User Add(User newUser)
         {
-            var user = context.Users.Where(x => x.UserKey == newUser.UserKey).FirstOrDefault();
-            if (user == null)
+            try
             {
-                try
+                var user = context.Users.Where(x => x.UserKey == newUser.UserKey).FirstOrDefault();
+                if (user == null)
                 {
+
                     newUser.UserKey = newUser.UserKey.ToUpper();
                     context.Users.AddAsync(newUser);
                     if (context.SaveChanges() > 0)
@@ -45,21 +46,22 @@ namespace IoT.DataLayer.Repository
                         context.UserPermissions.Add(permission);
                         context.SaveChanges();
                     }
+
                 }
-                catch (Exception ex)
+                else
                 {
-                    throw ex;
+                    user.LastLogin = DateTime.Now;
+                    var updatedUser = context.Users.Attach(user);
+                    updatedUser.State = EntityState.Modified;
+                    context.SaveChanges();
                 }
+                newUser.UserPermissions = context.UserPermissions.Where(x => x.UserKey == newUser.UserKey).ToList();
+                return newUser;
             }
-            else
+            catch (Exception ex)
             {
-                user.LastLogin = DateTime.Now;
-                var updatedUser = context.Users.Attach(user);
-                updatedUser.State = EntityState.Modified;
-                context.SaveChanges();
+                throw ex;
             }
-            newUser.UserPermissions = context.UserPermissions.Where(x => x.UserKey == newUser.UserKey).ToList();
-            return newUser;
         }
 
         public User APIKeyGet(string userKey)
@@ -100,7 +102,7 @@ namespace IoT.DataLayer.Repository
         {
             if (GetUserPermission(userKey) != null)
             {
-                var data=context.UserPermissions.Include(x => x.User).OrderBy(x => x.User.FirstName).ToList();
+                var data = context.UserPermissions.Include(x => x.User).OrderBy(x => x.User.FirstName).ToList();
                 foreach (UserPermission userPermission in data)
                 {
                     userPermission.User.UserPermissions = null;

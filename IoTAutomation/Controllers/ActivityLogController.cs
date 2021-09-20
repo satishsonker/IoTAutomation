@@ -3,6 +3,7 @@ using IoT.DataLayer.Interface;
 using IoT.DataLayer.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,9 +16,11 @@ namespace IoT.WebAPI.Controllers
     public class ActivityLogController : ControllerBase
     {
         private ActivityLogsBL activityLogsBL;
-        public ActivityLogController(IActivityLogs activityLogs)
+        private readonly ILogger _logger;
+        public ActivityLogController(IActivityLogs activityLogs, ILogger<ActivityLogController> logger)
         {
             activityLogsBL = new ActivityLogsBL(activityLogs);
+            _logger = logger;
         }
 
         [HttpPost]
@@ -30,14 +33,19 @@ namespace IoT.WebAPI.Controllers
                 {
                     var newdevice = activityLogsBL.Add(device, userKey);
                     if (newdevice.ActivityLogId > 0)
+                    {
                         return Ok();
-                    return BadRequest(ModelState);
+                    }
+                    _logger.LogError("Unable to Add Activity Log: User Key {0}", userKey);
+                    return BadRequest("Unable to Add Activity Log");
                 }
+                _logger.LogError("Get invalid Model while Adding the Activity log: User Key {0}", userKey);
                 return BadRequest(ModelState);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                _logger.LogError(ex, "Error Occured while Adding the Activity log: User Key {0}", userKey);
+                return BadRequest();
             }
         }
 
@@ -49,8 +57,9 @@ namespace IoT.WebAPI.Controllers
             {
                 return activityLogsBL.GetAll(userKey);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                _logger.LogError(ex, "Error Occured while getting all Activity log: User Key {0}", userKey);
                 return new List<ActivityLog>();
             }
         }

@@ -1,6 +1,7 @@
 ﻿using IoT.BusinessLayer;
 using IoT.DataLayer.Interface;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Linq;
 
@@ -11,9 +12,11 @@ namespace IoT.WebAPI.Controllers
     public class DashboardController : ControllerBase
     {
         private DashboardBL _dashboardBL;
-        public DashboardController(IDashboard dashboard)
+        private readonly ILogger _logger;
+        public DashboardController(IDashboard dashboard, ILogger<DashboardController> logger)
         {
             _dashboardBL = new DashboardBL(dashboard);
+            _logger = logger;
         }
         [HttpGet]
         [Route("GetDashboardData")]
@@ -28,6 +31,7 @@ namespace IoT.WebAPI.Controllers
             }
             catch (Exception ex)
             {
+                _logger.LogError(ex, "Error occured while getting dashboard data");
                 return BadRequest(ex.Message);
             }
 

@@ -11,7 +11,9 @@ namespace IoT.DataLayer.Models
     {
         [Key]
         public int UserPermissionId { get; set; }
+        [Required(AllowEmptyStrings =false,ErrorMessage ="User key is required")]
         public string UserKey { get; set; }
+        [Range(minimum:1,maximum:int.MaxValue, ErrorMessage ="Invalid user Id")]
         public int UserId { get; set; }
         public bool CanView { get; set; }
         public User User { get; set; }
@@ -19,6 +21,7 @@ namespace IoT.DataLayer.Models
         public bool CanDelete { get; set; }
         public bool CanCreate { get; set; }
         public bool IsAdmin { get; set; }
+        [Required(ErrorMessage ="Invalid Created Date")]
         public DateTime CreatedDate { get; set; }
         public DateTime ModifiedDate { get; set; }
     }

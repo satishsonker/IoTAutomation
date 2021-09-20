@@ -2,6 +2,7 @@
 using IoT.DataLayer.Interface;
 using IoT.DataLayer.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 
@@ -12,89 +13,253 @@ namespace IoT.WebAPI.Controllers
     public class AdminController : ControllerBase
     {
         private AdminBL _adminBL;
-        public AdminController(IAdmin iadmin)
+        private readonly ILogger _logger;
+        public AdminController(IAdmin iadmin, ILogger<AdminController> logger)
         {
             _adminBL = new AdminBL(iadmin);
+            _logger = logger;
         }
 
         [HttpPost]
         [Route("AddDeviceType")]
-        public int AddDeviceType([FromBody] DeviceType deviceType)
+        public IActionResult AddDeviceType([FromBody] DeviceType deviceType,[FromHeader] string userKey)
         {
-            if (deviceType != null)
-                deviceType.CreatedDate = DateTime.Now;
-            return _adminBL.AddDeviceType(deviceType);
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    deviceType.CreatedDate = DateTime.Now;
+                    int result = _adminBL.AddDeviceType(deviceType, userKey);
+                    return Ok(result);
+                }
+                _logger.LogWarning("Get invalid model while adding the Device Type, UserKey : {0}", userKey);
+                return BadRequest("Get invalid model while adding the Device Type");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error occured while adding the Device Type, UserKey : {0}", userKey);
+                return BadRequest(ModelState);
+            }
+
+
         }
         [HttpPost]
         [Route("UpdateDeviceType")]
-        public int UpdateDeviceType([FromBody] DeviceType deviceType)
+        public IActionResult UpdateDeviceType([FromBody] DeviceType deviceType, [FromHeader] string userKey)
         {
-            if (deviceType != null)
-                deviceType.ModifiedDate = DateTime.Now;
-            return _adminBL.UpdateDeviceType(deviceType);
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    if (deviceType != null)
+                    {
+                        deviceType.ModifiedDate = DateTime.Now;
+                        return Ok(_adminBL.UpdateDeviceType(deviceType, userKey));
+                    }
+                }
+                _logger.LogWarning("Get invalid model while updating the Device Type UserKey : {0}", userKey);
+                return BadRequest("Get invalid model while updating the Device Type");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error occured while updating the Device Type, UserKey : {0}", userKey);
+                return BadRequest(ModelState);
+            }
         }
 
         [HttpDelete]
         [Route("DeleteDeviceType")]
-        public int DeleteDeviceType([FromQuery] int deviceTypeId)
+        public IActionResult DeleteDeviceType([FromQuery] int deviceTypeId, [FromHeader] string userKey)
         {
-            return _adminBL.DeleteDeviceType(deviceTypeId);
+            try
+            {
+                if (deviceTypeId>0)
+                {
+                    return Ok(_adminBL.DeleteDeviceType(deviceTypeId, userKey)); 
+                }
+                _logger.LogWarning("Get invalid Device Type id while deleting the Device Type, userKey : {0} & ID:{1}", userKey,deviceTypeId);
+                return BadRequest("Unable to delete the Device Type");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error occured while deleting the Device Type, UserKey : {0} & ID:{1}", userKey, deviceTypeId);
+                return BadRequest("Unable to delete the Device Type");
+            }
         }
 
         [HttpGet]
         [Route("SearchDeviceType")]
-        public IEnumerable<DeviceType> SearchDeviceType([FromQuery] string searchTerm)
+        public IActionResult SearchDeviceType([FromQuery] string searchTerm, [FromHeader] string userKey)
         {
-           return _adminBL.SearchDeviceType(searchTerm);
+            try
+            {
+                searchTerm = searchTerm == null ? string.Empty : searchTerm;
+                return Ok(_adminBL.SearchDeviceType(searchTerm, userKey));
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error occured while search the Device Type, UserKey : {0}", userKey);
+                return BadRequest("Unable to search the Device Type");
+            }
         }
 
         [HttpGet]
         [Route("GetDeviceType")]
-        public DeviceType GetDeviceType([FromQuery]int deviceTypeId)
+        public IActionResult GetDeviceType([FromQuery] int deviceTypeId, [FromHeader] string userKey)
         {
-            return _adminBL.GetDeviceType(deviceTypeId);
+            try
+            {
+                if (deviceTypeId > 0)
+                {
+                    return Ok(_adminBL.GetDeviceType(deviceTypeId, userKey));
+                }
+                _logger.LogWarning("Get invalid Device Type id while getting the Device Type, userKey : {0} & ID:{1}", userKey, deviceTypeId);
+                return BadRequest("Unable to get the Device Type");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error occured while getting the Device Type, UserKey : {0} & ID:{1}", userKey, deviceTypeId);
+                return BadRequest("Unable to delete the Device Type");
+            }
         }
 
         [HttpPost]
         [Route("AddDeviceAction")]
-        public int AddDeviceAction([FromBody] DeviceAction deviceAction)
+        public IActionResult AddDeviceAction([FromBody] DeviceAction deviceAction, [FromHeader] string userKey)
         {
-            return _adminBL.AddDeviceAction(deviceAction);
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    if (deviceAction != null)
+                    {
+                        return Ok(_adminBL.AddDeviceAction(deviceAction, userKey));
+                    }
+                    _logger.LogWarning("Get model=null while adding the Device Action, UserKey : {0}", userKey);
+                }
+                _logger.LogWarning("Get invalid model while adding the Device Action, UserKey : {0}", userKey);
+                return BadRequest("Get invalid model while adding the Device Action");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error occured while adding the Device Action, UserKey : {0}", userKey);
+                return BadRequest(ModelState);
+            }
         }
 
         [HttpPost]
         [Route("UpdateDeviceAction")]
-        public int UpdateDeviceAction([FromBody] DeviceAction deviceAction)
+        public IActionResult UpdateDeviceAction([FromBody] DeviceAction deviceAction, [FromHeader] string userKey)
         {
-            return _adminBL.UpdateDeviceAction(deviceAction);
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    if (deviceAction != null)
+                    {
+                        return Ok(_adminBL.UpdateDeviceAction(deviceAction, userKey));
+                    }
+                    _logger.LogWarning("Get model=null while updating the Device Action, UserKey : {0}", userKey);
+                }
+                _logger.LogWarning("Get invalid model while updating the Device Action, UserKey : {0}", userKey);
+                return BadRequest("Get invalid model while updating the Device Action");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error occured while updating the Device Action, UserKey : {0}", userKey);
+                return BadRequest(ModelState);
+            }
         }
 
         [HttpDelete]
         [Route("DeleteDeviceAction")]
-        public int DeleteDeviceAction([FromQuery] int deviceActionId)
+        public IActionResult DeleteDeviceAction([FromQuery] int deviceActionId, [FromHeader] string userKey)
         {
-            return _adminBL.DeleteDeviceAction(deviceActionId);
+            try
+            {
+                if (deviceActionId > 0)
+                {
+                    return Ok(_adminBL.DeleteDeviceAction(deviceActionId, userKey));
+                }
+                _logger.LogWarning("Get invalid Device Action Id while deleting the Device Action, userKey : {0} & ID:{1}", userKey, deviceActionId);
+                return BadRequest("Unable to delete the Device Action");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error occured while deleting the Device Action, UserKey : {0} & ID:{1}", userKey, deviceActionId);
+                return BadRequest("Unable to delete the Device Action");
+            }
         }
 
         [HttpGet]
         [Route("SearchDeviceAction")]
-        public IEnumerable<DeviceAction> SearchDeviceAction([FromQuery] string searchTerm)
+        public IActionResult SearchDeviceAction([FromQuery] string searchTerm, [FromHeader] string userKey)
         {
-            return _adminBL.SearchDeviceAction(searchTerm);
+            try
+            {
+                searchTerm = searchTerm == null ? string.Empty : searchTerm;
+                return Ok(_adminBL.SearchDeviceAction(searchTerm, userKey));
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error occured while search the Device Action, UserKey : {0}", userKey);
+                return BadRequest("Unable to search the Device Action");
+            }
         }
 
         [HttpGet]
         [Route("GetDeviceAction")]
-        public DeviceAction GetDeviceAction([FromQuery]int deviceActionId)
+        public IActionResult GetDeviceAction([FromQuery] int deviceActionId, [FromHeader] string userKey)
         {
-            return _adminBL.GetDeviceAction(deviceActionId);
-        } 
-        
+            try
+            {
+                if (deviceActionId > 0)
+                {
+                    return Ok(_adminBL.GetDeviceAction(deviceActionId, userKey));
+                }
+                _logger.LogWarning("Get invalid Device Action id while Getting the Device Action, userKey : {0} & ID:{1}", userKey, deviceActionId);
+                return BadRequest("Unable to get the Device Action");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error occured while getting the Device Action, UserKey : {0} & ID:{1}", userKey, deviceActionId);
+                return BadRequest("Unable to get the Device Action");
+            }
+        }
+
         [HttpGet]
         [Route("GetAllDeviceAction")]
-        public IEnumerable<DeviceAction> GetAllDeviceAction()
+        public IActionResult GetAllDeviceAction([FromHeader] string userKey)
         {
-            return _adminBL.GetAllDeviceType();
+            try
+            {
+                return Ok(_adminBL.GetAllDeviceType(userKey));
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error occured while getting the Device Actions, UserKey : {0}", userKey);
+                return BadRequest("Unable to get the Device Actions");
+            }
+        }
+        [HttpPost]
+        [Route("UpdateAdminPermission")]
+        public IActionResult UpdateAdminPermission([FromBody] List<UserPermission> userPermissions, [FromHeader] string userKey)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    return Ok(_adminBL.UpdateAdminPermission(userPermissions, userKey)); 
+                }
+                _logger.LogWarning("Get invalid model while updating the admin permission, UserKey : {0}", userKey);
+                return BadRequest(ModelState);
+
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Error occured while updating the admin permission, UserKey : {0}", userKey);
+                return BadRequest("Error : Unable to update admin perminssion");
+            }
         }
     }
 }

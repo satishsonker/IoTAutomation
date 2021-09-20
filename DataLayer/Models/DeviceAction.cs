@@ -17,9 +17,11 @@ namespace IoT.DataLayer.Models
         public int DeviceTypeId { get; set; }
 
         [Column("DeciveActionName", Order = 3)]
+        [Required(AllowEmptyStrings =false,ErrorMessage ="Device action name is required")]
         public string DeviceActionName { get; set; }
 
         [Column(Order = 4)]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Device Action Name Backend is required")]
         public string DeviceActionNameBackEnd { get; set; }
 
         [Column(Order = 5)]

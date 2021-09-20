@@ -11,6 +11,7 @@ namespace IoT.DataLayer.Models
     {
         [Key]
         public int DeviceTypeId { get; set; }
+        [Required(AllowEmptyStrings =false,ErrorMessage ="Device Type Name is required")]
         public string DeviceTypeName { get; set; }
         public ICollection<DeviceAction> DeviceActions { get; set; }
         public DateTime CreatedDate { get; set; }

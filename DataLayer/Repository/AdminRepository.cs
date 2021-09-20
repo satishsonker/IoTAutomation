@@ -16,19 +16,24 @@ namespace IoT.DataLayer.Repository
             this.context = context;
         }
 
-        public int AddDeviceAction(DeviceAction deviceAction)
+        public int AddDeviceAction(DeviceAction deviceAction, string userKey)
         {
             context.DeviceActions.Add(deviceAction);
             return context.SaveChanges();
         }
 
-        public int AddDeviceType(DeviceType deviceType)
+        public int AddDeviceType(DeviceType deviceType,string userKey)
         {
-            context.DeviceTypes.Add(deviceType);
-            return context.SaveChanges();
+            var user = context.UserPermissions.Where(x => x.UserKey == userKey).FirstOrDefault();
+            if (user != null && user.IsAdmin)
+            {
+                context.DeviceTypes.Add(deviceType);
+                return context.SaveChanges();
+            }
+            return 0;
         }
 
-        public int DeleteDeviceAction(int deviceActionId)
+        public int DeleteDeviceAction(int deviceActionId, string userKey)
         {
             var oldDeviceType = context.DeviceActions.Where(x => x.DeciveActionId == deviceActionId).FirstOrDefault();
             if (oldDeviceType != null)
@@ -40,7 +45,7 @@ namespace IoT.DataLayer.Repository
             return 0;
         }
 
-        public int DeleteDeviceType(int deviceTypeId)
+        public int DeleteDeviceType(int deviceTypeId, string userKey)
         {
             var oldDeviceType = context.DeviceTypes.Where(x => x.DeviceTypeId == deviceTypeId).FirstOrDefault();
             if(oldDeviceType!=null)
@@ -52,7 +57,7 @@ namespace IoT.DataLayer.Repository
             return 0;
         }
 
-        public IEnumerable<DeviceAction> GetAllDeviceAction()
+        public IEnumerable<DeviceAction> GetAllDeviceAction(string userKey)
         {
            var data= context.DeviceActions.Include(x=>x.DeviceType).OrderBy(x => x.DeviceActionName);
             if(data!=null)
@@ -65,7 +70,7 @@ namespace IoT.DataLayer.Repository
             return data;
         }
 
-        public DeviceAction GetDeviceAction(int deviceActionId)
+        public DeviceAction GetDeviceAction(int deviceActionId, string userKey)
         {
             var data =context.DeviceActions.Include(x=>x.DeviceType).Where(x => x.DeciveActionId==deviceActionId).FirstOrDefault();
             if(data!=null)
@@ -75,24 +80,42 @@ namespace IoT.DataLayer.Repository
             return data;
         }
 
-        public DeviceType GetDeviceType(int deviceTypeId)
+        public DeviceType GetDeviceType(int deviceTypeId, string userKey)
         {
             return context.DeviceTypes.Where(x => x.DeviceTypeId == deviceTypeId).FirstOrDefault();
         }
 
-        public IEnumerable<DeviceAction> SearchDeviceAction(string searchTerm)
+        public IEnumerable<DeviceAction> SearchDeviceAction(string searchTerm, string userKey)
         {
             searchTerm = searchTerm.ToLower();
             return context.DeviceActions.Where(x => searchTerm == "all" || x.DeviceActionName.ToLower().Contains(searchTerm) || x.DeviceActionValue.ToLower().Contains(searchTerm)).OrderBy(x => x.DeviceActionName);
         }
 
-        public IEnumerable<DeviceType> SearchDeviceType(string searchTerm)
+        public IEnumerable<DeviceType> SearchDeviceType(string searchTerm, string userKey)
         {
             searchTerm = searchTerm.ToLower();
             return context.DeviceTypes.Where(x => searchTerm == "all" || x.DeviceTypeName.ToLower().Contains(searchTerm)).OrderBy(x => x.DeviceTypeName);
 }
 
-        public int UpdateDeviceAction(DeviceAction deviceAction)
+        public bool UpdateAdminPermission(List<UserPermission> userPermissions,string userKey)
+        {
+            bool result = false;
+          if(userPermissions!=null && userPermissions.Count>0 && !string.IsNullOrEmpty(userKey))
+            {
+                if(context.Users.Include(x=>x.UserPermissions).Where(x=>x.UserKey==userKey && x.UserPermissions.FirstOrDefault().IsAdmin).Count()>0)
+                {
+                    foreach (UserPermission userPermission in userPermissions)
+                    {
+                        context.UserPermissions.Attach(userPermission).State = EntityState.Modified;
+                    }
+                    if (context.SaveChanges() > 0)
+                        result = true;
+                }
+            }
+            return result;
+        }
+
+        public int UpdateDeviceAction(DeviceAction deviceAction, string userKey)
         {
             if (deviceAction != null)
             {
@@ -103,7 +126,7 @@ namespace IoT.DataLayer.Repository
             return 0;
         }
 
-        public int UpdateDeviceType(DeviceType updateDeviceType)
+        public int UpdateDeviceType(DeviceType updateDeviceType,string userKey)
         {
             if (updateDeviceType != null)
             {

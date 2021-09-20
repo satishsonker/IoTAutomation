@@ -7,17 +7,18 @@ namespace IoT.DataLayer.Interface
 {
   public  interface IAdmin
     {
-        int AddDeviceType(DeviceType deviceType);
-        int UpdateDeviceType(DeviceType deviceType);
-        int DeleteDeviceType(int deviceTypeId);
-        IEnumerable<DeviceType> SearchDeviceType(string searchTerm);
-        DeviceType GetDeviceType(int deviceTypeId);
+        int AddDeviceType(DeviceType deviceType, string userKey);
+        int UpdateDeviceType(DeviceType deviceType, string userKey);
+        int DeleteDeviceType(int deviceTypeId, string userKey);
+        IEnumerable<DeviceType> SearchDeviceType(string searchTerm, string userKey);
+        DeviceType GetDeviceType(int deviceTypeId, string userKey);
 
-        int AddDeviceAction(DeviceAction deviceAction);
-        int UpdateDeviceAction(DeviceAction deviceAction);
-        int DeleteDeviceAction(int deviceActionId);
-        IEnumerable<DeviceAction> SearchDeviceAction(string searchTerm);
-        DeviceAction GetDeviceAction(int deviceActionId);
-        IEnumerable<DeviceAction> GetAllDeviceAction();
+        int AddDeviceAction(DeviceAction deviceAction, string userKey);
+        int UpdateDeviceAction(DeviceAction deviceAction, string userKey);
+        int DeleteDeviceAction(int deviceActionId, string userKey);
+        IEnumerable<DeviceAction> SearchDeviceAction(string searchTerm, string userKey);
+        DeviceAction GetDeviceAction(int deviceActionId, string userKey);
+        IEnumerable<DeviceAction> GetAllDeviceAction(string userKey);
+        bool UpdateAdminPermission(List<UserPermission> userPermissions, string userKey);
     }
 }
