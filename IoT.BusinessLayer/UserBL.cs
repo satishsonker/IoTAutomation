@@ -2,6 +2,7 @@
 using IoT.DataLayer.Models;
 using IoT.DataLayer.Interface;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace IoT.BusinessLayer
 {
@@ -38,9 +39,9 @@ namespace IoT.BusinessLayer
         {
             return _users.Update(user);
         }
-        public UserPermission GetUserPermission(string userKey)
+        public async Task<UserPermission> GetUserPermission(string userKey)
         {
-            return _users.GetUserPermission(userKey);
+            return await _users.GetUserPermission(userKey);
         }
         public IEnumerable<UserPermission> GetAllUserPermissions(string userKey)
         {

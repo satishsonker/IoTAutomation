@@ -82,5 +82,44 @@ namespace IoT.BusinessLayer
             }
             return _adminBL.UpdateAdminPermission(userPermissions, userKey);
         }
+
+        public IEnumerable<DeviceAction> GetAllDeviceAction(string userKey)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int AddDeviceCapability(DeviceCapability deviceCapability, string userKey)
+        {
+            if (deviceCapability != null)
+                deviceCapability.CreatedDate = DateTime.Now;
+            return _adminBL.AddDeviceCapability(deviceCapability, userKey);
+        }
+
+        public int UpdateDeviceCapability(DeviceCapability deviceCapability, string userKey)
+        {
+            if (deviceCapability != null)
+                deviceCapability.Modifieddate = DateTime.Now;
+            return _adminBL.UpdateDeviceCapability(deviceCapability, userKey);
+        }
+
+        public int DeleteDeviceCapability(int deviceCapabilityId, string userKey)
+        {
+            return _adminBL.DeleteDeviceCapability(deviceCapabilityId, userKey);
+        }
+
+        public IEnumerable<DeviceCapability> SearchDeviceCapability(string searchTerm, string userKey)
+        {
+            return _adminBL.SearchDeviceCapability(searchTerm, userKey);
+        }
+
+        public DeviceCapability GetDeviceCapability(int deviceCapabilityId, string userKey)
+        {
+            return _adminBL.GetDeviceCapability(deviceCapabilityId, userKey);
+        }
+
+        public IEnumerable<DeviceCapability> GetAllDeviceCapability(string userKey)
+        {
+            return _adminBL.GetAllDeviceCapability(userKey);
+        }
     }
 }

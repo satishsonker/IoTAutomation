@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace IoT.DataLayer.Repository
 {
@@ -16,7 +17,7 @@ namespace IoT.DataLayer.Repository
         {
             this.context = context;
         }
-        public User Add(User newUser)
+        public Task<User> Add(User newUser)
         {
             try
             {
@@ -25,27 +26,30 @@ namespace IoT.DataLayer.Repository
                 {
 
                     newUser.UserKey = newUser.UserKey.ToUpper();
-                    context.Users.AddAsync(newUser);
-                    if (context.SaveChanges() > 0)
+                    context.Users.Add(newUser);
+                    context.SaveChangesAsync().ContinueWith(t =>
                     {
-                        UserPermission permission = new UserPermission()
+                        if (t.Result > 0)
                         {
-                            UserId = newUser.UserId,
-                            UserKey = newUser.UserKey.ToUpper(),
-                            CanView = true,
-                            CreatedDate = DateTime.Now,
-                            ModifiedDate = DateTime.Now
-                        };
-                        int permissionId = 0;
-                        var allPermisiionIds = context.UserPermissions.Select(x => x.UserPermissionId).ToList();
-                        if (allPermisiionIds != null && allPermisiionIds.Count() > 0)
-                        {
-                            permissionId = allPermisiionIds.Max(x => x);
+                            UserPermission permission = new UserPermission()
+                            {
+                                UserId = newUser.UserId,
+                                UserKey = newUser.UserKey.ToUpper(),
+                                CanView = true,
+                                CreatedDate = DateTime.Now,
+                                ModifiedDate = DateTime.Now
+                            };
+                            int permissionId = 0;
+                            var allPermisiionIds = context.UserPermissions.Select(x => x.UserPermissionId).ToListAsync();
+                            if (allPermisiionIds != null && allPermisiionIds.Result.Count() > 0)
+                            {
+                                permissionId = allPermisiionIds.Result.Max(x => x);
+                            }
+                            permission.UserPermissionId = permissionId + 1;
+                            context.UserPermissions.Add(permission);
+                            context.SaveChangesAsync();
                         }
-                        permission.UserPermissionId = permissionId + 1;
-                        context.UserPermissions.Add(permission);
-                        context.SaveChanges();
-                    }
+                    });
 
                 }
                 else
@@ -53,10 +57,10 @@ namespace IoT.DataLayer.Repository
                     user.LastLogin = DateTime.Now;
                     var updatedUser = context.Users.Attach(user);
                     updatedUser.State = EntityState.Modified;
-                    context.SaveChanges();
+                    context.SaveChangesAsync();
                 }
-                newUser.UserPermissions = context.UserPermissions.Where(x => x.UserKey == newUser.UserKey).ToList();
-                return newUser;
+                newUser.UserPermissions = context.UserPermissions.Where(x => x.UserKey == newUser.UserKey).ToListAsync().Result;
+                return Task<User>.Factory.StartNew(() => newUser);
             }
             catch (Exception ex)
             {
@@ -122,9 +126,9 @@ namespace IoT.DataLayer.Repository
             return context.Users.FirstOrDefault(x => x.UserKey == userKey);
         }
 
-        public UserPermission GetUserPermission(string userKey)
+        public async Task<UserPermission> GetUserPermission(string userKey)
         {
-            var data = context.UserPermissions.Where(x => x.UserKey == userKey).FirstOrDefault();
+            var data = await context.UserPermissions.Where(x => x.UserKey == userKey).FirstOrDefaultAsync();
             return data;
         }
 

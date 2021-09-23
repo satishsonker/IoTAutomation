@@ -32,9 +32,10 @@ namespace IoT.WebAPI.Controllers
         [Route("AddUser")]
         public User AddUser([FromBody] User user)
         {
-            if (user != null)
-                user.CreatedDate = DateTime.Now;
-           return _userBL.AddUser(user);
+            // if (user != null)
+            //     user.CreatedDate = DateTime.Now;
+            //return _userBL.AddUser(user);
+            return user;
         }
 
         [HttpPost]
@@ -62,9 +63,9 @@ namespace IoT.WebAPI.Controllers
         }
         [HttpGet]
         [Route("GetUserPermission")]
-        public UserPermission GetUserPermission([FromHeader] string userKey)
+        public async Task<UserPermission> GetUserPermission([FromHeader] string userKey)
         {
-            return _userBL.GetUserPermission(userKey);
+            return await _userBL.GetUserPermission(userKey);
         }
 
         [HttpGet]

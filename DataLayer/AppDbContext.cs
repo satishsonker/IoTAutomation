@@ -13,6 +13,8 @@ namespace IoT.DataLayer
         {
             modelBuilder.Entity<Device>()
                 .HasOne<DeviceType>(s => s.DeviceType);
+            modelBuilder.Entity<DeviceType>().HasMany<DeviceCapability>(x => x.DeviceCapabilities);
+            modelBuilder.Entity<DeviceCapability>().HasOne<DeviceType>(x => x.DeviceType).WithMany(x => x.DeviceCapabilities).HasForeignKey(x => x.DeviceTypeId);
             modelBuilder.Entity<Device>()
                 .HasOne<Room>(s => s.Room)
                 .WithMany(g => g.Devices)
@@ -30,6 +32,7 @@ namespace IoT.DataLayer
         public DbSet<SceneAction> SceneActions { get; set; }
         public DbSet<ActivityLog> ActivityLogs { get; set; }
         public DbSet<DeviceAction> DeviceActions { get; set; }
+        public DbSet<DeviceCapability> DeviceCapabilities { get; set; }
         public DbSet<UserPermission> UserPermissions { get; set; }
 
 

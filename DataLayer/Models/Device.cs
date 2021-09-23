@@ -12,6 +12,8 @@ namespace IoT.DataLayer.Models
         [Key]
         public int DeviceId { get; set; }
         public string DeviceName { get; set; }
+        public string FriendlyName { get; set; }
+        public string ManufacturerName { get; set; }
         public int DeviceTypeId { get; set; }
         public string DeviceDesc { get; set; }
         public string DeviceKey { get; set; }

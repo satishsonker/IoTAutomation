@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace IoT.DataLayer.Repository
 {
@@ -16,25 +17,26 @@ namespace IoT.DataLayer.Repository
             context = _context;
 
         }
-        public ActivityLog Add(ActivityLog entity, string userKey)
+        public Task<ActivityLog> Add(ActivityLog entity, string userKey)
         {
             if (entity != null)
             {
-                List<ActivityLog> oldLogs = context.ActivityLogs.Where(x => x.UserKey == userKey).OrderByDescending(x=>x.CreatedDate).ToList();
-                if(oldLogs.Count()>100)
-                {
-                    var data = context.ActivityLogs.Attach(oldLogs.Skip(100).FirstOrDefault());
-                    data.State = EntityState.Deleted;
-                    context.SaveChanges();
-                }
-                if (context.Users.Where(x => x.UserKey == userKey).Count() > 0)
-                {
-                    context.ActivityLogs.Add(entity);
-                    context.SaveChangesAsync();
-                    return entity;
-                }
+                var oldLogs = context.ActivityLogs.Where(x => x.UserKey == userKey).OrderByDescending(x=>x.CreatedDate).ToListAsync();
+                oldLogs.ContinueWith(t => { 
+                if(t.Result.Count>100)
+                    {
+                        var data = context.ActivityLogs.Attach(oldLogs.Result.Skip(100).FirstOrDefault());
+                        data.State = EntityState.Deleted;
+                        context.SaveChangesAsync();
+                    }
+                    else
+                    {
+                        context.ActivityLogs.Add(entity);
+                        context.SaveChangesAsync();
+                    }
+                });
             }
-            return new ActivityLog();
+            return Task<ActivityLog>.Factory.StartNew(()=> new ActivityLog());
         }
 
         public int Delete(ActivityLog entity, string userKey)

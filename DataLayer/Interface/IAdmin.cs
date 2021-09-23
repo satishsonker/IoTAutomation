@@ -20,5 +20,12 @@ namespace IoT.DataLayer.Interface
         DeviceAction GetDeviceAction(int deviceActionId, string userKey);
         IEnumerable<DeviceAction> GetAllDeviceAction(string userKey);
         bool UpdateAdminPermission(List<UserPermission> userPermissions, string userKey);
+
+        int AddDeviceCapability(DeviceCapability deviceCapability, string userKey);
+        int UpdateDeviceCapability(DeviceCapability deviceCapability, string userKey);
+        int DeleteDeviceCapability(int deviceCapabilityId, string userKey);
+        IEnumerable<DeviceCapability> SearchDeviceCapability(string searchTerm, string userKey);
+        DeviceCapability GetDeviceCapability(int deviceCapabilityId, string userKey);
+        IEnumerable<DeviceCapability> GetAllDeviceCapability(string userKey);
     }
 }

@@ -2,12 +2,13 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace IoT.DataLayer.Interface
 {
   public interface IUsers
     {
-        User Add(User newUser);
+        Task<User> Add(User newUser);
         User Update(User updateUser);
         User Delete(string userKey);
         IEnumerable<User> GetAllUsers();
@@ -15,7 +16,7 @@ namespace IoT.DataLayer.Interface
         User APIKeyGet(string userKey);
         User APIKeyReset(string userKey);
         IEnumerable<User> SearchUsers(string searchTerm);
-        UserPermission GetUserPermission(string userKey);
+        Task<UserPermission> GetUserPermission(string userKey);
         IEnumerable<UserPermission> GetAllUserPermissions(string userKey);
     }
 }

@@ -27,9 +27,11 @@ namespace IoT.DataLayer.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Activity")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("AppName")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("CreatedDate")
@@ -45,6 +47,7 @@ namespace IoT.DataLayer.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("UserKey")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ActivityLogId");
@@ -77,8 +80,14 @@ namespace IoT.DataLayer.Migrations
                     b.Property<int>("DeviceTypeId")
                         .HasColumnType("int");
 
+                    b.Property<string>("FriendlyName")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime?>("LastConnected")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("ManufacturerName")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("ModifiedDate")
                         .HasColumnType("datetime2");
@@ -109,10 +118,12 @@ namespace IoT.DataLayer.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("DeviceActionName")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("DeciveActionName");
 
                     b.Property<string>("DeviceActionNameBackEnd")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("DeviceActionValue")
@@ -131,6 +142,51 @@ namespace IoT.DataLayer.Migrations
                     b.ToTable("DeviceActions");
                 });
 
+            modelBuilder.Entity("IoT.DataLayer.Models.DeviceCapability", b =>
+                {
+                    b.Property<int>("DeviceCapabilityId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("CapabilityInterface")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CapabilityType")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("DeviceTypeId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("Modifieddate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("ProactivelyReported")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("Retrievable")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("SupportedProperty")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Version")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("DeviceCapabilityId");
+
+                    b.HasIndex("DeviceTypeId");
+
+                    b.ToTable("DeviceCapability");
+                });
+
             modelBuilder.Entity("IoT.DataLayer.Models.DeviceType", b =>
                 {
                     b.Property<int>("DeviceTypeId")
@@ -142,6 +198,7 @@ namespace IoT.DataLayer.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("DeviceTypeName")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("ModifiedDate")
@@ -304,7 +361,9 @@ namespace IoT.DataLayer.Migrations
             modelBuilder.Entity("IoT.DataLayer.Models.UserPermission", b =>
                 {
                     b.Property<int>("UserPermissionId")
-                        .HasColumnType("int");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<bool>("CanCreate")
                         .HasColumnType("bit");
@@ -331,9 +390,12 @@ namespace IoT.DataLayer.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("UserKey")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("UserPermissionId");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("UserPermission");
                 });
@@ -368,6 +430,17 @@ namespace IoT.DataLayer.Migrations
                     b.Navigation("DeviceType");
                 });
 
+            modelBuilder.Entity("IoT.DataLayer.Models.DeviceCapability", b =>
+                {
+                    b.HasOne("IoT.DataLayer.Models.DeviceType", "DeviceType")
+                        .WithMany("DeviceCapabilities")
+                        .HasForeignKey("DeviceTypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("DeviceType");
+                });
+
             modelBuilder.Entity("IoT.DataLayer.Models.SceneAction", b =>
                 {
                     b.HasOne("IoT.DataLayer.Models.Device", "Device")
@@ -389,7 +462,7 @@ namespace IoT.DataLayer.Migrations
                 {
                     b.HasOne("IoT.DataLayer.Models.User", "User")
                         .WithMany("UserPermissions")
-                        .HasForeignKey("UserPermissionId")
+                        .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -399,6 +472,8 @@ namespace IoT.DataLayer.Migrations
             modelBuilder.Entity("IoT.DataLayer.Models.DeviceType", b =>
                 {
                     b.Navigation("DeviceActions");
+
+                    b.Navigation("DeviceCapabilities");
                 });
 
             modelBuilder.Entity("IoT.DataLayer.Models.Room", b =>

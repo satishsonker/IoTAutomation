@@ -241,6 +241,126 @@ namespace IoT.WebAPI.Controllers
                 return BadRequest("Unable to get the Device Actions");
             }
         }
+
+        [HttpPost]
+        [Route("AddDeviceCapability")]
+        public IActionResult AddDeviceCapability([FromBody] DeviceCapability deviceCapability, [FromHeader] string userKey)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    if (deviceCapability != null)
+                    {
+                        return Ok(_adminBL.AddDeviceCapability(deviceCapability, userKey));
+                    }
+                    _logger.LogWarning("Get model=null while adding the Device Capability, UserKey : {0}", userKey);
+                }
+                _logger.LogWarning("Get invalid model while adding the Device Capability, UserKey : {0}", userKey);
+                return BadRequest("Get invalid model while adding the Device Capability");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error occured while adding the Device Capability, UserKey : {0}", userKey);
+                return BadRequest(ModelState);
+            }
+        }
+
+        [HttpPost]
+        [Route("UpdateDeviceCapability")]
+        public IActionResult UpdateDeviceCapability([FromBody] DeviceCapability DeviceCapability, [FromHeader] string userKey)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    if (DeviceCapability != null)
+                    {
+                        return Ok(_adminBL.UpdateDeviceCapability(DeviceCapability, userKey));
+                    }
+                    _logger.LogWarning("Get model=null while updating the Device Capability, UserKey : {0}", userKey);
+                }
+                _logger.LogWarning("Get invalid model while updating the Device Capability, UserKey : {0}", userKey);
+                return BadRequest("Get invalid model while updating the Device Capability");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error occured while updating the Device Capability, UserKey : {0}", userKey);
+                return BadRequest(ModelState);
+            }
+        }
+
+        [HttpDelete]
+        [Route("DeleteDeviceCapability")]
+        public IActionResult DeleteDeviceCapability([FromQuery] int DeviceCapabilityId, [FromHeader] string userKey)
+        {
+            try
+            {
+                if (DeviceCapabilityId > 0)
+                {
+                    return Ok(_adminBL.DeleteDeviceCapability(DeviceCapabilityId, userKey));
+                }
+                _logger.LogWarning("Get invalid Device Capability Id while deleting the Device Capability, userKey : {0} & ID:{1}", userKey, DeviceCapabilityId);
+                return BadRequest("Unable to delete the Device Capability");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error occured while deleting the Device Capability, UserKey : {0} & ID:{1}", userKey, DeviceCapabilityId);
+                return BadRequest("Unable to delete the Device Capability");
+            }
+        }
+
+        [HttpGet]
+        [Route("SearchDeviceCapability")]
+        public IActionResult SearchDeviceCapability([FromQuery] string searchTerm, [FromHeader] string userKey)
+        {
+            try
+            {
+                searchTerm = searchTerm == null ? string.Empty : searchTerm;
+                return Ok(_adminBL.SearchDeviceCapability(searchTerm, userKey));
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error occured while search the Device Capability, UserKey : {0}", userKey);
+                return BadRequest("Unable to search the Device Capability");
+            }
+        }
+
+        [HttpGet]
+        [Route("GetDeviceCapability")]
+        public IActionResult GetDeviceCapability([FromQuery] int DeviceCapabilityId, [FromHeader] string userKey)
+        {
+            try
+            {
+                if (DeviceCapabilityId > 0)
+                {
+                    return Ok(_adminBL.GetDeviceCapability(DeviceCapabilityId, userKey));
+                }
+                _logger.LogWarning("Get invalid Device Capability id while Getting the Device Capability, userKey : {0} & ID:{1}", userKey, DeviceCapabilityId);
+                return BadRequest("Unable to get the Device Capability");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error occured while getting the Device Capability, UserKey : {0} & ID:{1}", userKey, DeviceCapabilityId);
+                return BadRequest("Unable to get the Device Capability");
+            }
+        }
+
+        [HttpGet]
+        [Route("GetAllDeviceCapability")]
+        public IActionResult GetAllDeviceCapability([FromHeader] string userKey)
+        {
+            try
+            {
+                return Ok(_adminBL.GetAllDeviceCapability(userKey));
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error occured while getting the Device Capabilitys, UserKey : {0}", userKey);
+                return BadRequest("Unable to get the Device Capabilitys");
+            }
+        }
+
         [HttpPost]
         [Route("UpdateAdminPermission")]
         public IActionResult UpdateAdminPermission([FromBody] List<UserPermission> userPermissions, [FromHeader] string userKey)
