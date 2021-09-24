@@ -34,7 +34,6 @@ namespace AlexaSmartHomeLambda
             string nameSpace = jsonRequest["directive"]["header"]["namespace"].Value<string>();
             switch (nameSpace)
             {
-
                 case "Alexa.Authorization":
                     if (context != null)
                         context.Logger.Log("Alexa.Authorization Request");
@@ -69,11 +68,8 @@ namespace AlexaSmartHomeLambda
                             capabilities.Add(capabilityAlexaPowerController);
 
                             ar.AddPayloadEndpoint(item["deviceKey"].ToString(), capabilities.ToString(),item["friendlyName"].ToString(), item["deviceDesc"].ToString(), item["manufacturerName"].ToString());
-                        }
-                       
+                        }                       
                     }
-
-
                     break;
 
                 case "Alexa.PowerController":
