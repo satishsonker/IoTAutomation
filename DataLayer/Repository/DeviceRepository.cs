@@ -52,6 +52,8 @@ namespace IoT.DataLayer.Repository
                 DeviceId = x.DeviceId,
                 DeviceTypeId = x.DeviceType.DeviceTypeId,
                 LastConnected = x.LastConnected,
+                FriendlyName=x.FriendlyName,
+                ManufacturerName=x.ManufacturerName,
                 RoomName = x.Room.RoomName,
                 DeviceTypeName = x.DeviceType.DeviceTypeName,
                 RoomId = x.RoomId,
@@ -128,6 +130,7 @@ namespace IoT.DataLayer.Repository
             if (context.Devices.Where(x => x.UserKey == userKey).Count() > 0)
             {
                 updateDevice.ModifiedDate = DateTime.Now;
+                updateDevice.ManufacturerName = "Areana-IoT";
                 var Device = context.Devices.Attach(updateDevice);
                 Device.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
                 context.SaveChangesAsync();

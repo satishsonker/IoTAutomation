@@ -6,12 +6,13 @@ using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace AlexaSmartHomeLambda
 {
-public class AlexaHandler
+    public class AlexaHandler
     {
         public Stream Handler(Stream inputStream, ILambdaContext context)
         {
@@ -27,7 +28,7 @@ public class AlexaHandler
                 context.Logger.Log(request);
             }
 
-            AlexaResponse ar;
+            AlexaResponse ar=new AlexaResponse();
 
             JObject jsonRequest = JObject.Parse(request);
             string nameSpace = jsonRequest["directive"]["header"]["namespace"].Value<string>();
@@ -43,20 +44,35 @@ public class AlexaHandler
                 case "Alexa.Discovery":
                     if (context != null)
                         context.Logger.Log("Alexa.Discovery Request");
+                    JArray Data = null;
+                    HttpClient httpClient = new HttpClient();
+                    var httpResponse = httpClient.GetAsync("http://www.iotHomeAutomation.somee.com/api/v1/AlexaPayload/GetAlexaDiscoveryPayload").Result;
+                    if (httpResponse.IsSuccessStatusCode)
+                    {
+                        string httpResponseString = httpResponse.Content.ReadAsStringAsync().Result;
+                        Data = JArray.Parse(httpResponseString);
+                    }
+                    foreach (var item in Data)
+                    {
+                        var deviceData = JObject.Parse(item.ToString());
+                        ar = new AlexaResponse("Alexa.Discovery", "Discover.Response", item["deviceKey"].ToString());
 
-                    ar = new AlexaResponse("Alexa.Discovery", "Discover.Response", "endpoint-001");
+                        JObject capabilityAlexa = JObject.Parse(ar.CreatePayloadEndpointCapability());
+                        foreach (var deviceCap in JArray.Parse(item["deviceType"]["deviceCapabilities"].ToString()))
+                        {
+                            JObject propertyPowerstate = new JObject();
+                            propertyPowerstate.Add("name", deviceCap["supportedProperty"]);
+                            JObject capabilityAlexaPowerController = JObject.Parse(ar.CreatePayloadEndpointCapability(deviceCap["capabilityType"].ToString(), deviceCap["capabilityInterface"].ToString(), deviceCap["version"].ToString(), propertyPowerstate.ToString()));
 
-                    JObject capabilityAlexa = JObject.Parse(ar.CreatePayloadEndpointCapability());
+                            JArray capabilities = new JArray();
+                            capabilities.Add(capabilityAlexa);
+                            capabilities.Add(capabilityAlexaPowerController);
 
-                    JObject propertyPowerstate = new JObject();
-                    propertyPowerstate.Add("name", "powerState");
-                    JObject capabilityAlexaPowerController = JObject.Parse(ar.CreatePayloadEndpointCapability("AlexaInterface", "Alexa.PowerController", "3", propertyPowerstate.ToString()));
+                            ar.AddPayloadEndpoint(item["deviceKey"].ToString(), capabilities.ToString(),item["friendlyName"].ToString(), item["deviceDesc"].ToString(), item["manufacturerName"].ToString());
+                        }
+                       
+                    }
 
-                    JArray capabilities = new JArray();
-                    capabilities.Add(capabilityAlexa);
-                    capabilities.Add(capabilityAlexaPowerController);
-
-                    ar.AddPayloadEndpoint("endpoint-001", capabilities.ToString());
 
                     break;
 

@@ -107,37 +107,37 @@ namespace AlexaSmartHomeLambda
             Response["event"]["endpoint"] = endpoint;
         }
 
-        public void AddPayloadEndpoint(string endpointId, string capabilities)
+        public void AddPayloadEndpoint(string endpointId, string capabilities,string deviceName, string devicedesc, string manufacturer)
         {
             JObject payload = JObject.FromObject(Response["event"]["payload"]);
             bool hasEndpoints = payload.TryGetValue("endpoints", out var endpointsToken);
             if (hasEndpoints)
             {
                 JArray endpoints = JArray.FromObject(endpointsToken);
-                endpoints.Add(JObject.Parse(CreatePayloadEndpoint(endpointId, capabilities)));
+                endpoints.Add(JObject.Parse(CreatePayloadEndpoint(endpointId, capabilities,deviceName,devicedesc,manufacturer)));
                 payload["endpoints"] = endpoints;
             }
             else
             {
                 JArray endpoints = new JArray();
-                endpoints.Add(JObject.Parse(CreatePayloadEndpoint(endpointId, capabilities)));
+                endpoints.Add(JObject.Parse(CreatePayloadEndpoint(endpointId, capabilities,deviceName,devicedesc,manufacturer)));
                 payload.Add("endpoints", endpoints);
             }
             Response["event"]["payload"] = payload;
         }
 
-        public string CreatePayloadEndpoint(string endpointId, string capabilities, string cookie = null)
+        public string CreatePayloadEndpoint(string endpointId, string capabilities,string deviceName,string devicedesc,string manufacturer, string cookie = null)
         {
             JObject endpoint = new JObject();
             endpoint.Add("capabilities", JArray.Parse(capabilities));
-            endpoint.Add("description", "Sample Endpoint Description");
+            endpoint.Add("description", devicedesc);
             JArray displayCategories = new JArray();
             displayCategories.Add("OTHER");
             endpoint.Add("displayCategories", displayCategories);
             endpoint.Add("endpointId", endpointId);
             //endpoint.Add("endpointId", "endpoint_" + new Random().Next(0, 999999).ToString("D6"));
-            endpoint.Add("friendlyName", "Sample Endpoint");
-            endpoint.Add("manufacturerName", "Sample Manufacturer");
+            endpoint.Add("friendlyName", deviceName);
+            endpoint.Add("manufacturerName", manufacturer);
 
             if (cookie != null)
                 endpoint.Add("cookie", JObject.Parse(cookie));

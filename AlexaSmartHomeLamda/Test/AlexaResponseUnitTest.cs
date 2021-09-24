@@ -59,7 +59,7 @@ namespace AlexaSmartHomeLambda.Test
             capabilities.Add(capabilityAlexa);
             capabilities.Add(capabilityAlexaPowerController);
 
-            ar.AddPayloadEndpoint("test", capabilities.ToString());
+            ar.AddPayloadEndpoint("test", capabilities.ToString(),"SampleDevice", "SampleDevice","SampleManufacturer");
 
             // Act
             JObject response = JObject.Parse(ar.ToString());

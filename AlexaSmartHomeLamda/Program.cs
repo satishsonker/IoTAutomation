@@ -4,7 +4,7 @@ namespace AlexaSmartHomeLamda
 {
     class Program
     {
-        static void Main(string[] args)
+       public static void Main1(string[] args)
         {
             Console.WriteLine("Hello World!");
         }

@@ -21,7 +21,19 @@ namespace IoT.DataLayer.Repository
         public IEnumerable<Device> GetAlexaDiscoveryPayload(string userKey)
         {
             var data= context.Devices.Include(x => x.DeviceType).ThenInclude(x => x.DeviceCapabilities);
-            return data;
+            if(data!=null)
+            {
+                foreach (Device item in data)
+                {
+                    item.DeviceType.DeviceActions = null;
+                    foreach (DeviceCapability deviceCapability in item.DeviceType.DeviceCapabilities)
+                    {
+                        deviceCapability.DeviceType = null;
+                    }                    
+                }
+                return data;
+            }
+            return new List<Device>();
         }
     }
 }
