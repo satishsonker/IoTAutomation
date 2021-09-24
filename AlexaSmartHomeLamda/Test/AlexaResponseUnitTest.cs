@@ -36,7 +36,6 @@ namespace AlexaSmartHomeLambda.Test
             // Act
             JObject response = JObject.Parse(ar.ToString());
             System.Console.WriteLine(response);
-
             // Assert
             Assert.AreEqual(response["event"]["header"]["name"].ToString(), "ErrorResponse");
             Assert.AreEqual(response["event"]["payload"]["type"].ToString(), "INVALID_SOMETHING");

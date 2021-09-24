@@ -97,7 +97,6 @@ namespace AlexaSmartHomeLambda.Test
                 }
 
                 JObject response = JObject.Parse(responseString);
-
                 System.Console.WriteLine(response);
 
                 Assert.AreEqual("Alexa", response["event"]["header"]["namespace"].ToString());

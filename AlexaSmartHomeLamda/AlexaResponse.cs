@@ -123,6 +123,7 @@ namespace AlexaSmartHomeLambda
                 endpoints.Add(JObject.Parse(CreatePayloadEndpoint(endpointId, capabilities,deviceName,devicedesc,manufacturer)));
                 payload.Add("endpoints", endpoints);
             }
+
             Response["event"]["payload"] = payload;
         }
 
@@ -138,7 +139,6 @@ namespace AlexaSmartHomeLambda
             //endpoint.Add("endpointId", "endpoint_" + new Random().Next(0, 999999).ToString("D6"));
             endpoint.Add("friendlyName", deviceName);
             endpoint.Add("manufacturerName", manufacturer);
-
             if (cookie != null)
                 endpoint.Add("cookie", JObject.Parse(cookie));
 
