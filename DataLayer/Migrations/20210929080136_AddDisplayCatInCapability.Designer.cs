@@ -4,14 +4,16 @@ using IoT.DataLayer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace IoT.DataLayer.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210929080136_AddDisplayCatInCapability")]
+    partial class AddDisplayCatInCapability
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -53,90 +55,6 @@ namespace IoT.DataLayer.Migrations
                     b.HasKey("ActivityLogId");
 
                     b.ToTable("ActivityLog");
-                });
-
-            modelBuilder.Entity("IoT.DataLayer.Models.CapabilityInterface", b =>
-                {
-                    b.Property<int>("CapabilityInterfaceId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("CapabilityInterfaceName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("ModifiedDate")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("CapabilityInterfaceId");
-
-                    b.ToTable("CapabilityInterface");
-                });
-
-            modelBuilder.Entity("IoT.DataLayer.Models.CapabilitySupportedProperty", b =>
-                {
-                    b.Property<int>("CapabilitySupportedPropertyId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("CapabilitySupportedPropertyName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("ModifiedDate")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("CapabilitySupportedPropertyId");
-
-                    b.ToTable("CapabilitySupportedProperty");
-                });
-
-            modelBuilder.Entity("IoT.DataLayer.Models.CapabilityType", b =>
-                {
-                    b.Property<int>("CapabilityTypeId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("CapabilityTypeName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("ModifiedDate")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("CapabilityTypeId");
-
-                    b.ToTable("CapabilityTypes");
-                });
-
-            modelBuilder.Entity("IoT.DataLayer.Models.CapabilityVersion", b =>
-                {
-                    b.Property<int>("CapabilityVersionId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("CapabilityVersionName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("ModifiedDate")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("CapabilityVersionId");
-
-                    b.ToTable("CapabilityVersion");
                 });
 
             modelBuilder.Entity("IoT.DataLayer.Models.Device", b =>
@@ -295,30 +213,6 @@ namespace IoT.DataLayer.Migrations
                     b.HasKey("DeviceTypeId");
 
                     b.ToTable("DeviceType");
-                });
-
-            modelBuilder.Entity("IoT.DataLayer.Models.DisplayCategory", b =>
-                {
-                    b.Property<int>("DisplayCategoryId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("DisplayCategoryLabel")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("DisplayCategoryValue")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("ModifiedDate")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("DisplayCategoryId");
-
-                    b.ToTable("DisplayCategory");
                 });
 
             modelBuilder.Entity("IoT.DataLayer.Models.Room", b =>

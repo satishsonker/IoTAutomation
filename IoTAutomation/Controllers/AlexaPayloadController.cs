@@ -27,7 +27,7 @@ namespace IoT.WebAPI.Controllers
         {
             try
             {
-                return Ok(_alexaPayloadBL.GetAlexaDiscoveryPayload(userKey));
+                return Ok(_alexaPayloadBL.GetAlexaDiscoveryPayload(userKey).ToList());
             }
             catch (Exception ex)
             {

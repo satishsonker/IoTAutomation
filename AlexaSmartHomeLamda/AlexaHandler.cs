@@ -42,7 +42,7 @@ namespace AlexaSmartHomeLambda
 
                 case "Alexa.Discovery":
                     if (context != null)
-                        context.Logger.Log("Alexa.Discovery Request");
+                        context.Logger.Log("Alexa.Discovery Request @"+DateTime.Now);
                     JArray Data = null;
                     HttpClient httpClient = new HttpClient();
                     var httpResponse = httpClient.GetAsync("http://www.iotHomeAutomation.somee.com/api/v1/AlexaPayload/GetAlexaDiscoveryPayload").Result;
@@ -50,6 +50,11 @@ namespace AlexaSmartHomeLambda
                     {
                         string httpResponseString = httpResponse.Content.ReadAsStringAsync().Result;
                         Data = JArray.Parse(httpResponseString);
+                        if (context != null)
+                        {
+                            context.Logger.Log("Alexa.Discovery API response");
+                            context.Logger.Log(httpResponseString);
+                        }
                     }
                     foreach (var item in Data)
                     {

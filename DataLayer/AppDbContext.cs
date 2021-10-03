@@ -34,7 +34,10 @@ namespace IoT.DataLayer
         public DbSet<DeviceAction> DeviceActions { get; set; }
         public DbSet<DeviceCapability> DeviceCapabilities { get; set; }
         public DbSet<UserPermission> UserPermissions { get; set; }
-
-
+        public DbSet<CapabilityType> CapabilityTypes { get; set; }
+        public DbSet<CapabilityVersion> CapabilityVersions { get; set; }
+        public DbSet<DisplayCategory> DisplayCategorys { get; set; }
+        public DbSet<CapabilityInterface> CapabilityInterfaces { get; set; }
+        public DbSet<CapabilitySupportedProperty> CapabilitySupportedProperties { get; set; }
     }
 }
