@@ -35,5 +35,31 @@ namespace IoT.DataLayer.Repository
             }
             return new List<Device>();
         }
+
+        public Task<string> GetDeviceStatus(string deviceKey, string userKey)
+        {
+            if (string.IsNullOrEmpty(deviceKey))
+                return Task.Factory.StartNew(() => "OFF");
+            var data = context.Devices.Where(x => x.DeviceKey == deviceKey).Select(x => x.Status).FirstOrDefault();
+            return Task.Factory.StartNew(() => data);
+        }
+
+        public Task<bool> UpdateDeviceStatus(string deviceKey, string status, string userKey)
+        {
+            Task<bool> result =Task.Factory.StartNew(()=>false);
+            var data = context.Devices.Where(x => x.DeviceKey == deviceKey).FirstOrDefault();
+            if(data!=null)
+            {
+                data.ModifiedDate = DateTime.Now;
+                data.LastConnected = DateTime.Now;
+                data.ConnectionCount += 1;
+                data.Status = status;
+                var entity = context.Entry(data);
+                entity.State = EntityState.Modified;
+                if(context.SaveChangesAsync().Result>0)
+                    result= Task.Factory.StartNew(() => true);
+            }
+            return result;
+        }
     }
 }

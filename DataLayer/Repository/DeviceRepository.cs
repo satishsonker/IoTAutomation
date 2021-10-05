@@ -101,7 +101,7 @@ namespace IoT.DataLayer.Repository
             return context.DeviceTypes.Select(x => new { x.DeviceTypeId, x.DeviceTypeName }).OrderBy(x => x.DeviceTypeName).ToList();
         }
 
-        public IEnumerable<DeviceExt> SearchDevices(string userKey, string searchTerm)
+        public IEnumerable<DeviceExt> SearchDevices(string searchTerm, string userKey )
         {
             searchTerm = searchTerm.ToUpper();
             return context.Devices
@@ -121,7 +121,7 @@ namespace IoT.DataLayer.Repository
                     RoomId = x.RoomId,
                     RoomKey = x.Room.RoomKey,
                     DeviceType = x.DeviceType
-                }).ToList().Where(x => searchTerm == "All" || x.DeviceName.ToUpper().Contains(searchTerm) || x.DeviceKey.Contains(searchTerm) || x.DeviceType.DeviceTypeName.ToUpper().Contains(searchTerm) || x.DeviceDesc.ToUpper().Contains(searchTerm)).OrderBy(x => x.DeviceName);
+                }).ToList().Where(x => searchTerm == "ALL" || x.DeviceName.ToUpper().Contains(searchTerm) || x.DeviceKey.Contains(searchTerm) || x.DeviceType.DeviceTypeName.ToUpper().Contains(searchTerm) || x.DeviceDesc.ToUpper().Contains(searchTerm)).OrderBy(x => x.DeviceName);
 
         }
 

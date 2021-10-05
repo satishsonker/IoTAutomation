@@ -24,6 +24,7 @@ namespace IoT.DataLayer.Models
         public DateTime CreatedDate { get; set; }
         public DateTime? ModifiedDate { get; set; }
         public DeviceType DeviceType { get; set; }
+        public string Status { get; set; }
         public Room Room { get; set; }
     }
 }

@@ -35,5 +35,33 @@ namespace IoT.WebAPI.Controllers
                 return BadRequest(ex.Message);
             }
         }
+        [HttpGet]
+        [Route("UpdateDeviceStatus/{deviceKey}/{status}")]
+        public IActionResult UpdateDeviceStatus([FromRoute] string deviceKey, [FromRoute] string status, [FromQuery] string userKey = "")
+        {
+            try
+            {
+                return Ok(_alexaPayloadBL.UpdateDeviceStatus(deviceKey,status, userKey));
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error occured while updating device status");
+                return BadRequest(ex.Message);
+            }
+        }
+        [HttpGet]
+        [Route("GetDeviceStatus/{deviceKey}")]
+        public IActionResult GetDeviceStatus([FromRoute] string deviceKey, [FromQuery] string userKey = "")
+        {
+            try
+            {
+                return Ok(_alexaPayloadBL.GetDeviceStatus(deviceKey, userKey));
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error occured while getting device status");
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }
