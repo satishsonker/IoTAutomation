@@ -1,5 +1,5 @@
 ﻿using IoT.DataLayer.Interface;
-using IoT.DataLayer.Models;
+using IoT.ModelLayer;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -98,7 +98,7 @@ namespace IoT.BusinessLayer
         public int UpdateDeviceCapability(DeviceCapability deviceCapability, string userKey)
         {
             if (deviceCapability != null)
-                deviceCapability.Modifieddate = DateTime.Now;
+                deviceCapability.ModifiedDate = DateTime.Now;
             return _adminBL.UpdateDeviceCapability(deviceCapability, userKey);
         }
 

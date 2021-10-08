@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using IoT.BusinessLayer;
+﻿using IoT.BusinessLayer;
 using IoT.DataLayer.Interface;
-using IoT.DataLayer.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.DependencyInjection;
+using System;
+using IoT.ModelLayer;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace IoT.WebAPI.Controllers
 {

@@ -1,4 +1,4 @@
-﻿using IoT.DataLayer.Models;
+﻿using IoT.ModelLayer;
 using System;
 using System.Collections.Generic;
 using System.Text;

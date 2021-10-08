@@ -1,9 +1,10 @@
 ﻿using IoT.BusinessLayer;
 using IoT.DataLayer.Interface;
-using IoT.DataLayer.Models;
+using IoT.ModelLayer;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
+using System.Threading.Tasks;
 
 namespace IoT.WebAPI.Controllers
 {
@@ -21,16 +22,18 @@ namespace IoT.WebAPI.Controllers
 
         [HttpPost]
         [Route("AddDevice")]
-        public IActionResult AddDevice([FromBody] Device device, [FromHeader] string userKey)
+        public async Task<IActionResult> AddDevice([FromBody] Device device, [FromHeader] string userKey)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    var newdevice = _deviceBL.AddDevice(device, userKey);
-                    if (newdevice.DeviceId > 0)
-                        return Ok();
-                    return BadRequest(ModelState);
+                    var newdevice = await _deviceBL.AddDevice(device, userKey);
+                    if (newdevice.MessageType==MessageTypes.NotSaved)
+                        return Ok(newdevice);
+                    if(newdevice.MessageType==MessageTypes.Saved)
+                        return Ok(newdevice);
+                    return BadRequest(newdevice);
                 }
                 return BadRequest(ModelState);
             }

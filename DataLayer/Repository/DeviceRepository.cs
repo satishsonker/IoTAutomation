@@ -1,14 +1,15 @@
 ﻿using IoT.DataLayer.Interface;
-using IoT.DataLayer.Models;
+using IoT.ModelLayer;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace IoT.DataLayer.Repository
 {
-    public class DeviceRepository : IDevices
+    public class DeviceRepository : CommonRepository,IDevices
     {
         private readonly AppDbContext context;
 
@@ -17,19 +18,25 @@ namespace IoT.DataLayer.Repository
             this.context = context;
         }
 
-        public Device Add(Device newDevice, string userKey)
+        public async Task<ResponseModel> Add(Device newDevice, string userKey)
         {
+            ResponseModel responseModel = new ResponseModel();
             if (context.Users.Where(x => x.UserKey == userKey).Count() > 0)
             {
-                var Device = context.Devices.Where(x => x.DeviceId == newDevice.DeviceId).FirstOrDefault();
+                var Device = context.Devices.Where(x => x.DeviceName == newDevice.DeviceName || x.FriendlyName==newDevice.FriendlyName).FirstOrDefault();
                 if (Device == null)
                 {
                     newDevice.CreatedDate = DateTime.Now;
                     context.Devices.Add(newDevice);
-                    context.SaveChanges();
+                    var result = await context.SaveChangesAsync();
+                    if (result > 0)
+                        return CommonRepository.GetResponseModel("Data saved", MessageTypes.Saved);
+                    return CommonRepository.GetResponseModel("Data not saved", MessageTypes.NotSaved);
                 }
+                else
+                    return CommonRepository.GetResponseModel($"Device name {newDevice.DeviceName} or {newDevice.FriendlyName} already existed!", MessageTypes.Duplicate);
             }
-            return newDevice;
+            return CommonRepository.GetResponseModel("Invalid userkey", MessageTypes.Unauthorized);
         }
 
         public Device Delete(string DeviceKey, string userKey)
@@ -101,27 +108,14 @@ namespace IoT.DataLayer.Repository
             return context.DeviceTypes.Select(x => new { x.DeviceTypeId, x.DeviceTypeName }).OrderBy(x => x.DeviceTypeName).ToList();
         }
 
-        public IEnumerable<DeviceExt> SearchDevices(string searchTerm, string userKey )
+        public IEnumerable<Device> SearchDevices(string searchTerm, string userKey )
         {
             searchTerm = searchTerm.ToUpper();
-            return context.Devices
+            var result= context.Devices
                 .Where(x => x.UserKey == userKey)
                 .Include(x => x.Room)
-                .Include(x => x.DeviceType)
-                .Select(x => new DeviceExt
-                {
-                    ConnectionCount = x.ConnectionCount,
-                    DeviceDesc = x.DeviceDesc,
-                    DeviceName = x.DeviceName,
-                    DeviceKey = x.DeviceKey,
-                    DeviceId = x.DeviceId,
-                    LastConnected = x.LastConnected,
-                    RoomName = x.Room.RoomName,
-                    DeviceTypeName = x.DeviceType.DeviceTypeName,
-                    RoomId = x.RoomId,
-                    RoomKey = x.Room.RoomKey,
-                    DeviceType = x.DeviceType
-                }).ToList().Where(x => searchTerm == "ALL" || x.DeviceName.ToUpper().Contains(searchTerm) || x.DeviceKey.Contains(searchTerm) || x.DeviceType.DeviceTypeName.ToUpper().Contains(searchTerm) || x.DeviceDesc.ToUpper().Contains(searchTerm)).OrderBy(x => x.DeviceName);
+                .Include(x => x.DeviceType).ToList().Where(x => searchTerm == "ALL" || x.DeviceName.ToUpper().Contains(searchTerm) || x.DeviceKey.ToUpper().Contains(searchTerm) || x.DeviceType.DeviceTypeName.ToUpper().Contains(searchTerm) || x.DeviceDesc.ToUpper().Contains(searchTerm) ||  x.FriendlyName.ToUpper().Contains(searchTerm)).OrderBy(x => x.DeviceName);
+            return result;
 
         }
 

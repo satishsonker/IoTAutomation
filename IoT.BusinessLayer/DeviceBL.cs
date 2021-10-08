@@ -1,12 +1,13 @@
 ﻿using IoT.DataLayer.Interface;
-using IoT.DataLayer.Models;
+using IoT.ModelLayer;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace IoT.BusinessLayer
 {
-   public class DeviceBL
+   public class DeviceBL:CommonBL
     {
         private readonly IDevices _device;
         public DeviceBL(IDevices device)
@@ -14,16 +15,18 @@ namespace IoT.BusinessLayer
             _device = device;
         }
 
-        public Device AddDevice(Device device, string userKey)
+        public async Task<ResponseModel> AddDevice(Device device, string userKey)
         {
+            if (device == null || string.IsNullOrEmpty(userKey))
+                return CommonBL.GetResponseModel("Server didn't received any data", MessageTypes.ValidationIssue);
             if (device != null)
             {
                 device.CreatedDate = DateTime.Now;
                 device.ConnectionCount = 0;
                 device.DeviceKey = Guid.NewGuid().ToString().Replace("-", "").ToUpper();
+                device.UserKey = userKey;
             }
-            _device.Add(device,userKey);
-            return device;
+           return await _device.Add(device,userKey);
         }
         public IEnumerable<Device> GetAllDevice(string userKey,string deviceKey="")
         {

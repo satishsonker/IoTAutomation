@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using IoT.DataLayer.Models;
+using IoT.ModelLayer;
 
 namespace IoT.DataLayer.Interface
 {

@@ -1,6 +1,6 @@
 ﻿using IoT.BusinessLayer;
 using IoT.DataLayer.Interface;
-using IoT.DataLayer.Models;
+using IoT.ModelLayer;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;

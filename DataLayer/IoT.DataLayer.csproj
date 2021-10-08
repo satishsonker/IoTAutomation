@@ -19,6 +19,14 @@
     </Reference>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\IoT.ModelLayer\IoT.ModelLayer.csproj" />
+  </ItemGroup>
+
   
 
 </Project>

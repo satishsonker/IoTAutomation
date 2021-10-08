@@ -1,5 +1,5 @@
 ﻿using System;
-using IoT.DataLayer.Models;
+using IoT.ModelLayer;
 using IoT.DataLayer.Interface;
 using System.Collections.Generic;
 using System.Threading.Tasks;

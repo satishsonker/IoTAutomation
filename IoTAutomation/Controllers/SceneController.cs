@@ -1,12 +1,9 @@
 ﻿using IoT.BusinessLayer;
 using IoT.DataLayer.Interface;
-using IoT.DataLayer.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using IoT.ModelLayer;
 
 namespace IoT.WebAPI.Controllers
 {

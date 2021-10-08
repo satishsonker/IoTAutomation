@@ -1,4 +1,4 @@
-﻿using IoT.DataLayer.Models;
+﻿using IoT.ModelLayer;
 using Microsoft.EntityFrameworkCore;
 namespace IoT.DataLayer
 {
