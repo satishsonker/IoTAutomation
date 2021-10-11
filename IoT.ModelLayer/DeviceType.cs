@@ -15,5 +15,6 @@ namespace IoT.ModelLayer
         public string DeviceTypeName { get; set; }
         public ICollection<DeviceAction> DeviceActions { get; set; }
         public ICollection<DeviceCapability> DeviceCapabilities { get; set; }
+        public string UserKey { get; set; }
     }
 }

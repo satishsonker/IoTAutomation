@@ -111,11 +111,27 @@ namespace IoT.DataLayer.Repository
         public IEnumerable<Device> SearchDevices(string searchTerm, string userKey )
         {
             searchTerm = searchTerm.ToUpper();
-            var result= context.Devices
-                .Where(x => x.UserKey == userKey)
-                .Include(x => x.Room)
-                .Include(x => x.DeviceType).ToList().Where(x => searchTerm == "ALL" || x.DeviceName.ToUpper().Contains(searchTerm) || x.DeviceKey.ToUpper().Contains(searchTerm) || x.DeviceType.DeviceTypeName.ToUpper().Contains(searchTerm) || x.DeviceDesc.ToUpper().Contains(searchTerm) ||  x.FriendlyName.ToUpper().Contains(searchTerm)).OrderBy(x => x.DeviceName);
+            var result = context.Devices.Include(x => x.DeviceType).Where(x => x.UserKey == userKey && (searchTerm == "ALL" || x.DeviceName.ToUpper().Contains(searchTerm) || x.DeviceKey.ToUpper().Contains(searchTerm) || x.DeviceType.DeviceTypeName.ToUpper().Contains(searchTerm) || x.DeviceDesc.ToUpper().Contains(searchTerm) || x.FriendlyName.ToUpper().Contains(searchTerm))).Select(x => new DeviceExt
+            {
+                ConnectionCount = x.ConnectionCount,
+                DeviceDesc = x.DeviceDesc,
+                DeviceName = x.DeviceName,
+                DeviceKey = x.DeviceKey,
+                DeviceId = x.DeviceId,
+                DeviceTypeId = x.DeviceType.DeviceTypeId,
+                LastConnected = x.LastConnected,
+                FriendlyName = x.FriendlyName,
+                ManufacturerName = x.ManufacturerName,
+                RoomName = x.Room.RoomName,
+                DeviceTypeName = x.DeviceType.DeviceTypeName,
+                RoomId = x.RoomId,
+                RoomKey = x.Room.RoomKey
+            }).ToList().OrderBy(x => x.DeviceName).ThenBy(x => x.RoomName);
             return result;
+            //.Where(x => x.UserKey == userKey)
+            //.Include(x => x.Room)
+            //.Include(x => x.DeviceType).ToList().Where(x => ).OrderBy(x => x.DeviceName);
+            //return result;
 
         }
 

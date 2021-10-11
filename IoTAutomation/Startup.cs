@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 
 namespace IoT.WebAPI
 {
@@ -52,6 +53,8 @@ namespace IoT.WebAPI
             });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Latest);
+            // In production, the React files will be served from this directory
+            
 
         }
 
@@ -84,6 +87,7 @@ namespace IoT.WebAPI
             {
                 endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}");
             });
+            
         }
     }
 }

@@ -16,6 +16,7 @@ namespace IoT.ModelLayer
         [StringLength(maximumLength:50, MinimumLength =3,ErrorMessage ="Room name required min 3 and max 50 char(s)")]
         public string RoomName { get; set; }
         public string RoomDesc { get; set; }
+        public string UserKey { get; set; }
         public ICollection<Device> Devices { get; set; }
     }
 }

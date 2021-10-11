@@ -6,7 +6,7 @@ namespace IoT.ModelLayer
 {
    public class DashboardModel
     {
-        public ICollection<Device> Devices { get; set; }
+        public ICollection<DeviceExt> Devices { get; set; }
         public ICollection<Room> Rooms { get; set; }
     }
 }

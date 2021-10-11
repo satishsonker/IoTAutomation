@@ -9,8 +9,7 @@ using System.Text.Json.Serialization;
 namespace IoT.ModelLayer
 {
     [Table("Devices")]
-    [DataContract]
-    public class Device:SharedTableModel
+    public class Device
     {
         [Key]
         [Range(minimum:0,maximum:int.MaxValue,ErrorMessage ="DeviceId is required")]
@@ -31,6 +30,12 @@ namespace IoT.ModelLayer
         public int ConnectionCount { get; set; }
         public DeviceType DeviceType { get; set; }
         public string Status { get; set; }
+        [JsonIgnore]
+        public DateTime CreatedDate { get; set; }
+        [JsonIgnore]
+        public DateTime ModifiedDate { get; set; }
+        [JsonIgnore]
+        public string UserKey { get; set; }
         [JsonIgnore]
         public Room Room { get; set; }
     }
