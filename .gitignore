@@ -338,3 +338,5 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+/IoTAutomation/Logs/mylog-20211011.txt
+/IoTAutomation/Logs/mylog-20211020.txt
