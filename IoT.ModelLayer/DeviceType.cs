@@ -7,7 +7,7 @@ using System.Text;
 namespace IoT.ModelLayer
 {
     [Table("DeviceType")]
-    public class DeviceType:SharedTableModel
+    public class DeviceType:SharedTableModelNoUserKey
     {
         [Key]
         public int DeviceTypeId { get; set; }
@@ -15,6 +15,5 @@ namespace IoT.ModelLayer
         public string DeviceTypeName { get; set; }
         public ICollection<DeviceAction> DeviceActions { get; set; }
         public ICollection<DeviceCapability> DeviceCapabilities { get; set; }
-        public string UserKey { get; set; }
     }
 }

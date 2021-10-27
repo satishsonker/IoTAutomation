@@ -7,7 +7,7 @@ using System.Text;
 namespace IoT.ModelLayer
 {
     [Table("DeviceActions")]
-    public class DeviceAction:SharedTableModel
+    public class DeviceAction:SharedTableModelNoUserKey
     {
         [Key]
         [Column(Order = 1)]

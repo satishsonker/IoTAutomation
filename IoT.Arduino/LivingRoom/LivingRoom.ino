@@ -1,5 +1,4 @@
 ﻿#include <ESP8266WiFi.h>
-
 #include <FastLED.h> 
 #include <WiFiClient.h>
 #include <PubSubClient.h>
@@ -14,68 +13,92 @@ const char* conTopic = "7C123F6551FB49E0A2DF99402906DFF81EF2632D12424DA88229EA6D
 #define L2 D2
 #define L3 D3
 #define L4 D4
-#define TempleLight "1704DC32EED44696B17F6C488571676A"  //Device Id/Key
-#define TvColorLight "DE7C70044FA7414F85E383CAF4946835"  //Device Id/Key
-#define TvLight "32BAB164570A480DA569EB4A27BE0C2E"  //Device Id/Key
-#define TvUnitLight "1ECA217174274A88B5D4AB424D2DB81A" 
+#define L5 D5
+#define L6 D6
+#define L7 D7
+#define L8 D8
+#define HallLight1 "4BBE91702F5F4BDB9C3DE49EDF13BEDC"  //Device Id/Key
+#define HallLight2 "A33B479D92F0486D8943BE9A8F87B02D"  //Device Id/Key
+#define HallLight3 "383E08641AB4400993B56DBD3A57F0AD"  //Device Id/Key
+#define HallFan1 "8C2C5997585B4DEAB6781FE0DEEA3601"
+#define HallFan2 "4E3E98D44E274557BD05DF16D6B5A600" 
+#define HallMoonLight "8D714DFA298A43F6B7435E8388D3F239" 
+#define HallBalconyLight "DBD3ADFBF30543C2B5C951AC5EE148C6" 
+#define Jhumar "6F82691AEFA848458DD0D66D919F50A7" 
 char message[3600];
-#define DeviceSize 4
-String deivcesId[DeviceSize] = { TempleLight,TvColorLight,TvLight,TvUnitLight }; //
+#define DeviceSize 8
+String deivcesId[DeviceSize] = { HallLight1,HallLight2,HallLight3,HallFan1,HallFan2,HallMoonLight,HallBalconyLight,Jhumar }; //
 WiFiClient espClient;
 PubSubClient client(espClient);
 StaticJsonDocument<400> mqttData;
 
 void turnOn(String deviceId) {
-    if (deviceId == TempleLight)
-    {
-        Serial.println("Turn on Device ID: OfficeLight1: ");
-        digitalWrite(L1, HIGH);  // turn on relay with voltage HIGH
+  if (deviceId == HallMoonLight)
+    {   digitalWrite(L6, LOW);  // turn on relay with voltage HIGH
         connectionStatusOnServer(deviceId, "ON");
     }
-    if (deviceId == TvColorLight)
-    {
-        Serial.println("Turn on Device ID: OfficeLight2: ");
-        digitalWrite(L2, HIGH);  // turn on relay with voltage HIGH
+    if (deviceId == HallBalconyLight)
+    {   digitalWrite(L7, LOW);  // turn on relay with voltage HIGH
         connectionStatusOnServer(deviceId, "ON");
     }
-    if (deviceId == TvLight)
-    {
-        Serial.println("Turn on Device ID: TvLight: ");
-        digitalWrite(L3, HIGH);  // turn on relay with voltage HIGH
+    if (deviceId == Jhumar)
+    {   digitalWrite(L8, LOW);  // turn on relay with voltage HIGH
         connectionStatusOnServer(deviceId, "ON");
     }
-    if (deviceId == TvUnitLight)
-    {
-        Serial.println("Turn on Device ID: TvUnitLight: ");
-        digitalWrite(L5, HIGH);  // turn on relay with voltage HIGH
+    if (deviceId == HallLight1)
+    {   digitalWrite(L1, LOW);  // turn on relay with voltage HIGH
+        connectionStatusOnServer(deviceId, "ON");
+    }
+    if (deviceId == HallLight2)
+    {   digitalWrite(L2, LOW);  // turn on relay with voltage HIGH
+        connectionStatusOnServer(deviceId, "ON");
+    }
+    if (deviceId == HallLight3)
+    {   digitalWrite(L3, LOW);  // turn on relay with voltage HIGH
+        connectionStatusOnServer(deviceId, "ON");
+    }
+    if (deviceId == HallFan1)
+    {   digitalWrite(L4, LOW);  // turn on relay with voltage HIGH
+        connectionStatusOnServer(deviceId, "ON");
+    }
+    if (deviceId == HallFan2)
+    {   digitalWrite(L5, LOW);  // turn on relay with voltage HIGH
         connectionStatusOnServer(deviceId, "ON");
     }
 }
 
 void turnOff(String deviceId)
 {
-    if (deviceId == TempleLight)
-    {
-        Serial.println("Turn on Device ID: OfficeLight1: ");
-        digitalWrite(L1, LOW);  // turn on relay with voltage HIGH
+     if (deviceId == HallMoonLight)
+    {   digitalWrite(L6, HIGH);  // turn on relay with voltage HIGH
         connectionStatusOnServer(deviceId, "OFF");
     }
-    if (deviceId == TvColorLight)
-    {
-        Serial.println("Turn on Device ID: OfficeLight2: ");
-        digitalWrite(L2, LOW);  // turn on relay with voltage HIGH
+    if (deviceId == HallBalconyLight)
+    {   digitalWrite(L7, HIGH);  // turn on relay with voltage HIGH
         connectionStatusOnServer(deviceId, "OFF");
     }
-    if (deviceId == TvLight)
-    {
-        Serial.println("Turn on Device ID: TvLight: ");
-        digitalWrite(L3, LOW);  // turn on relay with voltage HIGH
+    if (deviceId == Jhumar)
+    {   digitalWrite(L8, HIGH);  // turn on relay with voltage HIGH
         connectionStatusOnServer(deviceId, "OFF");
     }
-    if (deviceId == TvUnitLight)
-    {
-        Serial.println("Turn on Device ID: TvUnitLight: ");
-        digitalWrite(L5, LOW);  // turn on relay with voltage HIGH
+    if (deviceId == HallLight1)
+    {   digitalWrite(L1, HIGH);  // turn on relay with voltage HIGH
+        connectionStatusOnServer(deviceId, "OFF");
+    }
+    if (deviceId == HallLight2)
+    {   digitalWrite(L2, HIGH);  // turn on relay with voltage HIGH
+        connectionStatusOnServer(deviceId, "OFF");
+    }
+    if (deviceId == HallLight3)
+    {   digitalWrite(L3, HIGH);  // turn on relay with voltage HIGH
+        connectionStatusOnServer(deviceId, "OFF");
+    }
+    if (deviceId == HallFan1)
+    {   digitalWrite(L4, HIGH);  // turn on relay with voltage HIGH
+        connectionStatusOnServer(deviceId, "OFF");
+    }
+    if (deviceId == HallFan2)
+    {   digitalWrite(L5, HIGH);  // turn on relay with voltage HIGH
         connectionStatusOnServer(deviceId, "OFF");
     }
 }
@@ -87,8 +110,16 @@ void setup() {
     digitalWrite(L2, LOW);
     pinMode(L3, OUTPUT);
     digitalWrite(L3, LOW);
-    pinMode(L5, OUTPUT);
+    pinMode(L4, OUTPUT);
+    digitalWrite(L4, LOW);
+     pinMode(L5, OUTPUT);
     digitalWrite(L5, LOW);
+    pinMode(L6, OUTPUT);
+    digitalWrite(L6, LOW);
+    pinMode(L7, OUTPUT);
+    digitalWrite(L7, LOW);
+    pinMode(L8, OUTPUT);
+    digitalWrite(L8, LOW);
     Serial.begin(9600);
     delay(10);
     Serial.println("Connecting to ");
@@ -143,7 +174,7 @@ void reconnect() {
     {
         Serial.print("\n Connecting To ");
         Serial.println(broker);
-        if (client.connect("Web_Iot_1234", "", ""))
+        if (client.connect("Web_Iot_"+millis(), "", ""))
         {
             Serial.print("\n Connected To ");
             Serial.println(broker);

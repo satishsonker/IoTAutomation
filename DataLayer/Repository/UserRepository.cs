@@ -102,18 +102,13 @@ namespace IoT.DataLayer.Repository
             return user;
         }
 
-        public IEnumerable<UserPermission> GetAllUserPermissions(string userKey)
+        public async Task<List<UserPermission>> GetAllUserPermissions(string userKey)
         {
-            if (GetUserPermission(userKey) != null)
+            if (context.Users.Where(x=>x.UserKey==userKey).Count()>0)
             {
-                var data = context.UserPermissions.Include(x => x.User).OrderBy(x => x.User.FirstName).ToList();
-                foreach (UserPermission userPermission in data)
-                {
-                    userPermission.User.UserPermissions = null;
-                }
-                return data;
+                return await context.UserPermissions.Include(x => x.User).OrderBy(x => x.User.FirstName).ToListAsync();
             }
-            return new List<UserPermission>();
+            return await Task.Factory.StartNew(()=> new List<UserPermission>());
         }
 
         public IEnumerable<User> GetAllUsers()

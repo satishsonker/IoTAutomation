@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace IoT.ModelLayer
 {
     [Table("CapabilityTypes")]
-   public class CapabilityType:SharedTableModel
+   public class CapabilityType:SharedTableModelNoUserKey
     {
         [Key]
         [Range(minimum:0,maximum:int.MaxValue,ErrorMessage = "CapabilityTypeId is required")]
@@ -17,7 +18,7 @@ namespace IoT.ModelLayer
     }
 
     [Table("CapabilityVersion")]
-    public class CapabilityVersion : SharedTableModel
+    public class CapabilityVersion : SharedTableModelNoUserKey
     {
         [Key]
         [Range(minimum: 0, maximum: int.MaxValue, ErrorMessage = "CapabilityVersionId is required")]
@@ -26,7 +27,7 @@ namespace IoT.ModelLayer
         public string CapabilityVersionName { get; set; }
     }
     [Table("DisplayCategory")]
-    public class DisplayCategory : SharedTableModel
+    public class DisplayCategory : SharedTableModelNoUserKey
     {
         [Key]
         [Range(minimum: 0, maximum: int.MaxValue, ErrorMessage = "DisplayCategoryId is required")]
@@ -37,7 +38,7 @@ namespace IoT.ModelLayer
         public string DisplayCategoryLabel { get; set; }
     }
     [Table("CapabilityInterface")]
-    public class CapabilityInterface : SharedTableModel
+    public class CapabilityInterface : SharedTableModelNoUserKey
     {
         [Key]
         [Range(minimum: 0, maximum: int.MaxValue, ErrorMessage = "CapabilityInterfaceId is required")]
@@ -46,7 +47,7 @@ namespace IoT.ModelLayer
         public string CapabilityInterfaceName { get; set; }
     }
     [Table("CapabilitySupportedProperty")]
-    public class CapabilitySupportedProperty : SharedTableModel
+    public class CapabilitySupportedProperty : SharedTableModelNoUserKey
     {
         [Key]
         [Range(minimum: 0, maximum: int.MaxValue, ErrorMessage = "CapabilitySupportedPropertyId is required")]

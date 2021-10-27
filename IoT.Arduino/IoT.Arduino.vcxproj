@@ -107,14 +107,6 @@
     <DebuggerFlavor>VisualMicroDebugger</DebuggerFlavor>
   </PropertyGroup>
   <ItemGroup>
-    <None Include="C:\Users\satishsonkar\Documents\Arduino\OfficeLight\OfficeLight.ino" />
-    <None Include="C:\Users\satishsonkar\Documents\Arduino\OfficeLight\TempleLights.ino" />
-    <None Include="C:\Users\satishsonkar\Documents\Arduino\TempleLights\Guest_Room_with_Ping.ino" />
-    <None Include="IoT.Arduino.ino">
-      <FileType>CppCode</FileType>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="src\arduino folders read me.txt">
     </None>
   </ItemGroup>

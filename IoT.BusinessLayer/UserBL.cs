@@ -39,13 +39,13 @@ namespace IoT.BusinessLayer
         {
             return _users.Update(user);
         }
-        public async Task<UserPermission> GetUserPermission(string userKey)
+        public  Task<UserPermission> GetUserPermission(string userKey)
         {
-            return await _users.GetUserPermission(userKey);
+            return  _users.GetUserPermission(userKey);
         }
-        public IEnumerable<UserPermission> GetAllUserPermissions(string userKey)
+        public  async Task<List<UserPermission>> GetAllUserPermissions(string userKey)
         {
-            return _users.GetAllUserPermissions(userKey);
+            return await _users.GetAllUserPermissions(userKey);
         }
     }
 }

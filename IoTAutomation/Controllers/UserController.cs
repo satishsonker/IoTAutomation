@@ -67,9 +67,9 @@ namespace IoT.WebAPI.Controllers
 
         [HttpGet]
         [Route("GetAllUserPermissions")]
-        public IEnumerable<UserPermission> GetAllUserPermissions([FromHeader] string userKey)
+        public async Task<List<UserPermission>> GetAllUserPermissions([FromHeader] string userKey)
         {
-            return _userBL.GetAllUserPermissions(userKey);
+            return await _userBL.GetAllUserPermissions(userKey);
         }
     }
 }

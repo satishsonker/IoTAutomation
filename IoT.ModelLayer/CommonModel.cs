@@ -5,14 +5,16 @@ using System.Text.Json.Serialization;
 
 namespace IoT.ModelLayer
 {
-    public class SharedTableModel
+    public class SharedTableModel:SharedTableModelNoUserKey
+    {
+        public string UserKey { get; set; }
+    }
+    public class SharedTableModelNoUserKey
     {
         [JsonIgnore]
         public DateTime CreatedDate { get; set; }
         [JsonIgnore]
         public DateTime ModifiedDate { get; set; }
-        [JsonIgnore]
-        public string UserKey { get; set; }
     }
     public class ResponseModel
     {

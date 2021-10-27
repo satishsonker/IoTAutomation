@@ -7,7 +7,7 @@ using System.Text;
 namespace IoT.ModelLayer
 {
     [Table("DeviceCapability")]
-    public class DeviceCapability:SharedTableModel
+    public class DeviceCapability:SharedTableModelNoUserKey
     {
         [Key]
         public int DeviceCapabilityId { get; set; }

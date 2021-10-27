@@ -17,6 +17,6 @@ namespace IoT.DataLayer.Interface
         User APIKeyReset(string userKey);
         IEnumerable<User> SearchUsers(string searchTerm);
         Task<UserPermission> GetUserPermission(string userKey);
-        IEnumerable<UserPermission> GetAllUserPermissions(string userKey);
+        Task<List<UserPermission>> GetAllUserPermissions(string userKey);
     }
 }

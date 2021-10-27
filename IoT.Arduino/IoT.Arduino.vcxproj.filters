@@ -15,12 +15,8 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="IoT.Arduino.ino" />
     <None Include="src\arduino folders read me.txt">
       <Filter>Misc Files</Filter>
     </None>
-    <None Include="C:\Users\satishsonkar\Documents\Arduino\TempleLights\Guest_Room_with_Ping.ino" />
-    <None Include="C:\Users\satishsonkar\Documents\Arduino\OfficeLight\OfficeLight.ino" />
-    <None Include="C:\Users\satishsonkar\Documents\Arduino\OfficeLight\TempleLights.ino" />
   </ItemGroup>
 </Project>
