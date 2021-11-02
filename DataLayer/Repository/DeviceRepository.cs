@@ -103,9 +103,10 @@ namespace IoT.DataLayer.Repository
             return deviceTypes;
         }
 
-        public IEnumerable<object> GetDeviceTypeDropdown()
+        public IEnumerable<object> GetDeviceTypeDropdown(int pageNo, int pageSize)
         {
-            return context.DeviceTypes.Select(x => new { x.DeviceTypeId, x.DeviceTypeName }).OrderBy(x => x.DeviceTypeName).ToList();
+            int skipRecords = (pageNo - 1) * pageSize;
+            return context.DeviceTypes.Select(x => new { x.DeviceTypeId, x.DeviceTypeName }).OrderBy(x => x.DeviceTypeName).ToList().Skip(skipRecords).Take(pageSize);
         }
 
         public IEnumerable<Device> SearchDevices(string searchTerm, string userKey )

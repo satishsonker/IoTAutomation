@@ -52,9 +52,9 @@ namespace IoT.WebAPI.Controllers
         }
         [HttpGet]
         [Route("GetCapabilityType")]
-        public IEnumerable<CapabilityType> GetCapabilityType([FromHeader] string userKey, [FromQuery] int id)
+        public IEnumerable<CapabilityType> GetCapabilityType([FromHeader] string userKey, [FromQuery] int id, [FromQuery] int pageNo, [FromQuery] int pageSize)
         {
-            return _masterDataBL.GetCapabilityType(userKey, id);
+            return _masterDataBL.GetCapabilityType(userKey, id,pageNo,pageSize);
         }
 
         [HttpPost]
@@ -155,9 +155,9 @@ namespace IoT.WebAPI.Controllers
         }
         [HttpGet]
         [Route("GetCapabilityInterface")]
-        public IEnumerable<CapabilityInterface> GetCapabilityInterface([FromHeader] string userKey, [FromQuery] int id)
+        public dynamic GetCapabilityInterface([FromHeader] string userKey, [FromQuery] int id, [FromQuery] int pageNo, [FromQuery] int pageSize)
         {
-            return _masterDataBL.GetCapabilityInterface(userKey, id);
+            return _masterDataBL.GetCapabilityInterface(userKey, id,pageNo,pageSize);
         }
 
         [HttpPost]

@@ -89,9 +89,9 @@ namespace IoT.BusinessLayer
           return  _masterData.GetAllCapabilityDropdownData(userKey,searchTerm);
         }
 
-        public IEnumerable<CapabilityInterface> GetCapabilityInterface(string userKey, int id)
+        public dynamic GetCapabilityInterface(string userKey, int id, int pageNo, int pageSize)
         {
-            return _masterData.GetCapabilityInterface(userKey, id);
+            return _masterData.GetCapabilityInterface(userKey, id,pageNo,pageSize);
         }
 
         public IEnumerable<DropdownDataModel> GetCapabilityInterfaceDropdownData(string userKey,int id)
@@ -109,9 +109,9 @@ namespace IoT.BusinessLayer
             return _masterData.GetCapabilitySupportedPropertyDropdownData(userKey, id);
         }
 
-        public IEnumerable<CapabilityType> GetCapabilityType(string userKey, int id)
+        public IEnumerable<CapabilityType> GetCapabilityType(string userKey, int id,int pageNo,int pageSize)
         {
-            return _masterData.GetCapabilityType(userKey, id);
+            return _masterData.GetCapabilityType(userKey, id,pageNo,pageSize);
         }
 
         public IEnumerable<DropdownDataModel> GetCapabilityTypeDropdownData(string userKey, int id)

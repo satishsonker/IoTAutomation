@@ -41,6 +41,7 @@ namespace IoT.WebAPI
             services.AddScoped<IAdmin, AdminRepository>();
             services.AddScoped<IAlexaPayload, AlexaPayloadRepository>();
             services.AddScoped<IMasterData, MasterDataRepository>();
+            services.AddScoped<IAlexaEventSource, AlexaEventSourceRepository>();
             services.Configure<CookiePolicyOptions>(options =>
             {
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.

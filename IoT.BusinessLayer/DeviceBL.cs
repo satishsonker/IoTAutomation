@@ -38,9 +38,9 @@ namespace IoT.BusinessLayer
             return _device.GetDeviceDropdown(userKey);
         }
 
-        public IEnumerable<object> GetDeviceTypeDropdown()
+        public IEnumerable<object> GetDeviceTypeDropdown(int pageNo, int pageSize)
         {
-            return _device.GetDeviceTypeDropdown();
+            return _device.GetDeviceTypeDropdown(pageNo,pageSize);
         }
         public IEnumerable<Device> SearchDevice(string searchTerm, string userKey)
         {

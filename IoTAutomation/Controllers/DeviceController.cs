@@ -91,11 +91,11 @@ namespace IoT.WebAPI.Controllers
 
         [HttpGet]
         [Route("GetDeviceTypeDropdown")]
-        public IActionResult GetDeviceTypeDropdown()
+        public IActionResult GetDeviceTypeDropdown([FromQuery] int pageNo=1,[FromQuery] int pageSize=100)
         {
             try
             {
-                return Ok(_deviceBL.GetDeviceTypeDropdown());
+                return Ok(_deviceBL.GetDeviceTypeDropdown(pageNo,pageSize));
             }
             catch (Exception ex)
             {

@@ -1,4 +1,5 @@
 ﻿using IoT.ModelLayer;
+using IoT.ModelLayer.Alexa;
 using Microsoft.EntityFrameworkCore;
 namespace IoT.DataLayer
 {
@@ -37,6 +38,7 @@ namespace IoT.DataLayer
         public DbSet<CapabilityType> CapabilityTypes { get; set; }
         public DbSet<CapabilityVersion> CapabilityVersions { get; set; }
         public DbSet<DisplayCategory> DisplayCategorys { get; set; }
+        public DbSet<SkillToken> SkillTokens { get; set; }
         public DbSet<CapabilityInterface> CapabilityInterfaces { get; set; }
         public DbSet<CapabilitySupportedProperty> CapabilitySupportedProperties { get; set; }
     }

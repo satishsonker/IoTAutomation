@@ -16,7 +16,7 @@ namespace IoT.DataLayer.Interface
         bool UpdateDeviceHistory(string userKey, string deviceKey,bool isConnected);
         IEnumerable<Device> SearchDevices(string searchTerm, string userKey);
         IEnumerable<object> GetDeviceDropdown(string userKey);
-        IEnumerable<object> GetDeviceTypeDropdown();
+        IEnumerable<object> GetDeviceTypeDropdown(int pageNo, int pageSize);
         IEnumerable<DeviceType> GetDeviceTypeAction();
 
     }

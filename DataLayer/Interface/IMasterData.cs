@@ -34,10 +34,10 @@ namespace IoT.DataLayer.Interface
         IEnumerable<DropdownDataModel> GetCapabilitySupportedPropertyDropdownData(string userKey, int id = 0);
         AllCapabilityMasterModel GetAllCapabilityDropdownData(string userKey,string searchTerm="All");
         IEnumerable<CapabilitySupportedProperty> GetCapabilitySupportedProperty(string userKey, int id);
-        IEnumerable<CapabilityInterface> GetCapabilityInterface(string userKey, int id);
+        dynamic GetCapabilityInterface(string userKey, int id, int pageNo, int pageSize);
         IEnumerable<DisplayCategory> GetDisplayCategory(string userKey, int id);
         IEnumerable<CapabilityVersion> GetCapabilityVersion(string userKey, int id);
-        IEnumerable<CapabilityType> GetCapabilityType(string userKey, int id);
+        IEnumerable<CapabilityType> GetCapabilityType(string userKey, int id,int pageNo,int pageSize);
         IEnumerable<CapabilitySupportedProperty> SearchCapabilitySupportedProperty(string userKey, string searchTerm);
         IEnumerable<CapabilityInterface> SearchCapabilityInterface(string userKey, string searchTerm);
         IEnumerable<DisplayCategory> SearchDisplayCategory(string userKey, string searchTerm);

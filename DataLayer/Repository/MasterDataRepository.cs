@@ -226,17 +226,19 @@ namespace IoT.DataLayer.Repository
             }
         }
 
-        public IEnumerable<CapabilityInterface> GetCapabilityInterface(string userKey, int id)
+        public dynamic GetCapabilityInterface(string userKey, int id, int pageNo, int pageSize)
         {
             var result = new List<CapabilityInterface>();
             if (!isUserExist(userKey))
                 return result;
             else
             {
+                int skipRecords = (pageNo - 1) * pageSize;
                 result = context.CapabilityInterfaces
-                    .Where(x => id == 0 || x.CapabilityInterfaceId == id).OrderBy(x => x.CapabilityInterfaceName)
+                    .Where(x => id == 0 || x.CapabilityInterfaceId == id)
+                    .OrderBy(x => x.CapabilityInterfaceName)
                     .ToList();
-                return result;
+                return new { Data = result.Skip(skipRecords).Take(pageSize), TotalRecords = result.Count };
             }
         }
 
@@ -286,15 +288,16 @@ namespace IoT.DataLayer.Repository
             }
         }
 
-        public IEnumerable<CapabilityType> GetCapabilityType(string userKey, int id)
+        public IEnumerable<CapabilityType> GetCapabilityType(string userKey, int id, int pageNo, int pageSize)
         {
             var result = new List<CapabilityType>();
             if (!isUserExist(userKey))
                 return result;
             else
             {
+                int skipRecords = (pageNo - 1) * pageSize;
                 result = context.CapabilityTypes
-                    .Where(x => id == 0 || x.CapabilityTypeId == id).OrderBy(x => x.CapabilityTypeName)
+                    .Where(x => id == 0 || x.CapabilityTypeId == id).OrderBy(x => x.CapabilityTypeName).Skip(skipRecords).Take(pageSize)
                     .ToList();
                 return result;
             }
