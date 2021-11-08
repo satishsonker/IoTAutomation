@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
+using IoT.BusinessLayer;
 
 namespace IoT.WebAPI
 {
@@ -42,6 +43,7 @@ namespace IoT.WebAPI
             services.AddScoped<IAlexaPayload, AlexaPayloadRepository>();
             services.AddScoped<IMasterData, MasterDataRepository>();
             services.AddScoped<IAlexaEventSource, AlexaEventSourceRepository>();
+            services.AddScoped<IMqtt, MqttRepository>();
             services.Configure<CookiePolicyOptions>(options =>
             {
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.
@@ -55,13 +57,17 @@ namespace IoT.WebAPI
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Latest);
             // In production, the React files will be served from this directory
-            
 
+            var serviceProvider = services.BuildServiceProvider(); // Resolving Service
+            var mqttRepository = serviceProvider.GetService<IMqtt>();
+            var AlexaEventRepository = serviceProvider.GetService<IAlexaEventSource>();
+            var mqtt = new Mqtt(mqttRepository, AlexaEventRepository);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env,ILoggerFactory loggerFactory)
         {
+           
             loggerFactory.AddFile("Logs/mylog-{Date}.txt");
             app.UseCors(builder => builder
                          .AllowAnyOrigin()
@@ -88,7 +94,8 @@ namespace IoT.WebAPI
             {
                 endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}");
             });
-            
+          
+
         }
     }
 }

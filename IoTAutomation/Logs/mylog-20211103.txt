@@ -1,0 +1,917 @@
+2021-11-03T10:01:17.6941421+05:30  [INF] User profile is available. Using '"C:\Users\satishsonkar\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2021-11-03T10:01:18.2126811+05:30 800001dc-0005-fa00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44342/   (ca22a1cb)
+2021-11-03T10:01:18.4010352+05:30 800001dc-0005-fa00-b63f-84710c7967bb [INF] Request finished in 219.5563ms 404  (791a596a)
+2021-11-03T10:01:29.5285253+05:30 80000012-0003-f800-b63f-84710c7967bb [INF] Request starting HTTP/1.1 POST https://localhost:44342/api/v1/AlexaEventSource/PressDoorbell/7C123F6551FB49E0A2DF99402906DFF81EF2632D12424DA88229EA6D431C8CFC/70F28919CE8B4292B13B6D7AA0FF5E32  0 (ca22a1cb)
+2021-11-03T10:01:29.5861032+05:30 80000012-0003-f800-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (500cc934)
+2021-11-03T10:01:29.7763871+05:30 80000012-0003-f800-b63f-84710c7967bb [INF] Route matched with "{action = \"PressDoorbell\", controller = \"AlexaEventSource\"}". Executing controller action with signature "Void PressDoorbell(System.String, System.String)" on controller "IoT.WebAPI.Controllers.AlexaEventSourceController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-03T10:01:33.0607241+05:30 80000012-0003-f800-b63f-84710c7967bb [INF] Entity Framework Core "5.0.9" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MaxPoolSize=128 " (9958f5bb)
+2021-11-03T10:01:37.3386638+05:30 80000012-0003-f800-b63f-84710c7967bb [INF] Executed DbCommand ("433"ms) [Parameters=["@__apiKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[APIKey] = @__apiKey_0" (0723d8ff)
+2021-11-03T10:01:40.9946290+05:30 80000012-0003-f800-b63f-84710c7967bb [WRN] The query uses the 'First'/'FirstOrDefault' operator without 'OrderBy' and filter operators. This may lead to unpredictable results. (f43d926b)
+2021-11-03T10:01:41.3381946+05:30 80000012-0003-f800-b63f-84710c7967bb [INF] Executed DbCommand ("279"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[ClientId], [s].[ClientSecret], [s].[Code], [s].[CreatedDate], [s].[ExpireAt], [s].[ModifiedDate], [s].[RefreshToken], [s].[Token]
+FROM [SkillTokens] AS [s]" (0723d8ff)
+2021-11-03T10:02:03.5222084+05:30 80000012-0003-f800-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)" in 33737.1365ms (afa2e885)
+2021-11-03T10:02:03.5225429+05:30 80000012-0003-f800-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (99874f2b)
+2021-11-03T10:02:03.5372924+05:30 80000012-0003-f800-b63f-84710c7967bb [INF] Request finished in 34014.5599ms 200  (791a596a)
+2021-11-03T10:30:04.3749190+05:30  [INF] User profile is available. Using '"C:\Users\satishsonkar\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2021-11-03T10:30:04.6967488+05:30 800000b2-0005-f900-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44342/   (ca22a1cb)
+2021-11-03T10:30:04.8682452+05:30 800000b2-0005-f900-b63f-84710c7967bb [INF] Request finished in 185.2023ms 404  (791a596a)
+2021-11-03T10:31:06.7137979+05:30 8000016d-0001-fc00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 POST https://localhost:44342/api/v1/AlexaEventSource/PressDoorbell/7C123F6551FB49E0A2DF99402906DFF81EF2632D12424DA88229EA6D431C8CFC/70F28919CE8B4292B13B6D7AA0FF5E32  0 (ca22a1cb)
+2021-11-03T10:31:06.7417852+05:30 8000016d-0001-fc00-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (500cc934)
+2021-11-03T10:31:06.8745281+05:30 8000016d-0001-fc00-b63f-84710c7967bb [INF] Route matched with "{action = \"PressDoorbell\", controller = \"AlexaEventSource\"}". Executing controller action with signature "Void PressDoorbell(System.String, System.String)" on controller "IoT.WebAPI.Controllers.AlexaEventSourceController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-03T10:31:09.5944999+05:30 8000016d-0001-fc00-b63f-84710c7967bb [INF] Entity Framework Core "5.0.9" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MaxPoolSize=128 " (9958f5bb)
+2021-11-03T10:31:13.4769336+05:30 8000016d-0001-fc00-b63f-84710c7967bb [INF] Executed DbCommand ("473"ms) [Parameters=["@__apiKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[APIKey] = @__apiKey_0" (0723d8ff)
+2021-11-03T10:31:17.0637639+05:30 8000016d-0001-fc00-b63f-84710c7967bb [WRN] The query uses the 'First'/'FirstOrDefault' operator without 'OrderBy' and filter operators. This may lead to unpredictable results. (f43d926b)
+2021-11-03T10:31:17.4301988+05:30 8000016d-0001-fc00-b63f-84710c7967bb [INF] Executed DbCommand ("302"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[ClientId], [s].[ClientSecret], [s].[Code], [s].[CreatedDate], [s].[ExpireAt], [s].[ModifiedDate], [s].[RefreshToken], [s].[Token]
+FROM [SkillTokens] AS [s]" (0723d8ff)
+2021-11-03T10:31:23.2028718+05:30 8000016d-0001-fc00-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)" in 16318.4335ms (afa2e885)
+2021-11-03T10:31:23.2031631+05:30 8000016d-0001-fc00-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (99874f2b)
+2021-11-03T10:31:23.2163193+05:30 8000016d-0001-fc00-b63f-84710c7967bb [INF] Request finished in 16504.4417ms 200  (791a596a)
+2021-11-03T10:32:29.4425327+05:30 8000016e-0001-fc00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 POST https://localhost:44342/api/v1/AlexaEventSource/PressDoorbell/7C123F6551FB49E0A2DF99402906DFF81EF2632D12424DA88229EA6D431C8CFC/70F28919CE8B4292B13B6D7AA0FF5E32  0 (ca22a1cb)
+2021-11-03T10:32:29.4520317+05:30 8000016e-0001-fc00-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (500cc934)
+2021-11-03T10:32:29.4532573+05:30 8000016e-0001-fc00-b63f-84710c7967bb [INF] Route matched with "{action = \"PressDoorbell\", controller = \"AlexaEventSource\"}". Executing controller action with signature "Void PressDoorbell(System.String, System.String)" on controller "IoT.WebAPI.Controllers.AlexaEventSourceController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-03T10:32:29.7598494+05:30 8000016e-0001-fc00-b63f-84710c7967bb [INF] Executed DbCommand ("293"ms) [Parameters=["@__apiKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[APIKey] = @__apiKey_0" (0723d8ff)
+2021-11-03T10:32:39.3518123+05:30 8000016e-0001-fc00-b63f-84710c7967bb [INF] Executed DbCommand ("369"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[ClientId], [s].[ClientSecret], [s].[Code], [s].[CreatedDate], [s].[ExpireAt], [s].[ModifiedDate], [s].[RefreshToken], [s].[Token]
+FROM [SkillTokens] AS [s]" (0723d8ff)
+2021-11-03T10:32:39.3738750+05:30 8000016e-0001-fc00-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)" in 9919.5252ms (afa2e885)
+2021-11-03T10:32:39.3759080+05:30 8000016e-0001-fc00-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (99874f2b)
+2021-11-03T10:32:39.3816478+05:30 8000016e-0001-fc00-b63f-84710c7967bb [INF] Request finished in 9939.5833ms 200  (791a596a)
+2021-11-03T10:43:39.5728103+05:30  [INF] User profile is available. Using '"C:\Users\satishsonkar\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2021-11-03T10:43:39.7598976+05:30 80000175-0006-fa00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44342/   (ca22a1cb)
+2021-11-03T10:43:39.9164588+05:30 80000175-0006-fa00-b63f-84710c7967bb [INF] Request finished in 160.7089ms 404  (791a596a)
+2021-11-03T10:44:04.8424441+05:30 800000ed-0002-f700-b63f-84710c7967bb [INF] Request starting HTTP/1.1 POST https://localhost:44342/api/v1/AlexaEventSource/PressDoorbell/7C123F6551FB49E0A2DF99402906DFF81EF2632D12424DA88229EA6D431C8CFC/70F28919CE8B4292B13B6D7AA0FF5E32  0 (ca22a1cb)
+2021-11-03T10:44:04.9029741+05:30 800000ed-0002-f700-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (500cc934)
+2021-11-03T10:44:05.0428525+05:30 800000ed-0002-f700-b63f-84710c7967bb [INF] Route matched with "{action = \"PressDoorbell\", controller = \"AlexaEventSource\"}". Executing controller action with signature "Void PressDoorbell(System.String, System.String)" on controller "IoT.WebAPI.Controllers.AlexaEventSourceController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-03T10:44:07.6840109+05:30 800000ed-0002-f700-b63f-84710c7967bb [INF] Entity Framework Core "5.0.9" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MaxPoolSize=128 " (9958f5bb)
+2021-11-03T10:44:11.0733768+05:30 800000ed-0002-f700-b63f-84710c7967bb [INF] Executed DbCommand ("383"ms) [Parameters=["@__apiKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[APIKey] = @__apiKey_0" (0723d8ff)
+2021-11-03T10:44:13.9628814+05:30 800000ed-0002-f700-b63f-84710c7967bb [WRN] The query uses the 'First'/'FirstOrDefault' operator without 'OrderBy' and filter operators. This may lead to unpredictable results. (f43d926b)
+2021-11-03T10:44:14.2864323+05:30 800000ed-0002-f700-b63f-84710c7967bb [INF] Executed DbCommand ("282"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[ClientId], [s].[ClientSecret], [s].[Code], [s].[CreatedDate], [s].[ExpireAt], [s].[ModifiedDate], [s].[RefreshToken], [s].[Token]
+FROM [SkillTokens] AS [s]" (0723d8ff)
+2021-11-03T10:44:14.5975705+05:30 800000ed-0002-f700-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)" in 9540.9433ms (afa2e885)
+2021-11-03T10:44:14.5977673+05:30 800000ed-0002-f700-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (99874f2b)
+2021-11-03T10:44:14.6095329+05:30 800000ed-0002-f700-b63f-84710c7967bb [INF] Request finished in 9774.6923ms 200  (791a596a)
+2021-11-03T10:44:33.0488728+05:30 800000ee-0002-f700-b63f-84710c7967bb [INF] Request starting HTTP/1.1 POST https://localhost:44342/api/v1/AlexaEventSource/PressDoorbell/7C123F6551FB49E0A2DF99402906DFF81EF2632D12424DA88229EA6D431C8CFC/70F28919CE8B4292B13B6D7AA0FF5E32  0 (ca22a1cb)
+2021-11-03T10:44:33.0541358+05:30 800000ee-0002-f700-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (500cc934)
+2021-11-03T10:44:33.0549163+05:30 800000ee-0002-f700-b63f-84710c7967bb [INF] Route matched with "{action = \"PressDoorbell\", controller = \"AlexaEventSource\"}". Executing controller action with signature "Void PressDoorbell(System.String, System.String)" on controller "IoT.WebAPI.Controllers.AlexaEventSourceController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-03T10:44:33.3320337+05:30 800000ee-0002-f700-b63f-84710c7967bb [INF] Executed DbCommand ("269"ms) [Parameters=["@__apiKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[APIKey] = @__apiKey_0" (0723d8ff)
+2021-11-03T10:44:42.9770009+05:30 800000ee-0002-f700-b63f-84710c7967bb [INF] Executed DbCommand ("271"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[ClientId], [s].[ClientSecret], [s].[Code], [s].[CreatedDate], [s].[ExpireAt], [s].[ModifiedDate], [s].[RefreshToken], [s].[Token]
+FROM [SkillTokens] AS [s]" (0723d8ff)
+2021-11-03T10:44:45.6012003+05:30 800000ee-0002-f700-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)" in 12545.953ms (afa2e885)
+2021-11-03T10:44:45.6013849+05:30 800000ee-0002-f700-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (99874f2b)
+2021-11-03T10:44:45.6023882+05:30 800000ee-0002-f700-b63f-84710c7967bb [INF] Request finished in 12554.9037ms 200  (791a596a)
+2021-11-03T10:45:19.6890197+05:30 800000ef-0002-f700-b63f-84710c7967bb [INF] Request starting HTTP/1.1 POST https://localhost:44342/api/v1/AlexaEventSource/PressDoorbell/7C123F6551FB49E0A2DF99402906DFF81EF2632D12424DA88229EA6D431C8CFC/70F28919CE8B4292B13B6D7AA0FF5E32  0 (ca22a1cb)
+2021-11-03T10:45:19.6902259+05:30 800000ef-0002-f700-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (500cc934)
+2021-11-03T10:45:19.6913304+05:30 800000ef-0002-f700-b63f-84710c7967bb [INF] Route matched with "{action = \"PressDoorbell\", controller = \"AlexaEventSource\"}". Executing controller action with signature "Void PressDoorbell(System.String, System.String)" on controller "IoT.WebAPI.Controllers.AlexaEventSourceController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-03T10:45:19.9736241+05:30 800000ef-0002-f700-b63f-84710c7967bb [INF] Executed DbCommand ("274"ms) [Parameters=["@__apiKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[APIKey] = @__apiKey_0" (0723d8ff)
+2021-11-03T10:45:53.2123818+05:30 800000ef-0002-f700-b63f-84710c7967bb [INF] Executed DbCommand ("273"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[ClientId], [s].[ClientSecret], [s].[Code], [s].[CreatedDate], [s].[ExpireAt], [s].[ModifiedDate], [s].[RefreshToken], [s].[Token]
+FROM [SkillTokens] AS [s]" (0723d8ff)
+2021-11-03T10:45:53.2313703+05:30 800000ef-0002-f700-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)" in 33539.1777ms (afa2e885)
+2021-11-03T10:45:53.2323334+05:30 800000ef-0002-f700-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (99874f2b)
+2021-11-03T10:45:53.2382609+05:30 800000ef-0002-f700-b63f-84710c7967bb [INF] Request finished in 33549.0678ms 200  (791a596a)
+2021-11-03T10:46:28.7779553+05:30 800000f0-0002-f700-b63f-84710c7967bb [INF] Request starting HTTP/1.1 POST https://localhost:44342/api/v1/AlexaEventSource/PressDoorbell/7C123F6551FB49E0A2DF99402906DFF81EF2632D12424DA88229EA6D431C8CFC/70F28919CE8B4292B13B6D7AA0FF5E32  0 (ca22a1cb)
+2021-11-03T10:46:28.7790671+05:30 800000f0-0002-f700-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (500cc934)
+2021-11-03T10:46:28.7796778+05:30 800000f0-0002-f700-b63f-84710c7967bb [INF] Route matched with "{action = \"PressDoorbell\", controller = \"AlexaEventSource\"}". Executing controller action with signature "Void PressDoorbell(System.String, System.String)" on controller "IoT.WebAPI.Controllers.AlexaEventSourceController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-03T10:46:29.0609734+05:30 800000f0-0002-f700-b63f-84710c7967bb [INF] Executed DbCommand ("272"ms) [Parameters=["@__apiKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[APIKey] = @__apiKey_0" (0723d8ff)
+2021-11-03T10:46:32.8687658+05:30 800000f0-0002-f700-b63f-84710c7967bb [INF] Executed DbCommand ("273"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[ClientId], [s].[ClientSecret], [s].[Code], [s].[CreatedDate], [s].[ExpireAt], [s].[ModifiedDate], [s].[RefreshToken], [s].[Token]
+FROM [SkillTokens] AS [s]" (0723d8ff)
+2021-11-03T10:46:32.8860769+05:30 800000f0-0002-f700-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)" in 4105.6728ms (afa2e885)
+2021-11-03T10:46:32.8869852+05:30 800000f0-0002-f700-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (99874f2b)
+2021-11-03T10:46:32.8914715+05:30 800000f0-0002-f700-b63f-84710c7967bb [INF] Request finished in 4112.9202ms 200  (791a596a)
+2021-11-03T10:47:25.6836890+05:30  [INF] User profile is available. Using '"C:\Users\satishsonkar\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2021-11-03T10:47:25.8544333+05:30 800001e5-0005-fa00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44342/   (ca22a1cb)
+2021-11-03T10:47:26.0348717+05:30 800001e5-0005-fa00-b63f-84710c7967bb [INF] Request finished in 189.6751ms 404  (791a596a)
+2021-11-03T10:47:55.2166851+05:30 800000f2-0002-f700-b63f-84710c7967bb [INF] Request starting HTTP/1.1 POST https://localhost:44342/api/v1/AlexaEventSource/PressDoorbell/7C123F6551FB49E0A2DF99402906DFF81EF2632D12424DA88229EA6D431C8CFC/70F28919CE8B4292B13B6D7AA0FF5E32  0 (ca22a1cb)
+2021-11-03T10:47:55.2543268+05:30 800000f2-0002-f700-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (500cc934)
+2021-11-03T10:47:55.3832968+05:30 800000f2-0002-f700-b63f-84710c7967bb [INF] Route matched with "{action = \"PressDoorbell\", controller = \"AlexaEventSource\"}". Executing controller action with signature "Void PressDoorbell(System.String, System.String)" on controller "IoT.WebAPI.Controllers.AlexaEventSourceController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-03T10:47:57.6040339+05:30 800000f2-0002-f700-b63f-84710c7967bb [INF] Entity Framework Core "5.0.9" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MaxPoolSize=128 " (9958f5bb)
+2021-11-03T10:48:00.8998379+05:30 800000f2-0002-f700-b63f-84710c7967bb [INF] Executed DbCommand ("384"ms) [Parameters=["@__apiKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[APIKey] = @__apiKey_0" (0723d8ff)
+2021-11-03T10:48:03.3825138+05:30 800000f2-0002-f700-b63f-84710c7967bb [WRN] The query uses the 'First'/'FirstOrDefault' operator without 'OrderBy' and filter operators. This may lead to unpredictable results. (f43d926b)
+2021-11-03T10:48:03.7282034+05:30 800000f2-0002-f700-b63f-84710c7967bb [INF] Executed DbCommand ("281"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[ClientId], [s].[ClientSecret], [s].[Code], [s].[CreatedDate], [s].[ExpireAt], [s].[ModifiedDate], [s].[RefreshToken], [s].[Token]
+FROM [SkillTokens] AS [s]" (0723d8ff)
+2021-11-03T10:48:04.0795002+05:30 800000f2-0002-f700-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)" in 8688.2398ms (afa2e885)
+2021-11-03T10:48:04.0796939+05:30 800000f2-0002-f700-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (99874f2b)
+2021-11-03T10:48:04.0911741+05:30 800000f2-0002-f700-b63f-84710c7967bb [INF] Request finished in 8876.4187ms 200  (791a596a)
+2021-11-03T10:49:02.4687638+05:30  [INF] User profile is available. Using '"C:\Users\satishsonkar\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2021-11-03T10:49:02.6334775+05:30 800001e7-0005-fa00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44342/   (ca22a1cb)
+2021-11-03T10:49:02.6935247+05:30 800001e7-0005-fa00-b63f-84710c7967bb [INF] Request finished in 65.2927ms 404  (791a596a)
+2021-11-03T10:49:19.8347868+05:30 80000177-0006-fa00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 POST https://localhost:44342/api/v1/AlexaEventSource/PressDoorbell/7C123F6551FB49E0A2DF99402906DFF81EF2632D12424DA88229EA6D431C8CFC/70F28919CE8B4292B13B6D7AA0FF5E32  0 (ca22a1cb)
+2021-11-03T10:49:19.8480481+05:30 80000177-0006-fa00-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (500cc934)
+2021-11-03T10:49:19.9407813+05:30 80000177-0006-fa00-b63f-84710c7967bb [INF] Route matched with "{action = \"PressDoorbell\", controller = \"AlexaEventSource\"}". Executing controller action with signature "Void PressDoorbell(System.String, System.String)" on controller "IoT.WebAPI.Controllers.AlexaEventSourceController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-03T10:49:22.3185176+05:30 80000177-0006-fa00-b63f-84710c7967bb [INF] Entity Framework Core "5.0.9" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MaxPoolSize=128 " (9958f5bb)
+2021-11-03T10:49:25.9213252+05:30 80000177-0006-fa00-b63f-84710c7967bb [INF] Executed DbCommand ("488"ms) [Parameters=["@__apiKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[APIKey] = @__apiKey_0" (0723d8ff)
+2021-11-03T10:49:28.7357888+05:30 80000177-0006-fa00-b63f-84710c7967bb [WRN] The query uses the 'First'/'FirstOrDefault' operator without 'OrderBy' and filter operators. This may lead to unpredictable results. (f43d926b)
+2021-11-03T10:49:29.1229708+05:30 80000177-0006-fa00-b63f-84710c7967bb [INF] Executed DbCommand ("344"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[ClientId], [s].[ClientSecret], [s].[Code], [s].[CreatedDate], [s].[ExpireAt], [s].[ModifiedDate], [s].[RefreshToken], [s].[Token]
+FROM [SkillTokens] AS [s]" (0723d8ff)
+2021-11-03T10:49:29.5550752+05:30 80000177-0006-fa00-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)" in 9606.3382ms (afa2e885)
+2021-11-03T10:49:29.5552564+05:30 80000177-0006-fa00-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (99874f2b)
+2021-11-03T10:49:29.5664386+05:30 80000177-0006-fa00-b63f-84710c7967bb [INF] Request finished in 9733.3113ms 200  (791a596a)
+2021-11-03T10:56:58.6366267+05:30  [INF] User profile is available. Using '"C:\Users\satishsonkar\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2021-11-03T10:56:58.8572692+05:30 800000b4-0005-f900-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44342/   (ca22a1cb)
+2021-11-03T10:56:59.0419529+05:30 800000b4-0005-f900-b63f-84710c7967bb [INF] Request finished in 210.6649ms 404  (791a596a)
+2021-11-03T10:57:14.5641150+05:30 80000321-0006-fd00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 POST https://localhost:44342/api/v1/AlexaEventSource/PressDoorbell/7C123F6551FB49E0A2DF99402906DFF81EF2632D12424DA88229EA6D431C8CFC/70F28919CE8B4292B13B6D7AA0FF5E32  0 (ca22a1cb)
+2021-11-03T10:57:14.5874633+05:30 80000321-0006-fd00-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (500cc934)
+2021-11-03T10:57:14.6972132+05:30 80000321-0006-fd00-b63f-84710c7967bb [INF] Route matched with "{action = \"PressDoorbell\", controller = \"AlexaEventSource\"}". Executing controller action with signature "Void PressDoorbell(System.String, System.String)" on controller "IoT.WebAPI.Controllers.AlexaEventSourceController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-03T10:57:16.9811485+05:30 80000321-0006-fd00-b63f-84710c7967bb [INF] Entity Framework Core "5.0.9" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MaxPoolSize=128 " (9958f5bb)
+2021-11-03T10:57:20.2394077+05:30 80000321-0006-fd00-b63f-84710c7967bb [INF] Executed DbCommand ("471"ms) [Parameters=["@__apiKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[APIKey] = @__apiKey_0" (0723d8ff)
+2021-11-03T10:57:23.8026606+05:30 80000321-0006-fd00-b63f-84710c7967bb [WRN] The query uses the 'First'/'FirstOrDefault' operator without 'OrderBy' and filter operators. This may lead to unpredictable results. (f43d926b)
+2021-11-03T10:57:24.1645546+05:30 80000321-0006-fd00-b63f-84710c7967bb [INF] Executed DbCommand ("319"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[ClientId], [s].[ClientSecret], [s].[Code], [s].[CreatedDate], [s].[ExpireAt], [s].[ModifiedDate], [s].[RefreshToken], [s].[Token]
+FROM [SkillTokens] AS [s]" (0723d8ff)
+2021-11-03T10:57:24.9000225+05:30 80000321-0006-fd00-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)" in 10193.4469ms (afa2e885)
+2021-11-03T10:57:24.9004081+05:30 80000321-0006-fd00-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (99874f2b)
+2021-11-03T10:57:24.9132544+05:30 80000321-0006-fd00-b63f-84710c7967bb [INF] Request finished in 10353.4053ms 200  (791a596a)
+2021-11-03T11:02:05.1047680+05:30  [INF] User profile is available. Using '"C:\Users\satishsonkar\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2021-11-03T11:02:05.2961560+05:30 80000173-0001-fc00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44342/   (ca22a1cb)
+2021-11-03T11:02:05.3740299+05:30 80000173-0001-fc00-b63f-84710c7967bb [INF] Request finished in 84.7646ms 404  (791a596a)
+2021-11-03T11:02:50.5144415+05:30 80000323-0006-fd00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 POST https://localhost:44342/api/v1/AlexaEventSource/PressDoorbell/7C123F6551FB49E0A2DF99402906DFF81EF2632D12424DA88229EA6D431C8CFC/70F28919CE8B4292B13B6D7AA0FF5E32  0 (ca22a1cb)
+2021-11-03T11:02:50.5307545+05:30 80000323-0006-fd00-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (500cc934)
+2021-11-03T11:02:50.6841962+05:30 80000323-0006-fd00-b63f-84710c7967bb [INF] Route matched with "{action = \"PressDoorbell\", controller = \"AlexaEventSource\"}". Executing controller action with signature "Void PressDoorbell(System.String, System.String)" on controller "IoT.WebAPI.Controllers.AlexaEventSourceController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-03T11:02:53.1080435+05:30 80000323-0006-fd00-b63f-84710c7967bb [INF] Entity Framework Core "5.0.9" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MaxPoolSize=128 " (9958f5bb)
+2021-11-03T11:02:56.8914568+05:30 80000323-0006-fd00-b63f-84710c7967bb [INF] Executed DbCommand ("377"ms) [Parameters=["@__apiKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[APIKey] = @__apiKey_0" (0723d8ff)
+2021-11-03T11:03:05.4323865+05:30 80000323-0006-fd00-b63f-84710c7967bb [WRN] The query uses the 'First'/'FirstOrDefault' operator without 'OrderBy' and filter operators. This may lead to unpredictable results. (f43d926b)
+2021-11-03T11:03:05.8752488+05:30 80000323-0006-fd00-b63f-84710c7967bb [INF] Executed DbCommand ("376"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[ClientId], [s].[ClientSecret], [s].[Code], [s].[CreatedDate], [s].[ExpireAt], [s].[ModifiedDate], [s].[RefreshToken], [s].[Token]
+FROM [SkillTokens] AS [s]" (0723d8ff)
+2021-11-03T11:03:06.3049886+05:30 80000323-0006-fd00-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)" in 15613.31ms (afa2e885)
+2021-11-03T11:03:06.3054014+05:30 80000323-0006-fd00-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (99874f2b)
+2021-11-03T11:03:06.3165731+05:30 80000323-0006-fd00-b63f-84710c7967bb [INF] Request finished in 15806.1315ms 200  (791a596a)
+2021-11-03T11:06:14.3409893+05:30  [INF] User profile is available. Using '"C:\Users\satishsonkar\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2021-11-03T11:06:14.4923893+05:30 800003ef-0004-fe00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44342/   (ca22a1cb)
+2021-11-03T11:06:14.7403073+05:30 800003ef-0004-fe00-b63f-84710c7967bb [INF] Request finished in 260.1458ms 404  (791a596a)
+2021-11-03T11:06:18.7236448+05:30 800003f1-0004-fe00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 POST https://localhost:44342/api/v1/AlexaEventSource/PressDoorbell/7C123F6551FB49E0A2DF99402906DFF81EF2632D12424DA88229EA6D431C8CFC/70F28919CE8B4292B13B6D7AA0FF5E32  0 (ca22a1cb)
+2021-11-03T11:06:18.7866949+05:30 800003f1-0004-fe00-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (500cc934)
+2021-11-03T11:06:18.9367745+05:30 800003f1-0004-fe00-b63f-84710c7967bb [INF] Route matched with "{action = \"PressDoorbell\", controller = \"AlexaEventSource\"}". Executing controller action with signature "Void PressDoorbell(System.String, System.String)" on controller "IoT.WebAPI.Controllers.AlexaEventSourceController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-03T11:06:21.2712315+05:30 800003f1-0004-fe00-b63f-84710c7967bb [INF] Entity Framework Core "5.0.9" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MaxPoolSize=128 " (9958f5bb)
+2021-11-03T11:06:24.8795438+05:30 800003f1-0004-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("447"ms) [Parameters=["@__apiKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[APIKey] = @__apiKey_0" (0723d8ff)
+2021-11-03T11:06:28.5284176+05:30 800003f1-0004-fe00-b63f-84710c7967bb [WRN] The query uses the 'First'/'FirstOrDefault' operator without 'OrderBy' and filter operators. This may lead to unpredictable results. (f43d926b)
+2021-11-03T11:06:28.9275430+05:30 800003f1-0004-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("332"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[ClientId], [s].[ClientSecret], [s].[Code], [s].[CreatedDate], [s].[ExpireAt], [s].[ModifiedDate], [s].[RefreshToken], [s].[Token]
+FROM [SkillTokens] AS [s]" (0723d8ff)
+2021-11-03T11:06:29.4165194+05:30 800003f1-0004-fe00-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)" in 10457.2796ms (afa2e885)
+2021-11-03T11:06:29.4169364+05:30 800003f1-0004-fe00-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (99874f2b)
+2021-11-03T11:06:29.4425686+05:30 800003f1-0004-fe00-b63f-84710c7967bb [INF] Request finished in 10722.4917ms 200  (791a596a)
+2021-11-03T11:07:11.5252229+05:30 800003f2-0004-fe00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 POST https://localhost:44342/api/v1/AlexaEventSource/PressDoorbell/7C123F6551FB49E0A2DF99402906DFF81EF2632D12424DA88229EA6D431C8CFC/70F28919CE8B4292B13B6D7AA0FF5E32  0 (ca22a1cb)
+2021-11-03T11:07:11.5419119+05:30 800003f2-0004-fe00-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (500cc934)
+2021-11-03T11:07:11.5448817+05:30 800003f2-0004-fe00-b63f-84710c7967bb [INF] Route matched with "{action = \"PressDoorbell\", controller = \"AlexaEventSource\"}". Executing controller action with signature "Void PressDoorbell(System.String, System.String)" on controller "IoT.WebAPI.Controllers.AlexaEventSourceController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-03T11:07:11.8500183+05:30 800003f2-0004-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("283"ms) [Parameters=["@__apiKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[APIKey] = @__apiKey_0" (0723d8ff)
+2021-11-03T11:07:14.4136269+05:30 800003f2-0004-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("284"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[ClientId], [s].[ClientSecret], [s].[Code], [s].[CreatedDate], [s].[ExpireAt], [s].[ModifiedDate], [s].[RefreshToken], [s].[Token]
+FROM [SkillTokens] AS [s]" (0723d8ff)
+2021-11-03T11:07:14.4412665+05:30 800003f2-0004-fe00-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)" in 2895.6614ms (afa2e885)
+2021-11-03T11:07:14.4418419+05:30 800003f2-0004-fe00-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (99874f2b)
+2021-11-03T11:07:14.4457713+05:30 800003f2-0004-fe00-b63f-84710c7967bb [INF] Request finished in 2923.4661ms 200  (791a596a)
+2021-11-03T11:07:52.8483297+05:30 800003f3-0004-fe00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 POST https://localhost:44342/api/v1/AlexaEventSource/PressDoorbell/7C123F6551FB49E0A2DF99402906DFF81EF2632D12424DA88229EA6D431C8CFC/70F28919CE8B4292B13B6D7AA0FF5E32  0 (ca22a1cb)
+2021-11-03T11:07:52.8507616+05:30 800003f3-0004-fe00-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (500cc934)
+2021-11-03T11:07:52.8541328+05:30 800003f3-0004-fe00-b63f-84710c7967bb [INF] Route matched with "{action = \"PressDoorbell\", controller = \"AlexaEventSource\"}". Executing controller action with signature "Void PressDoorbell(System.String, System.String)" on controller "IoT.WebAPI.Controllers.AlexaEventSourceController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-03T11:07:53.1590150+05:30 800003f3-0004-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("292"ms) [Parameters=["@__apiKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[APIKey] = @__apiKey_0" (0723d8ff)
+2021-11-03T11:07:58.1244013+05:30 800003f3-0004-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("398"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[ClientId], [s].[ClientSecret], [s].[Code], [s].[CreatedDate], [s].[ExpireAt], [s].[ModifiedDate], [s].[RefreshToken], [s].[Token]
+FROM [SkillTokens] AS [s]" (0723d8ff)
+2021-11-03T11:07:58.1474983+05:30 800003f3-0004-fe00-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)" in 5292.7107ms (afa2e885)
+2021-11-03T11:07:58.1483423+05:30 800003f3-0004-fe00-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (99874f2b)
+2021-11-03T11:07:58.1532722+05:30 800003f3-0004-fe00-b63f-84710c7967bb [INF] Request finished in 5305.2157ms 200  (791a596a)
+2021-11-03T11:09:41.3803140+05:30  [INF] User profile is available. Using '"C:\Users\satishsonkar\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2021-11-03T11:09:41.6604191+05:30 80000175-0001-fc00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 POST https://localhost:44342/api/v1/AlexaEventSource/PressDoorbell/7C123F6551FB49E0A2DF99402906DFF81EF2632D12424DA88229EA6D431C8CFC/70F28919CE8B4292B13B6D7AA0FF5E32  0 (ca22a1cb)
+2021-11-03T11:09:41.6604190+05:30 8000029d-0006-fb00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44342/   (ca22a1cb)
+2021-11-03T11:09:41.8041636+05:30 80000175-0001-fc00-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (500cc934)
+2021-11-03T11:09:41.8678703+05:30 8000029d-0006-fb00-b63f-84710c7967bb [INF] Request finished in 215.682ms 404  (791a596a)
+2021-11-03T11:09:41.9992220+05:30 80000175-0001-fc00-b63f-84710c7967bb [INF] Route matched with "{action = \"PressDoorbell\", controller = \"AlexaEventSource\"}". Executing controller action with signature "Void PressDoorbell(System.String, System.String)" on controller "IoT.WebAPI.Controllers.AlexaEventSourceController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-03T11:09:44.4035990+05:30 80000175-0001-fc00-b63f-84710c7967bb [INF] Entity Framework Core "5.0.9" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MaxPoolSize=128 " (9958f5bb)
+2021-11-03T11:09:47.7099632+05:30 80000175-0001-fc00-b63f-84710c7967bb [INF] Executed DbCommand ("413"ms) [Parameters=["@__apiKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[APIKey] = @__apiKey_0" (0723d8ff)
+2021-11-03T11:09:50.2729089+05:30 80000175-0001-fc00-b63f-84710c7967bb [WRN] The query uses the 'First'/'FirstOrDefault' operator without 'OrderBy' and filter operators. This may lead to unpredictable results. (f43d926b)
+2021-11-03T11:09:50.5830274+05:30 80000175-0001-fc00-b63f-84710c7967bb [INF] Executed DbCommand ("274"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[ClientId], [s].[ClientSecret], [s].[Code], [s].[CreatedDate], [s].[ExpireAt], [s].[ModifiedDate], [s].[RefreshToken], [s].[Token]
+FROM [SkillTokens] AS [s]" (0723d8ff)
+2021-11-03T11:09:50.8959429+05:30 80000175-0001-fc00-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)" in 8887.7623ms (afa2e885)
+2021-11-03T11:09:50.8966592+05:30 80000175-0001-fc00-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (99874f2b)
+2021-11-03T11:09:50.9074277+05:30 80000175-0001-fc00-b63f-84710c7967bb [INF] Request finished in 9263.6366ms 200  (791a596a)
+2021-11-03T11:10:44.2259785+05:30  [INF] User profile is available. Using '"C:\Users\satishsonkar\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2021-11-03T11:10:44.3803576+05:30 8000017c-0006-fa00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44342/   (ca22a1cb)
+2021-11-03T11:10:44.4900701+05:30 8000017c-0006-fa00-b63f-84710c7967bb [INF] Request finished in 115.6651ms 404  (791a596a)
+2021-11-03T11:10:49.3714040+05:30 800000b6-0005-f900-b63f-84710c7967bb [INF] Request starting HTTP/1.1 POST https://localhost:44342/api/v1/AlexaEventSource/PressDoorbell/7C123F6551FB49E0A2DF99402906DFF81EF2632D12424DA88229EA6D431C8CFC/70F28919CE8B4292B13B6D7AA0FF5E32  0 (ca22a1cb)
+2021-11-03T11:10:49.3861225+05:30 800000b6-0005-f900-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (500cc934)
+2021-11-03T11:10:49.4383436+05:30 800000b6-0005-f900-b63f-84710c7967bb [INF] Route matched with "{action = \"PressDoorbell\", controller = \"AlexaEventSource\"}". Executing controller action with signature "Void PressDoorbell(System.String, System.String)" on controller "IoT.WebAPI.Controllers.AlexaEventSourceController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-03T11:10:50.3327018+05:30 800000b6-0005-f900-b63f-84710c7967bb [INF] Entity Framework Core "5.0.9" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MaxPoolSize=128 " (9958f5bb)
+2021-11-03T11:10:53.1600523+05:30 800000b6-0005-f900-b63f-84710c7967bb [INF] Executed DbCommand ("449"ms) [Parameters=["@__apiKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[APIKey] = @__apiKey_0" (0723d8ff)
+2021-11-03T11:10:56.8344707+05:30 800000b6-0005-f900-b63f-84710c7967bb [WRN] The query uses the 'First'/'FirstOrDefault' operator without 'OrderBy' and filter operators. This may lead to unpredictable results. (f43d926b)
+2021-11-03T11:10:57.2213960+05:30 800000b6-0005-f900-b63f-84710c7967bb [INF] Executed DbCommand ("320"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[ClientId], [s].[ClientSecret], [s].[Code], [s].[CreatedDate], [s].[ExpireAt], [s].[ModifiedDate], [s].[RefreshToken], [s].[Token]
+FROM [SkillTokens] AS [s]" (0723d8ff)
+2021-11-03T11:10:57.5655445+05:30 800000b6-0005-f900-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)" in 8119.8988ms (afa2e885)
+2021-11-03T11:10:57.5657204+05:30 800000b6-0005-f900-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (99874f2b)
+2021-11-03T11:10:57.5753056+05:30 800000b6-0005-f900-b63f-84710c7967bb [INF] Request finished in 8205.8472ms 200  (791a596a)
+2021-11-03T11:12:02.9747928+05:30  [INF] User profile is available. Using '"C:\Users\satishsonkar\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2021-11-03T11:12:03.0834879+05:30 8000015a-0007-fc00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44342/   (ca22a1cb)
+2021-11-03T11:12:03.1476179+05:30 8000015a-0007-fc00-b63f-84710c7967bb [INF] Request finished in 66.782ms 404  (791a596a)
+2021-11-03T11:12:08.6711424+05:30 80000091-0000-f500-b63f-84710c7967bb [INF] Request starting HTTP/1.1 POST https://localhost:44342/api/v1/AlexaEventSource/PressDoorbell/7C123F6551FB49E0A2DF99402906DFF81EF2632D12424DA88229EA6D431C8CFC/70F28919CE8B4292B13B6D7AA0FF5E32  0 (ca22a1cb)
+2021-11-03T11:12:08.7134738+05:30 80000091-0000-f500-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (500cc934)
+2021-11-03T11:12:08.8393089+05:30 80000091-0000-f500-b63f-84710c7967bb [INF] Route matched with "{action = \"PressDoorbell\", controller = \"AlexaEventSource\"}". Executing controller action with signature "Void PressDoorbell(System.String, System.String)" on controller "IoT.WebAPI.Controllers.AlexaEventSourceController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-03T11:12:11.0818591+05:30 80000091-0000-f500-b63f-84710c7967bb [INF] Entity Framework Core "5.0.9" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MaxPoolSize=128 " (9958f5bb)
+2021-11-03T11:12:14.2099211+05:30 80000091-0000-f500-b63f-84710c7967bb [INF] Executed DbCommand ("376"ms) [Parameters=["@__apiKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[APIKey] = @__apiKey_0" (0723d8ff)
+2021-11-03T11:12:16.8536587+05:30 80000091-0000-f500-b63f-84710c7967bb [WRN] The query uses the 'First'/'FirstOrDefault' operator without 'OrderBy' and filter operators. This may lead to unpredictable results. (f43d926b)
+2021-11-03T11:12:17.3003583+05:30 80000091-0000-f500-b63f-84710c7967bb [INF] Executed DbCommand ("389"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[ClientId], [s].[ClientSecret], [s].[Code], [s].[CreatedDate], [s].[ExpireAt], [s].[ModifiedDate], [s].[RefreshToken], [s].[Token]
+FROM [SkillTokens] AS [s]" (0723d8ff)
+2021-11-03T11:12:17.6571360+05:30 80000091-0000-f500-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)" in 8804.5985ms (afa2e885)
+2021-11-03T11:12:17.6573438+05:30 80000091-0000-f500-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (99874f2b)
+2021-11-03T11:12:17.6679346+05:30 80000091-0000-f500-b63f-84710c7967bb [INF] Request finished in 8998.8346ms 200  (791a596a)
+2021-11-03T11:12:23.9824536+05:30 80000092-0000-f500-b63f-84710c7967bb [INF] Request starting HTTP/1.1 POST https://localhost:44342/api/v1/AlexaEventSource/PressDoorbell/7C123F6551FB49E0A2DF99402906DFF81EF2632D12424DA88229EA6D431C8CFC/70F28919CE8B4292B13B6D7AA0FF5E32  0 (ca22a1cb)
+2021-11-03T11:12:23.9972530+05:30 80000092-0000-f500-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (500cc934)
+2021-11-03T11:12:23.9997133+05:30 80000092-0000-f500-b63f-84710c7967bb [INF] Route matched with "{action = \"PressDoorbell\", controller = \"AlexaEventSource\"}". Executing controller action with signature "Void PressDoorbell(System.String, System.String)" on controller "IoT.WebAPI.Controllers.AlexaEventSourceController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-03T11:12:24.2959022+05:30 80000092-0000-f500-b63f-84710c7967bb [INF] Executed DbCommand ("281"ms) [Parameters=["@__apiKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[APIKey] = @__apiKey_0" (0723d8ff)
+2021-11-03T11:12:27.9500531+05:30 80000092-0000-f500-b63f-84710c7967bb [INF] Executed DbCommand ("336"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[ClientId], [s].[ClientSecret], [s].[Code], [s].[CreatedDate], [s].[ExpireAt], [s].[ModifiedDate], [s].[RefreshToken], [s].[Token]
+FROM [SkillTokens] AS [s]" (0723d8ff)
+2021-11-03T11:12:27.9563939+05:30 80000092-0000-f500-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)" in 3956.312ms (afa2e885)
+2021-11-03T11:12:27.9565570+05:30 80000092-0000-f500-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (99874f2b)
+2021-11-03T11:12:27.9579156+05:30 80000092-0000-f500-b63f-84710c7967bb [INF] Request finished in 3977.1782ms 200  (791a596a)
+2021-11-03T11:13:53.6417572+05:30  [INF] User profile is available. Using '"C:\Users\satishsonkar\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2021-11-03T11:13:53.8687364+05:30 80000301-0004-fd00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44342/   (ca22a1cb)
+2021-11-03T11:13:54.0497020+05:30 80000301-0004-fd00-b63f-84710c7967bb [INF] Request finished in 192.5789ms 404  (791a596a)
+2021-11-03T11:14:01.6584253+05:30 80000303-0004-fd00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 POST https://localhost:44342/api/v1/AlexaEventSource/PressDoorbell/7C123F6551FB49E0A2DF99402906DFF81EF2632D12424DA88229EA6D431C8CFC/70F28919CE8B4292B13B6D7AA0FF5E32  0 (ca22a1cb)
+2021-11-03T11:14:01.6806417+05:30 80000303-0004-fd00-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (500cc934)
+2021-11-03T11:14:01.7954299+05:30 80000303-0004-fd00-b63f-84710c7967bb [INF] Route matched with "{action = \"PressDoorbell\", controller = \"AlexaEventSource\"}". Executing controller action with signature "Void PressDoorbell(System.String, System.String)" on controller "IoT.WebAPI.Controllers.AlexaEventSourceController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-03T11:14:04.4387568+05:30 80000303-0004-fd00-b63f-84710c7967bb [INF] Entity Framework Core "5.0.9" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MaxPoolSize=128 " (9958f5bb)
+2021-11-03T11:14:07.9519548+05:30 80000303-0004-fd00-b63f-84710c7967bb [INF] Executed DbCommand ("394"ms) [Parameters=["@__apiKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[APIKey] = @__apiKey_0" (0723d8ff)
+2021-11-03T11:14:11.6983080+05:30 80000303-0004-fd00-b63f-84710c7967bb [WRN] The query uses the 'First'/'FirstOrDefault' operator without 'OrderBy' and filter operators. This may lead to unpredictable results. (f43d926b)
+2021-11-03T11:14:12.0889020+05:30 80000303-0004-fd00-b63f-84710c7967bb [INF] Executed DbCommand ("343"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[ClientId], [s].[ClientSecret], [s].[Code], [s].[CreatedDate], [s].[ExpireAt], [s].[ModifiedDate], [s].[RefreshToken], [s].[Token]
+FROM [SkillTokens] AS [s]" (0723d8ff)
+2021-11-03T11:14:12.3455399+05:30 80000303-0004-fd00-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)" in 10542.7124ms (afa2e885)
+2021-11-03T11:14:12.3457432+05:30 80000303-0004-fd00-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (99874f2b)
+2021-11-03T11:14:12.3564122+05:30 80000303-0004-fd00-b63f-84710c7967bb [INF] Request finished in 10701.6844ms 200  (791a596a)
+2021-11-03T11:15:52.3154126+05:30  [INF] User profile is available. Using '"C:\Users\satishsonkar\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2021-11-03T11:15:52.4813700+05:30 800001ed-0005-fa00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44342/   (ca22a1cb)
+2021-11-03T11:15:52.4813701+05:30 800000d8-0003-f600-b63f-84710c7967bb [INF] Request starting HTTP/1.1 POST https://localhost:44342/api/v1/AlexaEventSource/PressDoorbell/7C123F6551FB49E0A2DF99402906DFF81EF2632D12424DA88229EA6D431C8CFC/70F28919CE8B4292B13B6D7AA0FF5E32  0 (ca22a1cb)
+2021-11-03T11:15:52.5729100+05:30 800000d8-0003-f600-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (500cc934)
+2021-11-03T11:15:52.6142167+05:30 800001ed-0005-fa00-b63f-84710c7967bb [INF] Request finished in 140.2107ms 404  (791a596a)
+2021-11-03T11:15:52.7584344+05:30 800000d8-0003-f600-b63f-84710c7967bb [INF] Route matched with "{action = \"PressDoorbell\", controller = \"AlexaEventSource\"}". Executing controller action with signature "Void PressDoorbell(System.String, System.String)" on controller "IoT.WebAPI.Controllers.AlexaEventSourceController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-03T11:15:54.4820727+05:30 800000d8-0003-f600-b63f-84710c7967bb [INF] Entity Framework Core "5.0.9" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MaxPoolSize=128 " (9958f5bb)
+2021-11-03T11:15:57.2371980+05:30 800000d8-0003-f600-b63f-84710c7967bb [INF] Executed DbCommand ("438"ms) [Parameters=["@__apiKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[APIKey] = @__apiKey_0" (0723d8ff)
+2021-11-03T11:16:06.8111564+05:30 800000d8-0003-f600-b63f-84710c7967bb [WRN] The query uses the 'First'/'FirstOrDefault' operator without 'OrderBy' and filter operators. This may lead to unpredictable results. (f43d926b)
+2021-11-03T11:16:07.1596018+05:30 800000d8-0003-f600-b63f-84710c7967bb [INF] Executed DbCommand ("286"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[ClientId], [s].[ClientSecret], [s].[Code], [s].[CreatedDate], [s].[ExpireAt], [s].[ModifiedDate], [s].[RefreshToken], [s].[Token]
+FROM [SkillTokens] AS [s]" (0723d8ff)
+2021-11-03T11:16:07.7284578+05:30 800000d8-0003-f600-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)" in 14950.8083ms (afa2e885)
+2021-11-03T11:16:07.7301252+05:30 800000d8-0003-f600-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (99874f2b)
+2021-11-03T11:16:07.7595409+05:30 800000d8-0003-f600-b63f-84710c7967bb [INF] Request finished in 15291.1614ms 200  (791a596a)
+2021-11-03T11:17:09.5812893+05:30  [INF] User profile is available. Using '"C:\Users\satishsonkar\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2021-11-03T11:17:09.8453442+05:30 800000da-0003-f600-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44342/   (ca22a1cb)
+2021-11-03T11:17:10.0187062+05:30 800000da-0003-f600-b63f-84710c7967bb [INF] Request finished in 200.356ms 404  (791a596a)
+2021-11-03T11:17:19.3878440+05:30 8000017f-0006-fa00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 POST https://localhost:44342/api/v1/AlexaEventSource/PressDoorbell/7C123F6551FB49E0A2DF99402906DFF81EF2632D12424DA88229EA6D431C8CFC/70F28919CE8B4292B13B6D7AA0FF5E32  0 (ca22a1cb)
+2021-11-03T11:17:19.4206261+05:30 8000017f-0006-fa00-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (500cc934)
+2021-11-03T11:17:19.5828644+05:30 8000017f-0006-fa00-b63f-84710c7967bb [INF] Route matched with "{action = \"PressDoorbell\", controller = \"AlexaEventSource\"}". Executing controller action with signature "Void PressDoorbell(System.String, System.String)" on controller "IoT.WebAPI.Controllers.AlexaEventSourceController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-03T11:17:22.1765848+05:30 8000017f-0006-fa00-b63f-84710c7967bb [INF] Entity Framework Core "5.0.9" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MaxPoolSize=128 " (9958f5bb)
+2021-11-03T11:17:25.6877794+05:30 8000017f-0006-fa00-b63f-84710c7967bb [INF] Executed DbCommand ("439"ms) [Parameters=["@__apiKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[APIKey] = @__apiKey_0" (0723d8ff)
+2021-11-03T11:17:25.7763980+05:30 8000017f-0006-fa00-b63f-84710c7967bb [WRN] The query uses the 'First'/'FirstOrDefault' operator without 'OrderBy' and filter operators. This may lead to unpredictable results. (f43d926b)
+2021-11-03T11:17:26.2458910+05:30 8000017f-0006-fa00-b63f-84710c7967bb [INF] Executed DbCommand ("377"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[ClientId], [s].[ClientSecret], [s].[Code], [s].[CreatedDate], [s].[ExpireAt], [s].[ModifiedDate], [s].[RefreshToken], [s].[Token]
+FROM [SkillTokens] AS [s]" (0723d8ff)
+2021-11-03T11:17:26.9479536+05:30 8000017f-0006-fa00-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)" in 7332.0507ms (afa2e885)
+2021-11-03T11:17:26.9487118+05:30 8000017f-0006-fa00-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (99874f2b)
+2021-11-03T11:17:26.9912087+05:30 8000017f-0006-fa00-b63f-84710c7967bb [INF] Request finished in 7606.4869ms 200  (791a596a)
+2021-11-03T11:17:41.8261393+05:30 80000180-0006-fa00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 POST https://localhost:44342/api/v1/AlexaEventSource/PressDoorbell/7C123F6551FB49E0A2DF99402906DFF81EF2632D12424DA88229EA6D431C8CFC/70F28919CE8B4292B13B6D7AA0FF5E32  0 (ca22a1cb)
+2021-11-03T11:17:41.8443445+05:30 80000180-0006-fa00-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (500cc934)
+2021-11-03T11:17:41.8468803+05:30 80000180-0006-fa00-b63f-84710c7967bb [INF] Route matched with "{action = \"PressDoorbell\", controller = \"AlexaEventSource\"}". Executing controller action with signature "Void PressDoorbell(System.String, System.String)" on controller "IoT.WebAPI.Controllers.AlexaEventSourceController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-03T11:17:42.1530175+05:30 80000180-0006-fa00-b63f-84710c7967bb [INF] Executed DbCommand ("288"ms) [Parameters=["@__apiKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[APIKey] = @__apiKey_0" (0723d8ff)
+2021-11-03T11:17:42.4522147+05:30 80000180-0006-fa00-b63f-84710c7967bb [INF] Executed DbCommand ("291"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[ClientId], [s].[ClientSecret], [s].[Code], [s].[CreatedDate], [s].[ExpireAt], [s].[ModifiedDate], [s].[RefreshToken], [s].[Token]
+FROM [SkillTokens] AS [s]" (0723d8ff)
+2021-11-03T11:17:42.4684738+05:30 80000180-0006-fa00-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)" in 620.4769ms (afa2e885)
+2021-11-03T11:17:42.4692518+05:30 80000180-0006-fa00-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (99874f2b)
+2021-11-03T11:17:42.4725390+05:30 80000180-0006-fa00-b63f-84710c7967bb [INF] Request finished in 649.125ms 200  (791a596a)
+2021-11-03T11:17:55.0526535+05:30 80000181-0006-fa00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 POST https://localhost:44342/api/v1/AlexaEventSource/PressDoorbell/7C123F6551FB49E0A2DF99402906DFF81EF2632D12424DA88229EA6D431C8CFC/70F28919CE8B4292B13B6D7AA0FF5E32  0 (ca22a1cb)
+2021-11-03T11:17:55.0549745+05:30 80000181-0006-fa00-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (500cc934)
+2021-11-03T11:17:55.0574222+05:30 80000181-0006-fa00-b63f-84710c7967bb [INF] Route matched with "{action = \"PressDoorbell\", controller = \"AlexaEventSource\"}". Executing controller action with signature "Void PressDoorbell(System.String, System.String)" on controller "IoT.WebAPI.Controllers.AlexaEventSourceController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-03T11:17:55.3551136+05:30 80000181-0006-fa00-b63f-84710c7967bb [INF] Executed DbCommand ("284"ms) [Parameters=["@__apiKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[APIKey] = @__apiKey_0" (0723d8ff)
+2021-11-03T11:17:55.6479447+05:30 80000181-0006-fa00-b63f-84710c7967bb [INF] Executed DbCommand ("285"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[ClientId], [s].[ClientSecret], [s].[Code], [s].[CreatedDate], [s].[ExpireAt], [s].[ModifiedDate], [s].[RefreshToken], [s].[Token]
+FROM [SkillTokens] AS [s]" (0723d8ff)
+2021-11-03T11:17:55.6643212+05:30 80000181-0006-fa00-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)" in 605.5273ms (afa2e885)
+2021-11-03T11:17:55.6646498+05:30 80000181-0006-fa00-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (99874f2b)
+2021-11-03T11:17:55.6700568+05:30 80000181-0006-fa00-b63f-84710c7967bb [INF] Request finished in 617.8389ms 200  (791a596a)
+2021-11-03T11:18:11.9979322+05:30 80000182-0006-fa00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 POST https://localhost:44342/api/v1/AlexaEventSource/PressDoorbell/7C123F6551FB49E0A2DF99402906DFF81EF2632D12424DA88229EA6D431C8CFC/70F28919CE8B4292B13B6D7AA0FF5E32  0 (ca22a1cb)
+2021-11-03T11:18:11.9995438+05:30 80000182-0006-fa00-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (500cc934)
+2021-11-03T11:18:12.0004652+05:30 80000182-0006-fa00-b63f-84710c7967bb [INF] Route matched with "{action = \"PressDoorbell\", controller = \"AlexaEventSource\"}". Executing controller action with signature "Void PressDoorbell(System.String, System.String)" on controller "IoT.WebAPI.Controllers.AlexaEventSourceController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-03T11:18:12.2836419+05:30 80000182-0006-fa00-b63f-84710c7967bb [INF] Executed DbCommand ("278"ms) [Parameters=["@__apiKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[APIKey] = @__apiKey_0" (0723d8ff)
+2021-11-03T11:18:12.6286670+05:30 80000182-0006-fa00-b63f-84710c7967bb [INF] Executed DbCommand ("341"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[ClientId], [s].[ClientSecret], [s].[Code], [s].[CreatedDate], [s].[ExpireAt], [s].[ModifiedDate], [s].[RefreshToken], [s].[Token]
+FROM [SkillTokens] AS [s]" (0723d8ff)
+2021-11-03T11:18:12.6477657+05:30 80000182-0006-fa00-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)" in 646.2901ms (afa2e885)
+2021-11-03T11:18:12.6490710+05:30 80000182-0006-fa00-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (99874f2b)
+2021-11-03T11:18:12.6530183+05:30 80000182-0006-fa00-b63f-84710c7967bb [INF] Request finished in 654.7362ms 200  (791a596a)
+2021-11-03T11:19:07.2088828+05:30  [INF] User profile is available. Using '"C:\Users\satishsonkar\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2021-11-03T11:19:07.3598159+05:30 80000184-0006-fa00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44342/   (ca22a1cb)
+2021-11-03T11:19:07.4703014+05:30 80000184-0006-fa00-b63f-84710c7967bb [INF] Request finished in 130.3586ms 404  (791a596a)
+2021-11-03T11:19:07.5139555+05:30 80000308-0004-fd00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 POST https://localhost:44342/api/v1/AlexaEventSource/PressDoorbell/7C123F6551FB49E0A2DF99402906DFF81EF2632D12424DA88229EA6D431C8CFC/70F28919CE8B4292B13B6D7AA0FF5E32  0 (ca22a1cb)
+2021-11-03T11:19:07.5610728+05:30 80000308-0004-fd00-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (500cc934)
+2021-11-03T11:19:07.6906250+05:30 80000308-0004-fd00-b63f-84710c7967bb [INF] Route matched with "{action = \"PressDoorbell\", controller = \"AlexaEventSource\"}". Executing controller action with signature "Void PressDoorbell(System.String, System.String)" on controller "IoT.WebAPI.Controllers.AlexaEventSourceController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-03T11:19:09.9413106+05:30 80000308-0004-fd00-b63f-84710c7967bb [INF] Entity Framework Core "5.0.9" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MaxPoolSize=128 " (9958f5bb)
+2021-11-03T11:19:13.0651401+05:30 80000308-0004-fd00-b63f-84710c7967bb [INF] Executed DbCommand ("387"ms) [Parameters=["@__apiKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[APIKey] = @__apiKey_0" (0723d8ff)
+2021-11-03T11:19:13.1780444+05:30 80000308-0004-fd00-b63f-84710c7967bb [WRN] The query uses the 'First'/'FirstOrDefault' operator without 'OrderBy' and filter operators. This may lead to unpredictable results. (f43d926b)
+2021-11-03T11:19:13.5193312+05:30 80000308-0004-fd00-b63f-84710c7967bb [INF] Executed DbCommand ("275"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[ClientId], [s].[ClientSecret], [s].[Code], [s].[CreatedDate], [s].[ExpireAt], [s].[ModifiedDate], [s].[RefreshToken], [s].[Token]
+FROM [SkillTokens] AS [s]" (0723d8ff)
+2021-11-03T11:19:14.1659290+05:30 80000308-0004-fd00-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)" in 6454.8325ms (afa2e885)
+2021-11-03T11:19:14.1670157+05:30 80000308-0004-fd00-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (99874f2b)
+2021-11-03T11:19:14.2411782+05:30 80000308-0004-fd00-b63f-84710c7967bb [INF] Request finished in 6729.8798ms 200  (791a596a)
+2021-11-03T11:19:57.2865231+05:30  [INF] User profile is available. Using '"C:\Users\satishsonkar\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2021-11-03T11:19:57.5199968+05:30 80000186-0006-fa00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44342/   (ca22a1cb)
+2021-11-03T11:19:57.8117695+05:30 80000186-0006-fa00-b63f-84710c7967bb [INF] Request finished in 318.0753ms 404  (791a596a)
+2021-11-03T11:19:59.1426170+05:30 8000030a-0004-fd00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 POST https://localhost:44342/api/v1/AlexaEventSource/PressDoorbell/7C123F6551FB49E0A2DF99402906DFF81EF2632D12424DA88229EA6D431C8CFC/70F28919CE8B4292B13B6D7AA0FF5E32  0 (ca22a1cb)
+2021-11-03T11:19:59.1704260+05:30 8000030a-0004-fd00-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (500cc934)
+2021-11-03T11:19:59.3585939+05:30 8000030a-0004-fd00-b63f-84710c7967bb [INF] Route matched with "{action = \"PressDoorbell\", controller = \"AlexaEventSource\"}". Executing controller action with signature "Void PressDoorbell(System.String, System.String)" on controller "IoT.WebAPI.Controllers.AlexaEventSourceController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-03T11:20:01.5778412+05:30 8000030a-0004-fd00-b63f-84710c7967bb [INF] Entity Framework Core "5.0.9" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MaxPoolSize=128 " (9958f5bb)
+2021-11-03T11:20:04.6028255+05:30 8000030a-0004-fd00-b63f-84710c7967bb [INF] Executed DbCommand ("423"ms) [Parameters=["@__apiKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[APIKey] = @__apiKey_0" (0723d8ff)
+2021-11-03T11:20:04.6928191+05:30 8000030a-0004-fd00-b63f-84710c7967bb [WRN] The query uses the 'First'/'FirstOrDefault' operator without 'OrderBy' and filter operators. This may lead to unpredictable results. (f43d926b)
+2021-11-03T11:20:05.0534692+05:30 8000030a-0004-fd00-b63f-84710c7967bb [INF] Executed DbCommand ("279"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[ClientId], [s].[ClientSecret], [s].[Code], [s].[CreatedDate], [s].[ExpireAt], [s].[ModifiedDate], [s].[RefreshToken], [s].[Token]
+FROM [SkillTokens] AS [s]" (0723d8ff)
+2021-11-03T11:20:05.7803254+05:30 8000030a-0004-fd00-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)" in 6404.6728ms (afa2e885)
+2021-11-03T11:20:05.7808625+05:30 8000030a-0004-fd00-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (99874f2b)
+2021-11-03T11:20:05.8073890+05:30 8000030a-0004-fd00-b63f-84710c7967bb [INF] Request finished in 6669.6495ms 200  (791a596a)
+2021-11-03T11:23:11.2962946+05:30  [INF] User profile is available. Using '"C:\Users\satishsonkar\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2021-11-03T11:23:11.5116357+05:30 800000b8-0005-f900-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44342/   (ca22a1cb)
+2021-11-03T11:23:11.6323950+05:30 800000b8-0005-f900-b63f-84710c7967bb [INF] Request finished in 139.734ms 404  (791a596a)
+2021-11-03T11:23:27.1461383+05:30 800000ba-0005-f900-b63f-84710c7967bb [INF] Request starting HTTP/1.1 POST https://localhost:44342/api/v1/AlexaEventSource/PressDoorbell/7C123F6551FB49E0A2DF99402906DFF81EF2632D12424DA88229EA6D431C8CFC/70F28919CE8B4292B13B6D7AA0FF5E32  0 (ca22a1cb)
+2021-11-03T11:23:27.1705963+05:30 800000ba-0005-f900-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (500cc934)
+2021-11-03T11:23:27.2268184+05:30 800000ba-0005-f900-b63f-84710c7967bb [INF] Route matched with "{action = \"PressDoorbell\", controller = \"AlexaEventSource\"}". Executing controller action with signature "Void PressDoorbell(System.String, System.String)" on controller "IoT.WebAPI.Controllers.AlexaEventSourceController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-03T11:23:28.2548208+05:30 800000ba-0005-f900-b63f-84710c7967bb [INF] Entity Framework Core "5.0.9" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MaxPoolSize=128 " (9958f5bb)
+2021-11-03T11:23:31.0390111+05:30 800000ba-0005-f900-b63f-84710c7967bb [INF] Executed DbCommand ("470"ms) [Parameters=["@__apiKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[APIKey] = @__apiKey_0" (0723d8ff)
+2021-11-03T11:23:31.1283468+05:30 800000ba-0005-f900-b63f-84710c7967bb [WRN] The query uses the 'First'/'FirstOrDefault' operator without 'OrderBy' and filter operators. This may lead to unpredictable results. (f43d926b)
+2021-11-03T11:23:31.6190768+05:30 800000ba-0005-f900-b63f-84710c7967bb [INF] Executed DbCommand ("407"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[ClientId], [s].[ClientSecret], [s].[Code], [s].[CreatedDate], [s].[ExpireAt], [s].[ModifiedDate], [s].[RefreshToken], [s].[Token]
+FROM [SkillTokens] AS [s]" (0723d8ff)
+2021-11-03T11:23:32.3545616+05:30 800000ba-0005-f900-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)" in 5105.032ms (afa2e885)
+2021-11-03T11:23:32.3551528+05:30 800000ba-0005-f900-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (99874f2b)
+2021-11-03T11:23:32.3867748+05:30 800000ba-0005-f900-b63f-84710c7967bb [INF] Request finished in 5242.1275ms 200  (791a596a)
+2021-11-03T11:33:17.0405712+05:30  [INF] User profile is available. Using '"C:\Users\satishsonkar\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2021-11-03T11:33:17.4258662+05:30 80000102-0005-f800-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44342/   (ca22a1cb)
+2021-11-03T11:33:17.6148090+05:30 80000102-0005-f800-b63f-84710c7967bb [INF] Request finished in 209.2835ms 404  (791a596a)
+2021-11-03T12:00:56.5821822+05:30 800000ab-0001-fa00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 POST https://localhost:44342/api/v1/AlexaEventSource/PressDoorbell/7C123F6551FB49E0A2DF99402906DFF81EF2632D12424DA88229EA6D431C8CFC/70F28919CE8B4292B13B6D7AA0FF5E32  0 (ca22a1cb)
+2021-11-03T12:00:56.5925698+05:30 800000ab-0001-fa00-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (500cc934)
+2021-11-03T12:00:56.7271726+05:30 800000ab-0001-fa00-b63f-84710c7967bb [INF] Route matched with "{action = \"PressDoorbell\", controller = \"AlexaEventSource\"}". Executing controller action with signature "Void PressDoorbell(System.String, System.String)" on controller "IoT.WebAPI.Controllers.AlexaEventSourceController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-03T12:00:58.8422985+05:30 800000ab-0001-fa00-b63f-84710c7967bb [INF] Entity Framework Core "5.0.9" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MaxPoolSize=128 " (9958f5bb)
+2021-11-03T12:01:01.4165267+05:30 800000ab-0001-fa00-b63f-84710c7967bb [INF] Executed DbCommand ("327"ms) [Parameters=["@__apiKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[APIKey] = @__apiKey_0" (0723d8ff)
+2021-11-03T12:01:01.4663253+05:30 800000ab-0001-fa00-b63f-84710c7967bb [WRN] The query uses the 'First'/'FirstOrDefault' operator without 'OrderBy' and filter operators. This may lead to unpredictable results. (f43d926b)
+2021-11-03T12:01:01.8584604+05:30 800000ab-0001-fa00-b63f-84710c7967bb [INF] Executed DbCommand ("354"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[ClientId], [s].[ClientSecret], [s].[Code], [s].[CreatedDate], [s].[ExpireAt], [s].[ModifiedDate], [s].[RefreshToken], [s].[Token]
+FROM [SkillTokens] AS [s]" (0723d8ff)
+2021-11-03T12:01:02.1470690+05:30 800000ab-0001-fa00-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)" in 5410.2464ms (afa2e885)
+2021-11-03T12:01:02.1472685+05:30 800000ab-0001-fa00-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (99874f2b)
+2021-11-03T12:01:02.1603738+05:30 800000ab-0001-fa00-b63f-84710c7967bb [INF] Request finished in 5580.5621ms 200  (791a596a)
+2021-11-03T12:24:04.1369150+05:30  [INF] User profile is available. Using '"C:\Users\satishsonkar\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2021-11-03T12:24:04.3647651+05:30 800001f1-0005-fa00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44342/   (ca22a1cb)
+2021-11-03T12:24:04.5458952+05:30 800001f1-0005-fa00-b63f-84710c7967bb [INF] Request finished in 194.5805ms 404  (791a596a)
+2021-11-03T12:24:54.5550181+05:30 8000015f-0007-fc00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 POST https://localhost:44342/api/v1/AlexaEventSource/PressDoorbell/7C123F6551FB49E0A2DF99402906DFF81EF2632D12424DA88229EA6D431C8CFC/70F28919CE8B4292B13B6D7AA0FF5E32  0 (ca22a1cb)
+2021-11-03T12:24:54.5895341+05:30 8000015f-0007-fc00-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (500cc934)
+2021-11-03T12:24:54.7056997+05:30 8000015f-0007-fc00-b63f-84710c7967bb [INF] Route matched with "{action = \"PressDoorbell\", controller = \"AlexaEventSource\"}". Executing controller action with signature "Void PressDoorbell(System.String, System.String)" on controller "IoT.WebAPI.Controllers.AlexaEventSourceController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-03T12:24:56.8428530+05:30 8000015f-0007-fc00-b63f-84710c7967bb [INF] Entity Framework Core "5.0.9" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MaxPoolSize=128 " (9958f5bb)
+2021-11-03T12:25:00.6366891+05:30 8000015f-0007-fc00-b63f-84710c7967bb [INF] Executed DbCommand ("361"ms) [Parameters=["@__apiKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[APIKey] = @__apiKey_0" (0723d8ff)
+2021-11-03T12:25:00.7187902+05:30 8000015f-0007-fc00-b63f-84710c7967bb [WRN] The query uses the 'First'/'FirstOrDefault' operator without 'OrderBy' and filter operators. This may lead to unpredictable results. (f43d926b)
+2021-11-03T12:25:01.0736580+05:30 8000015f-0007-fc00-b63f-84710c7967bb [INF] Executed DbCommand ("279"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[ClientId], [s].[ClientSecret], [s].[Code], [s].[CreatedDate], [s].[ExpireAt], [s].[ModifiedDate], [s].[RefreshToken], [s].[Token]
+FROM [SkillTokens] AS [s]" (0723d8ff)
+2021-11-03T12:25:01.6707414+05:30 8000015f-0007-fc00-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)" in 6942.068ms (afa2e885)
+2021-11-03T12:25:01.6713373+05:30 8000015f-0007-fc00-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (99874f2b)
+2021-11-03T12:25:01.7014936+05:30 8000015f-0007-fc00-b63f-84710c7967bb [INF] Request finished in 7147.0268ms 200  (791a596a)
+2021-11-03T12:25:27.7602205+05:30 8000015f-0007-fc00-b63f-84710c7967bb [INF] Executed DbCommand ("276"ms) [Parameters=["@__userKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[UserKey] = @__userKey_0" (0723d8ff)
+2021-11-03T12:25:27.8329854+05:30 8000015f-0007-fc00-b63f-84710c7967bb [ERR] An exception occurred while iterating over the results of a query for context type '"IoT.DataLayer.AppDbContext"'."
+""System.ObjectDisposedException: Cannot access a disposed context instance. A common cause of this error is disposing a context instance that was resolved from dependency injection and then later trying to use the same context instance elsewhere in your application. This may occur if you are calling 'Dispose' on the context instance, or wrapping it in a using statement. If you are using dependency injection, you should let the dependency injection container take care of disposing context instances.
+Object name: 'AppDbContext'.
+   at Microsoft.EntityFrameworkCore.DbContext.CheckDisposed()
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.Microsoft.EntityFrameworkCore.Internal.IDbContextDependencies.get_StateManager()
+   at Microsoft.EntityFrameworkCore.Query.QueryContextDependencies.get_StateManager()
+   at Microsoft.EntityFrameworkCore.Query.QueryContext.InitializeStateManager(Boolean standAlone)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(DbContext _, Boolean result)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()" (f5c7ac34)
+System.ObjectDisposedException: Cannot access a disposed context instance. A common cause of this error is disposing a context instance that was resolved from dependency injection and then later trying to use the same context instance elsewhere in your application. This may occur if you are calling 'Dispose' on the context instance, or wrapping it in a using statement. If you are using dependency injection, you should let the dependency injection container take care of disposing context instances.
+Object name: 'AppDbContext'.
+   at Microsoft.EntityFrameworkCore.DbContext.CheckDisposed()
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.Microsoft.EntityFrameworkCore.Internal.IDbContextDependencies.get_StateManager()
+   at Microsoft.EntityFrameworkCore.Query.QueryContextDependencies.get_StateManager()
+   at Microsoft.EntityFrameworkCore.Query.QueryContext.InitializeStateManager(Boolean standAlone)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(DbContext _, Boolean result)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Linq.Enumerable.Single[TSource](IEnumerable`1 source)
+2021-11-03T12:27:39.3207951+05:30  [INF] User profile is available. Using '"C:\Users\satishsonkar\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2021-11-03T12:27:39.8837047+05:30 800000be-0005-f900-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44342/   (ca22a1cb)
+2021-11-03T12:27:40.0476762+05:30 800000be-0005-f900-b63f-84710c7967bb [INF] Request finished in 184.0064ms 404  (791a596a)
+2021-11-03T12:27:44.7430005+05:30 800000c0-0005-f900-b63f-84710c7967bb [INF] Request starting HTTP/1.1 POST https://localhost:44342/api/v1/AlexaEventSource/PressDoorbell/7C123F6551FB49E0A2DF99402906DFF81EF2632D12424DA88229EA6D431C8CFC/70F28919CE8B4292B13B6D7AA0FF5E32  0 (ca22a1cb)
+2021-11-03T12:27:44.7662626+05:30 800000c0-0005-f900-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (500cc934)
+2021-11-03T12:27:44.8794197+05:30 800000c0-0005-f900-b63f-84710c7967bb [INF] Route matched with "{action = \"PressDoorbell\", controller = \"AlexaEventSource\"}". Executing controller action with signature "Void PressDoorbell(System.String, System.String)" on controller "IoT.WebAPI.Controllers.AlexaEventSourceController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-03T12:27:47.2656241+05:30 800000c0-0005-f900-b63f-84710c7967bb [INF] Entity Framework Core "5.0.9" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MaxPoolSize=128 " (9958f5bb)
+2021-11-03T12:27:50.7372505+05:30 800000c0-0005-f900-b63f-84710c7967bb [INF] Executed DbCommand ("473"ms) [Parameters=["@__apiKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[APIKey] = @__apiKey_0" (0723d8ff)
+2021-11-03T12:27:50.8241899+05:30 800000c0-0005-f900-b63f-84710c7967bb [WRN] The query uses the 'First'/'FirstOrDefault' operator without 'OrderBy' and filter operators. This may lead to unpredictable results. (f43d926b)
+2021-11-03T12:27:51.2087607+05:30 800000c0-0005-f900-b63f-84710c7967bb [INF] Executed DbCommand ("291"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[ClientId], [s].[ClientSecret], [s].[Code], [s].[CreatedDate], [s].[ExpireAt], [s].[ModifiedDate], [s].[RefreshToken], [s].[Token]
+FROM [SkillTokens] AS [s]" (0723d8ff)
+2021-11-03T12:27:51.8124069+05:30 800000c0-0005-f900-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)" in 6915.1354ms (afa2e885)
+2021-11-03T12:27:51.8129088+05:30 800000c0-0005-f900-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (99874f2b)
+2021-11-03T12:27:51.8404169+05:30 800000c0-0005-f900-b63f-84710c7967bb [INF] Request finished in 7107.6878ms 200  (791a596a)
+2021-11-03T12:28:14.8502905+05:30 800000c0-0005-f900-b63f-84710c7967bb [INF] Executed DbCommand ("323"ms) [Parameters=["@__userKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[UserKey] = @__userKey_0" (0723d8ff)
+2021-11-03T12:28:14.9966380+05:30 800000c0-0005-f900-b63f-84710c7967bb [ERR] An exception occurred while iterating over the results of a query for context type '"IoT.DataLayer.AppDbContext"'."
+""System.ObjectDisposedException: Cannot access a disposed context instance. A common cause of this error is disposing a context instance that was resolved from dependency injection and then later trying to use the same context instance elsewhere in your application. This may occur if you are calling 'Dispose' on the context instance, or wrapping it in a using statement. If you are using dependency injection, you should let the dependency injection container take care of disposing context instances.
+Object name: 'AppDbContext'.
+   at Microsoft.EntityFrameworkCore.DbContext.CheckDisposed()
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.Microsoft.EntityFrameworkCore.Internal.IDbContextDependencies.get_StateManager()
+   at Microsoft.EntityFrameworkCore.Query.QueryContextDependencies.get_StateManager()
+   at Microsoft.EntityFrameworkCore.Query.QueryContext.InitializeStateManager(Boolean standAlone)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(DbContext _, Boolean result)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()" (f5c7ac34)
+System.ObjectDisposedException: Cannot access a disposed context instance. A common cause of this error is disposing a context instance that was resolved from dependency injection and then later trying to use the same context instance elsewhere in your application. This may occur if you are calling 'Dispose' on the context instance, or wrapping it in a using statement. If you are using dependency injection, you should let the dependency injection container take care of disposing context instances.
+Object name: 'AppDbContext'.
+   at Microsoft.EntityFrameworkCore.DbContext.CheckDisposed()
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.Microsoft.EntityFrameworkCore.Internal.IDbContextDependencies.get_StateManager()
+   at Microsoft.EntityFrameworkCore.Query.QueryContextDependencies.get_StateManager()
+   at Microsoft.EntityFrameworkCore.Query.QueryContext.InitializeStateManager(Boolean standAlone)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(DbContext _, Boolean result)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Linq.Enumerable.Single[TSource](IEnumerable`1 source)
+2021-11-03T12:28:22.9179728+05:30 800000c1-0005-f900-b63f-84710c7967bb [INF] Request starting HTTP/1.1 POST https://localhost:44342/api/v1/AlexaEventSource/PressDoorbell/7C123F6551FB49E0A2DF99402906DFF81EF2632D12424DA88229EA6D431C8CFC/70F28919CE8B4292B13B6D7AA0FF5E32  0 (ca22a1cb)
+2021-11-03T12:28:22.9258573+05:30 800000c1-0005-f900-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (500cc934)
+2021-11-03T12:28:22.9269110+05:30 800000c1-0005-f900-b63f-84710c7967bb [INF] Route matched with "{action = \"PressDoorbell\", controller = \"AlexaEventSource\"}". Executing controller action with signature "Void PressDoorbell(System.String, System.String)" on controller "IoT.WebAPI.Controllers.AlexaEventSourceController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-03T12:28:23.2133177+05:30 800000c1-0005-f900-b63f-84710c7967bb [INF] Executed DbCommand ("278"ms) [Parameters=["@__apiKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[APIKey] = @__apiKey_0" (0723d8ff)
+2021-11-03T12:28:23.5430240+05:30 800000c1-0005-f900-b63f-84710c7967bb [INF] Executed DbCommand ("326"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[ClientId], [s].[ClientSecret], [s].[Code], [s].[CreatedDate], [s].[ExpireAt], [s].[ModifiedDate], [s].[RefreshToken], [s].[Token]
+FROM [SkillTokens] AS [s]" (0723d8ff)
+2021-11-03T12:28:23.5640870+05:30 800000c1-0005-f900-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)" in 635.9659ms (afa2e885)
+2021-11-03T12:28:23.5657935+05:30 800000c1-0005-f900-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (99874f2b)
+2021-11-03T12:28:23.5708183+05:30 800000c1-0005-f900-b63f-84710c7967bb [INF] Request finished in 652.9691ms 200  (791a596a)
+2021-11-03T12:28:53.8645642+05:30 800000c1-0005-f900-b63f-84710c7967bb [INF] Executed DbCommand ("329"ms) [Parameters=["@__userKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[UserKey] = @__userKey_0" (0723d8ff)
+2021-11-03T12:28:53.8714375+05:30 800000c1-0005-f900-b63f-84710c7967bb [ERR] An exception occurred while iterating over the results of a query for context type '"IoT.DataLayer.AppDbContext"'."
+""System.ObjectDisposedException: Cannot access a disposed context instance. A common cause of this error is disposing a context instance that was resolved from dependency injection and then later trying to use the same context instance elsewhere in your application. This may occur if you are calling 'Dispose' on the context instance, or wrapping it in a using statement. If you are using dependency injection, you should let the dependency injection container take care of disposing context instances.
+Object name: 'AppDbContext'.
+   at Microsoft.EntityFrameworkCore.DbContext.CheckDisposed()
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.Microsoft.EntityFrameworkCore.Internal.IDbContextDependencies.get_StateManager()
+   at Microsoft.EntityFrameworkCore.Query.QueryContextDependencies.get_StateManager()
+   at Microsoft.EntityFrameworkCore.Query.QueryContext.InitializeStateManager(Boolean standAlone)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(DbContext _, Boolean result)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()" (f5c7ac34)
+System.ObjectDisposedException: Cannot access a disposed context instance. A common cause of this error is disposing a context instance that was resolved from dependency injection and then later trying to use the same context instance elsewhere in your application. This may occur if you are calling 'Dispose' on the context instance, or wrapping it in a using statement. If you are using dependency injection, you should let the dependency injection container take care of disposing context instances.
+Object name: 'AppDbContext'.
+   at Microsoft.EntityFrameworkCore.DbContext.CheckDisposed()
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.Microsoft.EntityFrameworkCore.Internal.IDbContextDependencies.get_StateManager()
+   at Microsoft.EntityFrameworkCore.Query.QueryContextDependencies.get_StateManager()
+   at Microsoft.EntityFrameworkCore.Query.QueryContext.InitializeStateManager(Boolean standAlone)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(DbContext _, Boolean result)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Linq.Enumerable.Single[TSource](IEnumerable`1 source)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.Execute[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.Count[TSource](IQueryable`1 source)
+   at IoT.DataLayer.Repository.AlexaEventSourceRepository.UpdateToken(String token, String refreshToken, Int32 expireMin, String userKey) in E:\IoTAutomation\IoTAutomation\DataLayer\Repository\AlexaEventSourceRepository.cs:line 55
+2021-11-03T12:29:15.1864683+05:30 800000c2-0005-f900-b63f-84710c7967bb [INF] Request starting HTTP/1.1 POST https://localhost:44342/api/v1/AlexaEventSource/PressDoorbell/7C123F6551FB49E0A2DF99402906DFF81EF2632D12424DA88229EA6D431C8CFC/70F28919CE8B4292B13B6D7AA0FF5E32  0 (ca22a1cb)
+2021-11-03T12:29:15.1891325+05:30 800000c2-0005-f900-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (500cc934)
+2021-11-03T12:29:15.1906450+05:30 800000c2-0005-f900-b63f-84710c7967bb [INF] Route matched with "{action = \"PressDoorbell\", controller = \"AlexaEventSource\"}". Executing controller action with signature "Void PressDoorbell(System.String, System.String)" on controller "IoT.WebAPI.Controllers.AlexaEventSourceController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-03T12:29:15.4838881+05:30 800000c2-0005-f900-b63f-84710c7967bb [INF] Executed DbCommand ("278"ms) [Parameters=["@__apiKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[APIKey] = @__apiKey_0" (0723d8ff)
+2021-11-03T12:29:15.8832546+05:30 800000c2-0005-f900-b63f-84710c7967bb [INF] Executed DbCommand ("392"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[ClientId], [s].[ClientSecret], [s].[Code], [s].[CreatedDate], [s].[ExpireAt], [s].[ModifiedDate], [s].[RefreshToken], [s].[Token]
+FROM [SkillTokens] AS [s]" (0723d8ff)
+2021-11-03T12:29:15.8996584+05:30 800000c2-0005-f900-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)" in 707.7522ms (afa2e885)
+2021-11-03T12:29:15.9001785+05:30 800000c2-0005-f900-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (99874f2b)
+2021-11-03T12:29:15.9079192+05:30 800000c2-0005-f900-b63f-84710c7967bb [INF] Request finished in 721.8017ms 200  (791a596a)
+2021-11-03T12:29:56.8530896+05:30 800000c2-0005-f900-b63f-84710c7967bb [INF] Executed DbCommand ("334"ms) [Parameters=["@__userKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[UserKey] = @__userKey_0" (0723d8ff)
+2021-11-03T12:29:56.8555632+05:30 800000c2-0005-f900-b63f-84710c7967bb [ERR] An exception occurred while iterating over the results of a query for context type '"IoT.DataLayer.AppDbContext"'."
+""System.ObjectDisposedException: Cannot access a disposed context instance. A common cause of this error is disposing a context instance that was resolved from dependency injection and then later trying to use the same context instance elsewhere in your application. This may occur if you are calling 'Dispose' on the context instance, or wrapping it in a using statement. If you are using dependency injection, you should let the dependency injection container take care of disposing context instances.
+Object name: 'AppDbContext'.
+   at Microsoft.EntityFrameworkCore.DbContext.CheckDisposed()
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.Microsoft.EntityFrameworkCore.Internal.IDbContextDependencies.get_StateManager()
+   at Microsoft.EntityFrameworkCore.Query.QueryContextDependencies.get_StateManager()
+   at Microsoft.EntityFrameworkCore.Query.QueryContext.InitializeStateManager(Boolean standAlone)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(DbContext _, Boolean result)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()" (f5c7ac34)
+System.ObjectDisposedException: Cannot access a disposed context instance. A common cause of this error is disposing a context instance that was resolved from dependency injection and then later trying to use the same context instance elsewhere in your application. This may occur if you are calling 'Dispose' on the context instance, or wrapping it in a using statement. If you are using dependency injection, you should let the dependency injection container take care of disposing context instances.
+Object name: 'AppDbContext'.
+   at Microsoft.EntityFrameworkCore.DbContext.CheckDisposed()
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.Microsoft.EntityFrameworkCore.Internal.IDbContextDependencies.get_StateManager()
+   at Microsoft.EntityFrameworkCore.Query.QueryContextDependencies.get_StateManager()
+   at Microsoft.EntityFrameworkCore.Query.QueryContext.InitializeStateManager(Boolean standAlone)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(DbContext _, Boolean result)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Linq.Enumerable.Single[TSource](IEnumerable`1 source)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.Execute[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.Count[TSource](IQueryable`1 source)
+   at IoT.DataLayer.Repository.AlexaEventSourceRepository.UpdateToken(String token, String refreshToken, Int32 expireMin, String userKey) in E:\IoTAutomation\IoTAutomation\DataLayer\Repository\AlexaEventSourceRepository.cs:line 55
+2021-11-03T12:41:02.7471645+05:30  [INF] User profile is available. Using '"C:\Users\satishsonkar\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2021-11-03T12:41:02.8536267+05:30 800000c6-0005-f900-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44342/   (ca22a1cb)
+2021-11-03T12:41:02.9205540+05:30 800000c6-0005-f900-b63f-84710c7967bb [INF] Request finished in 74.7906ms 404  (791a596a)
+2021-11-03T12:41:40.5893140+05:30  [INF] User profile is available. Using '"C:\Users\satishsonkar\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2021-11-03T12:41:40.6917180+05:30 800002ae-0006-fb00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44342/   (ca22a1cb)
+2021-11-03T12:41:40.7568385+05:30 800002ae-0006-fb00-b63f-84710c7967bb [INF] Request finished in 71.0888ms 404  (791a596a)
+2021-11-03T12:42:00.5882940+05:30 800000fb-0000-f400-b63f-84710c7967bb [INF] Request starting HTTP/1.1 POST https://localhost:44342/api/v1/AlexaEventSource/PressDoorbell/7C123F6551FB49E0A2DF99402906DFF81EF2632D12424DA88229EA6D431C8CFC/70F28919CE8B4292B13B6D7AA0FF5E32  0 (ca22a1cb)
+2021-11-03T12:42:00.6135422+05:30 800000fb-0000-f400-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (500cc934)
+2021-11-03T12:42:00.6802036+05:30 800000fb-0000-f400-b63f-84710c7967bb [INF] Route matched with "{action = \"PressDoorbell\", controller = \"AlexaEventSource\"}". Executing controller action with signature "Void PressDoorbell(System.String, System.String)" on controller "IoT.WebAPI.Controllers.AlexaEventSourceController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-03T12:42:01.6849826+05:30 800000fb-0000-f400-b63f-84710c7967bb [INF] Entity Framework Core "5.0.9" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MaxPoolSize=128 " (9958f5bb)
+2021-11-03T12:42:04.0677715+05:30 800000fb-0000-f400-b63f-84710c7967bb [INF] Executed DbCommand ("319"ms) [Parameters=["@__apiKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[APIKey] = @__apiKey_0" (0723d8ff)
+2021-11-03T12:42:04.1081657+05:30 800000fb-0000-f400-b63f-84710c7967bb [WRN] The query uses the 'First'/'FirstOrDefault' operator without 'OrderBy' and filter operators. This may lead to unpredictable results. (f43d926b)
+2021-11-03T12:42:04.4297797+05:30 800000fb-0000-f400-b63f-84710c7967bb [INF] Executed DbCommand ("283"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[ClientId], [s].[ClientSecret], [s].[Code], [s].[CreatedDate], [s].[ExpireAt], [s].[ModifiedDate], [s].[RefreshToken], [s].[Token]
+FROM [SkillTokens] AS [s]" (0723d8ff)
+2021-11-03T12:42:04.8386270+05:30 800000fb-0000-f400-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)" in 4151.5458ms (afa2e885)
+2021-11-03T12:42:04.8388982+05:30 800000fb-0000-f400-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (99874f2b)
+2021-11-03T12:42:04.8500874+05:30 800000fb-0000-f400-b63f-84710c7967bb [INF] Request finished in 4263.6139ms 200  (791a596a)
+2021-11-03T12:42:14.4584441+05:30 800000fb-0000-f400-b63f-84710c7967bb [INF] Executed DbCommand ("358"ms) [Parameters=["@__userKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[UserKey] = @__userKey_0" (0723d8ff)
+2021-11-03T12:42:14.4994799+05:30 800000fb-0000-f400-b63f-84710c7967bb [ERR] An exception occurred while iterating over the results of a query for context type '"IoT.DataLayer.AppDbContext"'."
+""System.ObjectDisposedException: Cannot access a disposed context instance. A common cause of this error is disposing a context instance that was resolved from dependency injection and then later trying to use the same context instance elsewhere in your application. This may occur if you are calling 'Dispose' on the context instance, or wrapping it in a using statement. If you are using dependency injection, you should let the dependency injection container take care of disposing context instances.
+Object name: 'AppDbContext'.
+   at Microsoft.EntityFrameworkCore.DbContext.CheckDisposed()
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.Microsoft.EntityFrameworkCore.Internal.IDbContextDependencies.get_StateManager()
+   at Microsoft.EntityFrameworkCore.Query.QueryContextDependencies.get_StateManager()
+   at Microsoft.EntityFrameworkCore.Query.QueryContext.InitializeStateManager(Boolean standAlone)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(DbContext _, Boolean result)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()" (f5c7ac34)
+System.ObjectDisposedException: Cannot access a disposed context instance. A common cause of this error is disposing a context instance that was resolved from dependency injection and then later trying to use the same context instance elsewhere in your application. This may occur if you are calling 'Dispose' on the context instance, or wrapping it in a using statement. If you are using dependency injection, you should let the dependency injection container take care of disposing context instances.
+Object name: 'AppDbContext'.
+   at Microsoft.EntityFrameworkCore.DbContext.CheckDisposed()
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.Microsoft.EntityFrameworkCore.Internal.IDbContextDependencies.get_StateManager()
+   at Microsoft.EntityFrameworkCore.Query.QueryContextDependencies.get_StateManager()
+   at Microsoft.EntityFrameworkCore.Query.QueryContext.InitializeStateManager(Boolean standAlone)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(DbContext _, Boolean result)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Linq.Enumerable.Single[TSource](IEnumerable`1 source)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.Execute[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.Count[TSource](IQueryable`1 source)
+   at IoT.DataLayer.Repository.AlexaEventSourceRepository.UpdateToken(String token, String refreshToken, Int32 expireMin, String userKey) in E:\IoTAutomation\IoTAutomation\DataLayer\Repository\AlexaEventSourceRepository.cs:line 57
+2021-11-03T12:44:29.9012132+05:30  [INF] User profile is available. Using '"C:\Users\satishsonkar\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2021-11-03T12:44:30.1429609+05:30 800002b0-0006-fb00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44342/   (ca22a1cb)
+2021-11-03T12:44:30.3045452+05:30 800002b0-0006-fb00-b63f-84710c7967bb [INF] Request finished in 171.9097ms 404  (791a596a)
+2021-11-03T12:44:43.0124031+05:30 800002b2-0006-fb00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 POST https://localhost:44342/api/v1/AlexaEventSource/PressDoorbell/7C123F6551FB49E0A2DF99402906DFF81EF2632D12424DA88229EA6D431C8CFC/70F28919CE8B4292B13B6D7AA0FF5E32  0 (ca22a1cb)
+2021-11-03T12:44:43.0705536+05:30 800002b2-0006-fb00-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (500cc934)
+2021-11-03T12:44:43.2517460+05:30 800002b2-0006-fb00-b63f-84710c7967bb [INF] Route matched with "{action = \"PressDoorbell\", controller = \"AlexaEventSource\"}". Executing controller action with signature "Void PressDoorbell(System.String, System.String)" on controller "IoT.WebAPI.Controllers.AlexaEventSourceController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-03T12:44:45.4649413+05:30 800002b2-0006-fb00-b63f-84710c7967bb [INF] Entity Framework Core "5.0.9" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MaxPoolSize=128 " (9958f5bb)
+2021-11-03T12:44:49.0076367+05:30 800002b2-0006-fb00-b63f-84710c7967bb [INF] Executed DbCommand ("457"ms) [Parameters=["@__apiKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[APIKey] = @__apiKey_0" (0723d8ff)
+2021-11-03T12:44:49.0819345+05:30 800002b2-0006-fb00-b63f-84710c7967bb [WRN] The query uses the 'First'/'FirstOrDefault' operator without 'OrderBy' and filter operators. This may lead to unpredictable results. (f43d926b)
+2021-11-03T12:44:49.4237645+05:30 800002b2-0006-fb00-b63f-84710c7967bb [INF] Executed DbCommand ("282"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[ClientId], [s].[ClientSecret], [s].[Code], [s].[CreatedDate], [s].[ExpireAt], [s].[ModifiedDate], [s].[RefreshToken], [s].[Token]
+FROM [SkillTokens] AS [s]" (0723d8ff)
+2021-11-03T12:45:01.3439667+05:30 800002b2-0006-fb00-b63f-84710c7967bb [INF] Executed DbCommand ("323"ms) [Parameters=["@__userKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[UserKey] = @__userKey_0" (0723d8ff)
+2021-11-03T12:45:43.1255916+05:30  [INF] User profile is available. Using '"C:\Users\satishsonkar\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2021-11-03T12:45:43.2293941+05:30 80000161-0007-fc00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44342/   (ca22a1cb)
+2021-11-03T12:45:43.3148034+05:30 80000161-0007-fc00-b63f-84710c7967bb [INF] Request finished in 91.041ms 404  (791a596a)
+2021-11-03T12:46:07.7201098+05:30 8000018a-0006-fa00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 POST https://localhost:44342/api/v1/AlexaEventSource/PressDoorbell/7C123F6551FB49E0A2DF99402906DFF81EF2632D12424DA88229EA6D431C8CFC/70F28919CE8B4292B13B6D7AA0FF5E32  0 (ca22a1cb)
+2021-11-03T12:46:07.7736480+05:30 8000018a-0006-fa00-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (500cc934)
+2021-11-03T12:46:07.9648183+05:30 8000018a-0006-fa00-b63f-84710c7967bb [INF] Route matched with "{action = \"PressDoorbell\", controller = \"AlexaEventSource\"}". Executing controller action with signature "Void PressDoorbell(System.String, System.String)" on controller "IoT.WebAPI.Controllers.AlexaEventSourceController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-03T12:46:10.3291544+05:30 8000018a-0006-fa00-b63f-84710c7967bb [INF] Entity Framework Core "5.0.9" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MaxPoolSize=128 " (9958f5bb)
+2021-11-03T12:46:13.6723410+05:30 8000018a-0006-fa00-b63f-84710c7967bb [INF] Executed DbCommand ("402"ms) [Parameters=["@__apiKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[APIKey] = @__apiKey_0" (0723d8ff)
+2021-11-03T12:46:13.7646408+05:30 8000018a-0006-fa00-b63f-84710c7967bb [WRN] The query uses the 'First'/'FirstOrDefault' operator without 'OrderBy' and filter operators. This may lead to unpredictable results. (f43d926b)
+2021-11-03T12:46:14.1529334+05:30 8000018a-0006-fa00-b63f-84710c7967bb [INF] Executed DbCommand ("330"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[ClientId], [s].[ClientSecret], [s].[Code], [s].[CreatedDate], [s].[ExpireAt], [s].[ModifiedDate], [s].[RefreshToken], [s].[Token]
+FROM [SkillTokens] AS [s]" (0723d8ff)
+2021-11-03T12:46:22.4552895+05:30 8000018a-0006-fa00-b63f-84710c7967bb [INF] Executed DbCommand ("281"ms) [Parameters=["@__userKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[APIKey] = @__userKey_0" (0723d8ff)
+2021-11-03T12:46:24.9158806+05:30 8000018a-0006-fa00-b63f-84710c7967bb [INF] Executed DbCommand ("436"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[ClientId], [s].[ClientSecret], [s].[Code], [s].[CreatedDate], [s].[ExpireAt], [s].[ModifiedDate], [s].[RefreshToken], [s].[Token]
+FROM [SkillTokens] AS [s]" (0723d8ff)
+2021-11-03T12:46:40.2637653+05:30 8000018a-0006-fa00-b63f-84710c7967bb [INF] Executed DbCommand ("7,820"ms) [Parameters=["@p8='?' (DbType = Int32), @p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Size = 4000), @p7='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [SkillTokens] SET [ClientId] = @p0, [ClientSecret] = @p1, [Code] = @p2, [CreatedDate] = @p3, [ExpireAt] = @p4, [ModifiedDate] = @p5, [RefreshToken] = @p6, [Token] = @p7
+WHERE [Id] = @p8;
+SELECT @@ROWCOUNT;" (0723d8ff)
+2021-11-03T12:46:40.3649788+05:30 8000018a-0006-fa00-b63f-84710c7967bb [ERR] An exception occurred while iterating over the results of a query for context type '"IoT.DataLayer.AppDbContext"'."
+""System.InvalidOperationException: A second operation was started on this context before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()" (f5c7ac34)
+System.InvalidOperationException: A second operation was started on this context before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+2021-11-03T12:46:43.4024182+05:30 8000018a-0006-fa00-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)" in 35405.9243ms (afa2e885)
+2021-11-03T12:46:43.4033250+05:30 8000018a-0006-fa00-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (99874f2b)
+2021-11-03T12:46:43.4331509+05:30 8000018a-0006-fa00-b63f-84710c7967bb [INF] Request finished in 35719.772ms 200  (791a596a)
+2021-11-03T12:46:52.1408439+05:30 8000018b-0006-fa00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 POST https://localhost:44342/api/v1/AlexaEventSource/PressDoorbell/7C123F6551FB49E0A2DF99402906DFF81EF2632D12424DA88229EA6D431C8CFC/70F28919CE8B4292B13B6D7AA0FF5E32  0 (ca22a1cb)
+2021-11-03T12:46:52.1451580+05:30 8000018b-0006-fa00-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (500cc934)
+2021-11-03T12:46:52.1456472+05:30 8000018b-0006-fa00-b63f-84710c7967bb [INF] Route matched with "{action = \"PressDoorbell\", controller = \"AlexaEventSource\"}". Executing controller action with signature "Void PressDoorbell(System.String, System.String)" on controller "IoT.WebAPI.Controllers.AlexaEventSourceController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-03T12:46:52.4289157+05:30 8000018b-0006-fa00-b63f-84710c7967bb [INF] Executed DbCommand ("276"ms) [Parameters=["@__apiKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[APIKey] = @__apiKey_0" (0723d8ff)
+2021-11-03T12:46:52.7055738+05:30 8000018b-0006-fa00-b63f-84710c7967bb [INF] Executed DbCommand ("270"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[ClientId], [s].[ClientSecret], [s].[Code], [s].[CreatedDate], [s].[ExpireAt], [s].[ModifiedDate], [s].[RefreshToken], [s].[Token]
+FROM [SkillTokens] AS [s]" (0723d8ff)
+2021-11-03T12:46:53.0644042+05:30 8000018b-0006-fa00-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)" in 918.2315ms (afa2e885)
+2021-11-03T12:46:53.0647276+05:30 8000018b-0006-fa00-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (99874f2b)
+2021-11-03T12:46:53.0667883+05:30 8000018b-0006-fa00-b63f-84710c7967bb [INF] Request finished in 926.3902ms 200  (791a596a)
+2021-11-03T12:47:07.6757300+05:30 8000018c-0006-fa00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 POST https://localhost:44342/api/v1/AlexaEventSource/PressDoorbell/7C123F6551FB49E0A2DF99402906DFF81EF2632D12424DA88229EA6D431C8CFC/70F28919CE8B4292B13B6D7AA0FF5E32  0 (ca22a1cb)
+2021-11-03T12:47:07.6789279+05:30 8000018c-0006-fa00-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (500cc934)
+2021-11-03T12:47:07.6807566+05:30 8000018c-0006-fa00-b63f-84710c7967bb [INF] Route matched with "{action = \"PressDoorbell\", controller = \"AlexaEventSource\"}". Executing controller action with signature "Void PressDoorbell(System.String, System.String)" on controller "IoT.WebAPI.Controllers.AlexaEventSourceController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-03T12:47:07.9644739+05:30 8000018c-0006-fa00-b63f-84710c7967bb [INF] Executed DbCommand ("269"ms) [Parameters=["@__apiKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[APIKey] = @__apiKey_0" (0723d8ff)
+2021-11-03T12:47:08.3184973+05:30 8000018c-0006-fa00-b63f-84710c7967bb [INF] Executed DbCommand ("349"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[ClientId], [s].[ClientSecret], [s].[Code], [s].[CreatedDate], [s].[ExpireAt], [s].[ModifiedDate], [s].[RefreshToken], [s].[Token]
+FROM [SkillTokens] AS [s]" (0723d8ff)
+2021-11-03T12:47:08.6255376+05:30 8000018c-0006-fa00-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)" in 944.1198ms (afa2e885)
+2021-11-03T12:47:08.6262657+05:30 8000018c-0006-fa00-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (99874f2b)
+2021-11-03T12:47:08.6297297+05:30 8000018c-0006-fa00-b63f-84710c7967bb [INF] Request finished in 955.3082ms 200  (791a596a)
+2021-11-03T15:52:28.0588802+05:30 80000331-0006-fd00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 POST https://localhost:44342/api/v1/AlexaEventSource/PressDoorbell/7C123F6551FB49E0A2DF99402906DFF81EF2632D12424DA88229EA6D431C8CFC/70F28919CE8B4292B13B6D7AA0FF5E32  0 (ca22a1cb)
+2021-11-03T15:52:28.0958372+05:30 80000331-0006-fd00-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (500cc934)
+2021-11-03T15:52:28.0969325+05:30 80000331-0006-fd00-b63f-84710c7967bb [INF] Route matched with "{action = \"PressDoorbell\", controller = \"AlexaEventSource\"}". Executing controller action with signature "Void PressDoorbell(System.String, System.String)" on controller "IoT.WebAPI.Controllers.AlexaEventSourceController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-03T15:52:29.7738597+05:30 80000331-0006-fd00-b63f-84710c7967bb [INF] Executed DbCommand ("275"ms) [Parameters=["@__apiKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[APIKey] = @__apiKey_0" (0723d8ff)
+2021-11-03T15:52:30.0546768+05:30 80000331-0006-fd00-b63f-84710c7967bb [INF] Executed DbCommand ("277"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[ClientId], [s].[ClientSecret], [s].[Code], [s].[CreatedDate], [s].[ExpireAt], [s].[ModifiedDate], [s].[RefreshToken], [s].[Token]
+FROM [SkillTokens] AS [s]" (0723d8ff)
+2021-11-03T15:52:46.3258693+05:30 80000331-0006-fd00-b63f-84710c7967bb [INF] Executed DbCommand ("272"ms) [Parameters=["@__userKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[APIKey] = @__userKey_0" (0723d8ff)
+2021-11-03T15:52:47.7046394+05:30 80000331-0006-fd00-b63f-84710c7967bb [INF] Executed DbCommand ("270"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[ClientId], [s].[ClientSecret], [s].[Code], [s].[CreatedDate], [s].[ExpireAt], [s].[ModifiedDate], [s].[RefreshToken], [s].[Token]
+FROM [SkillTokens] AS [s]" (0723d8ff)
+2021-11-03T15:52:49.3760506+05:30 80000331-0006-fd00-b63f-84710c7967bb [ERR] An exception occurred while iterating over the results of a query for context type '"IoT.DataLayer.AppDbContext"'."
+""System.InvalidOperationException: A second operation was started on this context before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()" (f5c7ac34)
+System.InvalidOperationException: A second operation was started on this context before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Linq.Enumerable.SingleOrDefault[TSource](IEnumerable`1 source)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.Execute[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source)
+   at IoT.DataLayer.Repository.AlexaEventSourceRepository.GetToken(Boolean allField) in E:\IoTAutomation\IoTAutomation\DataLayer\Repository\AlexaEventSourceRepository.cs:line 34
+   at IoT.BusinessLayer.AlexaEventSourceBL.PressDoorbell(String endpoitnId, String apiKey) in E:\IoTAutomation\IoTAutomation\IoT.BusinessLayer\AlexaEventSourceBL.cs:line 41
+2021-11-03T15:52:49.4478624+05:30 80000331-0006-fd00-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)" in 21350.4106ms (afa2e885)
+2021-11-03T15:52:49.4480951+05:30 80000331-0006-fd00-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (99874f2b)
+2021-11-03T15:52:49.5069839+05:30 80000331-0006-fd00-b63f-84710c7967bb [ERR] Connection ID ""18230571318976185136"", Request ID ""80000331-0006-fd00-b63f-84710c7967bb"": An unhandled exception was thrown by the application. (bf316047)
+System.InvalidOperationException: The connection does not support MultipleActiveResultSets.
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.ValidateConnectionForExecute(SqlCommand command)
+   at Microsoft.Data.SqlClient.SqlInternalTransaction.Rollback()
+   at Microsoft.Data.SqlClient.SqlInternalTransaction.Dispose(Boolean disposing)
+   at Microsoft.Data.SqlClient.SqlInternalTransaction.Dispose()
+   at Microsoft.Data.SqlClient.SqlTransaction.Dispose(Boolean disposing)
+   at System.Data.Common.DbTransaction.DisposeAsync()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalTransaction.DisposeAsync()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.DisposeAsync()
+   at Microsoft.EntityFrameworkCore.DbContext.Microsoft.EntityFrameworkCore.Infrastructure.IResettableService.ResetStateAsync(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextPool`1.ReturnAsync(IDbContextPoolable context, CancellationToken cancellationToken)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.<DisposeAsync>g__Await|15_0(Int32 i, ValueTask vt, List`1 toDispose)
+   at Microsoft.AspNetCore.Http.Features.RequestServicesFeature.<DisposeAsync>g__Awaited|9_0(RequestServicesFeature servicesFeature, ValueTask vt)
+   at Microsoft.AspNetCore.Server.IIS.Core.IISHttpContext.FireOnCompleted()
+2021-11-03T15:52:49.5080584+05:30 80000331-0006-fd00-b63f-84710c7967bb [INF] Request finished in 21449.3657ms 500  (791a596a)
+2021-11-03T15:52:49.6493974+05:30 80000331-0006-fd00-b63f-84710c7967bb [INF] Executed DbCommand ("273"ms) [Parameters=["@p8='?' (DbType = Int32), @p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Size = 4000), @p7='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [SkillTokens] SET [ClientId] = @p0, [ClientSecret] = @p1, [Code] = @p2, [CreatedDate] = @p3, [ExpireAt] = @p4, [ModifiedDate] = @p5, [RefreshToken] = @p6, [Token] = @p7
+WHERE [Id] = @p8;
+SELECT @@ROWCOUNT;" (0723d8ff)
+2021-11-03T15:52:49.9270777+05:30 80000331-0006-fd00-b63f-84710c7967bb [ERR] An exception occurred in the database while saving changes for context type '"IoT.DataLayer.AppDbContext"'."
+""System.NullReferenceException: Object reference not set to an instance of an object.
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.EntityReferenceMap.Remove(Object entity, IEntityType entityType, EntityState oldState)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.EntityReferenceMap.Update(InternalEntityEntry entry, EntityState state, Nullable`1 oldState)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.StateChanging(InternalEntityEntry entry, EntityState newState)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry.SetEntityState(EntityState oldState, EntityState newState, Boolean acceptChanges, Boolean modifyProperties)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry.SetEntityState(EntityState entityState, Boolean acceptChanges, Boolean modifyProperties, Nullable`1 forceStateWhenUnknownKey)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry.AcceptChanges()
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.AcceptAllChanges(IReadOnlyList`1 changedEntries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(DbContext _, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)" (170f029e)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.EntityReferenceMap.Remove(Object entity, IEntityType entityType, EntityState oldState)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.EntityReferenceMap.Update(InternalEntityEntry entry, EntityState state, Nullable`1 oldState)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.StateChanging(InternalEntityEntry entry, EntityState newState)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry.SetEntityState(EntityState oldState, EntityState newState, Boolean acceptChanges, Boolean modifyProperties)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry.SetEntityState(EntityState entityState, Boolean acceptChanges, Boolean modifyProperties, Nullable`1 forceStateWhenUnknownKey)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry.AcceptChanges()
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.AcceptAllChanges(IReadOnlyList`1 changedEntries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(DbContext _, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2021-11-03T15:53:00.8011898+05:30 80000332-0006-fd00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 POST https://localhost:44342/api/v1/AlexaEventSource/PressDoorbell/7C123F6551FB49E0A2DF99402906DFF81EF2632D12424DA88229EA6D431C8CFC/70F28919CE8B4292B13B6D7AA0FF5E32  0 (ca22a1cb)
+2021-11-03T15:53:00.8021363+05:30 80000332-0006-fd00-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (500cc934)
+2021-11-03T15:53:00.8026212+05:30 80000332-0006-fd00-b63f-84710c7967bb [INF] Route matched with "{action = \"PressDoorbell\", controller = \"AlexaEventSource\"}". Executing controller action with signature "Void PressDoorbell(System.String, System.String)" on controller "IoT.WebAPI.Controllers.AlexaEventSourceController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-03T15:53:00.8331890+05:30 80000332-0006-fd00-b63f-84710c7967bb [INF] Entity Framework Core "5.0.9" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MaxPoolSize=128 " (9958f5bb)
+2021-11-03T15:53:01.1214794+05:30 80000332-0006-fd00-b63f-84710c7967bb [INF] Executed DbCommand ("287"ms) [Parameters=["@__apiKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[APIKey] = @__apiKey_0" (0723d8ff)
+2021-11-03T15:53:01.3939811+05:30 80000332-0006-fd00-b63f-84710c7967bb [INF] Executed DbCommand ("271"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[ClientId], [s].[ClientSecret], [s].[Code], [s].[CreatedDate], [s].[ExpireAt], [s].[ModifiedDate], [s].[RefreshToken], [s].[Token]
+FROM [SkillTokens] AS [s]" (0723d8ff)
+2021-11-03T15:53:01.6178794+05:30 80000332-0006-fd00-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)" in 814.7981ms (afa2e885)
+2021-11-03T15:53:01.6182620+05:30 80000332-0006-fd00-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (99874f2b)
+2021-11-03T15:53:01.6254629+05:30 80000332-0006-fd00-b63f-84710c7967bb [INF] Request finished in 824.2458ms 200  (791a596a)
+2021-11-03T15:53:09.5012907+05:30 80000333-0006-fd00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 POST https://localhost:44342/api/v1/AlexaEventSource/PressDoorbell/7C123F6551FB49E0A2DF99402906DFF81EF2632D12424DA88229EA6D431C8CFC/70F28919CE8B4292B13B6D7AA0FF5E32  0 (ca22a1cb)
+2021-11-03T15:53:09.5017088+05:30 80000333-0006-fd00-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (500cc934)
+2021-11-03T15:53:09.5021170+05:30 80000333-0006-fd00-b63f-84710c7967bb [INF] Route matched with "{action = \"PressDoorbell\", controller = \"AlexaEventSource\"}". Executing controller action with signature "Void PressDoorbell(System.String, System.String)" on controller "IoT.WebAPI.Controllers.AlexaEventSourceController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-03T15:53:09.7825349+05:30 80000333-0006-fd00-b63f-84710c7967bb [INF] Executed DbCommand ("278"ms) [Parameters=["@__apiKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[APIKey] = @__apiKey_0" (0723d8ff)
+2021-11-03T15:53:10.0556122+05:30 80000333-0006-fd00-b63f-84710c7967bb [INF] Executed DbCommand ("271"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[ClientId], [s].[ClientSecret], [s].[Code], [s].[CreatedDate], [s].[ExpireAt], [s].[ModifiedDate], [s].[RefreshToken], [s].[Token]
+FROM [SkillTokens] AS [s]" (0723d8ff)
+2021-11-03T15:53:10.5828875+05:30 80000333-0006-fd00-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)" in 1080.5798ms (afa2e885)
+2021-11-03T15:53:10.5830337+05:30 80000333-0006-fd00-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (99874f2b)
+2021-11-03T15:53:10.5844864+05:30 80000333-0006-fd00-b63f-84710c7967bb [INF] Request finished in 1083.0805ms 200  (791a596a)
+2021-11-03T15:53:16.0318449+05:30 80000334-0006-fd00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 POST https://localhost:44342/api/v1/AlexaEventSource/PressDoorbell/7C123F6551FB49E0A2DF99402906DFF81EF2632D12424DA88229EA6D431C8CFC/70F28919CE8B4292B13B6D7AA0FF5E32  0 (ca22a1cb)
+2021-11-03T15:53:16.0322147+05:30 80000334-0006-fd00-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (500cc934)
+2021-11-03T15:53:16.0325489+05:30 80000334-0006-fd00-b63f-84710c7967bb [INF] Route matched with "{action = \"PressDoorbell\", controller = \"AlexaEventSource\"}". Executing controller action with signature "Void PressDoorbell(System.String, System.String)" on controller "IoT.WebAPI.Controllers.AlexaEventSourceController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-03T15:53:16.3047000+05:30 80000334-0006-fd00-b63f-84710c7967bb [INF] Executed DbCommand ("270"ms) [Parameters=["@__apiKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[APIKey] = @__apiKey_0" (0723d8ff)
+2021-11-03T15:53:16.5774401+05:30 80000334-0006-fd00-b63f-84710c7967bb [INF] Executed DbCommand ("271"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[ClientId], [s].[ClientSecret], [s].[Code], [s].[CreatedDate], [s].[ExpireAt], [s].[ModifiedDate], [s].[RefreshToken], [s].[Token]
+FROM [SkillTokens] AS [s]" (0723d8ff)
+2021-11-03T15:53:16.8237363+05:30 80000334-0006-fd00-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)" in 791.0007ms (afa2e885)
+2021-11-03T15:53:16.8239089+05:30 80000334-0006-fd00-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (99874f2b)
+2021-11-03T15:53:16.8251539+05:30 80000334-0006-fd00-b63f-84710c7967bb [INF] Request finished in 793.2519ms 200  (791a596a)
+2021-11-03T15:53:22.6542593+05:30 80000335-0006-fd00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 POST https://localhost:44342/api/v1/AlexaEventSource/PressDoorbell/7C123F6551FB49E0A2DF99402906DFF81EF2632D12424DA88229EA6D431C8CFC/70F28919CE8B4292B13B6D7AA0FF5E32  0 (ca22a1cb)
+2021-11-03T15:53:22.6546221+05:30 80000335-0006-fd00-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (500cc934)
+2021-11-03T15:53:22.6550104+05:30 80000335-0006-fd00-b63f-84710c7967bb [INF] Route matched with "{action = \"PressDoorbell\", controller = \"AlexaEventSource\"}". Executing controller action with signature "Void PressDoorbell(System.String, System.String)" on controller "IoT.WebAPI.Controllers.AlexaEventSourceController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-03T15:53:22.9286372+05:30 80000335-0006-fd00-b63f-84710c7967bb [INF] Executed DbCommand ("271"ms) [Parameters=["@__apiKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[APIKey] = @__apiKey_0" (0723d8ff)
+2021-11-03T15:53:23.2018685+05:30 80000335-0006-fd00-b63f-84710c7967bb [INF] Executed DbCommand ("272"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[ClientId], [s].[ClientSecret], [s].[Code], [s].[CreatedDate], [s].[ExpireAt], [s].[ModifiedDate], [s].[RefreshToken], [s].[Token]
+FROM [SkillTokens] AS [s]" (0723d8ff)
+2021-11-03T15:53:23.4549596+05:30 80000335-0006-fd00-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)" in 799.6968ms (afa2e885)
+2021-11-03T15:53:23.4552237+05:30 80000335-0006-fd00-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (99874f2b)
+2021-11-03T15:53:23.4577836+05:30 80000335-0006-fd00-b63f-84710c7967bb [INF] Request finished in 803.3056ms 200  (791a596a)
+2021-11-03T15:55:03.8842409+05:30 80000336-0006-fd00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 POST https://localhost:44342/api/v1/AlexaEventSource/PressDoorbell/7C123F6551FB49E0A2DF99402906DFF81EF2632D12424DA88229EA6D431C8CFC/70F28919CE8B4292B13B6D7AA0FF5E32  0 (ca22a1cb)
+2021-11-03T15:55:03.8846749+05:30 80000336-0006-fd00-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (500cc934)
+2021-11-03T15:55:03.8850261+05:30 80000336-0006-fd00-b63f-84710c7967bb [INF] Route matched with "{action = \"PressDoorbell\", controller = \"AlexaEventSource\"}". Executing controller action with signature "Void PressDoorbell(System.String, System.String)" on controller "IoT.WebAPI.Controllers.AlexaEventSourceController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-03T15:55:04.1619510+05:30 80000336-0006-fd00-b63f-84710c7967bb [INF] Executed DbCommand ("274"ms) [Parameters=["@__apiKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[APIKey] = @__apiKey_0" (0723d8ff)
+2021-11-03T15:55:04.4332033+05:30 80000336-0006-fd00-b63f-84710c7967bb [INF] Executed DbCommand ("270"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[ClientId], [s].[ClientSecret], [s].[Code], [s].[CreatedDate], [s].[ExpireAt], [s].[ModifiedDate], [s].[RefreshToken], [s].[Token]
+FROM [SkillTokens] AS [s]" (0723d8ff)
+2021-11-03T15:55:04.6704697+05:30 80000336-0006-fd00-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)" in 785.0726ms (afa2e885)
+2021-11-03T15:55:04.6707131+05:30 80000336-0006-fd00-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (99874f2b)
+2021-11-03T15:55:04.6728570+05:30 80000336-0006-fd00-b63f-84710c7967bb [INF] Request finished in 788.2428ms 200  (791a596a)
+2021-11-03T16:38:29.7805365+05:30 8000033a-0006-fd00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 POST https://localhost:44342/api/v1/AlexaEventSource/PressDoorbell/7C123F6551FB49E0A2DF99402906DFF81EF2632D12424DA88229EA6D431C8CFC/70F28919CE8B4292B13B6D7AA0FF5E32  0 (ca22a1cb)
+2021-11-03T16:38:29.7811465+05:30 8000033a-0006-fd00-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (500cc934)
+2021-11-03T16:38:29.7816215+05:30 8000033a-0006-fd00-b63f-84710c7967bb [INF] Route matched with "{action = \"PressDoorbell\", controller = \"AlexaEventSource\"}". Executing controller action with signature "Void PressDoorbell(System.String, System.String)" on controller "IoT.WebAPI.Controllers.AlexaEventSourceController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-03T16:38:31.1559310+05:30 8000033a-0006-fd00-b63f-84710c7967bb [INF] Executed DbCommand ("274"ms) [Parameters=["@__apiKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[APIKey] = @__apiKey_0" (0723d8ff)
+2021-11-03T16:38:31.4332081+05:30 8000033a-0006-fd00-b63f-84710c7967bb [INF] Executed DbCommand ("276"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [s].[Id], [s].[ClientId], [s].[ClientSecret], [s].[Code], [s].[CreatedDate], [s].[ExpireAt], [s].[ModifiedDate], [s].[RefreshToken], [s].[Token]
+FROM [SkillTokens] AS [s]" (0723d8ff)
+2021-11-03T16:38:31.6732068+05:30 8000033a-0006-fd00-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)" in 1891.4775ms (afa2e885)
+2021-11-03T16:38:31.6732766+05:30 8000033a-0006-fd00-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.AlexaEventSourceController.PressDoorbell (IoT.WebAPI)"' (99874f2b)
+2021-11-03T16:38:31.6739842+05:30 8000033a-0006-fd00-b63f-84710c7967bb [INF] Request finished in 1893.6087ms 200  (791a596a)

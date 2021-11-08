@@ -20,5 +20,19 @@ namespace IoT.BusinessLayer
             HttpResponseMessage httpResponseMessage = await httpClient.PostAsync(url, httpContent);
             return httpResponseMessage;
         }
+        public async Task<HttpResponseMessage> PostFormData(HttpRequestMessage msg)
+        {
+            try
+            {
+                //httpClient.DefaultRequestHeaders.Add("Content-Type","application/x-www-form-urlencoded");
+                HttpResponseMessage httpResponseMessage = await httpClient.SendAsync(msg);
+                return httpResponseMessage;
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+        }
     }
 }

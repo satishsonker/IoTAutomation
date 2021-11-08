@@ -28,11 +28,18 @@ namespace IoT.WebAPI.Controllers
         {
             _alexaEventSourceBL.UpdateCode(code, userKey);
         }
+
         [HttpPost]
         [Route("PressDoorbell/{apikey}/{endpoitnId}")]
         public void PressDoorbell([FromRoute] string endpoitnId, [FromRoute] string apiKey)
         {
             _alexaEventSourceBL.PressDoorbell(endpoitnId, apiKey);
+        }
+        [HttpPost]
+        [Route("ChangeReport/{apikey}/{endpoitnId}")]
+        public void ChangeReport([FromRoute] string apiKey)
+        {
+            //_alexaEventSourceBL.PressDoorbell(apiKey);
         }
     }
 }

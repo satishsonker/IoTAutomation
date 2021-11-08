@@ -1,4 +1,5 @@
 ﻿using IoT.DataLayer.Interface;
+using IoT.ModelLayer.Alexa;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -28,10 +29,14 @@ namespace IoT.DataLayer.Repository
             }
             return new Tuple<string, string, DateTime>(string.Empty, string.Empty, DateTime.Now); ;
         }
+        public SkillToken GetToken(bool allField)
+        {
+            return context.SkillTokens.FirstOrDefault();
+        }
 
         public void UpdateCode(string code, string userKey)
         {
-            if (context.Users.Where(x => x.UserKey == userKey).Count() > 0)
+            if (context.Users.Where(x => x.UserKey == userKey || x.APIKey==userKey) .Count() > 0)
             {
                 var oldData = context.SkillTokens.FirstOrDefault();
                 if (oldData != null)
@@ -47,19 +52,27 @@ namespace IoT.DataLayer.Repository
 
         public void UpdateToken(string token, string refreshToken, int expireMin,string userKey)
         {
-            if (context.Users.Where(x => x.UserKey == userKey).Count() > 0)
+            try
             {
-                var oldData = context.SkillTokens.FirstOrDefault();
-                if (oldData != null)
+                if (context.Users.Where(x => x.APIKey == userKey).Count() > 0)
                 {
-                    oldData.Token = token;
-                    oldData.RefreshToken = refreshToken;
-                    oldData.ModifiedDate = DateTime.Now;
-                    oldData.ExpireAt = DateTime.Now.AddMinutes(expireMin);
-                    var entity = context.Attach(oldData);
-                    entity.State = EntityState.Modified;
-                    context.SaveChangesAsync();
+                    var oldData = context.SkillTokens.FirstOrDefault();
+                    if (oldData != null)
+                    {
+                        oldData.Token = token;
+                        oldData.RefreshToken = refreshToken;
+                        oldData.ModifiedDate = DateTime.Now;
+                        oldData.ExpireAt = DateTime.Now.AddMinutes(expireMin);
+                        var entity = context.Attach(oldData);
+                        entity.State = EntityState.Modified;
+                        context.SaveChangesAsync();
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+
+                throw;
             }
         }
 

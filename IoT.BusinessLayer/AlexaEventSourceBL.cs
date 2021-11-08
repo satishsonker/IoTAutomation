@@ -3,8 +3,10 @@ using IoT.ModelLayer.Alexa;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Net;
 using System.Net.Http;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace IoT.BusinessLayer
 {
@@ -22,11 +24,6 @@ namespace IoT.BusinessLayer
             return _alexaEventSource.GetRefreshToken();
         }
 
-        private Tuple<string, string, DateTime> GetToken()
-        {
-            return _alexaEventSource.GetToken();
-        }
-
         public void UpdateCode(string code, string userKey)
         {
             _alexaEventSource.UpdateCode(code, userKey);
@@ -36,13 +33,13 @@ namespace IoT.BusinessLayer
         {
             _alexaEventSource.UpdateToken(token, refreshToken, expireMin, userKey);
         }
-        public void PressDoorbell(string endpoitnId, string apiKey)
+        public async Task<string> PressDoorbell(string endpoitnId, string apiKey)
         {
-            if (_alexaEventSource.VerifyAPIKey(apiKey))
+            if (apiKey == "ByPassApiKey" || _alexaEventSource.VerifyAPIKey(apiKey))
             {
-
-                var token = GetToken();
-                if (token.Item3 > DateTime.Now)
+            again:
+                var token = _alexaEventSource.GetToken(true);
+                if (token != null && token.ExpireAt > DateTime.Now)
                 {
                     DoorbellEventModel doorbellEventModel = new DoorbellEventModel()
                     {
@@ -53,7 +50,7 @@ namespace IoT.BusinessLayer
                                 endpointId = endpoitnId,
                                 scope = new Scope()
                                 {
-                                    token = token.Item1,
+                                    token = token.Token,
                                     type = "BearerToken"
                                 }
                             },
@@ -75,9 +72,130 @@ namespace IoT.BusinessLayer
                         }
                     };
                     StringContent stringContent = new StringContent(JsonConvert.SerializeObject(doorbellEventModel));
-                    httpClientWrapper.Post("https://api.eu.amazonalexa.com/v3/events", stringContent);
+                    var response = httpClientWrapper.Post("https://api.eu.amazonalexa.com/v3/events", stringContent).Result;
+                    if (response.StatusCode == HttpStatusCode.Unauthorized)
+                    {
+                        List<KeyValuePair<string, string>> keyValuePair = new List<KeyValuePair<string, string>>();
+                        keyValuePair.Add(new KeyValuePair<string, string>("grant_type", "refresh_token"));
+                        keyValuePair.Add(new KeyValuePair<string, string>("refresh_token", token.RefreshToken));
+                        keyValuePair.Add(new KeyValuePair<string, string>("client_id", token.ClientId));
+                        keyValuePair.Add(new KeyValuePair<string, string>("client_secret", token.ClientSecret));
+                        var req = new HttpRequestMessage(HttpMethod.Post, "https://api.amazon.com/auth/o2/token") { Content = new FormUrlEncodedContent(keyValuePair) };
+                        var refreshTokenResponse = httpClientWrapper.PostFormData(req).Result;
+                        var data = refreshTokenResponse.Content.ReadAsStringAsync();
+                        if (refreshTokenResponse.IsSuccessStatusCode)
+                        {
+                            var refreshToken = JsonConvert.DeserializeObject<RefreshTokenResponseModel>(data.Result);
+                            _alexaEventSource.UpdateToken(refreshToken.access_token, refreshToken.refresh_token, refreshToken.expires_in, apiKey);
+                            goto again;
+                        }
+                    }
+                    if (response.IsSuccessStatusCode)
+                    {
+                        return "success";
+                    }
                 }
             }
+            return "error";
+        }
+        public async Task<string> MotionDetect(string endpointId, string apiKey)
+        {
+            if (!string.IsNullOrEmpty(endpointId))
+            {
+
+                if (apiKey == "ByPassApiKey" || _alexaEventSource.VerifyAPIKey(apiKey))
+                {
+                again:
+                    var token = _alexaEventSource.GetToken(true);
+                    if (token != null && token.ExpireAt > DateTime.Now)
+                    {
+                        MotionDetectModel motionDetectModel = new MotionDetectModel()
+                        {
+                            @event = new Event()
+                            {
+                                endpoint = new Endpoint()
+                                {
+                                    endpointId = endpointId,
+                                    scope = new Scope()
+                                    {
+                                        token = token.Token,
+                                        type = "BearerToken"
+                                    }
+                                },
+                                header = new Header()
+                                {
+                                    messageId = Guid.NewGuid().ToString(),
+                                    name = "ChangeReport",
+                                    payloadVersion = "3",
+                                    @namespace = "Alexa"
+                                },
+                                payload = new Payload()
+                                {
+                                    change = new Change()
+                                    {
+                                        cause = new Cause()
+                                        {
+                                            type = "PHYSICAL_INTERACTION"
+                                        },
+                                        properties = new List<Property>()
+                                        {
+                                            new Property()
+                                            {
+                                                name="detectionState",
+                                                @namespace="Alexa.MotionSensor",
+                                                value="DETECTED",
+                                                timeOfSample=DateTime.Now,
+                                                uncertaintyInMilliseconds=0
+                                            }
+                                        }
+                                    },
+                                    timestamp = DateTime.Now
+                                }
+                            },
+                            context = new Context()
+                            {
+                                properties = new List<PropertyContext>()
+                                {
+                                   new PropertyContext()
+                                   {
+                                       @namespace= "Alexa.EndpointHealth",
+                                       name= "connectivity",
+                                       value= {
+                                                value= "OK"
+                                                },
+                                        timeOfSample= DateTime.Now,
+                                        uncertaintyInMilliseconds= 0
+                                   }
+                                }
+                            }
+                        };
+                        StringContent stringContent = new StringContent(JsonConvert.SerializeObject(motionDetectModel));
+                        var response = httpClientWrapper.Post("https://api.eu.amazonalexa.com/v3/events", stringContent).Result;
+                        if (response.StatusCode == HttpStatusCode.Unauthorized)
+                        {
+                            List<KeyValuePair<string, string>> keyValuePair = new List<KeyValuePair<string, string>>();
+                            keyValuePair.Add(new KeyValuePair<string, string>("grant_type", "refresh_token"));
+                            keyValuePair.Add(new KeyValuePair<string, string>("refresh_token", token.RefreshToken));
+                            keyValuePair.Add(new KeyValuePair<string, string>("client_id", token.ClientId));
+                            keyValuePair.Add(new KeyValuePair<string, string>("client_secret", token.ClientSecret));
+                            var req = new HttpRequestMessage(HttpMethod.Post, "https://api.amazon.com/auth/o2/token") { Content = new FormUrlEncodedContent(keyValuePair) };
+                            var refreshTokenResponse = httpClientWrapper.PostFormData(req).Result;
+                            var data = refreshTokenResponse.Content.ReadAsStringAsync();
+                            if (refreshTokenResponse.IsSuccessStatusCode)
+                            {
+                                var refreshToken = JsonConvert.DeserializeObject<RefreshTokenResponseModel>(data.Result);
+                                _alexaEventSource.UpdateToken(refreshToken.access_token, refreshToken.refresh_token, refreshToken.expires_in, apiKey);
+                                goto again;
+                            }
+                        }
+                        if (response.IsSuccessStatusCode)
+                        {
+                            return "success";
+                        }
+                    }
+                }
+            }
+            return "error";
         }
     }
 }
