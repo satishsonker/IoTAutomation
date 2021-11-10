@@ -1,5 +1,7 @@
 ﻿using IoT.DataLayer.Interface;
+using IoT.ModelLayer;
 using IoT.ModelLayer.Alexa;
+using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -14,9 +16,11 @@ namespace IoT.BusinessLayer
     {
         private readonly IAlexaEventSource _alexaEventSource;
         private readonly HttpClientWrapper httpClientWrapper;
-        public AlexaEventSourceBL(IAlexaEventSource ialexaEventSource)
+        private readonly IOptions<AppSettingConfig> config;
+        public AlexaEventSourceBL(IAlexaEventSource ialexaEventSource,IOptions<AppSettingConfig> _config)
         {
             _alexaEventSource = ialexaEventSource;
+            config = _config;
             httpClientWrapper = new HttpClientWrapper();
         }
         private string GetRefreshToken()
@@ -37,9 +41,11 @@ namespace IoT.BusinessLayer
         {
             if (apiKey == "ByPassApiKey" || _alexaEventSource.VerifyAPIKey(apiKey))
             {
+                string newToken = null;
+                var token = new SkillToken();
             again:
-                var token = _alexaEventSource.GetToken(true);
-                if (token != null && token.ExpireAt > DateTime.Now)
+                token = _alexaEventSource.GetToken(true);
+                if (newToken!=null || (token != null && token.ExpireAt > DateTime.Now))
                 {
                     DoorbellEventModel doorbellEventModel = new DoorbellEventModel()
                     {
@@ -50,7 +56,7 @@ namespace IoT.BusinessLayer
                                 endpointId = endpoitnId,
                                 scope = new Scope()
                                 {
-                                    token = token.Token,
+                                    token = newToken == null ? token.Token : newToken,
                                     type = "BearerToken"
                                 }
                             },
@@ -72,28 +78,23 @@ namespace IoT.BusinessLayer
                         }
                     };
                     StringContent stringContent = new StringContent(JsonConvert.SerializeObject(doorbellEventModel));
-                    var response = httpClientWrapper.Post("https://api.eu.amazonalexa.com/v3/events", stringContent).Result;
+                    var response = httpClientWrapper.Post(config.Value.AlexaEventUrl, stringContent).Result;
                     if (response.StatusCode == HttpStatusCode.Unauthorized)
                     {
-                        List<KeyValuePair<string, string>> keyValuePair = new List<KeyValuePair<string, string>>();
-                        keyValuePair.Add(new KeyValuePair<string, string>("grant_type", "refresh_token"));
-                        keyValuePair.Add(new KeyValuePair<string, string>("refresh_token", token.RefreshToken));
-                        keyValuePair.Add(new KeyValuePair<string, string>("client_id", token.ClientId));
-                        keyValuePair.Add(new KeyValuePair<string, string>("client_secret", token.ClientSecret));
-                        var req = new HttpRequestMessage(HttpMethod.Post, "https://api.amazon.com/auth/o2/token") { Content = new FormUrlEncodedContent(keyValuePair) };
-                        var refreshTokenResponse = httpClientWrapper.PostFormData(req).Result;
-                        var data = refreshTokenResponse.Content.ReadAsStringAsync();
-                        if (refreshTokenResponse.IsSuccessStatusCode)
-                        {
-                            var refreshToken = JsonConvert.DeserializeObject<RefreshTokenResponseModel>(data.Result);
-                            _alexaEventSource.UpdateToken(refreshToken.access_token, refreshToken.refresh_token, refreshToken.expires_in, apiKey);
-                            goto again;
-                        }
+                        var rtoken = GetRefreshToken(token.RefreshToken, token.ClientId, token.ClientSecret, apiKey);
+                        newToken = rtoken.Item1.access_token;
+                        goto again;
                     }
                     if (response.IsSuccessStatusCode)
                     {
                         return "success";
                     }
+                }
+                else
+                {
+                    var rtoken = GetRefreshToken(token.RefreshToken, token.ClientId, token.ClientSecret, apiKey);
+                    newToken = rtoken.Item1.access_token;
+                    goto again;
                 }
             }
             return "error";
@@ -105,9 +106,11 @@ namespace IoT.BusinessLayer
 
                 if (apiKey == "ByPassApiKey" || _alexaEventSource.VerifyAPIKey(apiKey))
                 {
+                    string newToken = null;
+                    var token = new SkillToken();
                 again:
-                    var token = _alexaEventSource.GetToken(true);
-                    if (token != null && token.ExpireAt > DateTime.Now)
+                    token = _alexaEventSource.GetToken(true);
+                    if (newToken!=null || (token != null && token.ExpireAt > DateTime.Now))
                     {
                         MotionDetectModel motionDetectModel = new MotionDetectModel()
                         {
@@ -118,7 +121,7 @@ namespace IoT.BusinessLayer
                                     endpointId = endpointId,
                                     scope = new Scope()
                                     {
-                                        token = token.Token,
+                                        token = newToken == null ? token.Token : newToken,
                                         type = "BearerToken"
                                     }
                                 },
@@ -160,9 +163,10 @@ namespace IoT.BusinessLayer
                                    {
                                        @namespace= "Alexa.EndpointHealth",
                                        name= "connectivity",
-                                       value= {
-                                                value= "OK"
-                                                },
+                                       value=new Value()
+                                       {
+                                           value="OK"
+                                       },
                                         timeOfSample= DateTime.Now,
                                         uncertaintyInMilliseconds= 0
                                    }
@@ -170,32 +174,46 @@ namespace IoT.BusinessLayer
                             }
                         };
                         StringContent stringContent = new StringContent(JsonConvert.SerializeObject(motionDetectModel));
-                        var response = httpClientWrapper.Post("https://api.eu.amazonalexa.com/v3/events", stringContent).Result;
+                        var response = httpClientWrapper.Post(config.Value.AlexaEventUrl, stringContent).Result;
                         if (response.StatusCode == HttpStatusCode.Unauthorized)
                         {
-                            List<KeyValuePair<string, string>> keyValuePair = new List<KeyValuePair<string, string>>();
-                            keyValuePair.Add(new KeyValuePair<string, string>("grant_type", "refresh_token"));
-                            keyValuePair.Add(new KeyValuePair<string, string>("refresh_token", token.RefreshToken));
-                            keyValuePair.Add(new KeyValuePair<string, string>("client_id", token.ClientId));
-                            keyValuePair.Add(new KeyValuePair<string, string>("client_secret", token.ClientSecret));
-                            var req = new HttpRequestMessage(HttpMethod.Post, "https://api.amazon.com/auth/o2/token") { Content = new FormUrlEncodedContent(keyValuePair) };
-                            var refreshTokenResponse = httpClientWrapper.PostFormData(req).Result;
-                            var data = refreshTokenResponse.Content.ReadAsStringAsync();
-                            if (refreshTokenResponse.IsSuccessStatusCode)
-                            {
-                                var refreshToken = JsonConvert.DeserializeObject<RefreshTokenResponseModel>(data.Result);
-                                _alexaEventSource.UpdateToken(refreshToken.access_token, refreshToken.refresh_token, refreshToken.expires_in, apiKey);
-                                goto again;
-                            }
+                            var rtoken = GetRefreshToken(token.RefreshToken, token.ClientId, token.ClientSecret, apiKey);
+                            newToken = rtoken.Item1.access_token;
+                            goto again;
                         }
                         if (response.IsSuccessStatusCode)
                         {
                             return "success";
                         }
                     }
+                    else
+                    {
+                        var rtoken = GetRefreshToken(token.RefreshToken, token.ClientId, token.ClientSecret, apiKey);
+                        newToken = rtoken.Item1.access_token;
+                        goto again;
+                    }
                 }
+              
             }
             return "error";
+        }
+        private Tuple<RefreshTokenResponseModel, bool> GetRefreshToken(string refreshToken, string clientId, string clientSecret, string apiKey)
+        {
+            List<KeyValuePair<string, string>> keyValuePair = new List<KeyValuePair<string, string>>();
+            keyValuePair.Add(new KeyValuePair<string, string>("grant_type", "refresh_token"));
+            keyValuePair.Add(new KeyValuePair<string, string>("refresh_token", refreshToken));
+            keyValuePair.Add(new KeyValuePair<string, string>("client_id", clientId));
+            keyValuePair.Add(new KeyValuePair<string, string>("client_secret", clientSecret));
+            var req = new HttpRequestMessage(HttpMethod.Post, config.Value.AlexaTokenUrl) { Content = new FormUrlEncodedContent(keyValuePair) };
+            var refreshTokenResponse = httpClientWrapper.PostFormData(req).Result;
+            var data = refreshTokenResponse.Content.ReadAsStringAsync();
+            if (refreshTokenResponse.IsSuccessStatusCode)
+            {
+                var refreshTokenObj = JsonConvert.DeserializeObject<RefreshTokenResponseModel>(data.Result);
+                _alexaEventSource.UpdateToken(refreshTokenObj.access_token, refreshTokenObj.refresh_token, refreshTokenObj.expires_in, apiKey);
+                return new Tuple<RefreshTokenResponseModel, bool>(refreshTokenObj, true);
+            }
+            return new Tuple<RefreshTokenResponseModel, bool>(new RefreshTokenResponseModel(), false);
         }
     }
 }

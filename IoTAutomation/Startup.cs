@@ -12,6 +12,8 @@ using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using IoT.BusinessLayer;
+using IoT.ModelLayer;
+using Microsoft.Extensions.Options;
 
 namespace IoT.WebAPI
 {
@@ -23,6 +25,13 @@ namespace IoT.WebAPI
         }
 
         public IConfiguration Configuration { get; }
+        public Startup(IWebHostEnvironment env)
+        {
+            var builder = new ConfigurationBuilder()
+                .SetBasePath(env.ContentRootPath)
+                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
+            Configuration = builder.Build();
+        }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -44,6 +53,7 @@ namespace IoT.WebAPI
             services.AddScoped<IMasterData, MasterDataRepository>();
             services.AddScoped<IAlexaEventSource, AlexaEventSourceRepository>();
             services.AddScoped<IMqtt, MqttRepository>();
+            services.Configure<AppSettingConfig>(option => Configuration.GetSection("AppConfig").Bind(option));
             services.Configure<CookiePolicyOptions>(options =>
             {
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.
@@ -61,13 +71,15 @@ namespace IoT.WebAPI
             var serviceProvider = services.BuildServiceProvider(); // Resolving Service
             var mqttRepository = serviceProvider.GetService<IMqtt>();
             var AlexaEventRepository = serviceProvider.GetService<IAlexaEventSource>();
-            var mqtt = new Mqtt(mqttRepository, AlexaEventRepository);
+            var iDevice = serviceProvider.GetService<IDevices>();
+            var config = serviceProvider.GetService<IOptions<AppSettingConfig>>();
+            var mqtt = new Mqtt(mqttRepository, AlexaEventRepository, config, iDevice);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env,ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
         {
-           
+
             loggerFactory.AddFile("Logs/mylog-{Date}.txt");
             app.UseCors(builder => builder
                          .AllowAnyOrigin()
@@ -94,8 +106,6 @@ namespace IoT.WebAPI
             {
                 endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}");
             });
-          
-
         }
     }
 }

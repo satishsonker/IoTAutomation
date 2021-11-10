@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace IoT.DataLayer.Repository
 {
-    public class DeviceRepository : CommonRepository,IDevices
+    public class DeviceRepository : CommonRepository, IDevices
     {
         private readonly AppDbContext context;
 
@@ -23,7 +23,7 @@ namespace IoT.DataLayer.Repository
             ResponseModel responseModel = new ResponseModel();
             if (context.Users.Where(x => x.UserKey == userKey).Count() > 0)
             {
-                var Device = context.Devices.Where(x => x.DeviceName == newDevice.DeviceName || x.FriendlyName==newDevice.FriendlyName).FirstOrDefault();
+                var Device = context.Devices.Where(x => x.DeviceName == newDevice.DeviceName || x.FriendlyName == newDevice.FriendlyName).FirstOrDefault();
                 if (Device == null)
                 {
                     newDevice.CreatedDate = DateTime.Now;
@@ -59,8 +59,8 @@ namespace IoT.DataLayer.Repository
                 DeviceId = x.DeviceId,
                 DeviceTypeId = x.DeviceType.DeviceTypeId,
                 LastConnected = x.LastConnected,
-                FriendlyName=x.FriendlyName,
-                ManufacturerName=x.ManufacturerName,
+                FriendlyName = x.FriendlyName,
+                ManufacturerName = x.ManufacturerName,
                 RoomName = x.Room.RoomName,
                 DeviceTypeName = x.DeviceType.DeviceTypeName,
                 RoomId = x.RoomId,
@@ -109,7 +109,7 @@ namespace IoT.DataLayer.Repository
             return context.DeviceTypes.Select(x => new { x.DeviceTypeId, x.DeviceTypeName }).OrderBy(x => x.DeviceTypeName).ToList().Skip(skipRecords).Take(pageSize);
         }
 
-        public IEnumerable<Device> SearchDevices(string searchTerm, string userKey )
+        public IEnumerable<Device> SearchDevices(string searchTerm, string userKey)
         {
             searchTerm = searchTerm.ToUpper();
             var result = context.Devices.Include(x => x.DeviceType).Where(x => x.UserKey == userKey && (searchTerm == "ALL" || x.DeviceName.ToUpper().Contains(searchTerm) || x.DeviceKey.ToUpper().Contains(searchTerm) || x.DeviceType.DeviceTypeName.ToUpper().Contains(searchTerm) || x.DeviceDesc.ToUpper().Contains(searchTerm) || x.FriendlyName.ToUpper().Contains(searchTerm))).Select(x => new DeviceExt
@@ -152,7 +152,7 @@ namespace IoT.DataLayer.Repository
         public bool UpdateDeviceHistory(string userKey, string deviceKey, bool isConnected)
         {
             bool isUpdated = false;
-            if (context.Users.Where(x => x.UserKey == userKey).Count() > 0)
+            if (userKey == "ByPassApiKey" || context.Users.Where(x => x.UserKey == userKey).Count() > 0)
             {
                 var oldDevice = context.Devices.Where(x => x.DeviceKey == deviceKey).FirstOrDefault();
                 if (oldDevice != null)

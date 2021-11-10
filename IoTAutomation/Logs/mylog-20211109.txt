@@ -1,0 +1,957 @@
+2021-11-09T12:12:45.0451293+05:30  [INF] User profile is available. Using '"C:\Users\satishsonkar\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2021-11-09T12:12:45.2580230+05:30 80000018-0006-fd00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44342/   (ca22a1cb)
+2021-11-09T12:12:45.3673329+05:30 80000018-0006-fd00-b63f-84710c7967bb [INF] Request finished in 119.4468ms 404  (791a596a)
+2021-11-09T13:12:02.6196691+05:30  [INF] User profile is available. Using '"C:\Users\satishsonkar\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2021-11-09T13:12:02.8321650+05:30 80000014-0004-f700-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44342/   (ca22a1cb)
+2021-11-09T13:12:02.8984571+05:30 80000014-0004-f700-b63f-84710c7967bb [INF] Request finished in 74.452ms 404  (791a596a)
+2021-11-09T13:12:33.5574996+05:30  [INF] User profile is available. Using '"C:\Users\satishsonkar\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2021-11-09T13:12:33.8102080+05:30 8000002e-0005-f900-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44342/   (ca22a1cb)
+2021-11-09T13:12:33.9822324+05:30 8000002e-0005-f900-b63f-84710c7967bb [INF] Request finished in 188.5312ms 404  (791a596a)
+2021-11-09T14:15:35.6086285+05:30  [INF] User profile is available. Using '"C:\Users\satishsonkar\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2021-11-09T14:15:35.7781410+05:30 80000010-0004-f800-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44342/   (ca22a1cb)
+2021-11-09T14:15:35.8594293+05:30 80000010-0004-f800-b63f-84710c7967bb [INF] Request finished in 90.1921ms 404  (791a596a)
+2021-11-09T14:18:24.0442695+05:30  [INF] User profile is available. Using '"C:\Users\satishsonkar\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2021-11-09T14:18:24.3660436+05:30 80000031-0005-f900-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44342/   (ca22a1cb)
+2021-11-09T14:18:24.5488730+05:30 80000031-0005-f900-b63f-84710c7967bb [INF] Request finished in 197.3714ms 404  (791a596a)
+2021-11-09T14:20:57.8243100+05:30  [INF] User profile is available. Using '"C:\Users\satishsonkar\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2021-11-09T14:20:58.0421984+05:30 80000033-0005-f900-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44342/   (ca22a1cb)
+2021-11-09T14:20:58.2269329+05:30 80000033-0005-f900-b63f-84710c7967bb [INF] Request finished in 200.7286ms 404  (791a596a)
+2021-11-09T14:22:00.7882636+05:30  [INF] User profile is available. Using '"C:\Users\satishsonkar\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2021-11-09T14:22:01.0493736+05:30 8000003b-0004-fc00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44342/   (ca22a1cb)
+2021-11-09T14:22:01.1911263+05:30 8000003b-0004-fc00-b63f-84710c7967bb [INF] Request finished in 168.2996ms 404  (791a596a)
+2021-11-09T14:25:56.1167752+05:30  [INF] User profile is available. Using '"C:\Users\satishsonkar\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2021-11-09T14:25:56.3338959+05:30 8000008d-0004-fb00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44342/   (ca22a1cb)
+2021-11-09T14:25:56.4953419+05:30 8000008d-0004-fb00-b63f-84710c7967bb [INF] Request finished in 174.692ms 404  (791a596a)
+2021-11-09T14:28:48.6617700+05:30  [INF] User profile is available. Using '"C:\Users\satishsonkar\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2021-11-09T14:28:48.8768552+05:30 80000048-0007-fd00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44342/   (ca22a1cb)
+2021-11-09T14:28:49.0338730+05:30 80000048-0007-fd00-b63f-84710c7967bb [INF] Request finished in 172.3747ms 404  (791a596a)
+2021-11-09T14:29:23.4181944+05:30 80000035-0005-f900-b63f-84710c7967bb [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44342/api/v1/user/getAPIKey   (ca22a1cb)
+2021-11-09T14:29:23.4179812+05:30 80000022-0004-f700-b63f-84710c7967bb [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44342/api/v1/user/addUser   (ca22a1cb)
+2021-11-09T14:29:23.4179642+05:30 8000001a-0003-fc00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44342/api/v1/user/getUserPermission   (ca22a1cb)
+2021-11-09T14:29:23.4278500+05:30 80000022-0004-f700-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T14:29:23.4278500+05:30 80000035-0005-f900-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T14:29:23.4278500+05:30 8000001a-0003-fc00-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T14:29:23.4361679+05:30 8000001a-0003-fc00-b63f-84710c7967bb [INF] Request finished in 21.1292ms 204  (791a596a)
+2021-11-09T14:29:23.4361679+05:30 80000022-0004-f700-b63f-84710c7967bb [INF] Request finished in 21.1466ms 204  (791a596a)
+2021-11-09T14:29:23.4361679+05:30 80000035-0005-f900-b63f-84710c7967bb [INF] Request finished in 20.9199ms 204  (791a596a)
+2021-11-09T14:29:23.4457903+05:30 80000024-0004-f700-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44342/api/v1/user/getUserPermission   (ca22a1cb)
+2021-11-09T14:29:23.4457907+05:30 80000004-0001-fb00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44342/api/v1/user/getAPIKey   (ca22a1cb)
+2021-11-09T14:29:23.4472923+05:30 80000004-0001-fb00-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T14:29:23.4473024+05:30 80000024-0004-f700-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T14:29:23.4504082+05:30 80000054-0001-fd00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 POST https://localhost:44342/api/v1/user/addUser application/json;charset=UTF-8 163 (ca22a1cb)
+2021-11-09T14:29:23.4506842+05:30 80000054-0001-fd00-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T14:29:23.4641123+05:30 80000004-0001-fb00-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.UserController.GetAPIKey (IoT.WebAPI)"' (500cc934)
+2021-11-09T14:29:23.4641121+05:30 80000024-0004-f700-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.UserController.GetUserPermission (IoT.WebAPI)"' (500cc934)
+2021-11-09T14:29:23.4641121+05:30 80000054-0001-fd00-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.UserController.AddUser (IoT.WebAPI)"' (500cc934)
+2021-11-09T14:29:23.5958624+05:30 80000004-0001-fb00-b63f-84710c7967bb [INF] Route matched with "{action = \"GetAPIKey\", controller = \"User\"}". Executing controller action with signature "IoT.ModelLayer.User GetAPIKey(System.String)" on controller "IoT.WebAPI.Controllers.UserController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-09T14:29:23.5958624+05:30 80000054-0001-fd00-b63f-84710c7967bb [INF] Route matched with "{action = \"AddUser\", controller = \"User\"}". Executing controller action with signature "IoT.ModelLayer.User AddUser(IoT.ModelLayer.User)" on controller "IoT.WebAPI.Controllers.UserController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-09T14:29:23.5958686+05:30 80000024-0004-f700-b63f-84710c7967bb [INF] Route matched with "{action = \"GetUserPermission\", controller = \"User\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[IoT.ModelLayer.UserPermission] GetUserPermission(System.String)" on controller "IoT.WebAPI.Controllers.UserController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-09T14:29:23.7017737+05:30 80000004-0001-fb00-b63f-84710c7967bb [INF] Entity Framework Core "5.0.9" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MaxPoolSize=128 " (9958f5bb)
+2021-11-09T14:29:23.7017888+05:30 80000024-0004-f700-b63f-84710c7967bb [INF] Entity Framework Core "5.0.9" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MaxPoolSize=128 " (9958f5bb)
+2021-11-09T14:29:23.8000066+05:30 80000054-0001-fd00-b63f-84710c7967bb [INF] Executing ObjectResult, writing value of type '"IoT.ModelLayer.User"'. (8a1b66c8)
+2021-11-09T14:29:23.8667881+05:30 80000054-0001-fd00-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.UserController.AddUser (IoT.WebAPI)" in 255.7181ms (afa2e885)
+2021-11-09T14:29:23.8670274+05:30 80000054-0001-fd00-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.UserController.AddUser (IoT.WebAPI)"' (99874f2b)
+2021-11-09T14:29:23.8816576+05:30 80000054-0001-fd00-b63f-84710c7967bb [INF] Request finished in 435.9599ms 200 application/json; charset=utf-8 (791a596a)
+2021-11-09T14:29:24.1294315+05:30 80000004-0001-fb00-b63f-84710c7967bb [INF] Executed DbCommand ("367"ms) [Parameters=["@__userKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[UserId], [u].[APIKey], [u].[AuthProvidor], [u].[CreatedDate], [u].[Email], [u].[FirstName], [u].[Language], [u].[LastLogin], [u].[Lastname], [u].[ModifiedDate], [u].[Temperature], [u].[Timezone], [u].[UserKey]
+FROM [Users] AS [u]
+WHERE [u].[UserKey] = @__userKey_0" (0723d8ff)
+2021-11-09T14:29:24.1921159+05:30 80000004-0001-fb00-b63f-84710c7967bb [INF] Executing ObjectResult, writing value of type '"IoT.ModelLayer.User"'. (8a1b66c8)
+2021-11-09T14:29:24.1935792+05:30 80000004-0001-fb00-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.UserController.GetAPIKey (IoT.WebAPI)" in 596.7283ms (afa2e885)
+2021-11-09T14:29:24.1937789+05:30 80000004-0001-fb00-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.UserController.GetAPIKey (IoT.WebAPI)"' (99874f2b)
+2021-11-09T14:29:24.1987607+05:30 80000004-0001-fb00-b63f-84710c7967bb [INF] Request finished in 753.1033ms 200 application/json; charset=utf-8 (791a596a)
+2021-11-09T14:29:26.2794272+05:30 80000024-0004-f700-b63f-84710c7967bb [INF] Executed DbCommand ("615"ms) [Parameters=["@__userKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[UserPermissionId], [u].[CanCreate], [u].[CanDelete], [u].[CanUpdate], [u].[CanView], [u].[CreatedDate], [u].[IsAdmin], [u].[ModifiedDate], [u].[UserId], [u].[UserKey]
+FROM [UserPermission] AS [u]
+WHERE [u].[UserKey] = @__userKey_0" (0723d8ff)
+2021-11-09T14:29:26.3733762+05:30 80000024-0004-f700-b63f-84710c7967bb [INF] Executing ObjectResult, writing value of type '"IoT.ModelLayer.UserPermission"'. (8a1b66c8)
+2021-11-09T14:29:26.3900748+05:30 80000024-0004-f700-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.UserController.GetUserPermission (IoT.WebAPI)" in 2793.1783ms (afa2e885)
+2021-11-09T14:29:26.3912797+05:30 80000024-0004-f700-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.UserController.GetUserPermission (IoT.WebAPI)"' (99874f2b)
+2021-11-09T14:29:26.3951558+05:30 80000024-0004-f700-b63f-84710c7967bb [INF] Request finished in 2949.4777ms 200 application/json; charset=utf-8 (791a596a)
+2021-11-09T14:29:28.6448620+05:30 80000026-0004-f700-b63f-84710c7967bb [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44342/api/v1/masterData/getCapabilitySupportedProperty   (ca22a1cb)
+2021-11-09T14:29:28.6461443+05:30 80000026-0004-f700-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T14:29:28.6502820+05:30 80000026-0004-f700-b63f-84710c7967bb [INF] Request finished in 5.3893ms 204  (791a596a)
+2021-11-09T14:29:28.6615981+05:30 8000001c-0003-fc00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44342/api/v1/masterData/getCapabilitySupportedProperty   (ca22a1cb)
+2021-11-09T14:29:28.6623511+05:30 8000001c-0003-fc00-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T14:29:28.6711379+05:30 8000001c-0003-fc00-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.MasterDataController.GetCapabilitySupportedProperty (IoT.WebAPI)"' (500cc934)
+2021-11-09T14:29:28.6762213+05:30 8000001c-0003-fc00-b63f-84710c7967bb [INF] Route matched with "{action = \"GetCapabilitySupportedProperty\", controller = \"MasterData\"}". Executing controller action with signature "System.Collections.Generic.IEnumerable`1[IoT.ModelLayer.CapabilitySupportedProperty] GetCapabilitySupportedProperty(System.String, Int32)" on controller "IoT.WebAPI.Controllers.MasterDataController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-09T14:29:28.7042885+05:30 8000001c-0003-fc00-b63f-84710c7967bb [INF] Entity Framework Core "5.0.9" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MaxPoolSize=128 " (9958f5bb)
+2021-11-09T14:29:29.1844168+05:30 8000001c-0003-fc00-b63f-84710c7967bb [INF] Executed DbCommand ("456"ms) [Parameters=["@__userKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [UserPermission] AS [u]
+WHERE ([u].[UserKey] = @__userKey_0) AND ([u].[IsAdmin] = CAST(1 AS bit))" (0723d8ff)
+2021-11-09T14:29:29.7076142+05:30 8000001c-0003-fc00-b63f-84710c7967bb [INF] Executed DbCommand ("478"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[CapabilitySupportedPropertyId], [c].[CapabilitySupportedPropertyName], [c].[CreatedDate], [c].[ModifiedDate]
+FROM [CapabilitySupportedProperty] AS [c]
+ORDER BY [c].[CapabilitySupportedPropertyName]" (0723d8ff)
+2021-11-09T14:29:29.7620738+05:30 8000001c-0003-fc00-b63f-84710c7967bb [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[IoT.ModelLayer.CapabilitySupportedProperty, IoT.ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2021-11-09T14:29:29.7815270+05:30 8000001c-0003-fc00-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.MasterDataController.GetCapabilitySupportedProperty (IoT.WebAPI)" in 1104.6813ms (afa2e885)
+2021-11-09T14:29:29.7818896+05:30 8000001c-0003-fc00-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.MasterDataController.GetCapabilitySupportedProperty (IoT.WebAPI)"' (99874f2b)
+2021-11-09T14:29:29.7860342+05:30 8000001c-0003-fc00-b63f-84710c7967bb [INF] Request finished in 1124.9544ms 200 application/json; charset=utf-8 (791a596a)
+2021-11-09T14:29:29.8422888+05:30 80000082-0000-ff00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44342/api/v1/masterData/getCapabilityType?pageNo=1&pagesize=10   (ca22a1cb)
+2021-11-09T14:29:29.8428203+05:30 80000082-0000-ff00-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T14:29:29.8429024+05:30 80000028-0004-f700-b63f-84710c7967bb [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44342/api/v1/masterData/getCapabilityVersion?pageNo=1&pagesize=10   (ca22a1cb)
+2021-11-09T14:29:29.8430289+05:30 80000028-0004-f700-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T14:29:29.8435831+05:30 80000028-0004-f700-b63f-84710c7967bb [INF] Request finished in 0.7348ms 204  (791a596a)
+2021-11-09T14:29:29.8441006+05:30 80000082-0000-ff00-b63f-84710c7967bb [INF] Request finished in 2.2594ms 204  (791a596a)
+2021-11-09T14:29:29.8443567+05:30 80000026-0006-fa00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44342/api/v1/masterData/getDisplayCategory?pageNo=1&pagesize=10   (ca22a1cb)
+2021-11-09T14:29:29.8445634+05:30 80000026-0006-fa00-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T14:29:29.8448021+05:30 80000037-0005-f900-b63f-84710c7967bb [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44342/api/v1/masterData/getCapabilityInterface?pageNo=1&pagesize=10   (ca22a1cb)
+2021-11-09T14:29:29.8449163+05:30 80000026-0006-fa00-b63f-84710c7967bb [INF] Request finished in 0.5866ms 204  (791a596a)
+2021-11-09T14:29:29.8449189+05:30 80000037-0005-f900-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T14:29:29.8453455+05:30 80000037-0005-f900-b63f-84710c7967bb [INF] Request finished in 0.5905ms 204  (791a596a)
+2021-11-09T14:29:29.8538418+05:30 8000002a-0004-f700-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44342/api/v1/masterData/getCapabilityVersion?pageNo=1&pagesize=10   (ca22a1cb)
+2021-11-09T14:29:29.8538416+05:30 8000008f-0004-fb00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44342/api/v1/masterData/getCapabilityType?pageNo=1&pagesize=10   (ca22a1cb)
+2021-11-09T14:29:29.8540141+05:30 8000002a-0004-f700-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T14:29:29.8541542+05:30 8000008f-0004-fb00-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T14:29:29.8575072+05:30 80000007-0007-fc00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44342/api/v1/masterData/getCapabilityInterface?pageNo=1&pagesize=10   (ca22a1cb)
+2021-11-09T14:29:29.8579663+05:30 80000007-0007-fc00-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T14:29:29.8585640+05:30 8000004a-0007-fd00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44342/api/v1/masterData/getDisplayCategory?pageNo=1&pagesize=10   (ca22a1cb)
+2021-11-09T14:29:29.8586666+05:30 8000004a-0007-fd00-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T14:29:29.8939486+05:30 8000008f-0004-fb00-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.MasterDataController.GetCapabilityType (IoT.WebAPI)"' (500cc934)
+2021-11-09T14:29:29.8939487+05:30 8000004a-0007-fd00-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.MasterDataController.GetDisplayCategory (IoT.WebAPI)"' (500cc934)
+2021-11-09T14:29:29.8939487+05:30 8000002a-0004-f700-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.MasterDataController.GetCapabilityVersion (IoT.WebAPI)"' (500cc934)
+2021-11-09T14:29:29.8940037+05:30 80000007-0007-fc00-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.MasterDataController.GetCapabilityInterface (IoT.WebAPI)"' (500cc934)
+2021-11-09T14:29:29.8995098+05:30 8000002a-0004-f700-b63f-84710c7967bb [INF] Route matched with "{action = \"GetCapabilityVersion\", controller = \"MasterData\"}". Executing controller action with signature "System.Collections.Generic.IEnumerable`1[IoT.ModelLayer.CapabilityVersion] GetCapabilityVersion(System.String, Int32)" on controller "IoT.WebAPI.Controllers.MasterDataController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-09T14:29:29.9002512+05:30 8000008f-0004-fb00-b63f-84710c7967bb [INF] Route matched with "{action = \"GetCapabilityType\", controller = \"MasterData\"}". Executing controller action with signature "System.Collections.Generic.IEnumerable`1[IoT.ModelLayer.CapabilityType] GetCapabilityType(System.String, Int32, Int32, Int32)" on controller "IoT.WebAPI.Controllers.MasterDataController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-09T14:29:29.9092465+05:30 8000004a-0007-fd00-b63f-84710c7967bb [INF] Route matched with "{action = \"GetDisplayCategory\", controller = \"MasterData\"}". Executing controller action with signature "System.Collections.Generic.IEnumerable`1[IoT.ModelLayer.DisplayCategory] GetDisplayCategory(System.String, Int32)" on controller "IoT.WebAPI.Controllers.MasterDataController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-09T14:29:29.9092502+05:30 80000007-0007-fc00-b63f-84710c7967bb [INF] Route matched with "{action = \"GetCapabilityInterface\", controller = \"MasterData\"}". Executing controller action with signature "System.Object GetCapabilityInterface(System.String, Int32, Int32, Int32)" on controller "IoT.WebAPI.Controllers.MasterDataController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-09T14:29:29.9179411+05:30 8000004a-0007-fd00-b63f-84710c7967bb [INF] Entity Framework Core "5.0.9" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MaxPoolSize=128 " (9958f5bb)
+2021-11-09T14:29:30.4389493+05:30 8000008f-0004-fb00-b63f-84710c7967bb [INF] Executed DbCommand ("516"ms) [Parameters=["@__userKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [UserPermission] AS [u]
+WHERE ([u].[UserKey] = @__userKey_0) AND ([u].[IsAdmin] = CAST(1 AS bit))" (0723d8ff)
+2021-11-09T14:29:30.4389499+05:30 80000007-0007-fc00-b63f-84710c7967bb [INF] Executed DbCommand ("517"ms) [Parameters=["@__userKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [UserPermission] AS [u]
+WHERE ([u].[UserKey] = @__userKey_0) AND ([u].[IsAdmin] = CAST(1 AS bit))" (0723d8ff)
+2021-11-09T14:29:30.8241139+05:30 80000007-0007-fc00-b63f-84710c7967bb [INF] Executed DbCommand ("351"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[CapabilityInterfaceId], [c].[CapabilityInterfaceName], [c].[CreatedDate], [c].[ModifiedDate]
+FROM [CapabilityInterface] AS [c]
+ORDER BY [c].[CapabilityInterfaceName]" (0723d8ff)
+2021-11-09T14:29:30.8248596+05:30 8000004a-0007-fd00-b63f-84710c7967bb [INF] Executed DbCommand ("380"ms) [Parameters=["@__userKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [UserPermission] AS [u]
+WHERE ([u].[UserKey] = @__userKey_0) AND ([u].[IsAdmin] = CAST(1 AS bit))" (0723d8ff)
+2021-11-09T14:29:30.8602270+05:30 80000007-0007-fc00-b63f-84710c7967bb [INF] Executing ObjectResult, writing value of type '"<>f__AnonymousType15`2[[System.Collections.Generic.IEnumerable`1[[IoT.ModelLayer.CapabilityInterface, IoT.ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'. (8a1b66c8)
+2021-11-09T14:29:30.8834487+05:30 80000007-0007-fc00-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.MasterDataController.GetCapabilityInterface (IoT.WebAPI)" in 973.8408ms (afa2e885)
+2021-11-09T14:29:30.8836328+05:30 80000007-0007-fc00-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.MasterDataController.GetCapabilityInterface (IoT.WebAPI)"' (99874f2b)
+2021-11-09T14:29:30.8843168+05:30 80000007-0007-fc00-b63f-84710c7967bb [INF] Request finished in 1026.7276ms 200 application/json; charset=utf-8 (791a596a)
+2021-11-09T14:29:31.3293928+05:30 8000004a-0007-fd00-b63f-84710c7967bb [INF] Executed DbCommand ("470"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [d].[DisplayCategoryId], [d].[CreatedDate], [d].[DisplayCategoryLabel], [d].[DisplayCategoryValue], [d].[ModifiedDate]
+FROM [DisplayCategory] AS [d]
+ORDER BY [d].[DisplayCategoryLabel]" (0723d8ff)
+2021-11-09T14:29:31.3294409+05:30 8000008f-0004-fb00-b63f-84710c7967bb [INF] Executed DbCommand ("502"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[CapabilityTypeId], [c].[CapabilityTypeName], [c].[CreatedDate], [c].[ModifiedDate]
+FROM [CapabilityTypes] AS [c]
+ORDER BY [c].[CapabilityTypeName]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY" (0723d8ff)
+2021-11-09T14:29:31.3522749+05:30 8000008f-0004-fb00-b63f-84710c7967bb [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[IoT.ModelLayer.CapabilityType, IoT.ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2021-11-09T14:29:31.3539200+05:30 8000004a-0007-fd00-b63f-84710c7967bb [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[IoT.ModelLayer.DisplayCategory, IoT.ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2021-11-09T14:29:31.3570095+05:30 8000008f-0004-fb00-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.MasterDataController.GetCapabilityType (IoT.WebAPI)" in 1456.3065ms (afa2e885)
+2021-11-09T14:29:31.3570094+05:30 8000004a-0007-fd00-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.MasterDataController.GetDisplayCategory (IoT.WebAPI)" in 1447.626ms (afa2e885)
+2021-11-09T14:29:31.3571877+05:30 8000008f-0004-fb00-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.MasterDataController.GetCapabilityType (IoT.WebAPI)"' (99874f2b)
+2021-11-09T14:29:31.3572262+05:30 8000004a-0007-fd00-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.MasterDataController.GetDisplayCategory (IoT.WebAPI)"' (99874f2b)
+2021-11-09T14:29:31.3579720+05:30 8000004a-0007-fd00-b63f-84710c7967bb [INF] Request finished in 1500.364ms 200 application/json; charset=utf-8 (791a596a)
+2021-11-09T14:29:31.3579719+05:30 8000008f-0004-fb00-b63f-84710c7967bb [INF] Request finished in 1504.0752ms 200 application/json; charset=utf-8 (791a596a)
+2021-11-09T14:29:31.9760298+05:30 8000002a-0004-f700-b63f-84710c7967bb [INF] Executed DbCommand ("333"ms) [Parameters=["@__userKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [UserPermission] AS [u]
+WHERE ([u].[UserKey] = @__userKey_0) AND ([u].[IsAdmin] = CAST(1 AS bit))" (0723d8ff)
+2021-11-09T14:29:32.3355982+05:30 8000002a-0004-f700-b63f-84710c7967bb [INF] Executed DbCommand ("327"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[CapabilityVersionId], [c].[CapabilityVersionName], [c].[CreatedDate], [c].[ModifiedDate]
+FROM [CapabilityVersion] AS [c]
+ORDER BY [c].[CapabilityVersionName]" (0723d8ff)
+2021-11-09T14:29:32.3789864+05:30 8000002a-0004-f700-b63f-84710c7967bb [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[IoT.ModelLayer.CapabilityVersion, IoT.ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2021-11-09T14:29:32.3847220+05:30 8000002a-0004-f700-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.MasterDataController.GetCapabilityVersion (IoT.WebAPI)" in 2484.8176ms (afa2e885)
+2021-11-09T14:29:32.3849128+05:30 8000002a-0004-f700-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.MasterDataController.GetCapabilityVersion (IoT.WebAPI)"' (99874f2b)
+2021-11-09T14:29:32.3856563+05:30 8000002a-0004-f700-b63f-84710c7967bb [INF] Request finished in 2531.7351ms 200 application/json; charset=utf-8 (791a596a)
+2021-11-09T14:30:21.1067390+05:30 8000000b-0002-f800-b63f-84710c7967bb [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44342/api/v1/masterData/addDisplayCategory   (ca22a1cb)
+2021-11-09T14:30:21.1082230+05:30 8000000b-0002-f800-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T14:30:21.1116001+05:30 8000000b-0002-f800-b63f-84710c7967bb [INF] Request finished in 4.962ms 204  (791a596a)
+2021-11-09T14:30:21.1217133+05:30 8000002c-0004-f700-b63f-84710c7967bb [INF] Request starting HTTP/2.0 POST https://localhost:44342/api/v1/masterData/addDisplayCategory application/json;charset=UTF-8 71 (ca22a1cb)
+2021-11-09T14:30:21.1225674+05:30 8000002c-0004-f700-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T14:30:21.1251500+05:30 8000002c-0004-f700-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.MasterDataController.AddDisplayCategory (IoT.WebAPI)"' (500cc934)
+2021-11-09T14:30:21.1460142+05:30 8000002c-0004-f700-b63f-84710c7967bb [INF] Route matched with "{action = \"AddDisplayCategory\", controller = \"MasterData\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[System.Int32] AddDisplayCategory(IoT.ModelLayer.DisplayCategory, System.String)" on controller "IoT.WebAPI.Controllers.MasterDataController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-09T14:30:21.6119213+05:30 8000002c-0004-f700-b63f-84710c7967bb [INF] Executed DbCommand ("442"ms) [Parameters=["@__userKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [UserPermission] AS [u]
+WHERE ([u].[UserKey] = @__userKey_0) AND ([u].[IsAdmin] = CAST(1 AS bit))" (0723d8ff)
+2021-11-09T14:30:22.9736050+05:30 8000002c-0004-f700-b63f-84710c7967bb [INF] Executed DbCommand ("462"ms) [Parameters=["@p0='?' (DbType = DateTime2), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [DisplayCategory] ([CreatedDate], [DisplayCategoryLabel], [DisplayCategoryValue], [ModifiedDate])
+VALUES (@p0, @p1, @p2, @p3);
+SELECT [DisplayCategoryId]
+FROM [DisplayCategory]
+WHERE @@ROWCOUNT = 1 AND [DisplayCategoryId] = scope_identity();" (0723d8ff)
+2021-11-09T14:30:23.8182978+05:30 8000002c-0004-f700-b63f-84710c7967bb [INF] Executing ObjectResult, writing value of type '"System.Int32"'. (8a1b66c8)
+2021-11-09T14:30:23.8238959+05:30 8000002c-0004-f700-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.MasterDataController.AddDisplayCategory (IoT.WebAPI)" in 2677.1909ms (afa2e885)
+2021-11-09T14:30:23.8243950+05:30 8000002c-0004-f700-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.MasterDataController.AddDisplayCategory (IoT.WebAPI)"' (99874f2b)
+2021-11-09T14:30:23.8261722+05:30 8000002c-0004-f700-b63f-84710c7967bb [INF] Request finished in 2704.6655ms 200 application/json; charset=utf-8 (791a596a)
+2021-11-09T14:30:23.9314039+05:30 80000028-0006-fa00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44342/api/v1/masterData/getCapabilitySupportedProperty   (ca22a1cb)
+2021-11-09T14:30:23.9324414+05:30 80000028-0006-fa00-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T14:30:23.9331578+05:30 80000028-0006-fa00-b63f-84710c7967bb [INF] Request finished in 2.0852ms 204  (791a596a)
+2021-11-09T14:30:23.9431274+05:30 8000002e-0004-f700-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44342/api/v1/masterData/getCapabilitySupportedProperty   (ca22a1cb)
+2021-11-09T14:30:23.9434472+05:30 8000002e-0004-f700-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T14:30:23.9455991+05:30 8000002e-0004-f700-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.MasterDataController.GetCapabilitySupportedProperty (IoT.WebAPI)"' (500cc934)
+2021-11-09T14:30:23.9468852+05:30 8000002e-0004-f700-b63f-84710c7967bb [INF] Route matched with "{action = \"GetCapabilitySupportedProperty\", controller = \"MasterData\"}". Executing controller action with signature "System.Collections.Generic.IEnumerable`1[IoT.ModelLayer.CapabilitySupportedProperty] GetCapabilitySupportedProperty(System.String, Int32)" on controller "IoT.WebAPI.Controllers.MasterDataController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-09T14:30:24.2702245+05:30 8000002e-0004-f700-b63f-84710c7967bb [INF] Executed DbCommand ("318"ms) [Parameters=["@__userKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [UserPermission] AS [u]
+WHERE ([u].[UserKey] = @__userKey_0) AND ([u].[IsAdmin] = CAST(1 AS bit))" (0723d8ff)
+2021-11-09T14:30:24.5918621+05:30 8000002e-0004-f700-b63f-84710c7967bb [INF] Executed DbCommand ("317"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[CapabilitySupportedPropertyId], [c].[CapabilitySupportedPropertyName], [c].[CreatedDate], [c].[ModifiedDate]
+FROM [CapabilitySupportedProperty] AS [c]
+ORDER BY [c].[CapabilitySupportedPropertyName]" (0723d8ff)
+2021-11-09T14:30:24.5975571+05:30 8000002e-0004-f700-b63f-84710c7967bb [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[IoT.ModelLayer.CapabilitySupportedProperty, IoT.ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2021-11-09T14:30:24.6022833+05:30 8000002e-0004-f700-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.MasterDataController.GetCapabilitySupportedProperty (IoT.WebAPI)" in 654.5723ms (afa2e885)
+2021-11-09T14:30:24.6027459+05:30 8000002e-0004-f700-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.MasterDataController.GetCapabilitySupportedProperty (IoT.WebAPI)"' (99874f2b)
+2021-11-09T14:30:24.6043265+05:30 8000002e-0004-f700-b63f-84710c7967bb [INF] Request finished in 660.818ms 200 application/json; charset=utf-8 (791a596a)
+2021-11-09T14:30:24.6634017+05:30 80000030-0004-f700-b63f-84710c7967bb [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44342/api/v1/masterData/getCapabilityVersion?pageNo=1&pagesize=10   (ca22a1cb)
+2021-11-09T14:30:24.6633901+05:30 80000084-0000-ff00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44342/api/v1/masterData/getCapabilityType?pageNo=1&pagesize=10   (ca22a1cb)
+2021-11-09T14:30:24.6637059+05:30 80000084-0000-ff00-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T14:30:24.6637087+05:30 80000030-0004-f700-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T14:30:24.6645472+05:30 80000030-0004-f700-b63f-84710c7967bb [INF] Request finished in 1.1245ms 204  (791a596a)
+2021-11-09T14:30:24.6646205+05:30 80000084-0000-ff00-b63f-84710c7967bb [INF] Request finished in 1.2221ms 204  (791a596a)
+2021-11-09T14:30:24.6652327+05:30 80000091-0004-fb00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44342/api/v1/masterData/getDisplayCategory?pageNo=1&pagesize=10   (ca22a1cb)
+2021-11-09T14:30:24.6653996+05:30 8000004c-0007-fd00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44342/api/v1/masterData/getCapabilityInterface?pageNo=1&pagesize=10   (ca22a1cb)
+2021-11-09T14:30:24.6657138+05:30 8000004c-0007-fd00-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T14:30:24.6662822+05:30 8000004c-0007-fd00-b63f-84710c7967bb [INF] Request finished in 1.1382ms 204  (791a596a)
+2021-11-09T14:30:24.6655925+05:30 80000091-0004-fb00-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T14:30:24.6672166+05:30 80000091-0004-fb00-b63f-84710c7967bb [INF] Request finished in 2.187ms 204  (791a596a)
+2021-11-09T14:30:24.6740383+05:30 80000093-0004-fb00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44342/api/v1/masterData/getCapabilityType?pageNo=1&pagesize=10   (ca22a1cb)
+2021-11-09T14:30:24.6749137+05:30 80000093-0004-fb00-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T14:30:24.6753694+05:30 80000086-0000-ff00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44342/api/v1/masterData/getCapabilityVersion?pageNo=1&pagesize=10   (ca22a1cb)
+2021-11-09T14:30:24.6757866+05:30 80000086-0000-ff00-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T14:30:24.6763695+05:30 8000002a-0006-fa00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44342/api/v1/masterData/getDisplayCategory?pageNo=1&pagesize=10   (ca22a1cb)
+2021-11-09T14:30:24.6764128+05:30 80000093-0004-fb00-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.MasterDataController.GetCapabilityType (IoT.WebAPI)"' (500cc934)
+2021-11-09T14:30:24.6768014+05:30 8000002a-0006-fa00-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T14:30:24.6768082+05:30 80000032-0004-f700-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44342/api/v1/masterData/getCapabilityInterface?pageNo=1&pagesize=10   (ca22a1cb)
+2021-11-09T14:30:24.6773098+05:30 80000032-0004-f700-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T14:30:24.6778938+05:30 80000086-0000-ff00-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.MasterDataController.GetCapabilityVersion (IoT.WebAPI)"' (500cc934)
+2021-11-09T14:30:24.6780150+05:30 8000002a-0006-fa00-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.MasterDataController.GetDisplayCategory (IoT.WebAPI)"' (500cc934)
+2021-11-09T14:30:24.6791130+05:30 80000093-0004-fb00-b63f-84710c7967bb [INF] Route matched with "{action = \"GetCapabilityType\", controller = \"MasterData\"}". Executing controller action with signature "System.Collections.Generic.IEnumerable`1[IoT.ModelLayer.CapabilityType] GetCapabilityType(System.String, Int32, Int32, Int32)" on controller "IoT.WebAPI.Controllers.MasterDataController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-09T14:30:24.6796035+05:30 80000032-0004-f700-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.MasterDataController.GetCapabilityInterface (IoT.WebAPI)"' (500cc934)
+2021-11-09T14:30:24.6798465+05:30 80000086-0000-ff00-b63f-84710c7967bb [INF] Route matched with "{action = \"GetCapabilityVersion\", controller = \"MasterData\"}". Executing controller action with signature "System.Collections.Generic.IEnumerable`1[IoT.ModelLayer.CapabilityVersion] GetCapabilityVersion(System.String, Int32)" on controller "IoT.WebAPI.Controllers.MasterDataController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-09T14:30:24.6798996+05:30 8000002a-0006-fa00-b63f-84710c7967bb [INF] Route matched with "{action = \"GetDisplayCategory\", controller = \"MasterData\"}". Executing controller action with signature "System.Collections.Generic.IEnumerable`1[IoT.ModelLayer.DisplayCategory] GetDisplayCategory(System.String, Int32)" on controller "IoT.WebAPI.Controllers.MasterDataController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-09T14:30:24.6811447+05:30 80000032-0004-f700-b63f-84710c7967bb [INF] Route matched with "{action = \"GetCapabilityInterface\", controller = \"MasterData\"}". Executing controller action with signature "System.Object GetCapabilityInterface(System.String, Int32, Int32, Int32)" on controller "IoT.WebAPI.Controllers.MasterDataController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-09T14:30:24.9969509+05:30 80000093-0004-fb00-b63f-84710c7967bb [INF] Executed DbCommand ("308"ms) [Parameters=["@__userKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [UserPermission] AS [u]
+WHERE ([u].[UserKey] = @__userKey_0) AND ([u].[IsAdmin] = CAST(1 AS bit))" (0723d8ff)
+2021-11-09T14:30:25.0030378+05:30 80000086-0000-ff00-b63f-84710c7967bb [INF] Executed DbCommand ("315"ms) [Parameters=["@__userKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [UserPermission] AS [u]
+WHERE ([u].[UserKey] = @__userKey_0) AND ([u].[IsAdmin] = CAST(1 AS bit))" (0723d8ff)
+2021-11-09T14:30:25.0111703+05:30 8000002a-0006-fa00-b63f-84710c7967bb [INF] Executed DbCommand ("323"ms) [Parameters=["@__userKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [UserPermission] AS [u]
+WHERE ([u].[UserKey] = @__userKey_0) AND ([u].[IsAdmin] = CAST(1 AS bit))" (0723d8ff)
+2021-11-09T14:30:25.3368090+05:30 8000002a-0006-fa00-b63f-84710c7967bb [INF] Executed DbCommand ("320"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [d].[DisplayCategoryId], [d].[CreatedDate], [d].[DisplayCategoryLabel], [d].[DisplayCategoryValue], [d].[ModifiedDate]
+FROM [DisplayCategory] AS [d]
+ORDER BY [d].[DisplayCategoryLabel]" (0723d8ff)
+2021-11-09T14:30:25.3367438+05:30 80000093-0004-fb00-b63f-84710c7967bb [INF] Executed DbCommand ("332"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[CapabilityTypeId], [c].[CapabilityTypeName], [c].[CreatedDate], [c].[ModifiedDate]
+FROM [CapabilityTypes] AS [c]
+ORDER BY [c].[CapabilityTypeName]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY" (0723d8ff)
+2021-11-09T14:30:25.3367421+05:30 80000086-0000-ff00-b63f-84710c7967bb [INF] Executed DbCommand ("324"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[CapabilityVersionId], [c].[CapabilityVersionName], [c].[CreatedDate], [c].[ModifiedDate]
+FROM [CapabilityVersion] AS [c]
+ORDER BY [c].[CapabilityVersionName]" (0723d8ff)
+2021-11-09T14:30:25.3491559+05:30 80000086-0000-ff00-b63f-84710c7967bb [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[IoT.ModelLayer.CapabilityVersion, IoT.ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2021-11-09T14:30:25.3491958+05:30 80000093-0004-fb00-b63f-84710c7967bb [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[IoT.ModelLayer.CapabilityType, IoT.ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2021-11-09T14:30:25.3509520+05:30 8000002a-0006-fa00-b63f-84710c7967bb [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[IoT.ModelLayer.DisplayCategory, IoT.ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2021-11-09T14:30:25.3567659+05:30 8000002a-0006-fa00-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.MasterDataController.GetDisplayCategory (IoT.WebAPI)" in 673.7534ms (afa2e885)
+2021-11-09T14:30:25.3568639+05:30 80000086-0000-ff00-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.MasterDataController.GetCapabilityVersion (IoT.WebAPI)" in 673.7803ms (afa2e885)
+2021-11-09T14:30:25.3572931+05:30 8000002a-0006-fa00-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.MasterDataController.GetDisplayCategory (IoT.WebAPI)"' (99874f2b)
+2021-11-09T14:30:25.3571505+05:30 80000093-0004-fb00-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.MasterDataController.GetCapabilityType (IoT.WebAPI)" in 674.458ms (afa2e885)
+2021-11-09T14:30:25.3575477+05:30 80000093-0004-fb00-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.MasterDataController.GetCapabilityType (IoT.WebAPI)"' (99874f2b)
+2021-11-09T14:30:25.3589003+05:30 80000093-0004-fb00-b63f-84710c7967bb [INF] Request finished in 684.8965ms 200 application/json; charset=utf-8 (791a596a)
+2021-11-09T14:30:25.3691148+05:30 80000086-0000-ff00-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.MasterDataController.GetCapabilityVersion (IoT.WebAPI)"' (99874f2b)
+2021-11-09T14:30:25.3700522+05:30 80000086-0000-ff00-b63f-84710c7967bb [INF] Request finished in 694.9946ms 200 application/json; charset=utf-8 (791a596a)
+2021-11-09T14:30:25.3701005+05:30 8000002a-0006-fa00-b63f-84710c7967bb [INF] Request finished in 693.0976ms 200 application/json; charset=utf-8 (791a596a)
+2021-11-09T14:30:26.8141497+05:30 80000032-0004-f700-b63f-84710c7967bb [INF] Executed DbCommand ("697"ms) [Parameters=["@__userKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [UserPermission] AS [u]
+WHERE ([u].[UserKey] = @__userKey_0) AND ([u].[IsAdmin] = CAST(1 AS bit))" (0723d8ff)
+2021-11-09T14:30:27.4530814+05:30 80000032-0004-f700-b63f-84710c7967bb [INF] Executed DbCommand ("634"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[CapabilityInterfaceId], [c].[CapabilityInterfaceName], [c].[CreatedDate], [c].[ModifiedDate]
+FROM [CapabilityInterface] AS [c]
+ORDER BY [c].[CapabilityInterfaceName]" (0723d8ff)
+2021-11-09T14:30:27.4576019+05:30 80000032-0004-f700-b63f-84710c7967bb [INF] Executing ObjectResult, writing value of type '"<>f__AnonymousType15`2[[System.Collections.Generic.IEnumerable`1[[IoT.ModelLayer.CapabilityInterface, IoT.ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'. (8a1b66c8)
+2021-11-09T14:30:27.4633148+05:30 80000032-0004-f700-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.MasterDataController.GetCapabilityInterface (IoT.WebAPI)" in 2781.6548ms (afa2e885)
+2021-11-09T14:30:27.4638042+05:30 80000032-0004-f700-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.MasterDataController.GetCapabilityInterface (IoT.WebAPI)"' (99874f2b)
+2021-11-09T14:30:27.4647235+05:30 80000032-0004-f700-b63f-84710c7967bb [INF] Request finished in 2787.913ms 200 application/json; charset=utf-8 (791a596a)
+2021-11-09T15:11:33.4517515+05:30 80000011-0002-f800-b63f-84710c7967bb [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44342/api/v1/admin/getAllDeviceCapability   (ca22a1cb)
+2021-11-09T15:11:33.4520997+05:30 80000011-0002-f800-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T15:11:33.4528198+05:30 80000011-0002-f800-b63f-84710c7967bb [INF] Request finished in 1.0714ms 204  (791a596a)
+2021-11-09T15:11:33.4608477+05:30 80000092-0000-ff00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44342/api/v1/admin/getAllDeviceCapability   (ca22a1cb)
+2021-11-09T15:11:33.4610466+05:30 80000092-0000-ff00-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T15:11:33.4636273+05:30 80000092-0000-ff00-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.AdminController.GetAllDeviceCapability (IoT.WebAPI)"' (500cc934)
+2021-11-09T15:11:33.4687793+05:30 80000092-0000-ff00-b63f-84710c7967bb [INF] Route matched with "{action = \"GetAllDeviceCapability\", controller = \"Admin\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult GetAllDeviceCapability(System.String)" on controller "IoT.WebAPI.Controllers.AdminController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-09T15:11:35.6061624+05:30 80000092-0000-ff00-b63f-84710c7967bb [INF] Executed DbCommand ("436"ms) [Parameters=["@__userKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [UserPermission] AS [u]
+WHERE ([u].[UserKey] = @__userKey_0) AND ([u].[IsAdmin] = CAST(1 AS bit))" (0723d8ff)
+2021-11-09T15:11:35.9773650+05:30 80000092-0000-ff00-b63f-84710c7967bb [INF] Executed DbCommand ("318"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [d].[DeviceCapabilityId], [d].[CapabilityInterface], [d].[CapabilityType], [d].[CreatedDate], [d].[DeviceTypeId], [d].[DisplayCategory], [d].[ModifiedDate], [d].[ProactivelyReported], [d].[Retrievable], [d].[SupportedProperty], [d].[Version], [d0].[DeviceTypeId], [d0].[CreatedDate], [d0].[DeviceTypeName], [d0].[ModifiedDate]
+FROM [DeviceCapability] AS [d]
+INNER JOIN [DeviceType] AS [d0] ON [d].[DeviceTypeId] = [d0].[DeviceTypeId]
+ORDER BY [d].[CapabilityType]" (0723d8ff)
+2021-11-09T15:11:36.0355674+05:30 80000092-0000-ff00-b63f-84710c7967bb [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[IoT.ModelLayer.DeviceCapability, IoT.ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2021-11-09T15:11:36.0400787+05:30 80000092-0000-ff00-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.AdminController.GetAllDeviceCapability (IoT.WebAPI)" in 2571.1773ms (afa2e885)
+2021-11-09T15:11:36.0401408+05:30 80000092-0000-ff00-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.AdminController.GetAllDeviceCapability (IoT.WebAPI)"' (99874f2b)
+2021-11-09T15:11:36.0403562+05:30 80000092-0000-ff00-b63f-84710c7967bb [INF] Request finished in 2579.5482ms 200 application/json; charset=utf-8 (791a596a)
+2021-11-09T15:12:27.7771779+05:30 8000002f-0006-fd00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44342/api/v1/device/getDeviceTypeDropdown?pageno=1&pagesize=10   (ca22a1cb)
+2021-11-09T15:12:27.7773490+05:30 8000002f-0006-fd00-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T15:12:27.7782640+05:30 8000002f-0006-fd00-b63f-84710c7967bb [INF] Request finished in 0.6751ms 204  (791a596a)
+2021-11-09T15:12:27.7844667+05:30 80000094-0000-ff00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44342/api/v1/device/getDeviceTypeDropdown?pageno=1&pagesize=10   (ca22a1cb)
+2021-11-09T15:12:27.7846506+05:30 80000094-0000-ff00-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T15:12:27.7865407+05:30 80000094-0000-ff00-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.DeviceController.GetDeviceTypeDropdown (IoT.WebAPI)"' (500cc934)
+2021-11-09T15:12:27.7891271+05:30 80000094-0000-ff00-b63f-84710c7967bb [INF] Route matched with "{action = \"GetDeviceTypeDropdown\", controller = \"Device\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult GetDeviceTypeDropdown(Int32, Int32)" on controller "IoT.WebAPI.Controllers.DeviceController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-09T15:12:28.1047338+05:30 80000094-0000-ff00-b63f-84710c7967bb [INF] Executed DbCommand ("302"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [d].[DeviceTypeId], [d].[DeviceTypeName]
+FROM [DeviceType] AS [d]
+ORDER BY [d].[DeviceTypeName]" (0723d8ff)
+2021-11-09T15:12:28.1058664+05:30 80000094-0000-ff00-b63f-84710c7967bb [INF] Executing ObjectResult, writing value of type '"System.Linq.Enumerable+ListPartition`1[[<>f__AnonymousType14`2[[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], IoT.DataLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2021-11-09T15:12:28.1082203+05:30 80000094-0000-ff00-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.DeviceController.GetDeviceTypeDropdown (IoT.WebAPI)" in 318.9478ms (afa2e885)
+2021-11-09T15:12:28.1083304+05:30 80000094-0000-ff00-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.DeviceController.GetDeviceTypeDropdown (IoT.WebAPI)"' (99874f2b)
+2021-11-09T15:12:28.1085593+05:30 80000094-0000-ff00-b63f-84710c7967bb [INF] Request finished in 324.116ms 200 application/json; charset=utf-8 (791a596a)
+2021-11-09T15:12:49.1675314+05:30 8000001a-0003-fd00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44342/api/v1/masterData/getCapabilitySupportedProperty   (ca22a1cb)
+2021-11-09T15:12:49.1680375+05:30 8000001a-0003-fd00-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T15:12:49.1696954+05:30 8000001a-0003-fd00-b63f-84710c7967bb [INF] Request finished in 2.3334ms 204  (791a596a)
+2021-11-09T15:12:49.1886732+05:30 80000041-0004-fc00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44342/api/v1/masterData/getCapabilitySupportedProperty   (ca22a1cb)
+2021-11-09T15:12:49.1890169+05:30 80000041-0004-fc00-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T15:12:49.1901854+05:30 80000041-0004-fc00-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.MasterDataController.GetCapabilitySupportedProperty (IoT.WebAPI)"' (500cc934)
+2021-11-09T15:12:49.1915503+05:30 80000041-0004-fc00-b63f-84710c7967bb [INF] Route matched with "{action = \"GetCapabilitySupportedProperty\", controller = \"MasterData\"}". Executing controller action with signature "System.Collections.Generic.IEnumerable`1[IoT.ModelLayer.CapabilitySupportedProperty] GetCapabilitySupportedProperty(System.String, Int32)" on controller "IoT.WebAPI.Controllers.MasterDataController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-09T15:12:49.5325594+05:30 80000041-0004-fc00-b63f-84710c7967bb [INF] Executed DbCommand ("334"ms) [Parameters=["@__userKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [UserPermission] AS [u]
+WHERE ([u].[UserKey] = @__userKey_0) AND ([u].[IsAdmin] = CAST(1 AS bit))" (0723d8ff)
+2021-11-09T15:12:49.8947493+05:30 80000041-0004-fc00-b63f-84710c7967bb [INF] Executed DbCommand ("357"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[CapabilitySupportedPropertyId], [c].[CapabilitySupportedPropertyName], [c].[CreatedDate], [c].[ModifiedDate]
+FROM [CapabilitySupportedProperty] AS [c]
+ORDER BY [c].[CapabilitySupportedPropertyName]" (0723d8ff)
+2021-11-09T15:12:49.8972413+05:30 80000041-0004-fc00-b63f-84710c7967bb [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[IoT.ModelLayer.CapabilitySupportedProperty, IoT.ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2021-11-09T15:12:49.9001761+05:30 80000041-0004-fc00-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.MasterDataController.GetCapabilitySupportedProperty (IoT.WebAPI)" in 708.0312ms (afa2e885)
+2021-11-09T15:12:49.9004850+05:30 80000041-0004-fc00-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.MasterDataController.GetCapabilitySupportedProperty (IoT.WebAPI)"' (99874f2b)
+2021-11-09T15:12:49.9012692+05:30 80000041-0004-fc00-b63f-84710c7967bb [INF] Request finished in 712.6423ms 200 application/json; charset=utf-8 (791a596a)
+2021-11-09T15:12:49.9694416+05:30 8000003e-0001-fa00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44342/api/v1/masterData/getCapabilityType?pageNo=1&pagesize=10   (ca22a1cb)
+2021-11-09T15:12:49.9696936+05:30 8000003e-0001-fa00-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T15:12:49.9702899+05:30 8000003e-0001-fa00-b63f-84710c7967bb [INF] Request finished in 0.9976ms 204  (791a596a)
+2021-11-09T15:12:49.9708324+05:30 8000002e-0006-fa00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44342/api/v1/masterData/getDisplayCategory?pageNo=1&pagesize=10   (ca22a1cb)
+2021-11-09T15:12:49.9710900+05:30 8000002e-0006-fa00-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T15:12:49.9716229+05:30 8000002e-0006-fa00-b63f-84710c7967bb [INF] Request finished in 0.8064ms 204  (791a596a)
+2021-11-09T15:12:49.9717165+05:30 8000003b-0005-f900-b63f-84710c7967bb [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44342/api/v1/masterData/getCapabilityVersion?pageNo=1&pagesize=10   (ca22a1cb)
+2021-11-09T15:12:49.9719604+05:30 8000003b-0005-f900-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T15:12:49.9724305+05:30 8000001d-0007-fe00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44342/api/v1/masterData/getCapabilityInterface?pageNo=1&pagesize=10   (ca22a1cb)
+2021-11-09T15:12:49.9724894+05:30 8000003b-0005-f900-b63f-84710c7967bb [INF] Request finished in 0.7838ms 204  (791a596a)
+2021-11-09T15:12:49.9728425+05:30 8000001d-0007-fe00-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T15:12:49.9733954+05:30 8000001d-0007-fe00-b63f-84710c7967bb [INF] Request finished in 0.984ms 204  (791a596a)
+2021-11-09T15:12:49.9839007+05:30 80000043-0004-fc00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44342/api/v1/masterData/getCapabilityType?pageNo=1&pagesize=10   (ca22a1cb)
+2021-11-09T15:12:49.9841431+05:30 80000043-0004-fc00-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T15:12:49.9847571+05:30 80000043-0004-fc00-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.MasterDataController.GetCapabilityType (IoT.WebAPI)"' (500cc934)
+2021-11-09T15:12:49.9847712+05:30 8000001f-0007-fe00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44342/api/v1/masterData/getDisplayCategory?pageNo=1&pagesize=10   (ca22a1cb)
+2021-11-09T15:12:49.9850072+05:30 8000001f-0007-fe00-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T15:12:49.9853659+05:30 80000043-0004-fc00-b63f-84710c7967bb [INF] Route matched with "{action = \"GetCapabilityType\", controller = \"MasterData\"}". Executing controller action with signature "System.Collections.Generic.IEnumerable`1[IoT.ModelLayer.CapabilityType] GetCapabilityType(System.String, Int32, Int32, Int32)" on controller "IoT.WebAPI.Controllers.MasterDataController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-09T15:12:49.9855518+05:30 8000001f-0007-fe00-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.MasterDataController.GetDisplayCategory (IoT.WebAPI)"' (500cc934)
+2021-11-09T15:12:49.9857028+05:30 8000003d-0005-f900-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44342/api/v1/masterData/getCapabilityVersion?pageNo=1&pagesize=10   (ca22a1cb)
+2021-11-09T15:12:49.9858581+05:30 8000003d-0005-f900-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T15:12:49.9861338+05:30 8000001f-0007-fe00-b63f-84710c7967bb [INF] Route matched with "{action = \"GetDisplayCategory\", controller = \"MasterData\"}". Executing controller action with signature "System.Collections.Generic.IEnumerable`1[IoT.ModelLayer.DisplayCategory] GetDisplayCategory(System.String, Int32)" on controller "IoT.WebAPI.Controllers.MasterDataController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-09T15:12:49.9864345+05:30 8000003d-0005-f900-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.MasterDataController.GetCapabilityVersion (IoT.WebAPI)"' (500cc934)
+2021-11-09T15:12:49.9869440+05:30 8000003d-0005-f900-b63f-84710c7967bb [INF] Route matched with "{action = \"GetCapabilityVersion\", controller = \"MasterData\"}". Executing controller action with signature "System.Collections.Generic.IEnumerable`1[IoT.ModelLayer.CapabilityVersion] GetCapabilityVersion(System.String, Int32)" on controller "IoT.WebAPI.Controllers.MasterDataController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-09T15:12:49.9878928+05:30 8000001c-0003-fd00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44342/api/v1/masterData/getCapabilityInterface?pageNo=1&pagesize=10   (ca22a1cb)
+2021-11-09T15:12:49.9881715+05:30 8000001c-0003-fd00-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T15:12:49.9889397+05:30 8000001c-0003-fd00-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.MasterDataController.GetCapabilityInterface (IoT.WebAPI)"' (500cc934)
+2021-11-09T15:12:49.9976771+05:30 8000001c-0003-fd00-b63f-84710c7967bb [INF] Route matched with "{action = \"GetCapabilityInterface\", controller = \"MasterData\"}". Executing controller action with signature "System.Object GetCapabilityInterface(System.String, Int32, Int32, Int32)" on controller "IoT.WebAPI.Controllers.MasterDataController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-09T15:12:50.4350386+05:30 80000043-0004-fc00-b63f-84710c7967bb [INF] Executed DbCommand ("437"ms) [Parameters=["@__userKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [UserPermission] AS [u]
+WHERE ([u].[UserKey] = @__userKey_0) AND ([u].[IsAdmin] = CAST(1 AS bit))" (0723d8ff)
+2021-11-09T15:12:50.8481297+05:30 8000003d-0005-f900-b63f-84710c7967bb [INF] Executed DbCommand ("411"ms) [Parameters=["@__userKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [UserPermission] AS [u]
+WHERE ([u].[UserKey] = @__userKey_0) AND ([u].[IsAdmin] = CAST(1 AS bit))" (0723d8ff)
+2021-11-09T15:12:51.1590251+05:30 80000043-0004-fc00-b63f-84710c7967bb [INF] Executed DbCommand ("310"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[CapabilityTypeId], [c].[CapabilityTypeName], [c].[CreatedDate], [c].[ModifiedDate]
+FROM [CapabilityTypes] AS [c]
+ORDER BY [c].[CapabilityTypeName]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY" (0723d8ff)
+2021-11-09T15:12:51.1603284+05:30 80000043-0004-fc00-b63f-84710c7967bb [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[IoT.ModelLayer.CapabilityType, IoT.ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2021-11-09T15:12:51.1633789+05:30 80000043-0004-fc00-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.MasterDataController.GetCapabilityType (IoT.WebAPI)" in 1177.6353ms (afa2e885)
+2021-11-09T15:12:51.1636062+05:30 80000043-0004-fc00-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.MasterDataController.GetCapabilityType (IoT.WebAPI)"' (99874f2b)
+2021-11-09T15:12:51.1646079+05:30 80000043-0004-fc00-b63f-84710c7967bb [INF] Request finished in 1180.764ms 200 application/json; charset=utf-8 (791a596a)
+2021-11-09T15:12:51.4561462+05:30 8000001c-0003-fd00-b63f-84710c7967bb [INF] Executed DbCommand ("296"ms) [Parameters=["@__userKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [UserPermission] AS [u]
+WHERE ([u].[UserKey] = @__userKey_0) AND ([u].[IsAdmin] = CAST(1 AS bit))" (0723d8ff)
+2021-11-09T15:12:51.7568302+05:30 8000003d-0005-f900-b63f-84710c7967bb [INF] Executed DbCommand ("300"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[CapabilityVersionId], [c].[CapabilityVersionName], [c].[CreatedDate], [c].[ModifiedDate]
+FROM [CapabilityVersion] AS [c]
+ORDER BY [c].[CapabilityVersionName]" (0723d8ff)
+2021-11-09T15:12:51.7580276+05:30 8000003d-0005-f900-b63f-84710c7967bb [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[IoT.ModelLayer.CapabilityVersion, IoT.ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2021-11-09T15:12:51.7600207+05:30 8000003d-0005-f900-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.MasterDataController.GetCapabilityVersion (IoT.WebAPI)" in 1772.7021ms (afa2e885)
+2021-11-09T15:12:51.7602454+05:30 8000003d-0005-f900-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.MasterDataController.GetCapabilityVersion (IoT.WebAPI)"' (99874f2b)
+2021-11-09T15:12:51.7608315+05:30 8000003d-0005-f900-b63f-84710c7967bb [INF] Request finished in 1775.0797ms 200 application/json; charset=utf-8 (791a596a)
+2021-11-09T15:12:51.8370965+05:30 8000001f-0007-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("334"ms) [Parameters=["@__userKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [UserPermission] AS [u]
+WHERE ([u].[UserKey] = @__userKey_0) AND ([u].[IsAdmin] = CAST(1 AS bit))" (0723d8ff)
+2021-11-09T15:12:52.1758115+05:30 8000001f-0007-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("336"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [d].[DisplayCategoryId], [d].[CreatedDate], [d].[DisplayCategoryLabel], [d].[DisplayCategoryValue], [d].[ModifiedDate]
+FROM [DisplayCategory] AS [d]
+ORDER BY [d].[DisplayCategoryLabel]" (0723d8ff)
+2021-11-09T15:12:52.1769170+05:30 8000001f-0007-fe00-b63f-84710c7967bb [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[IoT.ModelLayer.DisplayCategory, IoT.ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2021-11-09T15:12:52.1796514+05:30 8000001f-0007-fe00-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.MasterDataController.GetDisplayCategory (IoT.WebAPI)" in 2192.7478ms (afa2e885)
+2021-11-09T15:12:52.1798367+05:30 8000001f-0007-fe00-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.MasterDataController.GetDisplayCategory (IoT.WebAPI)"' (99874f2b)
+2021-11-09T15:12:52.1804044+05:30 8000001f-0007-fe00-b63f-84710c7967bb [INF] Request finished in 2195.5685ms 200 application/json; charset=utf-8 (791a596a)
+2021-11-09T15:12:53.4045480+05:30 8000001c-0003-fd00-b63f-84710c7967bb [INF] Executed DbCommand ("409"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[CapabilityInterfaceId], [c].[CapabilityInterfaceName], [c].[CreatedDate], [c].[ModifiedDate]
+FROM [CapabilityInterface] AS [c]
+ORDER BY [c].[CapabilityInterfaceName]" (0723d8ff)
+2021-11-09T15:12:53.4409984+05:30 8000001c-0003-fd00-b63f-84710c7967bb [INF] Executing ObjectResult, writing value of type '"<>f__AnonymousType15`2[[System.Collections.Generic.IEnumerable`1[[IoT.ModelLayer.CapabilityInterface, IoT.ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'. (8a1b66c8)
+2021-11-09T15:12:53.4510562+05:30 8000001c-0003-fd00-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.MasterDataController.GetCapabilityInterface (IoT.WebAPI)" in 3452.9334ms (afa2e885)
+2021-11-09T15:12:53.4512009+05:30 8000001c-0003-fd00-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.MasterDataController.GetCapabilityInterface (IoT.WebAPI)"' (99874f2b)
+2021-11-09T15:12:53.4516268+05:30 8000001c-0003-fd00-b63f-84710c7967bb [INF] Request finished in 3463.9495ms 200 application/json; charset=utf-8 (791a596a)
+2021-11-09T15:13:12.7021983+05:30 8000003f-0005-f900-b63f-84710c7967bb [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44342/api/v1/admin/getAllDeviceCapability   (ca22a1cb)
+2021-11-09T15:13:12.7023366+05:30 8000003f-0005-f900-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T15:13:12.7027573+05:30 8000003f-0005-f900-b63f-84710c7967bb [INF] Request finished in 0.6621ms 204  (791a596a)
+2021-11-09T15:13:12.7127835+05:30 80000030-0006-fa00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44342/api/v1/admin/getAllDeviceCapability   (ca22a1cb)
+2021-11-09T15:13:12.7130980+05:30 80000030-0006-fa00-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T15:13:12.7240670+05:30 80000030-0006-fa00-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.AdminController.GetAllDeviceCapability (IoT.WebAPI)"' (500cc934)
+2021-11-09T15:13:12.7245590+05:30 80000030-0006-fa00-b63f-84710c7967bb [INF] Route matched with "{action = \"GetAllDeviceCapability\", controller = \"Admin\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult GetAllDeviceCapability(System.String)" on controller "IoT.WebAPI.Controllers.AdminController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-09T15:13:13.0662972+05:30 80000030-0006-fa00-b63f-84710c7967bb [INF] Executed DbCommand ("338"ms) [Parameters=["@__userKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [UserPermission] AS [u]
+WHERE ([u].[UserKey] = @__userKey_0) AND ([u].[IsAdmin] = CAST(1 AS bit))" (0723d8ff)
+2021-11-09T15:13:13.4752142+05:30 80000030-0006-fa00-b63f-84710c7967bb [INF] Executed DbCommand ("407"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [d].[DeviceCapabilityId], [d].[CapabilityInterface], [d].[CapabilityType], [d].[CreatedDate], [d].[DeviceTypeId], [d].[DisplayCategory], [d].[ModifiedDate], [d].[ProactivelyReported], [d].[Retrievable], [d].[SupportedProperty], [d].[Version], [d0].[DeviceTypeId], [d0].[CreatedDate], [d0].[DeviceTypeName], [d0].[ModifiedDate]
+FROM [DeviceCapability] AS [d]
+INNER JOIN [DeviceType] AS [d0] ON [d].[DeviceTypeId] = [d0].[DeviceTypeId]
+ORDER BY [d].[CapabilityType]" (0723d8ff)
+2021-11-09T15:13:13.4800836+05:30 80000030-0006-fa00-b63f-84710c7967bb [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[IoT.ModelLayer.DeviceCapability, IoT.ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2021-11-09T15:13:13.4819650+05:30 80000030-0006-fa00-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.AdminController.GetAllDeviceCapability (IoT.WebAPI)" in 757.1553ms (afa2e885)
+2021-11-09T15:13:13.4821196+05:30 80000030-0006-fa00-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.AdminController.GetAllDeviceCapability (IoT.WebAPI)"' (99874f2b)
+2021-11-09T15:13:13.4824554+05:30 80000030-0006-fa00-b63f-84710c7967bb [INF] Request finished in 769.6691ms 200 application/json; charset=utf-8 (791a596a)
+2021-11-09T15:13:15.0546467+05:30 8000002e-0002-fa00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44342/api/v1/device/getDeviceTypeDropdown   (ca22a1cb)
+2021-11-09T15:13:15.0546466+05:30 80000032-0006-fa00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44342/api/v1/masterData/getAllCapabilityDropdownData   (ca22a1cb)
+2021-11-09T15:13:15.0547816+05:30 8000002e-0002-fa00-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T15:13:15.0547898+05:30 80000032-0006-fa00-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T15:13:15.0549401+05:30 8000002e-0002-fa00-b63f-84710c7967bb [INF] Request finished in 0.3244ms 204  (791a596a)
+2021-11-09T15:13:15.0549400+05:30 80000032-0006-fa00-b63f-84710c7967bb [INF] Request finished in 0.3189ms 204  (791a596a)
+2021-11-09T15:13:15.0608586+05:30 8000001e-0003-fd00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44342/api/v1/device/getDeviceTypeDropdown   (ca22a1cb)
+2021-11-09T15:13:15.0609311+05:30 8000001e-0003-fd00-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T15:13:15.0633237+05:30 80000041-0005-f900-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44342/api/v1/masterData/getAllCapabilityDropdownData   (ca22a1cb)
+2021-11-09T15:13:15.0634447+05:30 80000041-0005-f900-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T15:13:15.0638070+05:30 80000041-0005-f900-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.MasterDataController.GetAllCapabilityDropdownData (IoT.WebAPI)"' (500cc934)
+2021-11-09T15:13:15.0655311+05:30 8000001e-0003-fd00-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.DeviceController.GetDeviceTypeDropdown (IoT.WebAPI)"' (500cc934)
+2021-11-09T15:13:15.0658310+05:30 8000001e-0003-fd00-b63f-84710c7967bb [INF] Route matched with "{action = \"GetDeviceTypeDropdown\", controller = \"Device\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult GetDeviceTypeDropdown(Int32, Int32)" on controller "IoT.WebAPI.Controllers.DeviceController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-09T15:13:15.0680068+05:30 80000041-0005-f900-b63f-84710c7967bb [INF] Route matched with "{action = \"GetAllCapabilityDropdownData\", controller = \"MasterData\"}". Executing controller action with signature "IoT.ModelLayer.AllCapabilityMasterModel GetAllCapabilityDropdownData(System.String, System.String)" on controller "IoT.WebAPI.Controllers.MasterDataController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-09T15:13:15.6976346+05:30 8000001e-0003-fd00-b63f-84710c7967bb [INF] Executed DbCommand ("629"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [d].[DeviceTypeId], [d].[DeviceTypeName]
+FROM [DeviceType] AS [d]
+ORDER BY [d].[DeviceTypeName]" (0723d8ff)
+2021-11-09T15:13:15.6979116+05:30 80000041-0005-f900-b63f-84710c7967bb [INF] Executed DbCommand ("619"ms) [Parameters=["@__userKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [UserPermission] AS [u]
+WHERE ([u].[UserKey] = @__userKey_0) AND ([u].[IsAdmin] = CAST(1 AS bit))" (0723d8ff)
+2021-11-09T15:13:15.6987946+05:30 8000001e-0003-fd00-b63f-84710c7967bb [INF] Executing ObjectResult, writing value of type '"System.Linq.Enumerable+ListPartition`1[[<>f__AnonymousType14`2[[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], IoT.DataLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2021-11-09T15:13:15.7013238+05:30 8000001e-0003-fd00-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.DeviceController.GetDeviceTypeDropdown (IoT.WebAPI)" in 635.1631ms (afa2e885)
+2021-11-09T15:13:15.7015131+05:30 8000001e-0003-fd00-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.DeviceController.GetDeviceTypeDropdown (IoT.WebAPI)"' (99874f2b)
+2021-11-09T15:13:15.7024025+05:30 8000001e-0003-fd00-b63f-84710c7967bb [INF] Request finished in 641.5211ms 200 application/json; charset=utf-8 (791a596a)
+2021-11-09T15:13:16.1374211+05:30 80000041-0005-f900-b63f-84710c7967bb [INF] Executed DbCommand ("348"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CONVERT(VARCHAR(11), [c].[CapabilityInterfaceId]) AS [Key], [c].[CapabilityInterfaceName] AS [Value]
+FROM [CapabilityInterface] AS [c]
+ORDER BY [c].[CapabilityInterfaceName]" (0723d8ff)
+2021-11-09T15:13:16.5331536+05:30 80000041-0005-f900-b63f-84710c7967bb [INF] Executed DbCommand ("370"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CONVERT(VARCHAR(11), [c].[CapabilitySupportedPropertyId]) AS [Key], [c].[CapabilitySupportedPropertyName] AS [Value]
+FROM [CapabilitySupportedProperty] AS [c]
+ORDER BY [c].[CapabilitySupportedPropertyName]" (0723d8ff)
+2021-11-09T15:13:17.0672225+05:30 80000041-0005-f900-b63f-84710c7967bb [INF] Executed DbCommand ("512"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CONVERT(VARCHAR(11), [c].[CapabilityTypeId]) AS [Key], [c].[CapabilityTypeName] AS [Value]
+FROM [CapabilityTypes] AS [c]
+ORDER BY [c].[CapabilityTypeName]" (0723d8ff)
+2021-11-09T15:13:17.5143059+05:30 80000041-0005-f900-b63f-84710c7967bb [INF] Executed DbCommand ("427"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CONVERT(VARCHAR(11), [c].[CapabilityVersionId]) AS [Key], [c].[CapabilityVersionName] AS [Value]
+FROM [CapabilityVersion] AS [c]
+ORDER BY [c].[CapabilityVersionName]" (0723d8ff)
+2021-11-09T15:13:17.8507099+05:30 80000041-0005-f900-b63f-84710c7967bb [INF] Executed DbCommand ("328"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [d].[DisplayCategoryValue] AS [Key], [d].[DisplayCategoryLabel] AS [Value]
+FROM [DisplayCategory] AS [d]
+ORDER BY [d].[DisplayCategoryLabel]" (0723d8ff)
+2021-11-09T15:13:17.8517254+05:30 80000041-0005-f900-b63f-84710c7967bb [INF] Executing ObjectResult, writing value of type '"IoT.ModelLayer.AllCapabilityMasterModel"'. (8a1b66c8)
+2021-11-09T15:13:17.8603886+05:30 80000041-0005-f900-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.MasterDataController.GetAllCapabilityDropdownData (IoT.WebAPI)" in 2792.185ms (afa2e885)
+2021-11-09T15:13:17.8605043+05:30 80000041-0005-f900-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.MasterDataController.GetAllCapabilityDropdownData (IoT.WebAPI)"' (99874f2b)
+2021-11-09T15:13:17.8609254+05:30 80000041-0005-f900-b63f-84710c7967bb [INF] Request finished in 2797.6174ms 200 application/json; charset=utf-8 (791a596a)
+2021-11-09T15:16:11.8945128+05:30 80000040-0001-fa00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44342/api/v1/device/getDeviceTypeDropdown   (ca22a1cb)
+2021-11-09T15:16:11.8948691+05:30 80000040-0001-fa00-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T15:16:11.8948744+05:30 80000020-0003-fd00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44342/api/v1/masterData/getAllCapabilityDropdownData   (ca22a1cb)
+2021-11-09T15:16:11.8948863+05:30 8000001f-0003-fc00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44342/api/v1/user/getUserPermission   (ca22a1cb)
+2021-11-09T15:16:11.8949144+05:30 80000020-0003-fd00-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T15:16:11.8949309+05:30 8000001f-0003-fc00-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T15:16:11.8951033+05:30 80000040-0001-fa00-b63f-84710c7967bb [INF] Request finished in 0.6784ms 204  (791a596a)
+2021-11-09T15:16:11.8952740+05:30 8000001f-0003-fc00-b63f-84710c7967bb [INF] Request finished in 0.5743ms 204  (791a596a)
+2021-11-09T15:16:11.8966183+05:30 8000000d-0003-ff00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44342/api/v1/user/getAPIKey   (ca22a1cb)
+2021-11-09T15:16:11.8966958+05:30 80000020-0003-fd00-b63f-84710c7967bb [INF] Request finished in 1.0199ms 204  (791a596a)
+2021-11-09T15:16:11.8968151+05:30 8000000d-0003-ff00-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T15:16:11.8970844+05:30 8000000d-0003-ff00-b63f-84710c7967bb [INF] Request finished in 0.4969ms 204  (791a596a)
+2021-11-09T15:16:11.9075864+05:30 80000072-0006-fb00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44342/api/v1/device/getDeviceTypeDropdown   (ca22a1cb)
+2021-11-09T15:16:11.9074502+05:30 80000031-0006-fd00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44342/api/v1/user/addUser   (ca22a1cb)
+2021-11-09T15:16:11.9082744+05:30 80000072-0006-fb00-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T15:16:11.9090307+05:30 80000045-0004-fc00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44342/api/v1/user/getUserPermission   (ca22a1cb)
+2021-11-09T15:16:11.9092100+05:30 80000045-0004-fc00-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T15:16:11.9093334+05:30 80000072-0006-fb00-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.DeviceController.GetDeviceTypeDropdown (IoT.WebAPI)"' (500cc934)
+2021-11-09T15:16:11.9083298+05:30 80000031-0006-fd00-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T15:16:11.9149622+05:30 80000021-0007-fe00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44342/api/v1/masterData/getAllCapabilityDropdownData   (ca22a1cb)
+2021-11-09T15:16:11.9149598+05:30 80000030-0002-fa00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44342/api/v1/user/getAPIKey   (ca22a1cb)
+2021-11-09T15:16:11.9150106+05:30 80000030-0002-fa00-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T15:16:11.9150102+05:30 80000021-0007-fe00-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T15:16:11.9157052+05:30 80000072-0006-fb00-b63f-84710c7967bb [INF] Route matched with "{action = \"GetDeviceTypeDropdown\", controller = \"Device\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult GetDeviceTypeDropdown(Int32, Int32)" on controller "IoT.WebAPI.Controllers.DeviceController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-09T15:16:11.9157739+05:30 80000021-0007-fe00-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.MasterDataController.GetAllCapabilityDropdownData (IoT.WebAPI)"' (500cc934)
+2021-11-09T15:16:11.9198556+05:30 80000021-0007-fe00-b63f-84710c7967bb [INF] Route matched with "{action = \"GetAllCapabilityDropdownData\", controller = \"MasterData\"}". Executing controller action with signature "IoT.ModelLayer.AllCapabilityMasterModel GetAllCapabilityDropdownData(System.String, System.String)" on controller "IoT.WebAPI.Controllers.MasterDataController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-09T15:16:11.9302690+05:30 80000031-0006-fd00-b63f-84710c7967bb [INF] Request finished in 16.5446ms 204  (791a596a)
+2021-11-09T15:16:11.9303966+05:30 80000030-0002-fa00-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.UserController.GetAPIKey (IoT.WebAPI)"' (500cc934)
+2021-11-09T15:16:11.9303964+05:30 80000045-0004-fc00-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.UserController.GetUserPermission (IoT.WebAPI)"' (500cc934)
+2021-11-09T15:16:11.9307044+05:30 80000004-0002-f700-b63f-84710c7967bb [INF] Request starting HTTP/2.0 POST https://localhost:44342/api/v1/user/addUser application/json;charset=UTF-8 163 (ca22a1cb)
+2021-11-09T15:16:11.9310095+05:30 80000004-0002-f700-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T15:16:11.9315051+05:30 80000004-0002-f700-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.UserController.AddUser (IoT.WebAPI)"' (500cc934)
+2021-11-09T15:16:11.9319517+05:30 80000004-0002-f700-b63f-84710c7967bb [INF] Route matched with "{action = \"AddUser\", controller = \"User\"}". Executing controller action with signature "IoT.ModelLayer.User AddUser(IoT.ModelLayer.User)" on controller "IoT.WebAPI.Controllers.UserController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-09T15:16:11.9356598+05:30 80000030-0002-fa00-b63f-84710c7967bb [INF] Route matched with "{action = \"GetAPIKey\", controller = \"User\"}". Executing controller action with signature "IoT.ModelLayer.User GetAPIKey(System.String)" on controller "IoT.WebAPI.Controllers.UserController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-09T15:16:11.9369618+05:30 80000004-0002-f700-b63f-84710c7967bb [INF] Executing ObjectResult, writing value of type '"IoT.ModelLayer.User"'. (8a1b66c8)
+2021-11-09T15:16:11.9382420+05:30 80000004-0002-f700-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.UserController.AddUser (IoT.WebAPI)" in 6.1004ms (afa2e885)
+2021-11-09T15:16:11.9383533+05:30 80000004-0002-f700-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.UserController.AddUser (IoT.WebAPI)"' (99874f2b)
+2021-11-09T15:16:11.9386286+05:30 80000004-0002-f700-b63f-84710c7967bb [INF] Request finished in 8.0077ms 200 application/json; charset=utf-8 (791a596a)
+2021-11-09T15:16:11.9409722+05:30 80000045-0004-fc00-b63f-84710c7967bb [INF] Route matched with "{action = \"GetUserPermission\", controller = \"User\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[IoT.ModelLayer.UserPermission] GetUserPermission(System.String)" on controller "IoT.WebAPI.Controllers.UserController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-09T15:16:12.2284942+05:30 80000072-0006-fb00-b63f-84710c7967bb [INF] Executed DbCommand ("297"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [d].[DeviceTypeId], [d].[DeviceTypeName]
+FROM [DeviceType] AS [d]
+ORDER BY [d].[DeviceTypeName]" (0723d8ff)
+2021-11-09T15:16:12.2295213+05:30 80000072-0006-fb00-b63f-84710c7967bb [INF] Executing ObjectResult, writing value of type '"System.Linq.Enumerable+ListPartition`1[[<>f__AnonymousType14`2[[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], IoT.DataLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2021-11-09T15:16:12.2313118+05:30 80000072-0006-fb00-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.DeviceController.GetDeviceTypeDropdown (IoT.WebAPI)" in 315.3863ms (afa2e885)
+2021-11-09T15:16:12.2314763+05:30 80000072-0006-fb00-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.DeviceController.GetDeviceTypeDropdown (IoT.WebAPI)"' (99874f2b)
+2021-11-09T15:16:12.2319932+05:30 80000072-0006-fb00-b63f-84710c7967bb [INF] Request finished in 324.407ms 200 application/json; charset=utf-8 (791a596a)
+2021-11-09T15:16:12.2494307+05:30 80000021-0007-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("318"ms) [Parameters=["@__userKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [UserPermission] AS [u]
+WHERE ([u].[UserKey] = @__userKey_0) AND ([u].[IsAdmin] = CAST(1 AS bit))" (0723d8ff)
+2021-11-09T15:16:12.2736367+05:30 80000030-0002-fa00-b63f-84710c7967bb [INF] Executed DbCommand ("335"ms) [Parameters=["@__userKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[UserId], [u].[APIKey], [u].[AuthProvidor], [u].[CreatedDate], [u].[Email], [u].[FirstName], [u].[Language], [u].[LastLogin], [u].[Lastname], [u].[ModifiedDate], [u].[Temperature], [u].[Timezone], [u].[UserKey]
+FROM [Users] AS [u]
+WHERE [u].[UserKey] = @__userKey_0" (0723d8ff)
+2021-11-09T15:16:12.2747046+05:30 80000030-0002-fa00-b63f-84710c7967bb [INF] Executing ObjectResult, writing value of type '"IoT.ModelLayer.User"'. (8a1b66c8)
+2021-11-09T15:16:12.2763408+05:30 80000030-0002-fa00-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.UserController.GetAPIKey (IoT.WebAPI)" in 340.4335ms (afa2e885)
+2021-11-09T15:16:12.2764497+05:30 80000030-0002-fa00-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.UserController.GetAPIKey (IoT.WebAPI)"' (99874f2b)
+2021-11-09T15:16:12.2767941+05:30 80000030-0002-fa00-b63f-84710c7967bb [INF] Request finished in 361.8539ms 200 application/json; charset=utf-8 (791a596a)
+2021-11-09T15:16:12.7789515+05:30 80000021-0007-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("523"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CONVERT(VARCHAR(11), [c].[CapabilityInterfaceId]) AS [Key], [c].[CapabilityInterfaceName] AS [Value]
+FROM [CapabilityInterface] AS [c]
+ORDER BY [c].[CapabilityInterfaceName]" (0723d8ff)
+2021-11-09T15:16:13.1007902+05:30 80000021-0007-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("317"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CONVERT(VARCHAR(11), [c].[CapabilitySupportedPropertyId]) AS [Key], [c].[CapabilitySupportedPropertyName] AS [Value]
+FROM [CapabilitySupportedProperty] AS [c]
+ORDER BY [c].[CapabilitySupportedPropertyName]" (0723d8ff)
+2021-11-09T15:16:13.4198030+05:30 80000021-0007-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("315"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CONVERT(VARCHAR(11), [c].[CapabilityTypeId]) AS [Key], [c].[CapabilityTypeName] AS [Value]
+FROM [CapabilityTypes] AS [c]
+ORDER BY [c].[CapabilityTypeName]" (0723d8ff)
+2021-11-09T15:16:13.8011284+05:30 80000021-0007-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("367"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CONVERT(VARCHAR(11), [c].[CapabilityVersionId]) AS [Key], [c].[CapabilityVersionName] AS [Value]
+FROM [CapabilityVersion] AS [c]
+ORDER BY [c].[CapabilityVersionName]" (0723d8ff)
+2021-11-09T15:16:13.8023106+05:30 80000045-0004-fc00-b63f-84710c7967bb [INF] Executed DbCommand ("369"ms) [Parameters=["@__userKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[UserPermissionId], [u].[CanCreate], [u].[CanDelete], [u].[CanUpdate], [u].[CanView], [u].[CreatedDate], [u].[IsAdmin], [u].[ModifiedDate], [u].[UserId], [u].[UserKey]
+FROM [UserPermission] AS [u]
+WHERE [u].[UserKey] = @__userKey_0" (0723d8ff)
+2021-11-09T15:16:13.8054834+05:30 80000045-0004-fc00-b63f-84710c7967bb [INF] Executing ObjectResult, writing value of type '"IoT.ModelLayer.UserPermission"'. (8a1b66c8)
+2021-11-09T15:16:13.8068009+05:30 80000045-0004-fc00-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.UserController.GetUserPermission (IoT.WebAPI)" in 1865.6046ms (afa2e885)
+2021-11-09T15:16:13.8069209+05:30 80000045-0004-fc00-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.UserController.GetUserPermission (IoT.WebAPI)"' (99874f2b)
+2021-11-09T15:16:13.8108061+05:30 80000045-0004-fc00-b63f-84710c7967bb [INF] Request finished in 1901.7928ms 200 application/json; charset=utf-8 (791a596a)
+2021-11-09T15:16:14.1207032+05:30 80000021-0007-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("317"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [d].[DisplayCategoryValue] AS [Key], [d].[DisplayCategoryLabel] AS [Value]
+FROM [DisplayCategory] AS [d]
+ORDER BY [d].[DisplayCategoryLabel]" (0723d8ff)
+2021-11-09T15:16:14.1210690+05:30 80000021-0007-fe00-b63f-84710c7967bb [INF] Executing ObjectResult, writing value of type '"IoT.ModelLayer.AllCapabilityMasterModel"'. (8a1b66c8)
+2021-11-09T15:16:14.1221154+05:30 80000021-0007-fe00-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.MasterDataController.GetAllCapabilityDropdownData (IoT.WebAPI)" in 2202.1008ms (afa2e885)
+2021-11-09T15:16:14.1222094+05:30 80000021-0007-fe00-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.MasterDataController.GetAllCapabilityDropdownData (IoT.WebAPI)"' (99874f2b)
+2021-11-09T15:16:14.1224662+05:30 80000021-0007-fe00-b63f-84710c7967bb [INF] Request finished in 2208.388ms 200 application/json; charset=utf-8 (791a596a)
+2021-11-09T15:17:50.5805748+05:30 8000003e-0004-f700-b63f-84710c7967bb [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44342/api/v1/admin/addDeviceCapability   (ca22a1cb)
+2021-11-09T15:17:50.5807122+05:30 8000003e-0004-f700-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T15:17:50.5811295+05:30 8000003e-0004-f700-b63f-84710c7967bb [INF] Request finished in 0.6579ms 204  (791a596a)
+2021-11-09T15:17:50.5917462+05:30 8000000f-0003-ff00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 POST https://localhost:44342/api/v1/admin/addDeviceCapability application/json;charset=UTF-8 220 (ca22a1cb)
+2021-11-09T15:17:50.5919750+05:30 8000000f-0003-ff00-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T15:17:50.5929370+05:30 8000000f-0003-ff00-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.AdminController.AddDeviceCapability (IoT.WebAPI)"' (500cc934)
+2021-11-09T15:17:50.6005668+05:30 8000000f-0003-ff00-b63f-84710c7967bb [INF] Route matched with "{action = \"AddDeviceCapability\", controller = \"Admin\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult AddDeviceCapability(IoT.ModelLayer.DeviceCapability, System.String)" on controller "IoT.WebAPI.Controllers.AdminController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-09T15:17:51.0250537+05:30 8000000f-0003-ff00-b63f-84710c7967bb [INF] Executed DbCommand ("366"ms) [Parameters=["@__userKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [UserPermission] AS [u]
+WHERE ([u].[UserKey] = @__userKey_0) AND ([u].[IsAdmin] = CAST(1 AS bit))" (0723d8ff)
+2021-11-09T15:17:51.7325576+05:30 8000000f-0003-ff00-b63f-84710c7967bb [INF] Executed DbCommand ("335"ms) [Parameters=["@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int32), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (DbType = Boolean), @p7='?' (DbType = Boolean), @p8='?' (Size = 4000), @p9='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [DeviceCapability] ([CapabilityInterface], [CapabilityType], [CreatedDate], [DeviceTypeId], [DisplayCategory], [ModifiedDate], [ProactivelyReported], [Retrievable], [SupportedProperty], [Version])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+SELECT [DeviceCapabilityId]
+FROM [DeviceCapability]
+WHERE @@ROWCOUNT = 1 AND [DeviceCapabilityId] = scope_identity();" (0723d8ff)
+2021-11-09T15:17:52.0741421+05:30 8000000f-0003-ff00-b63f-84710c7967bb [INF] Executing ObjectResult, writing value of type '"System.Int32"'. (8a1b66c8)
+2021-11-09T15:17:52.0760236+05:30 8000000f-0003-ff00-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.AdminController.AddDeviceCapability (IoT.WebAPI)" in 1475.0455ms (afa2e885)
+2021-11-09T15:17:52.0762044+05:30 8000000f-0003-ff00-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.AdminController.AddDeviceCapability (IoT.WebAPI)"' (99874f2b)
+2021-11-09T15:17:52.0767634+05:30 8000000f-0003-ff00-b63f-84710c7967bb [INF] Request finished in 1485.205ms 200 application/json; charset=utf-8 (791a596a)
+2021-11-09T15:17:52.1538828+05:30 80000032-0002-fa00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44342/api/v1/admin/getAllDeviceCapability   (ca22a1cb)
+2021-11-09T15:17:52.1558136+05:30 80000032-0002-fa00-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T15:17:52.1561392+05:30 80000032-0002-fa00-b63f-84710c7967bb [INF] Request finished in 2.7392ms 204  (791a596a)
+2021-11-09T15:17:52.1630405+05:30 80000040-0004-f700-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44342/api/v1/admin/getAllDeviceCapability   (ca22a1cb)
+2021-11-09T15:17:52.1631044+05:30 80000040-0004-f700-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T15:17:52.1634517+05:30 80000040-0004-f700-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.AdminController.GetAllDeviceCapability (IoT.WebAPI)"' (500cc934)
+2021-11-09T15:17:52.1637944+05:30 80000040-0004-f700-b63f-84710c7967bb [INF] Route matched with "{action = \"GetAllDeviceCapability\", controller = \"Admin\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult GetAllDeviceCapability(System.String)" on controller "IoT.WebAPI.Controllers.AdminController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-09T15:17:52.4881384+05:30 80000040-0004-f700-b63f-84710c7967bb [INF] Executed DbCommand ("323"ms) [Parameters=["@__userKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [UserPermission] AS [u]
+WHERE ([u].[UserKey] = @__userKey_0) AND ([u].[IsAdmin] = CAST(1 AS bit))" (0723d8ff)
+2021-11-09T15:17:52.8236862+05:30 80000040-0004-f700-b63f-84710c7967bb [INF] Executed DbCommand ("333"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [d].[DeviceCapabilityId], [d].[CapabilityInterface], [d].[CapabilityType], [d].[CreatedDate], [d].[DeviceTypeId], [d].[DisplayCategory], [d].[ModifiedDate], [d].[ProactivelyReported], [d].[Retrievable], [d].[SupportedProperty], [d].[Version], [d0].[DeviceTypeId], [d0].[CreatedDate], [d0].[DeviceTypeName], [d0].[ModifiedDate]
+FROM [DeviceCapability] AS [d]
+INNER JOIN [DeviceType] AS [d0] ON [d].[DeviceTypeId] = [d0].[DeviceTypeId]
+ORDER BY [d].[CapabilityType]" (0723d8ff)
+2021-11-09T15:17:52.8306364+05:30 80000040-0004-f700-b63f-84710c7967bb [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[IoT.ModelLayer.DeviceCapability, IoT.ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2021-11-09T15:17:52.8327363+05:30 80000040-0004-f700-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.AdminController.GetAllDeviceCapability (IoT.WebAPI)" in 668.6459ms (afa2e885)
+2021-11-09T15:17:52.8329514+05:30 80000040-0004-f700-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.AdminController.GetAllDeviceCapability (IoT.WebAPI)"' (99874f2b)
+2021-11-09T15:17:52.8333634+05:30 80000040-0004-f700-b63f-84710c7967bb [INF] Request finished in 670.3004ms 200 application/json; charset=utf-8 (791a596a)
+2021-11-09T15:18:03.9327528+05:30 80000036-0006-fa00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44342/api/v1/device/getAllDevice   (ca22a1cb)
+2021-11-09T15:18:03.9328347+05:30 80000036-0006-fa00-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T15:18:03.9331386+05:30 80000036-0006-fa00-b63f-84710c7967bb [INF] Request finished in 0.4079ms 204  (791a596a)
+2021-11-09T15:18:03.9430314+05:30 8000004b-0000-fe00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44342/api/v1/device/getAllDevice   (ca22a1cb)
+2021-11-09T15:18:03.9432055+05:30 8000004b-0000-fe00-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T15:18:03.9437688+05:30 8000004b-0000-fe00-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.DeviceController.GetAllDevice (IoT.WebAPI)"' (500cc934)
+2021-11-09T15:18:03.9472377+05:30 8000004b-0000-fe00-b63f-84710c7967bb [INF] Route matched with "{action = \"GetAllDevice\", controller = \"Device\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult GetAllDevice(System.String, System.String)" on controller "IoT.WebAPI.Controllers.DeviceController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-09T15:18:04.3969891+05:30 8000004b-0000-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("419"ms) [Parameters=["@__userKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [d].[ConnectionCount], [d].[DeviceDesc], [d].[DeviceName], [d].[DeviceKey], [d].[DeviceId], [d0].[DeviceTypeId], [d].[LastConnected], [d].[FriendlyName], [d].[ManufacturerName], [r].[RoomName], [d0].[DeviceTypeName], [d].[RoomId], [r].[RoomKey]
+FROM [Devices] AS [d]
+INNER JOIN [DeviceType] AS [d0] ON [d].[DeviceTypeId] = [d0].[DeviceTypeId]
+INNER JOIN [Rooms] AS [r] ON [d].[RoomId] = [r].[RoomId]
+WHERE [d].[UserKey] = @__userKey_0" (0723d8ff)
+2021-11-09T15:18:04.4063403+05:30 8000004b-0000-fe00-b63f-84710c7967bb [INF] Executing ObjectResult, writing value of type '"System.Linq.OrderedEnumerable`2[[IoT.ModelLayer.DeviceExt, IoT.ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'. (8a1b66c8)
+2021-11-09T15:18:04.4459010+05:30 8000004b-0000-fe00-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.DeviceController.GetAllDevice (IoT.WebAPI)" in 497.7234ms (afa2e885)
+2021-11-09T15:18:04.4461168+05:30 8000004b-0000-fe00-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.DeviceController.GetAllDevice (IoT.WebAPI)"' (99874f2b)
+2021-11-09T15:18:04.4466448+05:30 8000004b-0000-fe00-b63f-84710c7967bb [INF] Request finished in 503.7029ms 200 application/json; charset=utf-8 (791a596a)
+2021-11-09T15:18:06.5684688+05:30 8000004d-0000-fe00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44342/api/v1/device/getDeviceTypeDropdown   (ca22a1cb)
+2021-11-09T15:18:06.5684687+05:30 80000074-0006-fb00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44342/api/v1/room/getRoomDropdown   (ca22a1cb)
+2021-11-09T15:18:06.5686219+05:30 80000074-0006-fb00-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T15:18:06.5686219+05:30 8000004d-0000-fe00-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T15:18:06.5690135+05:30 80000074-0006-fb00-b63f-84710c7967bb [INF] Request finished in 0.5789ms 204  (791a596a)
+2021-11-09T15:18:06.5690135+05:30 8000004d-0000-fe00-b63f-84710c7967bb [INF] Request finished in 0.6651ms 204  (791a596a)
+2021-11-09T15:18:06.5836775+05:30 80000042-0004-f700-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44342/api/v1/device/getDeviceTypeDropdown   (ca22a1cb)
+2021-11-09T15:18:06.5838396+05:30 80000042-0004-f700-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T15:18:06.5839433+05:30 80000042-0001-fa00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44342/api/v1/room/getRoomDropdown   (ca22a1cb)
+2021-11-09T15:18:06.5842985+05:30 80000042-0001-fa00-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T15:18:06.5846816+05:30 80000042-0004-f700-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.DeviceController.GetDeviceTypeDropdown (IoT.WebAPI)"' (500cc934)
+2021-11-09T15:18:06.5855331+05:30 80000042-0004-f700-b63f-84710c7967bb [INF] Route matched with "{action = \"GetDeviceTypeDropdown\", controller = \"Device\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult GetDeviceTypeDropdown(Int32, Int32)" on controller "IoT.WebAPI.Controllers.DeviceController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-09T15:18:06.5891197+05:30 80000042-0001-fa00-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.RoomController.GetRoomDropdown (IoT.WebAPI)"' (500cc934)
+2021-11-09T15:18:06.5969397+05:30 80000042-0001-fa00-b63f-84710c7967bb [INF] Route matched with "{action = \"GetRoomDropdown\", controller = \"Room\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult GetRoomDropdown(System.String)" on controller "IoT.WebAPI.Controllers.RoomController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-09T15:18:07.1330467+05:30 80000042-0001-fa00-b63f-84710c7967bb [INF] Executed DbCommand ("514"ms) [Parameters=["@__userKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [r].[RoomId], [r].[RoomKey], [r].[RoomName]
+FROM [Rooms] AS [r]
+WHERE [r].[UserKey] = @__userKey_0
+ORDER BY [r].[RoomName]" (0723d8ff)
+2021-11-09T15:18:07.1330675+05:30 80000042-0004-f700-b63f-84710c7967bb [INF] Executed DbCommand ("539"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [d].[DeviceTypeId], [d].[DeviceTypeName]
+FROM [DeviceType] AS [d]
+ORDER BY [d].[DeviceTypeName]" (0723d8ff)
+2021-11-09T15:18:07.1339804+05:30 80000042-0004-f700-b63f-84710c7967bb [INF] Executing ObjectResult, writing value of type '"System.Linq.Enumerable+ListPartition`1[[<>f__AnonymousType14`2[[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], IoT.DataLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2021-11-09T15:18:07.1352098+05:30 80000042-0001-fa00-b63f-84710c7967bb [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[<>f__AnonymousType16`3[[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], IoT.DataLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2021-11-09T15:18:07.1355323+05:30 80000042-0004-f700-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.DeviceController.GetDeviceTypeDropdown (IoT.WebAPI)" in 549.0771ms (afa2e885)
+2021-11-09T15:18:07.1356884+05:30 80000042-0004-f700-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.DeviceController.GetDeviceTypeDropdown (IoT.WebAPI)"' (99874f2b)
+2021-11-09T15:18:07.1379299+05:30 80000042-0004-f700-b63f-84710c7967bb [INF] Request finished in 554.2824ms 200 application/json; charset=utf-8 (791a596a)
+2021-11-09T15:18:07.1447231+05:30 80000042-0001-fa00-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.RoomController.GetRoomDropdown (IoT.WebAPI)" in 547.4585ms (afa2e885)
+2021-11-09T15:18:07.1449124+05:30 80000042-0001-fa00-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.RoomController.GetRoomDropdown (IoT.WebAPI)"' (99874f2b)
+2021-11-09T15:18:07.1453263+05:30 80000042-0001-fa00-b63f-84710c7967bb [INF] Request finished in 561.4137ms 200 application/json; charset=utf-8 (791a596a)
+2021-11-09T15:18:32.9149569+05:30 80000011-0003-ff00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44342/api/v1/device/addDevice   (ca22a1cb)
+2021-11-09T15:18:32.9151096+05:30 80000011-0003-ff00-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T15:18:32.9154520+05:30 80000011-0003-ff00-b63f-84710c7967bb [INF] Request finished in 0.5561ms 204  (791a596a)
+2021-11-09T15:18:32.9263736+05:30 80000023-0007-fe00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 POST https://localhost:44342/api/v1/device/addDevice application/json;charset=UTF-8 140 (ca22a1cb)
+2021-11-09T15:18:32.9265251+05:30 80000023-0007-fe00-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T15:18:32.9268226+05:30 80000023-0007-fe00-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.DeviceController.AddDevice (IoT.WebAPI)"' (500cc934)
+2021-11-09T15:18:32.9423937+05:30 80000023-0007-fe00-b63f-84710c7967bb [INF] Route matched with "{action = \"AddDevice\", controller = \"Device\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddDevice(IoT.ModelLayer.Device, System.String)" on controller "IoT.WebAPI.Controllers.DeviceController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-09T15:18:33.3701864+05:30 80000023-0007-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("363"ms) [Parameters=["@__userKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[UserKey] = @__userKey_0" (0723d8ff)
+2021-11-09T15:18:33.7112434+05:30 80000023-0007-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("317"ms) [Parameters=["@__newDevice_DeviceName_0='?' (Size = 4000), @__newDevice_FriendlyName_1='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [d].[DeviceId], [d].[ConnectionCount], [d].[CreatedDate], [d].[DeviceDesc], [d].[DeviceKey], [d].[DeviceName], [d].[DeviceTypeId], [d].[FriendlyName], [d].[LastConnected], [d].[ManufacturerName], [d].[ModifiedDate], [d].[RoomId], [d].[Status], [d].[UserKey]
+FROM [Devices] AS [d]
+WHERE ([d].[DeviceName] = @__newDevice_DeviceName_0) OR ([d].[FriendlyName] = @__newDevice_FriendlyName_1)" (0723d8ff)
+2021-11-09T15:18:34.5820960+05:30 80000023-0007-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("374"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int32), @p6='?' (Size = 4000), @p7='?' (DbType = DateTime2), @p8='?' (Size = 4000), @p9='?' (DbType = DateTime2), @p10='?' (DbType = Int32), @p11='?' (Size = 4000), @p12='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Devices] ([ConnectionCount], [CreatedDate], [DeviceDesc], [DeviceKey], [DeviceName], [DeviceTypeId], [FriendlyName], [LastConnected], [ManufacturerName], [ModifiedDate], [RoomId], [Status], [UserKey])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12);
+SELECT [DeviceId]
+FROM [Devices]
+WHERE @@ROWCOUNT = 1 AND [DeviceId] = scope_identity();" (0723d8ff)
+2021-11-09T15:18:34.9140180+05:30 80000023-0007-fe00-b63f-84710c7967bb [INF] Executing ObjectResult, writing value of type '"IoT.ModelLayer.ResponseModel"'. (8a1b66c8)
+2021-11-09T15:18:34.9411497+05:30 80000023-0007-fe00-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.DeviceController.AddDevice (IoT.WebAPI)" in 1998.514ms (afa2e885)
+2021-11-09T15:18:34.9413311+05:30 80000023-0007-fe00-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.DeviceController.AddDevice (IoT.WebAPI)"' (99874f2b)
+2021-11-09T15:18:34.9416413+05:30 80000023-0007-fe00-b63f-84710c7967bb [INF] Request finished in 2015.4069ms 200 application/json; charset=utf-8 (791a596a)
+2021-11-09T15:18:34.9851375+05:30 80000076-0006-fb00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44342/api/v1/device/getAllDevice   (ca22a1cb)
+2021-11-09T15:18:34.9852430+05:30 80000076-0006-fb00-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T15:18:34.9854596+05:30 80000076-0006-fb00-b63f-84710c7967bb [INF] Request finished in 0.3511ms 204  (791a596a)
+2021-11-09T15:18:34.9955472+05:30 80000044-0001-fa00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44342/api/v1/device/getAllDevice   (ca22a1cb)
+2021-11-09T15:18:34.9957043+05:30 80000044-0001-fa00-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T15:18:34.9959293+05:30 80000044-0001-fa00-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.DeviceController.GetAllDevice (IoT.WebAPI)"' (500cc934)
+2021-11-09T15:18:34.9962086+05:30 80000044-0001-fa00-b63f-84710c7967bb [INF] Route matched with "{action = \"GetAllDevice\", controller = \"Device\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult GetAllDevice(System.String, System.String)" on controller "IoT.WebAPI.Controllers.DeviceController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-09T15:18:35.3350471+05:30 80000044-0001-fa00-b63f-84710c7967bb [INF] Executed DbCommand ("336"ms) [Parameters=["@__userKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [d].[ConnectionCount], [d].[DeviceDesc], [d].[DeviceName], [d].[DeviceKey], [d].[DeviceId], [d0].[DeviceTypeId], [d].[LastConnected], [d].[FriendlyName], [d].[ManufacturerName], [r].[RoomName], [d0].[DeviceTypeName], [d].[RoomId], [r].[RoomKey]
+FROM [Devices] AS [d]
+INNER JOIN [DeviceType] AS [d0] ON [d].[DeviceTypeId] = [d0].[DeviceTypeId]
+INNER JOIN [Rooms] AS [r] ON [d].[RoomId] = [r].[RoomId]
+WHERE [d].[UserKey] = @__userKey_0" (0723d8ff)
+2021-11-09T15:18:35.3402498+05:30 80000044-0001-fa00-b63f-84710c7967bb [INF] Executing ObjectResult, writing value of type '"System.Linq.OrderedEnumerable`2[[IoT.ModelLayer.DeviceExt, IoT.ModelLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'. (8a1b66c8)
+2021-11-09T15:18:35.3443441+05:30 80000044-0001-fa00-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.DeviceController.GetAllDevice (IoT.WebAPI)" in 347.9279ms (afa2e885)
+2021-11-09T15:18:35.3445030+05:30 80000044-0001-fa00-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.DeviceController.GetAllDevice (IoT.WebAPI)"' (99874f2b)
+2021-11-09T15:18:35.3447877+05:30 80000044-0001-fa00-b63f-84710c7967bb [INF] Request finished in 349.4082ms 200 application/json; charset=utf-8 (791a596a)
+2021-11-09T15:18:42.0217757+05:30 80000034-0002-fa00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44342/api/v1/dashboard/getDashboardData   (ca22a1cb)
+2021-11-09T15:18:42.0218713+05:30 80000034-0002-fa00-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T15:18:42.0223231+05:30 80000034-0002-fa00-b63f-84710c7967bb [INF] Request finished in 0.5946ms 204  (791a596a)
+2021-11-09T15:18:42.0301751+05:30 80000045-0005-f900-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44342/api/v1/dashboard/getDashboardData   (ca22a1cb)
+2021-11-09T15:18:42.0302588+05:30 80000045-0005-f900-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T15:18:42.0305393+05:30 80000045-0005-f900-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.DashboardController.GetDashboardData (IoT.WebAPI)"' (500cc934)
+2021-11-09T15:18:42.0370119+05:30 80000045-0005-f900-b63f-84710c7967bb [INF] Route matched with "{action = \"GetDashboardData\", controller = \"Dashboard\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult GetDashboardData(System.String)" on controller "IoT.WebAPI.Controllers.DashboardController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-09T15:18:42.4027742+05:30 80000045-0005-f900-b63f-84710c7967bb [INF] Executed DbCommand ("344"ms) [Parameters=["@__userKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [d].[ConnectionCount], [d].[DeviceDesc], [d].[DeviceName], [d].[DeviceKey], [d].[DeviceId], [d0].[DeviceTypeId], [d].[LastConnected], [d].[FriendlyName], [d].[ManufacturerName], [r].[RoomName], [d0].[DeviceTypeName], [d].[RoomId], [r].[RoomKey]
+FROM [Devices] AS [d]
+INNER JOIN [DeviceType] AS [d0] ON [d].[DeviceTypeId] = [d0].[DeviceTypeId]
+INNER JOIN [Rooms] AS [r] ON [d].[RoomId] = [r].[RoomId]
+WHERE [d].[UserKey] = @__userKey_0" (0723d8ff)
+2021-11-09T15:18:42.7936772+05:30 80000045-0005-f900-b63f-84710c7967bb [INF] Executed DbCommand ("363"ms) [Parameters=["@__userKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [r].[RoomId], [r].[CreatedDate], [r].[ModifiedDate], [r].[RoomDesc], [r].[RoomKey], [r].[RoomName], [r].[UserKey]
+FROM [Rooms] AS [r]
+WHERE [r].[UserKey] = @__userKey_0
+ORDER BY [r].[RoomName]" (0723d8ff)
+2021-11-09T15:18:42.8237673+05:30 80000045-0005-f900-b63f-84710c7967bb [INF] Executing ObjectResult, writing value of type '"IoT.ModelLayer.DashboardModel"'. (8a1b66c8)
+2021-11-09T15:18:42.8375150+05:30 80000045-0005-f900-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.DashboardController.GetDashboardData (IoT.WebAPI)" in 800.3136ms (afa2e885)
+2021-11-09T15:18:42.8376293+05:30 80000045-0005-f900-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.DashboardController.GetDashboardData (IoT.WebAPI)"' (99874f2b)
+2021-11-09T15:18:42.8377577+05:30 80000045-0005-f900-b63f-84710c7967bb [INF] Request finished in 807.6063ms 200 application/json; charset=utf-8 (791a596a)
+2021-11-09T15:18:43.9389171+05:30 80000044-0004-f700-b63f-84710c7967bb [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44342/api/v1/device/updateDeviceHistory?deviceKey=6448A3BC8D174E709AEFFE67C4D91FD9&isconnected=true   (ca22a1cb)
+2021-11-09T15:18:43.9389717+05:30 80000047-0004-fc00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44342/api/v1/device/updateDeviceHistory?deviceKey=B53C9EEED04E4B01BDF2AF323BCF087C&isconnected=true   (ca22a1cb)
+2021-11-09T15:18:43.9408668+05:30 80000044-0004-f700-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T15:18:43.9408693+05:30 80000047-0004-fc00-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T15:18:43.9407347+05:30 80000047-0005-f900-b63f-84710c7967bb [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44342/api/v1/device/updateDeviceHistory?deviceKey=1704DC32EED44696B17F6C488571676A&isconnected=true   (ca22a1cb)
+2021-11-09T15:18:43.9409187+05:30 80000047-0005-f900-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T15:18:43.9410677+05:30 80000047-0005-f900-b63f-84710c7967bb [INF] Request finished in 0.9496ms 204  (791a596a)
+2021-11-09T15:18:43.9410700+05:30 80000047-0004-fc00-b63f-84710c7967bb [INF] Request finished in 2.1118ms 204  (791a596a)
+2021-11-09T15:18:43.9411728+05:30 80000078-0006-fb00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44342/api/v1/device/updateDeviceHistory?deviceKey=DE7C70044FA7414F85E383CAF4946835&isconnected=true   (ca22a1cb)
+2021-11-09T15:18:43.9412224+05:30 80000044-0004-f700-b63f-84710c7967bb [INF] Request finished in 2.3753ms 204  (791a596a)
+2021-11-09T15:18:43.9493984+05:30 80000078-0006-fb00-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T15:18:43.9494912+05:30 8000004f-0000-fe00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44342/api/v1/device/updateDeviceHistory?deviceKey=4B29A32E2F034B29AB8F7707E0CAB2A1&isconnected=true   (ca22a1cb)
+2021-11-09T15:18:43.9495278+05:30 8000004f-0000-fe00-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T15:18:43.9495899+05:30 80000078-0006-fb00-b63f-84710c7967bb [INF] Request finished in 8.4153ms 204  (791a596a)
+2021-11-09T15:18:43.9496088+05:30 8000004f-0000-fe00-b63f-84710c7967bb [INF] Request finished in 0.175ms 204  (791a596a)
+2021-11-09T15:18:43.9496301+05:30 80000049-0005-f900-b63f-84710c7967bb [INF] Request starting HTTP/2.0 POST https://localhost:44342/api/v1/device/updateDeviceHistory?deviceKey=1704DC32EED44696B17F6C488571676A&isconnected=true application/json;charset=UTF-8 2 (ca22a1cb)
+2021-11-09T15:18:43.9496535+05:30 80000028-0005-fd00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 POST https://localhost:44342/api/v1/device/updateDeviceHistory?deviceKey=B53C9EEED04E4B01BDF2AF323BCF087C&isconnected=true application/json;charset=UTF-8 2 (ca22a1cb)
+2021-11-09T15:18:43.9496638+05:30 80000049-0005-f900-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T15:18:43.9496881+05:30 80000028-0005-fd00-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T15:18:43.9496899+05:30 80000013-0003-ff00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 POST https://localhost:44342/api/v1/device/updateDeviceHistory?deviceKey=6448A3BC8D174E709AEFFE67C4D91FD9&isconnected=true application/json;charset=UTF-8 2 (ca22a1cb)
+2021-11-09T15:18:43.9497169+05:30 80000013-0003-ff00-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T15:18:43.9497739+05:30 80000013-0003-ff00-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.DeviceController.UpdateDeviceHistory (IoT.WebAPI)"' (500cc934)
+2021-11-09T15:18:43.9497749+05:30 80000028-0005-fd00-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.DeviceController.UpdateDeviceHistory (IoT.WebAPI)"' (500cc934)
+2021-11-09T15:18:43.9497741+05:30 80000049-0005-f900-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.DeviceController.UpdateDeviceHistory (IoT.WebAPI)"' (500cc934)
+2021-11-09T15:18:43.9523321+05:30 80000028-0005-fd00-b63f-84710c7967bb [INF] Route matched with "{action = \"UpdateDeviceHistory\", controller = \"Device\"}". Executing controller action with signature "Boolean UpdateDeviceHistory(System.String, Boolean, System.String)" on controller "IoT.WebAPI.Controllers.DeviceController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-09T15:18:43.9523514+05:30 80000013-0003-ff00-b63f-84710c7967bb [INF] Route matched with "{action = \"UpdateDeviceHistory\", controller = \"Device\"}". Executing controller action with signature "Boolean UpdateDeviceHistory(System.String, Boolean, System.String)" on controller "IoT.WebAPI.Controllers.DeviceController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-09T15:18:43.9523570+05:30 80000049-0005-f900-b63f-84710c7967bb [INF] Route matched with "{action = \"UpdateDeviceHistory\", controller = \"Device\"}". Executing controller action with signature "Boolean UpdateDeviceHistory(System.String, Boolean, System.String)" on controller "IoT.WebAPI.Controllers.DeviceController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-09T15:18:43.9563962+05:30 80000022-0003-fd00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 POST https://localhost:44342/api/v1/device/updateDeviceHistory?deviceKey=DE7C70044FA7414F85E383CAF4946835&isconnected=true application/json;charset=UTF-8 2 (ca22a1cb)
+2021-11-09T15:18:43.9565111+05:30 80000022-0003-fd00-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T15:18:43.9566657+05:30 80000022-0003-fd00-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.DeviceController.UpdateDeviceHistory (IoT.WebAPI)"' (500cc934)
+2021-11-09T15:18:43.9567806+05:30 80000022-0003-fd00-b63f-84710c7967bb [INF] Route matched with "{action = \"UpdateDeviceHistory\", controller = \"Device\"}". Executing controller action with signature "Boolean UpdateDeviceHistory(System.String, Boolean, System.String)" on controller "IoT.WebAPI.Controllers.DeviceController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-09T15:18:43.9568187+05:30 8000000d-0005-fc00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 POST https://localhost:44342/api/v1/device/updateDeviceHistory?deviceKey=4B29A32E2F034B29AB8F7707E0CAB2A1&isconnected=true application/json;charset=UTF-8 2 (ca22a1cb)
+2021-11-09T15:18:43.9568522+05:30 8000000d-0005-fc00-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T15:18:43.9569123+05:30 8000000d-0005-fc00-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.DeviceController.UpdateDeviceHistory (IoT.WebAPI)"' (500cc934)
+2021-11-09T15:18:43.9569955+05:30 8000000d-0005-fc00-b63f-84710c7967bb [INF] Route matched with "{action = \"UpdateDeviceHistory\", controller = \"Device\"}". Executing controller action with signature "Boolean UpdateDeviceHistory(System.String, Boolean, System.String)" on controller "IoT.WebAPI.Controllers.DeviceController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-09T15:18:43.9645620+05:30 8000000d-0005-fc00-b63f-84710c7967bb [INF] Entity Framework Core "5.0.9" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MaxPoolSize=128 " (9958f5bb)
+2021-11-09T15:18:44.0071574+05:30 8000000a-0005-fa00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44342/api/v1/device/updateDeviceHistory?deviceKey=32BAB164570A480DA569EB4A27BE0C2E&isconnected=true   (ca22a1cb)
+2021-11-09T15:18:44.0072900+05:30 8000000a-0005-fa00-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T15:18:44.0081025+05:30 8000000a-0005-fa00-b63f-84710c7967bb [INF] Request finished in 0.9451ms 204  (791a596a)
+2021-11-09T15:18:44.0131884+05:30 80000046-0001-fa00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 POST https://localhost:44342/api/v1/device/updateDeviceHistory?deviceKey=32BAB164570A480DA569EB4A27BE0C2E&isconnected=true application/json;charset=UTF-8 2 (ca22a1cb)
+2021-11-09T15:18:44.0132433+05:30 80000046-0001-fa00-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T15:18:44.0133218+05:30 80000046-0001-fa00-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.DeviceController.UpdateDeviceHistory (IoT.WebAPI)"' (500cc934)
+2021-11-09T15:18:44.0134056+05:30 80000046-0001-fa00-b63f-84710c7967bb [INF] Route matched with "{action = \"UpdateDeviceHistory\", controller = \"Device\"}". Executing controller action with signature "Boolean UpdateDeviceHistory(System.String, Boolean, System.String)" on controller "IoT.WebAPI.Controllers.DeviceController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-09T15:18:44.0144003+05:30 80000046-0001-fa00-b63f-84710c7967bb [INF] Entity Framework Core "5.0.9" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MaxPoolSize=128 " (9958f5bb)
+2021-11-09T15:18:44.1191208+05:30 80000042-0000-fc00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44342/api/v1/device/updateDeviceHistory?deviceKey=EBC05DFFF34E4417860A64C346BAA912&isconnected=true   (ca22a1cb)
+2021-11-09T15:18:44.1191207+05:30 80000051-0000-fe00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44342/api/v1/device/updateDeviceHistory?deviceKey=2571BD601DF74C5E81EB8969139FFC39&isconnected=true   (ca22a1cb)
+2021-11-09T15:18:44.1191701+05:30 80000051-0000-fe00-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T15:18:44.1191701+05:30 80000042-0000-fc00-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T15:18:44.1192532+05:30 80000051-0000-fe00-b63f-84710c7967bb [INF] Request finished in 0.1938ms 204  (791a596a)
+2021-11-09T15:18:44.1192569+05:30 80000042-0000-fc00-b63f-84710c7967bb [INF] Request finished in 0.1764ms 204  (791a596a)
+2021-11-09T15:18:44.1231399+05:30 80000044-0000-fc00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 POST https://localhost:44342/api/v1/device/updateDeviceHistory?deviceKey=EBC05DFFF34E4417860A64C346BAA912&isconnected=true application/json;charset=UTF-8 2 (ca22a1cb)
+2021-11-09T15:18:44.1231219+05:30 80000006-0001-fb00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 POST https://localhost:44342/api/v1/device/updateDeviceHistory?deviceKey=2571BD601DF74C5E81EB8969139FFC39&isconnected=true application/json;charset=UTF-8 2 (ca22a1cb)
+2021-11-09T15:18:44.1231995+05:30 80000006-0001-fb00-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T15:18:44.1232020+05:30 80000044-0000-fc00-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T15:18:44.1232658+05:30 80000006-0001-fb00-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.DeviceController.UpdateDeviceHistory (IoT.WebAPI)"' (500cc934)
+2021-11-09T15:18:44.1232658+05:30 80000044-0000-fc00-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.DeviceController.UpdateDeviceHistory (IoT.WebAPI)"' (500cc934)
+2021-11-09T15:18:44.1233364+05:30 80000006-0001-fb00-b63f-84710c7967bb [INF] Route matched with "{action = \"UpdateDeviceHistory\", controller = \"Device\"}". Executing controller action with signature "Boolean UpdateDeviceHistory(System.String, Boolean, System.String)" on controller "IoT.WebAPI.Controllers.DeviceController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-09T15:18:44.1233396+05:30 80000044-0000-fc00-b63f-84710c7967bb [INF] Route matched with "{action = \"UpdateDeviceHistory\", controller = \"Device\"}". Executing controller action with signature "Boolean UpdateDeviceHistory(System.String, Boolean, System.String)" on controller "IoT.WebAPI.Controllers.DeviceController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-09T15:18:44.1237387+05:30 80000044-0000-fc00-b63f-84710c7967bb [INF] Entity Framework Core "5.0.9" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MaxPoolSize=128 " (9958f5bb)
+2021-11-09T15:18:44.1237388+05:30 80000006-0001-fb00-b63f-84710c7967bb [INF] Entity Framework Core "5.0.9" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MaxPoolSize=128 " (9958f5bb)
+2021-11-09T15:18:44.1617909+05:30 80000056-0001-fd00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 OPTIONS https://localhost:44342/api/v1/device/updateDeviceHistory?deviceKey=1ECA217174274A88B5D4AB424D2DB81A&isconnected=true   (ca22a1cb)
+2021-11-09T15:18:44.1618749+05:30 80000056-0001-fd00-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T15:18:44.1619838+05:30 80000056-0001-fd00-b63f-84710c7967bb [INF] Request finished in 0.2333ms 204  (791a596a)
+2021-11-09T15:18:44.1668569+05:30 80000036-0002-fa00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 POST https://localhost:44342/api/v1/device/updateDeviceHistory?deviceKey=1ECA217174274A88B5D4AB424D2DB81A&isconnected=true application/json;charset=UTF-8 2 (ca22a1cb)
+2021-11-09T15:18:44.1668996+05:30 80000036-0002-fa00-b63f-84710c7967bb [INF] CORS policy execution successful. (5409d6ef)
+2021-11-09T15:18:44.1669601+05:30 80000036-0002-fa00-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.DeviceController.UpdateDeviceHistory (IoT.WebAPI)"' (500cc934)
+2021-11-09T15:18:44.1670279+05:30 80000036-0002-fa00-b63f-84710c7967bb [INF] Route matched with "{action = \"UpdateDeviceHistory\", controller = \"Device\"}". Executing controller action with signature "Boolean UpdateDeviceHistory(System.String, Boolean, System.String)" on controller "IoT.WebAPI.Controllers.DeviceController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-09T15:18:44.1673969+05:30 80000036-0002-fa00-b63f-84710c7967bb [INF] Entity Framework Core "5.0.9" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MaxPoolSize=128 " (9958f5bb)
+2021-11-09T15:18:44.4099082+05:30 80000028-0005-fd00-b63f-84710c7967bb [INF] Executed DbCommand ("452"ms) [Parameters=["@__userKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[UserKey] = @__userKey_0" (0723d8ff)
+2021-11-09T15:18:44.4099063+05:30 80000049-0005-f900-b63f-84710c7967bb [INF] Executed DbCommand ("452"ms) [Parameters=["@__userKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[UserKey] = @__userKey_0" (0723d8ff)
+2021-11-09T15:18:44.4099756+05:30 80000022-0003-fd00-b63f-84710c7967bb [INF] Executed DbCommand ("452"ms) [Parameters=["@__userKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[UserKey] = @__userKey_0" (0723d8ff)
+2021-11-09T15:18:44.4099894+05:30 80000013-0003-ff00-b63f-84710c7967bb [INF] Executed DbCommand ("452"ms) [Parameters=["@__userKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[UserKey] = @__userKey_0" (0723d8ff)
+2021-11-09T15:18:44.7053792+05:30 80000006-0001-fb00-b63f-84710c7967bb [INF] Executed DbCommand ("295"ms) [Parameters=["@__userKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[UserKey] = @__userKey_0" (0723d8ff)
+2021-11-09T15:18:44.7165423+05:30 80000036-0002-fa00-b63f-84710c7967bb [INF] Executed DbCommand ("306"ms) [Parameters=["@__userKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[UserKey] = @__userKey_0" (0723d8ff)
+2021-11-09T15:18:44.7165423+05:30 80000044-0000-fc00-b63f-84710c7967bb [INF] Executed DbCommand ("306"ms) [Parameters=["@__userKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[UserKey] = @__userKey_0" (0723d8ff)
+2021-11-09T15:18:44.7283116+05:30 80000046-0001-fa00-b63f-84710c7967bb [INF] Executed DbCommand ("318"ms) [Parameters=["@__userKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[UserKey] = @__userKey_0" (0723d8ff)
+2021-11-09T15:18:45.0467137+05:30 80000028-0005-fd00-b63f-84710c7967bb [INF] Executed DbCommand ("330"ms) [Parameters=["@__deviceKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [d].[DeviceId], [d].[ConnectionCount], [d].[CreatedDate], [d].[DeviceDesc], [d].[DeviceKey], [d].[DeviceName], [d].[DeviceTypeId], [d].[FriendlyName], [d].[LastConnected], [d].[ManufacturerName], [d].[ModifiedDate], [d].[RoomId], [d].[Status], [d].[UserKey]
+FROM [Devices] AS [d]
+WHERE [d].[DeviceKey] = @__deviceKey_0" (0723d8ff)
+2021-11-09T15:18:45.0467154+05:30 80000022-0003-fd00-b63f-84710c7967bb [INF] Executed DbCommand ("330"ms) [Parameters=["@__deviceKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [d].[DeviceId], [d].[ConnectionCount], [d].[CreatedDate], [d].[DeviceDesc], [d].[DeviceKey], [d].[DeviceName], [d].[DeviceTypeId], [d].[FriendlyName], [d].[LastConnected], [d].[ManufacturerName], [d].[ModifiedDate], [d].[RoomId], [d].[Status], [d].[UserKey]
+FROM [Devices] AS [d]
+WHERE [d].[DeviceKey] = @__deviceKey_0" (0723d8ff)
+2021-11-09T15:18:45.0467735+05:30 80000013-0003-ff00-b63f-84710c7967bb [INF] Executed DbCommand ("318"ms) [Parameters=["@__deviceKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [d].[DeviceId], [d].[ConnectionCount], [d].[CreatedDate], [d].[DeviceDesc], [d].[DeviceKey], [d].[DeviceName], [d].[DeviceTypeId], [d].[FriendlyName], [d].[LastConnected], [d].[ManufacturerName], [d].[ModifiedDate], [d].[RoomId], [d].[Status], [d].[UserKey]
+FROM [Devices] AS [d]
+WHERE [d].[DeviceKey] = @__deviceKey_0" (0723d8ff)
+2021-11-09T15:18:45.0467136+05:30 80000049-0005-f900-b63f-84710c7967bb [INF] Executed DbCommand ("341"ms) [Parameters=["@__deviceKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [d].[DeviceId], [d].[ConnectionCount], [d].[CreatedDate], [d].[DeviceDesc], [d].[DeviceKey], [d].[DeviceName], [d].[DeviceTypeId], [d].[FriendlyName], [d].[LastConnected], [d].[ManufacturerName], [d].[ModifiedDate], [d].[RoomId], [d].[Status], [d].[UserKey]
+FROM [Devices] AS [d]
+WHERE [d].[DeviceKey] = @__deviceKey_0" (0723d8ff)
+2021-11-09T15:18:45.3563361+05:30 80000044-0000-fc00-b63f-84710c7967bb [INF] Executed DbCommand ("309"ms) [Parameters=["@__deviceKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [d].[DeviceId], [d].[ConnectionCount], [d].[CreatedDate], [d].[DeviceDesc], [d].[DeviceKey], [d].[DeviceName], [d].[DeviceTypeId], [d].[FriendlyName], [d].[LastConnected], [d].[ManufacturerName], [d].[ModifiedDate], [d].[RoomId], [d].[Status], [d].[UserKey]
+FROM [Devices] AS [d]
+WHERE [d].[DeviceKey] = @__deviceKey_0" (0723d8ff)
+2021-11-09T15:18:45.3686561+05:30 80000036-0002-fa00-b63f-84710c7967bb [INF] Executed DbCommand ("321"ms) [Parameters=["@__deviceKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [d].[DeviceId], [d].[ConnectionCount], [d].[CreatedDate], [d].[DeviceDesc], [d].[DeviceKey], [d].[DeviceName], [d].[DeviceTypeId], [d].[FriendlyName], [d].[LastConnected], [d].[ManufacturerName], [d].[ModifiedDate], [d].[RoomId], [d].[Status], [d].[UserKey]
+FROM [Devices] AS [d]
+WHERE [d].[DeviceKey] = @__deviceKey_0" (0723d8ff)
+2021-11-09T15:18:45.3720763+05:30 80000046-0001-fa00-b63f-84710c7967bb [INF] Executed DbCommand ("324"ms) [Parameters=["@__deviceKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [d].[DeviceId], [d].[ConnectionCount], [d].[CreatedDate], [d].[DeviceDesc], [d].[DeviceKey], [d].[DeviceName], [d].[DeviceTypeId], [d].[FriendlyName], [d].[LastConnected], [d].[ManufacturerName], [d].[ModifiedDate], [d].[RoomId], [d].[Status], [d].[UserKey]
+FROM [Devices] AS [d]
+WHERE [d].[DeviceKey] = @__deviceKey_0" (0723d8ff)
+2021-11-09T15:18:45.3741587+05:30 80000006-0001-fb00-b63f-84710c7967bb [INF] Executed DbCommand ("327"ms) [Parameters=["@__deviceKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [d].[DeviceId], [d].[ConnectionCount], [d].[CreatedDate], [d].[DeviceDesc], [d].[DeviceKey], [d].[DeviceName], [d].[DeviceTypeId], [d].[FriendlyName], [d].[LastConnected], [d].[ManufacturerName], [d].[ModifiedDate], [d].[RoomId], [d].[Status], [d].[UserKey]
+FROM [Devices] AS [d]
+WHERE [d].[DeviceKey] = @__deviceKey_0" (0723d8ff)
+2021-11-09T15:18:45.9261124+05:30 8000000d-0005-fc00-b63f-84710c7967bb [INF] Executed DbCommand ("557"ms) [Parameters=["@__userKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[UserKey] = @__userKey_0" (0723d8ff)
+2021-11-09T15:18:46.2724438+05:30 80000013-0003-ff00-b63f-84710c7967bb [INF] Executed DbCommand ("332"ms) [Parameters=["@p13='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int32), @p6='?' (Size = 4000), @p7='?' (DbType = DateTime2), @p8='?' (Size = 4000), @p9='?' (DbType = DateTime2), @p10='?' (DbType = Int32), @p11='?' (Size = 4000), @p12='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [Devices] SET [ConnectionCount] = @p0, [CreatedDate] = @p1, [DeviceDesc] = @p2, [DeviceKey] = @p3, [DeviceName] = @p4, [DeviceTypeId] = @p5, [FriendlyName] = @p6, [LastConnected] = @p7, [ManufacturerName] = @p8, [ModifiedDate] = @p9, [RoomId] = @p10, [Status] = @p11, [UserKey] = @p12
+WHERE [DeviceId] = @p13;
+SELECT @@ROWCOUNT;" (0723d8ff)
+2021-11-09T15:18:46.2833460+05:30 80000028-0005-fd00-b63f-84710c7967bb [INF] Executed DbCommand ("343"ms) [Parameters=["@p13='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int32), @p6='?' (Size = 4000), @p7='?' (DbType = DateTime2), @p8='?' (Size = 4000), @p9='?' (DbType = DateTime2), @p10='?' (DbType = Int32), @p11='?' (Size = 4000), @p12='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [Devices] SET [ConnectionCount] = @p0, [CreatedDate] = @p1, [DeviceDesc] = @p2, [DeviceKey] = @p3, [DeviceName] = @p4, [DeviceTypeId] = @p5, [FriendlyName] = @p6, [LastConnected] = @p7, [ManufacturerName] = @p8, [ModifiedDate] = @p9, [RoomId] = @p10, [Status] = @p11, [UserKey] = @p12
+WHERE [DeviceId] = @p13;
+SELECT @@ROWCOUNT;" (0723d8ff)
+2021-11-09T15:18:46.2848309+05:30 80000022-0003-fd00-b63f-84710c7967bb [INF] Executed DbCommand ("345"ms) [Parameters=["@p13='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int32), @p6='?' (Size = 4000), @p7='?' (DbType = DateTime2), @p8='?' (Size = 4000), @p9='?' (DbType = DateTime2), @p10='?' (DbType = Int32), @p11='?' (Size = 4000), @p12='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [Devices] SET [ConnectionCount] = @p0, [CreatedDate] = @p1, [DeviceDesc] = @p2, [DeviceKey] = @p3, [DeviceName] = @p4, [DeviceTypeId] = @p5, [FriendlyName] = @p6, [LastConnected] = @p7, [ManufacturerName] = @p8, [ModifiedDate] = @p9, [RoomId] = @p10, [Status] = @p11, [UserKey] = @p12
+WHERE [DeviceId] = @p13;
+SELECT @@ROWCOUNT;" (0723d8ff)
+2021-11-09T15:18:46.2848419+05:30 80000044-0000-fc00-b63f-84710c7967bb [INF] Executed DbCommand ("345"ms) [Parameters=["@p13='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int32), @p6='?' (Size = 4000), @p7='?' (DbType = DateTime2), @p8='?' (Size = 4000), @p9='?' (DbType = DateTime2), @p10='?' (DbType = Int32), @p11='?' (Size = 4000), @p12='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [Devices] SET [ConnectionCount] = @p0, [CreatedDate] = @p1, [DeviceDesc] = @p2, [DeviceKey] = @p3, [DeviceName] = @p4, [DeviceTypeId] = @p5, [FriendlyName] = @p6, [LastConnected] = @p7, [ManufacturerName] = @p8, [ModifiedDate] = @p9, [RoomId] = @p10, [Status] = @p11, [UserKey] = @p12
+WHERE [DeviceId] = @p13;
+SELECT @@ROWCOUNT;" (0723d8ff)
+2021-11-09T15:18:46.5662922+05:30 80000036-0002-fa00-b63f-84710c7967bb [INF] Executed DbCommand ("328"ms) [Parameters=["@p13='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int32), @p6='?' (Size = 4000), @p7='?' (DbType = DateTime2), @p8='?' (Size = 4000), @p9='?' (DbType = DateTime2), @p10='?' (DbType = Int32), @p11='?' (Size = 4000), @p12='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [Devices] SET [ConnectionCount] = @p0, [CreatedDate] = @p1, [DeviceDesc] = @p2, [DeviceKey] = @p3, [DeviceName] = @p4, [DeviceTypeId] = @p5, [FriendlyName] = @p6, [LastConnected] = @p7, [ManufacturerName] = @p8, [ModifiedDate] = @p9, [RoomId] = @p10, [Status] = @p11, [UserKey] = @p12
+WHERE [DeviceId] = @p13;
+SELECT @@ROWCOUNT;" (0723d8ff)
+2021-11-09T15:18:46.5756665+05:30 80000013-0003-ff00-b63f-84710c7967bb [INF] Executing ObjectResult, writing value of type '"System.Boolean"'. (8a1b66c8)
+2021-11-09T15:18:46.5782085+05:30 80000013-0003-ff00-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.DeviceController.UpdateDeviceHistory (IoT.WebAPI)" in 2625.6981ms (afa2e885)
+2021-11-09T15:18:46.5783888+05:30 80000013-0003-ff00-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.DeviceController.UpdateDeviceHistory (IoT.WebAPI)"' (99874f2b)
+2021-11-09T15:18:46.5785811+05:30 80000013-0003-ff00-b63f-84710c7967bb [INF] Request finished in 2628.851ms 200 application/json; charset=utf-8 (791a596a)
+2021-11-09T15:18:46.5897232+05:30 80000028-0005-fd00-b63f-84710c7967bb [INF] Executing ObjectResult, writing value of type '"System.Boolean"'. (8a1b66c8)
+2021-11-09T15:18:46.5906405+05:30 80000028-0005-fd00-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.DeviceController.UpdateDeviceHistory (IoT.WebAPI)" in 2638.1492ms (afa2e885)
+2021-11-09T15:18:46.5907802+05:30 80000028-0005-fd00-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.DeviceController.UpdateDeviceHistory (IoT.WebAPI)"' (99874f2b)
+2021-11-09T15:18:46.5909691+05:30 80000028-0005-fd00-b63f-84710c7967bb [INF] Request finished in 2641.3004ms 200 application/json; charset=utf-8 (791a596a)
+2021-11-09T15:18:46.5931648+05:30 80000022-0003-fd00-b63f-84710c7967bb [INF] Executing ObjectResult, writing value of type '"System.Boolean"'. (8a1b66c8)
+2021-11-09T15:18:46.5944517+05:30 80000022-0003-fd00-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.DeviceController.UpdateDeviceHistory (IoT.WebAPI)" in 2637.5255ms (afa2e885)
+2021-11-09T15:18:46.5945882+05:30 80000022-0003-fd00-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.DeviceController.UpdateDeviceHistory (IoT.WebAPI)"' (99874f2b)
+2021-11-09T15:18:46.5947894+05:30 80000022-0003-fd00-b63f-84710c7967bb [INF] Request finished in 2638.4331ms 200 application/json; charset=utf-8 (791a596a)
+2021-11-09T15:18:46.5948237+05:30 80000044-0000-fc00-b63f-84710c7967bb [INF] Executing ObjectResult, writing value of type '"System.Boolean"'. (8a1b66c8)
+2021-11-09T15:18:46.5959098+05:30 80000044-0000-fc00-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.DeviceController.UpdateDeviceHistory (IoT.WebAPI)" in 2472.4507ms (afa2e885)
+2021-11-09T15:18:46.5960714+05:30 80000044-0000-fc00-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.DeviceController.UpdateDeviceHistory (IoT.WebAPI)"' (99874f2b)
+2021-11-09T15:18:46.5963321+05:30 80000044-0000-fc00-b63f-84710c7967bb [INF] Request finished in 2473.1334ms 200 application/json; charset=utf-8 (791a596a)
+2021-11-09T15:18:46.8907320+05:30 80000036-0002-fa00-b63f-84710c7967bb [INF] Executing ObjectResult, writing value of type '"System.Boolean"'. (8a1b66c8)
+2021-11-09T15:18:46.8915330+05:30 80000036-0002-fa00-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.DeviceController.UpdateDeviceHistory (IoT.WebAPI)" in 2724.4083ms (afa2e885)
+2021-11-09T15:18:46.8916628+05:30 80000036-0002-fa00-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.DeviceController.UpdateDeviceHistory (IoT.WebAPI)"' (99874f2b)
+2021-11-09T15:18:46.8918768+05:30 80000036-0002-fa00-b63f-84710c7967bb [INF] Request finished in 2725.0004ms 200 application/json; charset=utf-8 (791a596a)
+2021-11-09T15:18:46.9059771+05:30 8000000d-0005-fc00-b63f-84710c7967bb [INF] Executed DbCommand ("317"ms) [Parameters=["@__deviceKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [d].[DeviceId], [d].[ConnectionCount], [d].[CreatedDate], [d].[DeviceDesc], [d].[DeviceKey], [d].[DeviceName], [d].[DeviceTypeId], [d].[FriendlyName], [d].[LastConnected], [d].[ManufacturerName], [d].[ModifiedDate], [d].[RoomId], [d].[Status], [d].[UserKey]
+FROM [Devices] AS [d]
+WHERE [d].[DeviceKey] = @__deviceKey_0" (0723d8ff)
+2021-11-09T15:18:47.3004492+05:30 80000046-0001-fa00-b63f-84710c7967bb [INF] Executed DbCommand ("406"ms) [Parameters=["@p13='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int32), @p6='?' (Size = 4000), @p7='?' (DbType = DateTime2), @p8='?' (Size = 4000), @p9='?' (DbType = DateTime2), @p10='?' (DbType = Int32), @p11='?' (Size = 4000), @p12='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [Devices] SET [ConnectionCount] = @p0, [CreatedDate] = @p1, [DeviceDesc] = @p2, [DeviceKey] = @p3, [DeviceName] = @p4, [DeviceTypeId] = @p5, [FriendlyName] = @p6, [LastConnected] = @p7, [ManufacturerName] = @p8, [ModifiedDate] = @p9, [RoomId] = @p10, [Status] = @p11, [UserKey] = @p12
+WHERE [DeviceId] = @p13;
+SELECT @@ROWCOUNT;" (0723d8ff)
+2021-11-09T15:18:47.3004434+05:30 80000006-0001-fb00-b63f-84710c7967bb [INF] Executed DbCommand ("386"ms) [Parameters=["@p13='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int32), @p6='?' (Size = 4000), @p7='?' (DbType = DateTime2), @p8='?' (Size = 4000), @p9='?' (DbType = DateTime2), @p10='?' (DbType = Int32), @p11='?' (Size = 4000), @p12='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [Devices] SET [ConnectionCount] = @p0, [CreatedDate] = @p1, [DeviceDesc] = @p2, [DeviceKey] = @p3, [DeviceName] = @p4, [DeviceTypeId] = @p5, [FriendlyName] = @p6, [LastConnected] = @p7, [ManufacturerName] = @p8, [ModifiedDate] = @p9, [RoomId] = @p10, [Status] = @p11, [UserKey] = @p12
+WHERE [DeviceId] = @p13;
+SELECT @@ROWCOUNT;" (0723d8ff)
+2021-11-09T15:18:47.8458164+05:30 80000046-0001-fa00-b63f-84710c7967bb [INF] Executing ObjectResult, writing value of type '"System.Boolean"'. (8a1b66c8)
+2021-11-09T15:18:47.8468330+05:30 80000046-0001-fa00-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.DeviceController.UpdateDeviceHistory (IoT.WebAPI)" in 3833.2832ms (afa2e885)
+2021-11-09T15:18:47.8468926+05:30 80000049-0005-f900-b63f-84710c7967bb [INF] Executed DbCommand ("544"ms) [Parameters=["@p13='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int32), @p6='?' (Size = 4000), @p7='?' (DbType = DateTime2), @p8='?' (Size = 4000), @p9='?' (DbType = DateTime2), @p10='?' (DbType = Int32), @p11='?' (Size = 4000), @p12='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [Devices] SET [ConnectionCount] = @p0, [CreatedDate] = @p1, [DeviceDesc] = @p2, [DeviceKey] = @p3, [DeviceName] = @p4, [DeviceTypeId] = @p5, [FriendlyName] = @p6, [LastConnected] = @p7, [ManufacturerName] = @p8, [ModifiedDate] = @p9, [RoomId] = @p10, [Status] = @p11, [UserKey] = @p12
+WHERE [DeviceId] = @p13;
+SELECT @@ROWCOUNT;" (0723d8ff)
+2021-11-09T15:18:47.8468984+05:30 8000000d-0005-fc00-b63f-84710c7967bb [INF] Executed DbCommand ("544"ms) [Parameters=["@p13='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int32), @p6='?' (Size = 4000), @p7='?' (DbType = DateTime2), @p8='?' (Size = 4000), @p9='?' (DbType = DateTime2), @p10='?' (DbType = Int32), @p11='?' (Size = 4000), @p12='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [Devices] SET [ConnectionCount] = @p0, [CreatedDate] = @p1, [DeviceDesc] = @p2, [DeviceKey] = @p3, [DeviceName] = @p4, [DeviceTypeId] = @p5, [FriendlyName] = @p6, [LastConnected] = @p7, [ManufacturerName] = @p8, [ModifiedDate] = @p9, [RoomId] = @p10, [Status] = @p11, [UserKey] = @p12
+WHERE [DeviceId] = @p13;
+SELECT @@ROWCOUNT;" (0723d8ff)
+2021-11-09T15:18:47.8470012+05:30 80000046-0001-fa00-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.DeviceController.UpdateDeviceHistory (IoT.WebAPI)"' (99874f2b)
+2021-11-09T15:18:47.8472276+05:30 80000046-0001-fa00-b63f-84710c7967bb [INF] Request finished in 3834.0162ms 200 application/json; charset=utf-8 (791a596a)
+2021-11-09T15:18:47.8477877+05:30 80000006-0001-fb00-b63f-84710c7967bb [INF] Executing ObjectResult, writing value of type '"System.Boolean"'. (8a1b66c8)
+2021-11-09T15:18:47.8493072+05:30 80000006-0001-fb00-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.DeviceController.UpdateDeviceHistory (IoT.WebAPI)" in 3725.8244ms (afa2e885)
+2021-11-09T15:18:47.8494766+05:30 80000006-0001-fb00-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.DeviceController.UpdateDeviceHistory (IoT.WebAPI)"' (99874f2b)
+2021-11-09T15:18:47.8497532+05:30 80000006-0001-fb00-b63f-84710c7967bb [INF] Request finished in 3726.5928ms 200 application/json; charset=utf-8 (791a596a)
+2021-11-09T15:18:48.1676502+05:30 8000000d-0005-fc00-b63f-84710c7967bb [INF] Executing ObjectResult, writing value of type '"System.Boolean"'. (8a1b66c8)
+2021-11-09T15:18:48.1684680+05:30 8000000d-0005-fc00-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.DeviceController.UpdateDeviceHistory (IoT.WebAPI)" in 4211.2582ms (afa2e885)
+2021-11-09T15:18:48.1686044+05:30 8000000d-0005-fc00-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.DeviceController.UpdateDeviceHistory (IoT.WebAPI)"' (99874f2b)
+2021-11-09T15:18:48.1688427+05:30 8000000d-0005-fc00-b63f-84710c7967bb [INF] Request finished in 4211.99ms 200 application/json; charset=utf-8 (791a596a)
+2021-11-09T15:18:48.1856340+05:30 80000049-0005-f900-b63f-84710c7967bb [INF] Executing ObjectResult, writing value of type '"System.Boolean"'. (8a1b66c8)
+2021-11-09T15:18:48.1865099+05:30 80000049-0005-f900-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.DeviceController.UpdateDeviceHistory (IoT.WebAPI)" in 4233.9842ms (afa2e885)
+2021-11-09T15:18:48.1866526+05:30 80000049-0005-f900-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.DeviceController.UpdateDeviceHistory (IoT.WebAPI)"' (99874f2b)
+2021-11-09T15:18:48.1869409+05:30 80000049-0005-f900-b63f-84710c7967bb [INF] Request finished in 4237.2069ms 200 application/json; charset=utf-8 (791a596a)
+2021-11-09T16:43:05.8678089+05:30  [INF] User profile is available. Using '"C:\Users\satishsonkar\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2021-11-09T16:43:06.0428473+05:30 8000007c-0006-fb00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44342/   (ca22a1cb)
+2021-11-09T16:43:06.1110756+05:30 8000007c-0006-fb00-b63f-84710c7967bb [INF] Request finished in 73.394ms 404  (791a596a)

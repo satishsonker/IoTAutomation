@@ -1,8 +1,10 @@
 ﻿using IoT.BusinessLayer;
 using IoT.DataLayer.Interface;
+using IoT.ModelLayer;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,10 +18,10 @@ namespace IoT.WebAPI.Controllers
     {
         private readonly ILogger _logger;
         AlexaEventSourceBL _alexaEventSourceBL;
-        public AlexaEventSourceController(ILogger<ActivityLogController> logger,IAlexaEventSource alexaEventSource)
+        public AlexaEventSourceController(ILogger<ActivityLogController> logger,IAlexaEventSource alexaEventSource,IOptions<AppSettingConfig> config)
         {
             _logger = logger;
-            _alexaEventSourceBL = new AlexaEventSourceBL(alexaEventSource);
+            _alexaEventSourceBL = new AlexaEventSourceBL(alexaEventSource,config);
         }
 
         [HttpPost]
