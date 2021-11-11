@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace IoT.WebAPI.Controllers
 {
@@ -22,14 +23,14 @@ namespace IoT.WebAPI.Controllers
 
         [HttpPost]
         [Route("AddDeviceType")]
-        public IActionResult AddDeviceType([FromBody] DeviceType deviceType,[FromHeader] string userKey)
+        public async Task<IActionResult> AddDeviceType([FromBody] DeviceType deviceType,[FromHeader] string userKey)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
                     deviceType.CreatedDate = DateTime.Now;
-                    int result = _adminBL.AddDeviceType(deviceType, userKey);
+                    int result =await _adminBL.AddDeviceType(deviceType, userKey);
                     return Ok(result);
                 }
                 _logger.LogWarning("Get invalid model while adding the Device Type, UserKey : {0}", userKey);
@@ -43,9 +44,10 @@ namespace IoT.WebAPI.Controllers
 
 
         }
+
         [HttpPost]
         [Route("UpdateDeviceType")]
-        public IActionResult UpdateDeviceType([FromBody] DeviceType deviceType, [FromHeader] string userKey)
+        public async Task<IActionResult> UpdateDeviceType([FromBody] DeviceType deviceType, [FromHeader] string userKey)
         {
             try
             {
@@ -54,7 +56,7 @@ namespace IoT.WebAPI.Controllers
                     if (deviceType != null)
                     {
                         deviceType.ModifiedDate = DateTime.Now;
-                        return Ok(_adminBL.UpdateDeviceType(deviceType, userKey));
+                        return Ok(await _adminBL.UpdateDeviceType(deviceType, userKey));
                     }
                 }
                 _logger.LogWarning("Get invalid model while updating the Device Type UserKey : {0}", userKey);
@@ -69,13 +71,13 @@ namespace IoT.WebAPI.Controllers
 
         [HttpDelete]
         [Route("DeleteDeviceType")]
-        public IActionResult DeleteDeviceType([FromQuery] int deviceTypeId, [FromHeader] string userKey)
+        public async Task<IActionResult> DeleteDeviceType([FromQuery] int deviceTypeId, [FromHeader] string userKey)
         {
             try
             {
                 if (deviceTypeId>0)
                 {
-                    return Ok(_adminBL.DeleteDeviceType(deviceTypeId, userKey)); 
+                    return Ok(await _adminBL.DeleteDeviceType(deviceTypeId, userKey)); 
                 }
                 _logger.LogWarning("Get invalid Device Type id while deleting the Device Type, userKey : {0} & ID:{1}", userKey,deviceTypeId);
                 return BadRequest("Unable to delete the Device Type");
@@ -89,12 +91,12 @@ namespace IoT.WebAPI.Controllers
 
         [HttpGet]
         [Route("SearchDeviceType")]
-        public IActionResult SearchDeviceType([FromQuery] string searchTerm, [FromHeader] string userKey)
+        public async Task<IActionResult> SearchDeviceType([FromQuery] string searchTerm, [FromHeader] string userKey)
         {
             try
             {
                 searchTerm = searchTerm == null ? string.Empty : searchTerm;
-                return Ok(_adminBL.SearchDeviceType(searchTerm, userKey));
+                return Ok(await _adminBL.SearchDeviceType(searchTerm, userKey));
             }
             catch (Exception ex)
             {
@@ -105,13 +107,13 @@ namespace IoT.WebAPI.Controllers
 
         [HttpGet]
         [Route("GetDeviceType")]
-        public IActionResult GetDeviceType([FromQuery] int deviceTypeId, [FromHeader] string userKey)
+        public async Task<IActionResult> GetDeviceType([FromQuery] int deviceTypeId, [FromHeader] string userKey)
         {
             try
             {
                 if (deviceTypeId > 0)
                 {
-                    return Ok(_adminBL.GetDeviceType(deviceTypeId, userKey));
+                    return Ok(await _adminBL.GetDeviceType(deviceTypeId, userKey));
                 }
                 _logger.LogWarning("Get invalid Device Type id while getting the Device Type, userKey : {0} & ID:{1}", userKey, deviceTypeId);
                 return BadRequest("Unable to get the Device Type");
@@ -125,7 +127,7 @@ namespace IoT.WebAPI.Controllers
 
         [HttpPost]
         [Route("AddDeviceAction")]
-        public IActionResult AddDeviceAction([FromBody] DeviceAction deviceAction, [FromHeader] string userKey)
+        public async Task<IActionResult> AddDeviceAction([FromBody] DeviceAction deviceAction, [FromHeader] string userKey)
         {
             try
             {
@@ -133,7 +135,7 @@ namespace IoT.WebAPI.Controllers
                 {
                     if (deviceAction != null)
                     {
-                        return Ok(_adminBL.AddDeviceAction(deviceAction, userKey));
+                        return Ok(await _adminBL.AddDeviceAction(deviceAction, userKey));
                     }
                     _logger.LogWarning("Get model=null while adding the Device Action, UserKey : {0}", userKey);
                 }
@@ -149,7 +151,7 @@ namespace IoT.WebAPI.Controllers
 
         [HttpPost]
         [Route("UpdateDeviceAction")]
-        public IActionResult UpdateDeviceAction([FromBody] DeviceAction deviceAction, [FromHeader] string userKey)
+        public async Task<IActionResult> UpdateDeviceAction([FromBody] DeviceAction deviceAction, [FromHeader] string userKey)
         {
             try
             {
@@ -157,7 +159,7 @@ namespace IoT.WebAPI.Controllers
                 {
                     if (deviceAction != null)
                     {
-                        return Ok(_adminBL.UpdateDeviceAction(deviceAction, userKey));
+                        return Ok(await _adminBL.UpdateDeviceAction(deviceAction, userKey));
                     }
                     _logger.LogWarning("Get model=null while updating the Device Action, UserKey : {0}", userKey);
                 }
@@ -173,13 +175,13 @@ namespace IoT.WebAPI.Controllers
 
         [HttpDelete]
         [Route("DeleteDeviceAction")]
-        public IActionResult DeleteDeviceAction([FromQuery] int deviceActionId, [FromHeader] string userKey)
+        public async Task<IActionResult> DeleteDeviceAction([FromQuery] int deviceActionId, [FromHeader] string userKey)
         {
             try
             {
                 if (deviceActionId > 0)
                 {
-                    return Ok(_adminBL.DeleteDeviceAction(deviceActionId, userKey));
+                    return Ok(await _adminBL.DeleteDeviceAction(deviceActionId, userKey));
                 }
                 _logger.LogWarning("Get invalid Device Action Id while deleting the Device Action, userKey : {0} & ID:{1}", userKey, deviceActionId);
                 return BadRequest("Unable to delete the Device Action");
@@ -193,12 +195,12 @@ namespace IoT.WebAPI.Controllers
 
         [HttpGet]
         [Route("SearchDeviceAction")]
-        public IActionResult SearchDeviceAction([FromQuery] string searchTerm, [FromHeader] string userKey)
+        public async Task<IActionResult> SearchDeviceAction([FromQuery] string searchTerm, [FromHeader] string userKey)
         {
             try
             {
                 searchTerm = searchTerm == null ? string.Empty : searchTerm;
-                return Ok(_adminBL.SearchDeviceAction(searchTerm, userKey));
+                return Ok(await _adminBL.SearchDeviceAction(searchTerm, userKey));
             }
             catch (Exception ex)
             {
@@ -209,13 +211,13 @@ namespace IoT.WebAPI.Controllers
 
         [HttpGet]
         [Route("GetDeviceAction")]
-        public IActionResult GetDeviceAction([FromQuery] int deviceActionId, [FromHeader] string userKey)
+        public async Task<IActionResult> GetDeviceAction([FromQuery] int deviceActionId, [FromHeader] string userKey)
         {
             try
             {
                 if (deviceActionId > 0)
                 {
-                    return Ok(_adminBL.GetDeviceAction(deviceActionId, userKey));
+                    return Ok(await _adminBL.GetDeviceAction(deviceActionId, userKey));
                 }
                 _logger.LogWarning("Get invalid Device Action id while Getting the Device Action, userKey : {0} & ID:{1}", userKey, deviceActionId);
                 return BadRequest("Unable to get the Device Action");
@@ -229,11 +231,11 @@ namespace IoT.WebAPI.Controllers
 
         [HttpGet]
         [Route("GetAllDeviceAction")]
-        public IActionResult GetAllDeviceAction([FromHeader] string userKey)
+        public async Task<IActionResult> GetAllDeviceAction([FromHeader] string userKey)
         {
             try
             {
-                return Ok(_adminBL.GetAllDeviceType(userKey));
+                return Ok(await _adminBL.GetAllDeviceType(userKey));
             }
             catch (Exception ex)
             {
@@ -244,7 +246,7 @@ namespace IoT.WebAPI.Controllers
 
         [HttpPost]
         [Route("AddDeviceCapability")]
-        public IActionResult AddDeviceCapability([FromBody] DeviceCapability deviceCapability, [FromHeader] string userKey)
+        public async Task<IActionResult> AddDeviceCapability([FromBody] DeviceCapability deviceCapability, [FromHeader] string userKey)
         {
             try
             {
@@ -252,7 +254,7 @@ namespace IoT.WebAPI.Controllers
                 {
                     if (deviceCapability != null)
                     {
-                        return Ok(_adminBL.AddDeviceCapability(deviceCapability, userKey));
+                        return Ok(await _adminBL.AddDeviceCapability(deviceCapability, userKey));
                     }
                     _logger.LogWarning("Get model=null while adding the Device Capability, UserKey : {0}", userKey);
                 }
@@ -268,7 +270,7 @@ namespace IoT.WebAPI.Controllers
 
         [HttpPost]
         [Route("UpdateDeviceCapability")]
-        public IActionResult UpdateDeviceCapability([FromBody] DeviceCapability DeviceCapability, [FromHeader] string userKey)
+        public async Task<IActionResult> UpdateDeviceCapability([FromBody] DeviceCapability DeviceCapability, [FromHeader] string userKey)
         {
             try
             {
@@ -276,7 +278,7 @@ namespace IoT.WebAPI.Controllers
                 {
                     if (DeviceCapability != null)
                     {
-                        return Ok(_adminBL.UpdateDeviceCapability(DeviceCapability, userKey));
+                        return Ok(await _adminBL.UpdateDeviceCapability(DeviceCapability, userKey));
                     }
                     _logger.LogWarning("Get model=null while updating the Device Capability, UserKey : {0}", userKey);
                 }
@@ -292,13 +294,13 @@ namespace IoT.WebAPI.Controllers
 
         [HttpDelete]
         [Route("DeleteDeviceCapability")]
-        public IActionResult DeleteDeviceCapability([FromQuery] int DeviceCapabilityId, [FromHeader] string userKey)
+        public async Task<IActionResult> DeleteDeviceCapability([FromQuery] int DeviceCapabilityId, [FromHeader] string userKey)
         {
             try
             {
                 if (DeviceCapabilityId > 0)
                 {
-                    return Ok(_adminBL.DeleteDeviceCapability(DeviceCapabilityId, userKey));
+                    return Ok(await _adminBL.DeleteDeviceCapability(DeviceCapabilityId, userKey));
                 }
                 _logger.LogWarning("Get invalid Device Capability Id while deleting the Device Capability, userKey : {0} & ID:{1}", userKey, DeviceCapabilityId);
                 return BadRequest("Unable to delete the Device Capability");
@@ -312,12 +314,12 @@ namespace IoT.WebAPI.Controllers
 
         [HttpGet]
         [Route("SearchDeviceCapability")]
-        public IActionResult SearchDeviceCapability([FromQuery] string searchTerm, [FromHeader] string userKey)
+        public async Task<IActionResult> SearchDeviceCapability([FromQuery] string searchTerm, [FromHeader] string userKey)
         {
             try
             {
                 searchTerm = searchTerm == null ? string.Empty : searchTerm;
-                return Ok(_adminBL.SearchDeviceCapability(searchTerm, userKey));
+                return Ok(await _adminBL.SearchDeviceCapability(searchTerm, userKey));
             }
             catch (Exception ex)
             {
@@ -328,13 +330,13 @@ namespace IoT.WebAPI.Controllers
 
         [HttpGet]
         [Route("GetDeviceCapability")]
-        public IActionResult GetDeviceCapability([FromQuery] int DeviceCapabilityId, [FromHeader] string userKey)
+        public async Task<IActionResult> GetDeviceCapability([FromQuery] int DeviceCapabilityId, [FromHeader] string userKey)
         {
             try
             {
                 if (DeviceCapabilityId > 0)
                 {
-                    return Ok(_adminBL.GetDeviceCapability(DeviceCapabilityId, userKey));
+                    return Ok(await _adminBL.GetDeviceCapability(DeviceCapabilityId, userKey));
                 }
                 _logger.LogWarning("Get invalid Device Capability id while Getting the Device Capability, userKey : {0} & ID:{1}", userKey, DeviceCapabilityId);
                 return BadRequest("Unable to get the Device Capability");
@@ -348,11 +350,11 @@ namespace IoT.WebAPI.Controllers
 
         [HttpGet]
         [Route("GetAllDeviceCapability")]
-        public IActionResult GetAllDeviceCapability([FromHeader] string userKey)
+        public async Task<IActionResult> GetAllDeviceCapability([FromHeader] string userKey)
         {
             try
             {
-                return Ok(_adminBL.GetAllDeviceCapability(userKey));
+                return Ok(await _adminBL.GetAllDeviceCapability(userKey));
             }
             catch (Exception ex)
             {
@@ -363,13 +365,13 @@ namespace IoT.WebAPI.Controllers
 
         [HttpPost]
         [Route("UpdateAdminPermission")]
-        public IActionResult UpdateAdminPermission([FromBody] List<UserPermission> userPermissions, [FromHeader] string userKey)
+        public async Task<IActionResult> UpdateAdminPermission([FromBody] List<UserPermission> userPermissions, [FromHeader] string userKey)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    return Ok(_adminBL.UpdateAdminPermission(userPermissions, userKey)); 
+                    return Ok(await _adminBL.UpdateAdminPermission(userPermissions, userKey)); 
                 }
                 _logger.LogWarning("Get invalid model while updating the admin permission, UserKey : {0}", userKey);
                 return BadRequest(ModelState);

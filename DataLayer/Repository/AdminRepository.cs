@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace IoT.DataLayer.Repository
 {
@@ -16,87 +17,87 @@ namespace IoT.DataLayer.Repository
             this.context = context;
         }
 
-        public int AddDeviceAction(DeviceAction deviceAction, string userKey)
+        public async Task<int> AddDeviceAction(DeviceAction deviceAction, string userKey)
         {
-            if (isUserExist(userKey))
+            if (await isUserExist(userKey))
             {
-                context.DeviceActions.Add(deviceAction);
+                context.DeviceActions.AddAsync(deviceAction);
                 return context.SaveChanges();
             }
             return 0;
         }
 
-        public int AddDeviceCapability(DeviceCapability deviceCapability, string userKey)
+        public async Task<int> AddDeviceCapability(DeviceCapability deviceCapability, string userKey)
         {
-            if (isUserExist(userKey) && deviceCapability!=null)
+            if (await isUserExist(userKey) && deviceCapability != null)
             {
-                context.DeviceCapabilities.Add(deviceCapability);
+                await context.DeviceCapabilities.AddAsync(deviceCapability);
+                return await context.SaveChangesAsync();
+            }
+            return 0;
+        }
+
+        public async Task<int> AddDeviceType(DeviceType deviceType, string userKey)
+        {
+            if (await isUserExist(userKey) && deviceType != null)
+            {
+                await context.DeviceTypes.AddAsync(deviceType);
                 return context.SaveChanges();
             }
             return 0;
         }
 
-        public int AddDeviceType(DeviceType deviceType, string userKey)
+        public async Task<int> DeleteDeviceAction(int deviceActionId, string userKey)
         {
-            if (isUserExist(userKey) && deviceType != null)
+            if (await isUserExist(userKey) && deviceActionId > 0)
             {
-                context.DeviceTypes.Add(deviceType);
-                return context.SaveChanges();
-            }
-            return 0;
-        }
-
-        public int DeleteDeviceAction(int deviceActionId, string userKey)
-        {
-            if (isUserExist(userKey) && deviceActionId >0)
-            {
-                var oldDeviceType = context.DeviceActions.Where(x => x.DeciveActionId == deviceActionId).FirstOrDefault();
+                var oldDeviceType =await context.DeviceActions.Where(x => x.DeciveActionId == deviceActionId).FirstOrDefaultAsync();
                 if (oldDeviceType != null)
                 {
                     var deviceType = context.DeviceActions.Attach(oldDeviceType);
                     deviceType.State = EntityState.Deleted;
-                    return context.SaveChanges();
+                    return await context.SaveChangesAsync();
                 }
             }
             return 0;
         }
 
-        public int DeleteDeviceCapability(int deviceCapabilityId, string userKey)
+        public async Task<int> DeleteDeviceCapability(int deviceCapabilityId, string userKey)
         {
-            if(isUserExist(userKey) && deviceCapabilityId>0)
-            { 
-            var oldDeviceCapability = context.DeviceCapabilities.Where(x => x.DeviceCapabilityId == deviceCapabilityId).FirstOrDefault();
-            if (oldDeviceCapability != null)
+            if (await isUserExist(userKey) && deviceCapabilityId > 0)
             {
-                var deviceCapability = context.DeviceCapabilities.Attach(oldDeviceCapability);
-                deviceCapability.State = EntityState.Deleted;
-                return context.SaveChanges();
+                var oldDeviceCapability =await context.DeviceCapabilities.Where(x => x.DeviceCapabilityId == deviceCapabilityId).FirstOrDefaultAsync();
+                if (oldDeviceCapability != null)
+                {
+                    var deviceCapability = context.DeviceCapabilities.Attach(oldDeviceCapability);
+                    deviceCapability.State = EntityState.Deleted;
+                    return await context.SaveChangesAsync();
+                }
             }
-        }
             return 0;
         }
 
-        public int DeleteDeviceType(int deviceTypeId, string userKey)
+        public async Task<int> DeleteDeviceType(int deviceTypeId, string userKey)
         {
-            if (isUserExist(userKey) && deviceTypeId > 0)
+            if (await isUserExist(userKey) && deviceTypeId > 0)
             {
-                var oldDeviceType = context.DeviceTypes.Where(x => x.DeviceTypeId == deviceTypeId).FirstOrDefault();
+                var oldDeviceType =await context.DeviceTypes.Where(x => x.DeviceTypeId == deviceTypeId).FirstOrDefaultAsync();
                 if (oldDeviceType != null)
                 {
                     var deviceType = context.DeviceTypes.Attach(oldDeviceType);
                     deviceType.State = EntityState.Deleted;
-                    return context.SaveChanges();
+                    return await context.SaveChangesAsync();
                 }
             }
             return 0;
         }
 
-        public IEnumerable<DeviceAction> GetAllDeviceAction(string userKey)
+        public async Task<List<DeviceAction>> GetAllDeviceAction(string userKey)
         {
             var data = new List<DeviceAction>();
-            if (isUserExist(userKey))
+            if (await isUserExist(userKey))
             {
-                data = context.DeviceActions.Include(x => x.DeviceType).OrderBy(x => x.DeviceActionName).ToList();
+                data = await context.DeviceActions.Include(x => x.DeviceType).OrderBy(x => x.DeviceActionName).ToListAsync();
                 if (data != null)
                 {
                     foreach (var item in data)
@@ -108,12 +109,12 @@ namespace IoT.DataLayer.Repository
             return data;
         }
 
-        public IEnumerable<DeviceCapability> GetAllDeviceCapability(string userKey)
+        public async Task<List<DeviceCapability>> GetAllDeviceCapability(string userKey)
         {
             var data = new List<DeviceCapability>();
-            if (isUserExist(userKey))
+            if (await isUserExist(userKey))
             {
-                data = context.DeviceCapabilities.Include(x => x.DeviceType).OrderBy(x => x.CapabilityType).ToList();
+                data =await context.DeviceCapabilities.Include(x => x.DeviceType).OrderBy(x => x.CapabilityType).ToListAsync();
                 if (data != null)
                 {
                     foreach (var item in data)
@@ -125,12 +126,12 @@ namespace IoT.DataLayer.Repository
             return data;
         }
 
-        public DeviceAction GetDeviceAction(int deviceActionId, string userKey)
+        public async Task<DeviceAction> GetDeviceAction(int deviceActionId, string userKey)
         {
             var data = new DeviceAction();
-            if (isUserExist(userKey) && deviceActionId > 0)
+            if (await isUserExist(userKey) && deviceActionId > 0)
             {
-                data = context.DeviceActions.Include(x => x.DeviceType).Where(x => x.DeciveActionId == deviceActionId).FirstOrDefault();
+                data =await context.DeviceActions.Include(x => x.DeviceType).Where(x => x.DeciveActionId == deviceActionId).FirstOrDefaultAsync();
                 if (data != null)
                 {
                     data.DeviceType.DeviceActions = null;
@@ -139,12 +140,11 @@ namespace IoT.DataLayer.Repository
             return data;
         }
 
-        public DeviceCapability GetDeviceCapability(int deviceCapabilityId, string userKey)
+        public async Task<DeviceCapability> GetDeviceCapability(int deviceCapabilityId, string userKey)
         {
-            
-            if (isUserExist(userKey) && deviceCapabilityId > 0)
+            if (await isUserExist(userKey) && deviceCapabilityId > 0)
             {
-                var data =context.DeviceCapabilities.Include(x => x.DeviceType).Where(x => x.DeviceCapabilityId == deviceCapabilityId).FirstOrDefault();
+                var data =await context.DeviceCapabilities.Include(x => x.DeviceType).Where(x => x.DeviceCapabilityId == deviceCapabilityId).FirstOrDefaultAsync();
                 if (data != null)
                     data.DeviceType.DeviceCapabilities = null;
                 return data;
@@ -152,29 +152,29 @@ namespace IoT.DataLayer.Repository
             return new DeviceCapability(); ;
         }
 
-        public DeviceType GetDeviceType(int deviceTypeId, string userKey)
+        public async Task<DeviceType> GetDeviceType(int deviceTypeId, string userKey)
         {
-            if(isUserExist(userKey) && deviceTypeId>0)
-            return context.DeviceTypes.Where(x => x.DeviceTypeId == deviceTypeId).FirstOrDefault();
+            if (await isUserExist(userKey) && deviceTypeId > 0)
+                return await context.DeviceTypes.Where(x => x.DeviceTypeId == deviceTypeId).FirstOrDefaultAsync();
             return new DeviceType();
         }
 
-        public IEnumerable<DeviceAction> SearchDeviceAction(string searchTerm, string userKey)
+        public async Task<List<DeviceAction>> SearchDeviceAction(string searchTerm, string userKey)
         {
-            if (isUserExist(userKey) && !string.IsNullOrEmpty(searchTerm))
+            if (await isUserExist(userKey) && !string.IsNullOrEmpty(searchTerm))
             {
                 searchTerm = searchTerm.ToLower();
-                return context.DeviceActions.Where(x => searchTerm == "all" || x.DeviceActionName.ToLower().Contains(searchTerm) || x.DeviceActionValue.ToLower().Contains(searchTerm)).OrderBy(x => x.DeviceActionName);
-}
+                return await context.DeviceActions.Where(x => searchTerm == "all" || x.DeviceActionName.ToLower().Contains(searchTerm) || x.DeviceActionValue.ToLower().Contains(searchTerm)).OrderBy(x => x.DeviceActionName).ToListAsync();
+            }
             return new List<DeviceAction>();
         }
 
-        public IEnumerable<DeviceCapability> SearchDeviceCapability(string searchTerm, string userKey)
+        public async Task<List<DeviceCapability>> SearchDeviceCapability(string searchTerm, string userKey)
         {
-            if (isUserExist(userKey) && !string.IsNullOrEmpty(searchTerm))
+            if (await isUserExist(userKey) && !string.IsNullOrEmpty(searchTerm))
             {
                 searchTerm = searchTerm.ToLower();
-                var data = context.DeviceCapabilities.Include(x => x.DeviceType).Where(x => searchTerm == "all" || x.DeviceType.DeviceTypeName.ToLower().Contains(searchTerm) || x.SupportedProperty.ToLower().Contains(searchTerm) || x.CapabilityType.ToLower().Contains(searchTerm) || x.CapabilityInterface.ToLower().Contains(searchTerm)).OrderBy(x => x.CapabilityType);
+                var data = await context.DeviceCapabilities.Include(x => x.DeviceType).Where(x => searchTerm == "all" || x.DeviceType.DeviceTypeName.ToLower().Contains(searchTerm) || x.SupportedProperty.ToLower().Contains(searchTerm) || x.CapabilityType.ToLower().Contains(searchTerm) || x.CapabilityInterface.ToLower().Contains(searchTerm)).OrderBy(x => x.CapabilityType).ToListAsync();
                 foreach (DeviceCapability item in data)
                 {
                     item.DeviceType.DeviceCapabilities = null;
@@ -184,72 +184,72 @@ namespace IoT.DataLayer.Repository
             return new List<DeviceCapability>();
         }
 
-        public IEnumerable<DeviceType> SearchDeviceType(string searchTerm, string userKey)
+        public async Task<List<DeviceType>> SearchDeviceType(string searchTerm, string userKey)
         {
-            if (isUserExist(userKey) && !string.IsNullOrEmpty(searchTerm))
+            if (await isUserExist(userKey) && !string.IsNullOrEmpty(searchTerm))
             {
                 searchTerm = searchTerm.ToLower();
-                return context.DeviceTypes.Where(x => searchTerm == "all" || x.DeviceTypeName.ToLower().Contains(searchTerm)).OrderBy(x => x.DeviceTypeName);
- }
+                return await context.DeviceTypes.Where(x => searchTerm == "all" || x.DeviceTypeName.ToLower().Contains(searchTerm)).OrderBy(x => x.DeviceTypeName).ToListAsync();
+            }
             return new List<DeviceType>();
         }
 
-        public bool UpdateAdminPermission(List<UserPermission> userPermissions, string userKey)
+        public async Task<bool> UpdateAdminPermission(List<UserPermission> userPermissions, string userKey)
         {
             bool result = false;
-            if (isUserExist(userKey) && userPermissions != null && userPermissions.Count > 0 && !string.IsNullOrEmpty(userKey))
+            if (await isUserExist(userKey) && userPermissions != null && userPermissions.Count > 0 && !string.IsNullOrEmpty(userKey))
             {
-                if (context.Users.Include(x => x.UserPermissions).Where(x => x.UserKey == userKey && x.UserPermissions.FirstOrDefault().IsAdmin).Count() > 0)
+                if (await context.Users.Include(x => x.UserPermissions).Where(x => x.UserKey == userKey && x.UserPermissions.FirstOrDefault().IsAdmin).CountAsync() > 0)
                 {
                     foreach (UserPermission userPermission in userPermissions)
                     {
                         context.UserPermissions.Attach(userPermission).State = EntityState.Modified;
                     }
-                    if (context.SaveChanges() > 0)
+                    if (await context.SaveChangesAsync() > 0)
                         result = true;
                 }
             }
             return result;
         }
 
-        public int UpdateDeviceAction(DeviceAction deviceAction, string userKey)
+        public async Task<int> UpdateDeviceAction(DeviceAction deviceAction, string userKey)
         {
-            if (isUserExist(userKey) && deviceAction != null)
+            if (await isUserExist(userKey) && deviceAction != null)
             {
                 var deviceType = context.DeviceActions.Attach(deviceAction);
                 deviceType.State = EntityState.Modified;
-                return context.SaveChanges();
+                return await context.SaveChangesAsync();
             }
             return 0;
         }
 
-        public int UpdateDeviceCapability(DeviceCapability deviceCapability, string userKey)
+        public async Task<int> UpdateDeviceCapability(DeviceCapability deviceCapability, string userKey)
         {
-            if (isUserExist(userKey) && deviceCapability != null)
+            if (await isUserExist(userKey) && deviceCapability != null)
             {
                 var oldDeviceCapability = context.DeviceCapabilities.Attach(deviceCapability);
                 oldDeviceCapability.State = EntityState.Modified;
-                return context.SaveChanges();
+                return await context.SaveChangesAsync();
             }
             return 0;
         }
 
-        public int UpdateDeviceType(DeviceType updateDeviceType, string userKey)
+        public async Task<int> UpdateDeviceType(DeviceType updateDeviceType, string userKey)
         {
-            if (isUserExist(userKey) && updateDeviceType != null)
+            if (await isUserExist(userKey) && updateDeviceType != null)
             {
                 var deviceType = context.DeviceTypes.Attach(updateDeviceType);
                 deviceType.State = EntityState.Modified;
-                return context.SaveChanges();
+                return await context.SaveChangesAsync();
             }
             return 0;
         }
-        private bool isUserExist(string userKey)
+        private async Task<bool> isUserExist(string userKey)
         {
             bool result = false;
-            if(!string.IsNullOrEmpty(userKey))
+            if (!string.IsNullOrEmpty(userKey))
             {
-                if (context.UserPermissions.Where(x => x.UserKey == userKey && x.IsAdmin).Count() > 0)
+                if (await context.UserPermissions.Where(x => x.UserKey == userKey && x.IsAdmin).CountAsync() > 0)
                     result = true;
             }
             return result;

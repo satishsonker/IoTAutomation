@@ -36,7 +36,7 @@ namespace IoT.BusinessLayer
                 var newTopic = new string[subscribeTopic.Length + serverTopics.Length];
                 subscribeTopic.CopyTo(newTopic, 0);
                 serverTopics.CopyTo(newTopic, subscribeTopic.Length);
-                client.Subscribe(newTopic, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
+               //client.Subscribe(newTopic, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
             }
         }
         public async static void client_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs e)

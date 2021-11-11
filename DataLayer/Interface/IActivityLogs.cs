@@ -8,7 +8,7 @@ namespace IoT.DataLayer.Interface
 {
     public interface IActivityLogs
     {
-        Task<ActivityLog> Add(ActivityLog entity, string userKey);
-        IEnumerable<ActivityLog> GetAll(string userKey);
+        Task<int> Add(ActivityLog entity, string userKey);
+        Task<List<ActivityLog>> GetAll(string userKey);
     }
 }

@@ -25,37 +25,37 @@ namespace IoT.WebAPI.Controllers
 
         [HttpPost]
         [Route("Add")]
-        public IActionResult Add([FromBody] ActivityLog device, [FromHeader] string userKey)
+        public async  Task<int> Add([FromBody] ActivityLog device, [FromHeader] string userKey)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    var newdevice = activityLogsBL.Add(device, userKey);
-                    if (newdevice.ActivityLogId > 0)
+                    var newdevice =await activityLogsBL.Add(device, userKey);
+                    if (newdevice > 0)
                     {
-                        return Ok();
+                        return newdevice;
                     }
                     _logger.LogError("Unable to Add Activity Log: User Key {0}", userKey);
-                    return BadRequest("Unable to Add Activity Log");
+                    return 0;
                 }
                 _logger.LogError("Get invalid Model while Adding the Activity log: User Key {0}", userKey);
-                return BadRequest(ModelState);
+                return 0;
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error Occured while Adding the Activity log: User Key {0}", userKey);
-                return BadRequest();
+                return 0;
             }
         }
 
         [HttpGet]
         [Route("GetAll")]
-        public IEnumerable<ActivityLog> GetAll([FromHeader] string userKey)
+        public async Task<List<ActivityLog>> GetAll([FromHeader] string userKey)
         {
             try
             {
-                return activityLogsBL.GetAll(userKey);
+                return await activityLogsBL.GetAll(userKey);
             }
             catch (Exception ex)
             {

@@ -15,7 +15,7 @@ namespace IoT.BusinessLayer
             httpClient = new HttpClient();
         }
 
-        public async Task<HttpResponseMessage> Post(string url,HttpContent httpContent)
+        public virtual async Task<HttpResponseMessage> Post(string url,HttpContent httpContent)
         {
             HttpResponseMessage httpResponseMessage = await httpClient.PostAsync(url, httpContent);
             return httpResponseMessage;

@@ -17,35 +17,35 @@ namespace IoT.BusinessLayer
         private readonly IAlexaEventSource _alexaEventSource;
         private readonly HttpClientWrapper httpClientWrapper;
         private readonly IOptions<AppSettingConfig> config;
-        public AlexaEventSourceBL(IAlexaEventSource ialexaEventSource,IOptions<AppSettingConfig> _config)
+        public AlexaEventSourceBL(IAlexaEventSource ialexaEventSource, IOptions<AppSettingConfig> _config)
         {
             _alexaEventSource = ialexaEventSource;
             config = _config;
             httpClientWrapper = new HttpClientWrapper();
         }
-        private string GetRefreshToken()
+        private async Task<string> GetRefreshToken()
         {
-            return _alexaEventSource.GetRefreshToken();
+            return await _alexaEventSource.GetRefreshToken();
         }
 
-        public void UpdateCode(string code, string userKey)
+        public async Task<bool> UpdateCode(string code, string userKey)
         {
-            _alexaEventSource.UpdateCode(code, userKey);
+            return await _alexaEventSource.UpdateCode(code, userKey);
         }
 
-        public void UpdateToken(string token, string refreshToken, int expireMin, string userKey)
+        public async Task<bool> UpdateToken(string token, string refreshToken, int expireMin, string userKey)
         {
-            _alexaEventSource.UpdateToken(token, refreshToken, expireMin, userKey);
+            return await _alexaEventSource.UpdateToken(token, refreshToken, expireMin, userKey);
         }
         public async Task<string> PressDoorbell(string endpoitnId, string apiKey)
         {
-            if (apiKey == "ByPassApiKey" || _alexaEventSource.VerifyAPIKey(apiKey))
+            if (apiKey == "ByPassApiKey" || await _alexaEventSource.VerifyAPIKey(apiKey))
             {
                 string newToken = null;
                 var token = new SkillToken();
             again:
-                token = _alexaEventSource.GetToken(true);
-                if (newToken!=null || (token != null && token.ExpireAt > DateTime.Now))
+                token = await _alexaEventSource.GetToken(true);
+                if (newToken != null || (token != null && token.ExpireAt > DateTime.Now))
                 {
                     DoorbellEventModel doorbellEventModel = new DoorbellEventModel()
                     {
@@ -56,7 +56,7 @@ namespace IoT.BusinessLayer
                                 endpointId = endpoitnId,
                                 scope = new Scope()
                                 {
-                                    token = newToken == null ? token.Token : newToken,
+                                    token = newToken ?? token.Token,
                                     type = "BearerToken"
                                 }
                             },
@@ -78,10 +78,10 @@ namespace IoT.BusinessLayer
                         }
                     };
                     StringContent stringContent = new StringContent(JsonConvert.SerializeObject(doorbellEventModel));
-                    var response = httpClientWrapper.Post(config.Value.AlexaEventUrl, stringContent).Result;
+                    var response =await httpClientWrapper.Post(config.Value.AlexaEventUrl, stringContent);
                     if (response.StatusCode == HttpStatusCode.Unauthorized)
                     {
-                        var rtoken = GetRefreshToken(token.RefreshToken, token.ClientId, token.ClientSecret, apiKey);
+                        var rtoken =await GetRefreshToken(token.RefreshToken, token.ClientId, token.ClientSecret, apiKey);
                         newToken = rtoken.Item1.access_token;
                         goto again;
                     }
@@ -92,7 +92,7 @@ namespace IoT.BusinessLayer
                 }
                 else
                 {
-                    var rtoken = GetRefreshToken(token.RefreshToken, token.ClientId, token.ClientSecret, apiKey);
+                    var rtoken =await GetRefreshToken(token.RefreshToken, token.ClientId, token.ClientSecret, apiKey);
                     newToken = rtoken.Item1.access_token;
                     goto again;
                 }
@@ -104,13 +104,13 @@ namespace IoT.BusinessLayer
             if (!string.IsNullOrEmpty(endpointId))
             {
 
-                if (apiKey == "ByPassApiKey" || _alexaEventSource.VerifyAPIKey(apiKey))
+                if (apiKey == "ByPassApiKey" || await _alexaEventSource.VerifyAPIKey(apiKey))
                 {
                     string newToken = null;
                     var token = new SkillToken();
                 again:
-                    token = _alexaEventSource.GetToken(true);
-                    if (newToken!=null || (token != null && token.ExpireAt > DateTime.Now))
+                    token = await _alexaEventSource.GetToken(true);
+                    if (newToken != null || (token != null && token.ExpireAt > DateTime.Now))
                     {
                         MotionDetectModel motionDetectModel = new MotionDetectModel()
                         {
@@ -121,7 +121,7 @@ namespace IoT.BusinessLayer
                                     endpointId = endpointId,
                                     scope = new Scope()
                                     {
-                                        token = newToken == null ? token.Token : newToken,
+                                        token = newToken ?? token.Token,
                                         type = "BearerToken"
                                     }
                                 },
@@ -177,7 +177,7 @@ namespace IoT.BusinessLayer
                         var response = httpClientWrapper.Post(config.Value.AlexaEventUrl, stringContent).Result;
                         if (response.StatusCode == HttpStatusCode.Unauthorized)
                         {
-                            var rtoken = GetRefreshToken(token.RefreshToken, token.ClientId, token.ClientSecret, apiKey);
+                            var rtoken = await GetRefreshToken(token.RefreshToken, token.ClientId, token.ClientSecret, apiKey);
                             newToken = rtoken.Item1.access_token;
                             goto again;
                         }
@@ -188,16 +188,16 @@ namespace IoT.BusinessLayer
                     }
                     else
                     {
-                        var rtoken = GetRefreshToken(token.RefreshToken, token.ClientId, token.ClientSecret, apiKey);
+                        var rtoken = await GetRefreshToken(token.RefreshToken, token.ClientId, token.ClientSecret, apiKey);
                         newToken = rtoken.Item1.access_token;
                         goto again;
                     }
                 }
-              
+
             }
             return "error";
         }
-        private Tuple<RefreshTokenResponseModel, bool> GetRefreshToken(string refreshToken, string clientId, string clientSecret, string apiKey)
+        public virtual async Task<Tuple<RefreshTokenResponseModel, bool>> GetRefreshToken(string refreshToken, string clientId, string clientSecret, string apiKey)
         {
             List<KeyValuePair<string, string>> keyValuePair = new List<KeyValuePair<string, string>>();
             keyValuePair.Add(new KeyValuePair<string, string>("grant_type", "refresh_token"));
@@ -210,7 +210,7 @@ namespace IoT.BusinessLayer
             if (refreshTokenResponse.IsSuccessStatusCode)
             {
                 var refreshTokenObj = JsonConvert.DeserializeObject<RefreshTokenResponseModel>(data.Result);
-                _alexaEventSource.UpdateToken(refreshTokenObj.access_token, refreshTokenObj.refresh_token, refreshTokenObj.expires_in, apiKey);
+                await _alexaEventSource.UpdateToken(refreshTokenObj.access_token, refreshTokenObj.refresh_token, refreshTokenObj.expires_in, apiKey);
                 return new Tuple<RefreshTokenResponseModel, bool>(refreshTokenObj, true);
             }
             return new Tuple<RefreshTokenResponseModel, bool>(new RefreshTokenResponseModel(), false);

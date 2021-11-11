@@ -2,16 +2,17 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace IoT.DataLayer.Interface
 {
   public  interface IAlexaEventSource
     {
-        void UpdateCode(string code, string userKey);
-        void UpdateToken(string token,string refreshToken, int expireMin, string userKey);
-        Tuple<string,string, DateTime> GetToken();
-        SkillToken GetToken(bool allField);
-        string GetRefreshToken();
-        bool VerifyAPIKey(string apiKey);
+        Task<bool> UpdateCode(string code, string userKey);
+        Task<bool> UpdateToken(string token,string refreshToken, int expireMin, string userKey);
+        Task<Tuple<string,string, DateTime>> GetToken();
+        Task<SkillToken> GetToken(bool allField);
+        Task<string> GetRefreshToken();
+        Task<bool> VerifyAPIKey(string apiKey);
     }
 }

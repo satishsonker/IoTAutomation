@@ -17,46 +17,44 @@ namespace IoT.DataLayer.Repository
             context = _context;
 
         }
-        public Task<ActivityLog> Add(ActivityLog entity, string userKey)
+        public async Task<int> Add(ActivityLog entity, string userKey)
         {
             if (entity != null)
             {
-                var oldLogs = context.ActivityLogs.Where(x => x.UserKey == userKey).OrderByDescending(x=>x.CreatedDate).ToListAsync();
-                oldLogs.ContinueWith(t => { 
-                if(t.Result.Count>100)
-                    {
-                        var data = context.ActivityLogs.Attach(oldLogs.Result.Skip(100).FirstOrDefault());
-                        data.State = EntityState.Deleted;
-                        context.SaveChangesAsync();
-                    }
-                    else
-                    {
-                        context.ActivityLogs.Add(entity);
-                        context.SaveChangesAsync();
-                    }
-                });
-            }
-            return Task<ActivityLog>.Factory.StartNew(()=> new ActivityLog());
-        }
-
-        public int Delete(ActivityLog entity, string userKey)
-        {
-            if (entity != null)
-            {
-                if (context.Users.Where(x => x.UserKey == userKey).Count() > 0)
+                var oldLogs =await context.ActivityLogs.Where(x => x.UserKey == userKey).OrderByDescending(x=>x.CreatedDate).ToListAsync();
+                if (oldLogs.Count > 100)
                 {
-                   var data= context.ActivityLogs.Attach(entity);
+                    var data = context.ActivityLogs.Attach(oldLogs.Skip(100).FirstOrDefault());
                     data.State = EntityState.Deleted;
-                    context.SaveChangesAsync();
-                    return context.SaveChanges();
+                   await context.SaveChangesAsync();
+                }
+                else
+                {
+                    context.ActivityLogs.Add(entity);
+                  return await  context.SaveChangesAsync();
                 }
             }
-            return 0;
+            return await Task.Factory.StartNew(() => 0);
         }
 
-        public IEnumerable<ActivityLog> GetAll(string userKey)
+        //private int Delete(ActivityLog entity, string userKey)
+        //{
+        //    if (entity != null)
+        //    {
+        //        if (context.Users.Where(x => x.UserKey == userKey).Count() > 0)
+        //        {
+        //           var data= context.ActivityLogs.Attach(entity);
+        //            data.State = EntityState.Deleted;
+        //            context.SaveChangesAsync();
+        //            return context.SaveChanges();
+        //        }
+        //    }
+        //    return 0;
+        //}
+
+        public async Task<List<ActivityLog>> GetAll(string userKey)
         {
-            return context.ActivityLogs.Where(x => x.UserKey == userKey).OrderByDescending(x => x.CreatedDate).ToList();
+            return await context.ActivityLogs.Where(x => x.UserKey == userKey).OrderByDescending(x => x.CreatedDate).ToListAsync();
         }
     }
 }

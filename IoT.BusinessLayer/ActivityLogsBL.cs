@@ -2,6 +2,7 @@
 using IoT.ModelLayer;
 using IoT.DataLayer.Interface;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace IoT.BusinessLayer
 {
@@ -13,18 +14,17 @@ namespace IoT.BusinessLayer
             _áctivityLogs = áctivityLogs;
         }
 
-        public ActivityLog Add(ActivityLog activityLog,string userKey)
+        public  Task<int> Add(ActivityLog activityLog,string userKey)
         {
             if(activityLog != null)
             {
                 activityLog.CreatedDate = DateTime.Now;
                 activityLog.UserKey = userKey;
             }
-            _áctivityLogs.Add(activityLog,userKey);
-            return activityLog;
+          return  _áctivityLogs.Add(activityLog,userKey);
         }
        
-        public IEnumerable<ActivityLog> GetAll(string userKey)
+        public Task<List<ActivityLog>> GetAll(string userKey)
         {
             return _áctivityLogs.GetAll(userKey);
         }
