@@ -1,0 +1,57 @@
+2021-11-21T10:27:18.2322255+05:30  [INF] User profile is available. Using '"C:\Users\satishsonkar\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2021-11-21T10:27:18.6563609+05:30  [INF] Creating key {3c16f182-2944-4e2d-9d1e-6392aea3e29e} with creation date 2021-11-21 04:57:18Z, activation date 2021-11-21 04:57:18Z, and expiration date 2022-02-19 04:57:18Z. (77afce94)
+2021-11-21T10:27:18.7162835+05:30  [INF] Writing data to file '"C:\Users\satishsonkar\AppData\Local\ASP.NET\DataProtection-Keys\key-3c16f182-2944-4e2d-9d1e-6392aea3e29e.xml"'. (da22a8b1)
+2021-11-21T10:27:19.0137791+05:30 80000022-0005-fd00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44342/   (ca22a1cb)
+2021-11-21T10:27:19.4231369+05:30 80000022-0005-fd00-b63f-84710c7967bb [INF] Request finished in 426.2032ms 404  (791a596a)
+2021-11-21T10:36:04.2728011+05:30  [INF] User profile is available. Using '"C:\Users\satishsonkar\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2021-11-21T10:36:04.5979651+05:30 80000024-0005-fd00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44342/   (ca22a1cb)
+2021-11-21T10:36:04.6673893+05:30 80000024-0005-fd00-b63f-84710c7967bb [INF] Request finished in 74.399ms 404  (791a596a)
+2021-11-21T10:36:09.5627295+05:30 8000006c-0006-fe00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET https://localhost:44342/api/v1/alexapayload/GetDeviceStatus/4BBE91702F5F4BDB9C3DE49EDF13BEDC   (ca22a1cb)
+2021-11-21T10:36:09.5914220+05:30 8000006c-0006-fe00-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.AlexaPayloadController.GetDeviceStatus (IoT.WebAPI)"' (500cc934)
+2021-11-21T10:36:09.7559619+05:30 8000006c-0006-fe00-b63f-84710c7967bb [INF] Route matched with "{action = \"GetDeviceStatus\", controller = \"AlexaPayload\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[System.String] GetDeviceStatus(System.String, System.String)" on controller "IoT.WebAPI.Controllers.AlexaPayloadController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-21T10:36:21.4759977+05:30 8000006c-0006-fe00-b63f-84710c7967bb [INF] Entity Framework Core "5.0.9" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MaxPoolSize=128 " (9958f5bb)
+2021-11-21T10:36:21.9629889+05:30 8000006c-0006-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("382"ms) [Parameters=["@__deviceKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [d].[Status]
+FROM [Devices] AS [d]
+WHERE [d].[DeviceKey] = @__deviceKey_0" (0723d8ff)
+2021-11-21T10:36:26.1041640+05:30 8000006c-0006-fe00-b63f-84710c7967bb [INF] Executing ObjectResult, writing value of type '"System.String"'. (8a1b66c8)
+2021-11-21T10:36:26.1198629+05:30 8000006c-0006-fe00-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.AlexaPayloadController.GetDeviceStatus (IoT.WebAPI)" in 16356.084ms (afa2e885)
+2021-11-21T10:36:26.1204169+05:30 8000006c-0006-fe00-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.AlexaPayloadController.GetDeviceStatus (IoT.WebAPI)"' (99874f2b)
+2021-11-21T10:36:26.1321791+05:30 8000006c-0006-fe00-b63f-84710c7967bb [INF] Request finished in 16571.1981ms 200 text/plain; charset=utf-8 (791a596a)
+2021-11-21T10:36:45.3276980+05:30 8000006d-0006-fe00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET https://localhost:44342/api/v1/alexapayload/GetDeviceStatus/0BBE91702F5F4BDB9C3DE49EDF13BEDC   (ca22a1cb)
+2021-11-21T10:36:45.3329824+05:30 8000006d-0006-fe00-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.AlexaPayloadController.GetDeviceStatus (IoT.WebAPI)"' (500cc934)
+2021-11-21T10:36:45.3339798+05:30 8000006d-0006-fe00-b63f-84710c7967bb [INF] Route matched with "{action = \"GetDeviceStatus\", controller = \"AlexaPayload\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[System.String] GetDeviceStatus(System.String, System.String)" on controller "IoT.WebAPI.Controllers.AlexaPayloadController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-21T10:36:47.3222677+05:30 8000006d-0006-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("372"ms) [Parameters=["@__deviceKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [d].[Status]
+FROM [Devices] AS [d]
+WHERE [d].[DeviceKey] = @__deviceKey_0" (0723d8ff)
+2021-11-21T10:36:47.3266147+05:30 8000006d-0006-fe00-b63f-84710c7967bb [INF] Executing ObjectResult, writing value of type '"null"'. (8a1b66c8)
+2021-11-21T10:36:47.3282025+05:30 8000006d-0006-fe00-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.AlexaPayloadController.GetDeviceStatus (IoT.WebAPI)" in 1993.7128ms (afa2e885)
+2021-11-21T10:36:47.3285848+05:30 8000006d-0006-fe00-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.AlexaPayloadController.GetDeviceStatus (IoT.WebAPI)"' (99874f2b)
+2021-11-21T10:36:47.3299654+05:30 8000006d-0006-fe00-b63f-84710c7967bb [INF] Request finished in 2002.9285ms 204  (791a596a)
+2021-11-21T10:40:38.8545087+05:30  [INF] User profile is available. Using '"C:\Users\satishsonkar\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2021-11-21T10:40:39.0653542+05:30 80000073-0002-fd00-b63f-84710c7967bb [INF] Request starting HTTP/2.0 GET https://localhost:44342/   (ca22a1cb)
+2021-11-21T10:40:39.0653542+05:30 80000006-0006-fd00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET https://localhost:44342/api/v1/alexapayload/GetDeviceStatus/0BBE91702F5F4BDB9C3DE49EDF13BEDC   (ca22a1cb)
+2021-11-21T10:40:39.2045734+05:30 80000006-0006-fd00-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.AlexaPayloadController.GetDeviceStatus (IoT.WebAPI)"' (500cc934)
+2021-11-21T10:40:39.2789628+05:30 80000073-0002-fd00-b63f-84710c7967bb [INF] Request finished in 218.0833ms 404  (791a596a)
+2021-11-21T10:40:39.4357708+05:30 80000006-0006-fd00-b63f-84710c7967bb [INF] Route matched with "{action = \"GetDeviceStatus\", controller = \"AlexaPayload\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[System.String] GetDeviceStatus(System.String, System.String)" on controller "IoT.WebAPI.Controllers.AlexaPayloadController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-21T10:40:42.0996268+05:30 80000006-0006-fd00-b63f-84710c7967bb [INF] Entity Framework Core "5.0.9" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MaxPoolSize=128 " (9958f5bb)
+2021-11-21T10:40:42.5840989+05:30 80000006-0006-fd00-b63f-84710c7967bb [INF] Executed DbCommand ("427"ms) [Parameters=["@__deviceKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [d].[Status]
+FROM [Devices] AS [d]
+WHERE [d].[DeviceKey] = @__deviceKey_0" (0723d8ff)
+2021-11-21T10:40:42.6263162+05:30 80000006-0006-fd00-b63f-84710c7967bb [INF] Executing ObjectResult, writing value of type '"System.String"'. (8a1b66c8)
+2021-11-21T10:40:42.6598125+05:30 80000006-0006-fd00-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.AlexaPayloadController.GetDeviceStatus (IoT.WebAPI)" in 3207.0432ms (afa2e885)
+2021-11-21T10:40:42.6611188+05:30 80000006-0006-fd00-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.AlexaPayloadController.GetDeviceStatus (IoT.WebAPI)"' (99874f2b)
+2021-11-21T10:40:42.6846418+05:30 80000006-0006-fd00-b63f-84710c7967bb [INF] Request finished in 3634.5809ms 200 text/plain; charset=utf-8 (791a596a)
+2021-11-21T10:40:51.5292495+05:30 80000007-0006-fd00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET https://localhost:44342/api/v1/alexapayload/GetDeviceStatus/4BBE91702F5F4BDB9C3DE49EDF13BEDC   (ca22a1cb)
+2021-11-21T10:40:51.5388968+05:30 80000007-0006-fd00-b63f-84710c7967bb [INF] Executing endpoint '"IoT.WebAPI.Controllers.AlexaPayloadController.GetDeviceStatus (IoT.WebAPI)"' (500cc934)
+2021-11-21T10:40:51.5402223+05:30 80000007-0006-fd00-b63f-84710c7967bb [INF] Route matched with "{action = \"GetDeviceStatus\", controller = \"AlexaPayload\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[System.String] GetDeviceStatus(System.String, System.String)" on controller "IoT.WebAPI.Controllers.AlexaPayloadController" ("IoT.WebAPI"). (122b2fdf)
+2021-11-21T10:40:54.4619012+05:30 80000007-0006-fd00-b63f-84710c7967bb [INF] Executed DbCommand ("361"ms) [Parameters=["@__deviceKey_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [d].[Status]
+FROM [Devices] AS [d]
+WHERE [d].[DeviceKey] = @__deviceKey_0" (0723d8ff)
+2021-11-21T10:40:54.4747510+05:30 80000007-0006-fd00-b63f-84710c7967bb [INF] Executing ObjectResult, writing value of type '"System.String"'. (8a1b66c8)
+2021-11-21T10:40:54.4806582+05:30 80000007-0006-fd00-b63f-84710c7967bb [INF] Executed action "IoT.WebAPI.Controllers.AlexaPayloadController.GetDeviceStatus (IoT.WebAPI)" in 2939.8861ms (afa2e885)
+2021-11-21T10:40:54.4814044+05:30 80000007-0006-fd00-b63f-84710c7967bb [INF] Executed endpoint '"IoT.WebAPI.Controllers.AlexaPayloadController.GetDeviceStatus (IoT.WebAPI)"' (99874f2b)
+2021-11-21T10:40:54.4835001+05:30 80000007-0006-fd00-b63f-84710c7967bb [INF] Request finished in 2955.9971ms 200 text/plain; charset=utf-8 (791a596a)

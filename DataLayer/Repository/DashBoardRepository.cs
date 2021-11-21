@@ -1,9 +1,11 @@
 ﻿using IoT.DataLayer.Interface;
 using IoT.ModelLayer;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace IoT.DataLayer.Repository
 {
@@ -14,11 +16,11 @@ namespace IoT.DataLayer.Repository
         {
             this.context = context;
         }
-        public DashboardModel GetDashboardData(string userKey)
+        public async Task<DashboardModel> GetDashboardData(string userKey)
         {
             DashboardModel dashModel = new DashboardModel
             {
-                Devices = context.Devices.Where(x => x.UserKey == userKey).Select(x => new DeviceExt
+                Devices =await context.Devices.Where(x => x.UserKey == userKey).Select(x => new DeviceExt
                 {
                     ConnectionCount = x.ConnectionCount,
                     DeviceDesc = x.DeviceDesc,
@@ -33,8 +35,8 @@ namespace IoT.DataLayer.Repository
                     DeviceTypeName = x.DeviceType.DeviceTypeName,
                     RoomId = x.RoomId,
                     RoomKey = x.Room.RoomKey
-                }).ToList(),
-                Rooms = context.Rooms.Where(x => x.UserKey == userKey).OrderBy(x => x.RoomName).ToList()
+                }).ToListAsync(),
+                Rooms =await context.Rooms.Where(x => x.UserKey == userKey).OrderBy(x => x.RoomName).ToListAsync()
             };
             return dashModel;
 

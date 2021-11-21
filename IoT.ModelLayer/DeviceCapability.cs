@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace IoT.ModelLayer
 {
@@ -35,6 +36,7 @@ namespace IoT.ModelLayer
 
         public bool Retrievable { get; set; } = true;
 
+        [JsonIgnore]
         public DeviceType DeviceType { get; set; }
     }
 }

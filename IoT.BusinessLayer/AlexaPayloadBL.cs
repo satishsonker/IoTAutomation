@@ -14,18 +14,18 @@ namespace IoT.BusinessLayer
             _alexaPayload = alexaPayload;
         }
 
-        public IEnumerable<Device> GetAlexaDiscoveryPayload(string userKey)
+        public async Task<List<Device>> GetAlexaDiscoveryPayload(string userKey)
         {
-            return _alexaPayload.GetAlexaDiscoveryPayload(userKey);
+            return await _alexaPayload.GetAlexaDiscoveryPayload(userKey);
         }
 
-        public Task<bool> UpdateDeviceStatus(string deviceKey, string status, string userKey)
+        public async Task<bool> UpdateDeviceStatus(string deviceKey, string status, string userKey)
         {
-           return _alexaPayload.UpdateDeviceStatus(deviceKey, status, userKey);
+           return await _alexaPayload.UpdateDeviceStatus(deviceKey, status, userKey);
         }
-        public Task<string> GetDeviceStatus(string deviceKey,string userKey)
+        public async Task<string> GetDeviceStatus(string deviceKey,string userKey)
         {
-            return _alexaPayload.GetDeviceStatus(deviceKey, userKey);
+            return await _alexaPayload.GetDeviceStatus(deviceKey, userKey);
         }
     }
 }

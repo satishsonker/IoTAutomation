@@ -3,6 +3,7 @@ using IoT.ModelLayer;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace IoT.BusinessLayer
 {
@@ -13,10 +14,9 @@ namespace IoT.BusinessLayer
         {
             _dashboard = dashboard;
         }
-        public DashboardModel GetDashboardData(string userKey)
+        public async Task<DashboardModel> GetDashboardData(string userKey)
         {
-            return _dashboard.GetDashboardData(userKey);
-
+            return await _dashboard.GetDashboardData(userKey);
         }
     }
 }

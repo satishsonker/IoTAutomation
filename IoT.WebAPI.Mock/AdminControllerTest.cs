@@ -1,14 +1,11 @@
-﻿using Castle.Core.Logging;
-using IoT.DataLayer.Interface;
+﻿using IoT.DataLayer.Interface;
 using IoT.ModelLayer;
 using IoT.WebAPI.Controllers;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Moq;
 using NUnit.Framework;
-using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace IoT.WebAPI.Mock

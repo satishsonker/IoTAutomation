@@ -1,9 +1,11 @@
 ﻿using IoT.BusinessLayer;
 using IoT.DataLayer.Interface;
+using IoT.ModelLayer;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace IoT.WebAPI.Controllers
 {
@@ -20,21 +22,19 @@ namespace IoT.WebAPI.Controllers
         }
         [HttpGet]
         [Route("GetDashboardData")]
-        public IActionResult GetDashboardData([FromHeader] string userKey)
+        public async Task<DashboardModel> GetDashboardData([FromHeader] string userKey)
         {
             try
             {
-
                 if (string.IsNullOrEmpty(userKey))
-                    return Unauthorized(new object());
-                return Ok(_dashboardBL.GetDashboardData(userKey));
+                    return new DashboardModel();
+                return await _dashboardBL.GetDashboardData(userKey);
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error occured while getting dashboard data");
-                return BadRequest(ex.Message);
+                return new DashboardModel();
             }
-
         }
     }
 }

@@ -18,37 +18,29 @@ namespace IoT.DataLayer.Repository
             this.context = context;
         }
 
-        public IEnumerable<Device> GetAlexaDiscoveryPayload(string userKey)
+        public async Task<List<Device>> GetAlexaDiscoveryPayload(string userKey)
         {
-            var data= context.Devices.Include(x => x.DeviceType).ThenInclude(x => x.DeviceCapabilities);
-            if(data!=null)
-            {
-                foreach (Device item in data)
-                {
-                    item.DeviceType.DeviceActions = null;
-                    foreach (DeviceCapability deviceCapability in item.DeviceType.DeviceCapabilities)
-                    {
-                        deviceCapability.DeviceType = null;
-                    }                    
-                }
-                return data;
-            }
-            return new List<Device>();
+            return await context.Devices.Include(x => x.DeviceType).ThenInclude(x => x.DeviceCapabilities).ToListAsync();
         }
 
-        public Task<string> GetDeviceStatus(string deviceKey, string userKey)
+        public async Task<string> GetDeviceStatus(string deviceKey, string userKey)
         {
             if (string.IsNullOrEmpty(deviceKey))
-                return Task.Factory.StartNew(() => "OFF");
-            var data = context.Devices.Where(x => x.DeviceKey == deviceKey).Select(x => x.Status).FirstOrDefault();
-            return Task.Factory.StartNew(() => data);
+                return "Unknown";
+            else
+            {
+                var result = await context.Devices.Where(x => x.DeviceKey == deviceKey).Select(x => x.Status).FirstOrDefaultAsync();
+                if (result == null)
+                    return "Unknown";
+                return result;
+            }
         }
 
-        public Task<bool> UpdateDeviceStatus(string deviceKey, string status, string userKey)
+        public async Task<bool> UpdateDeviceStatus(string deviceKey, string status, string userKey)
         {
-            Task<bool> result =Task.Factory.StartNew(()=>false);
-            var data = context.Devices.Where(x => x.DeviceKey == deviceKey).FirstOrDefault();
-            if(data!=null)
+            bool result = false;
+            var data = await context.Devices.Where(x => x.DeviceKey == deviceKey).FirstOrDefaultAsync();
+            if (data != null)
             {
                 data.ModifiedDate = DateTime.Now;
                 data.LastConnected = DateTime.Now;
@@ -56,8 +48,8 @@ namespace IoT.DataLayer.Repository
                 data.Status = status;
                 var entity = context.Entry(data);
                 entity.State = EntityState.Modified;
-                if(context.SaveChangesAsync().Result>0)
-                    result= Task.Factory.StartNew(() => true);
+                if (await context.SaveChangesAsync() > 0)
+                    result = true;
             }
             return result;
         }

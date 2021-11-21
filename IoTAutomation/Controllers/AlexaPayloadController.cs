@@ -1,9 +1,12 @@
 ﻿using IoT.BusinessLayer;
 using IoT.DataLayer.Interface;
+using IoT.ModelLayer;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace IoT.WebAPI.Controllers
 {
@@ -20,44 +23,44 @@ namespace IoT.WebAPI.Controllers
         }
         [HttpGet]
         [Route("GetAlexaDiscoveryPayload")]
-        public IActionResult GetAllDevice([FromQuery] string userKey = "")
+        public async Task<List<Device>> GetAllDevice([FromQuery] string userKey = "")
         {
             try
             {
-                return Ok(_alexaPayloadBL.GetAlexaDiscoveryPayload(userKey).ToList());
+                return await _alexaPayloadBL.GetAlexaDiscoveryPayload(userKey);
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error occured while getting all Devices");
-                return BadRequest(ex.Message);
+                return new List<Device>();
             }
         }
         [HttpGet]
         [Route("UpdateDeviceStatus/{deviceKey}/{status}")]
-        public IActionResult UpdateDeviceStatus([FromRoute] string deviceKey, [FromRoute] string status, [FromQuery] string userKey = "")
+        public async Task<bool> UpdateDeviceStatus([FromRoute] string deviceKey, [FromRoute] string status, [FromQuery] string userKey = "")
         {
             try
             {
-                return Ok(_alexaPayloadBL.UpdateDeviceStatus(deviceKey,status, userKey));
+                return await _alexaPayloadBL.UpdateDeviceStatus(deviceKey,status, userKey);
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error occured while updating device status");
-                return BadRequest(ex.Message);
+                return default;
             }
         }
         [HttpGet]
         [Route("GetDeviceStatus/{deviceKey}")]
-        public IActionResult GetDeviceStatus([FromRoute] string deviceKey, [FromQuery] string userKey = "")
+        public async Task<string> GetDeviceStatus([FromRoute] string deviceKey, [FromQuery] string userKey = "")
         {
             try
             {
-                return Ok(_alexaPayloadBL.GetDeviceStatus(deviceKey, userKey));
+                return await _alexaPayloadBL.GetDeviceStatus(deviceKey, userKey);
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error occured while getting device status");
-                return BadRequest(ex.Message);
+                return string.Empty;
             }
         }
     }
