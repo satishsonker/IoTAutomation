@@ -25,211 +25,211 @@ namespace IoT.WebAPI.Controllers
         [HttpPost]
 
         [Route("AddCapabilityType")]
-        public Task<int> AddCapabilityType([FromBody] CapabilityType capabilityType,  [FromHeader] string userKey)
+        public async Task<int> AddCapabilityType([FromBody] CapabilityType capabilityType,  [FromHeader] string userKey)
         {
-            return _masterDataBL.AddCapabilityType(capabilityType, userKey);
+            return await _masterDataBL.AddCapabilityType(capabilityType, userKey);
         }
 
         [HttpPost]
         [Route("UpdateCapabilityType")]
-        public Task<int> UpdateCapabilityType([FromBody] CapabilityType capabilityType,  [FromHeader] string userKey)
+        public async Task<int> UpdateCapabilityType([FromBody] CapabilityType capabilityType,  [FromHeader] string userKey)
         {
-            return _masterDataBL.UpdateCapabilityType(capabilityType, userKey);
+            return await _masterDataBL.UpdateCapabilityType(capabilityType, userKey);
         }
         
         [HttpDelete]
         [Route("DeleteCapabilityType")]
-        public Task<int> DeleteCapabilityType([FromQuery] int capabilityTypeId,  [FromHeader] string userKey)
+        public async Task<int> DeleteCapabilityType([FromQuery] int capabilityTypeId,  [FromHeader] string userKey)
         {
-            return _masterDataBL.DeleteCapabilityType(capabilityTypeId, userKey);
+            return await _masterDataBL.DeleteCapabilityType(capabilityTypeId, userKey);
         }
         
         [HttpGet]
         [Route("GetCapabilityTypeDropdownData")]
-        public IEnumerable<DropdownDataModel> GetCapabilityTypeDropdownData( [FromHeader] string userKey,[FromQuery] int id)
+        public async Task<List<DropdownDataModel>> GetCapabilityTypeDropdownData( [FromHeader] string userKey,[FromQuery] int id)
         {
-            return _masterDataBL.GetCapabilityTypeDropdownData(userKey,id);
+            return await _masterDataBL.GetCapabilityTypeDropdownData(userKey,id);
         }
         [HttpGet]
         [Route("GetCapabilityType")]
-        public IEnumerable<CapabilityType> GetCapabilityType([FromHeader] string userKey, [FromQuery] int id, [FromQuery] int pageNo, [FromQuery] int pageSize)
+        public async Task<List<CapabilityType>> GetCapabilityType([FromHeader] string userKey, [FromQuery] int id, [FromQuery] int pageNo, [FromQuery] int pageSize)
         {
-            return _masterDataBL.GetCapabilityType(userKey, id,pageNo,pageSize);
+            return await _masterDataBL.GetCapabilityType(userKey, id,pageNo,pageSize);
         }
 
         [HttpPost]
         [Route("AddCapabilityVersion")]
-        public Task<int> AddCapabilityVersion([FromBody] CapabilityVersion capabilityVersion,  [FromHeader] string userKey)
+        public async Task<int> AddCapabilityVersion([FromBody] CapabilityVersion capabilityVersion,  [FromHeader] string userKey)
         {
-            return _masterDataBL.AddCapabilityVersion(capabilityVersion, userKey);
+            return await _masterDataBL.AddCapabilityVersion(capabilityVersion, userKey);
         }
         
         [HttpPost]
         [Route("UpdateCapabilityVersion")]
-        public Task<int> UpdateCapabilityVersion([FromBody] CapabilityVersion capabilityVersion,  [FromHeader] string userKey)
+        public async Task<int> UpdateCapabilityVersion([FromBody] CapabilityVersion capabilityVersion,  [FromHeader] string userKey)
         {
-            return _masterDataBL.UpdateCapabilityVersion(capabilityVersion, userKey);
+            return await _masterDataBL.UpdateCapabilityVersion(capabilityVersion, userKey);
         }
         
         [HttpDelete]
         [Route("DeleteCapabilityVersion")]
-        public Task<int> DeleteCapabilityVersion([FromQuery] int capabilityVersionId,  [FromHeader] string userKey)
+        public async Task<int> DeleteCapabilityVersion([FromQuery] int capabilityVersionId,  [FromHeader] string userKey)
         {
-            return _masterDataBL.DeleteCapabilityVersion(capabilityVersionId, userKey);
+            return await _masterDataBL.DeleteCapabilityVersion(capabilityVersionId, userKey);
         }
         
         [HttpGet]
         [Route("GetCapabilityVersionDropdownData")]
-        public IEnumerable<DropdownDataModel> GetCapabilityVersionDropdownData( [FromHeader] string userKey, [FromQuery] int id)
+        public async Task<List<DropdownDataModel>> GetCapabilityVersionDropdownData( [FromHeader] string userKey, [FromQuery] int id)
         {
-            return _masterDataBL.GetCapabilityVersionDropdownData(userKey,id);
+            return await _masterDataBL.GetCapabilityVersionDropdownData(userKey,id);
         }
         [HttpGet]
         [Route("GetCapabilityVersion")]
-        public IEnumerable<CapabilityVersion> GetCapabilityVersion([FromHeader] string userKey, [FromQuery] int id)
+        public async Task<List<CapabilityVersion>> GetCapabilityVersion([FromHeader] string userKey, [FromQuery] int id)
         {
-            return _masterDataBL.GetCapabilityVersion(userKey, id);
+            return await _masterDataBL.GetCapabilityVersion(userKey, id);
         }
 
         [HttpPost]
         [Route("AddDisplayCategory")]
-        public Task<int> AddDisplayCategory([FromBody] DisplayCategory displayCategory,  [FromHeader] string userKey)
+        public async Task<int> AddDisplayCategory([FromBody] DisplayCategory displayCategory,  [FromHeader] string userKey)
         {
-            return _masterDataBL.AddDisplayCategory(displayCategory, userKey);
+            return await _masterDataBL.AddDisplayCategory(displayCategory, userKey);
         }
         
         [HttpPost]
         [Route("UpdateDisplayCategory")]
-        public Task<int> UpdateDisplayCategory([FromBody] DisplayCategory displayCategory,  [FromHeader] string userKey)
+        public async Task<int> UpdateDisplayCategory([FromBody] DisplayCategory displayCategory,  [FromHeader] string userKey)
         {
-            return _masterDataBL.UpdateDisplayCategory(displayCategory, userKey);
+            return await _masterDataBL.UpdateDisplayCategory(displayCategory, userKey);
         }
         
         [HttpDelete]
         [Route("DeleteDisplayCategory")]
-        public Task<int> DeleteDisplayCategory([FromQuery] int displayCategoryId,  [FromHeader] string userKey)
+        public async Task<int> DeleteDisplayCategory([FromQuery] int displayCategoryId,  [FromHeader] string userKey)
         {
-            return _masterDataBL.DeleteDisplayCategory(displayCategoryId, userKey);
+            return await _masterDataBL.DeleteDisplayCategory(displayCategoryId, userKey);
         }
         
         [HttpGet]
         [Route("GetDisplayCategoryDropdownData")]
-        public IEnumerable<DropdownDataModel> GetDisplayCategoryDropdownData( [FromHeader] string userKey, [FromQuery] int id)
+        public async Task<List<DropdownDataModel>> GetDisplayCategoryDropdownData( [FromHeader] string userKey, [FromQuery] int id)
         {
-            return _masterDataBL.GetDisplayCategoryDropdownData(userKey,id);
+            return await _masterDataBL.GetDisplayCategoryDropdownData(userKey,id);
         }
 
         [HttpGet]
         [Route("GetDisplayCategory")]
-        public IEnumerable<DisplayCategory> GetDisplayCategory([FromHeader] string userKey, [FromQuery] int id)
+        public async Task<List<DisplayCategory>> GetDisplayCategory([FromHeader] string userKey, [FromQuery] int id)
         {
-            return _masterDataBL.GetDisplayCategory(userKey, id);
+            return await _masterDataBL.GetDisplayCategory(userKey, id);
         }
 
         [HttpPost]
         [Route("AddCapabilityInterface")]
-        public Task<int> AddCapabilityInterface([FromBody] CapabilityInterface capabilityInterface,  [FromHeader] string userKey)
+        public async Task<int> AddCapabilityInterface([FromBody] CapabilityInterface capabilityInterface,  [FromHeader] string userKey)
         {
-            return _masterDataBL.AddCapabilityInterface(capabilityInterface, userKey);
+            return await _masterDataBL.AddCapabilityInterface(capabilityInterface, userKey);
         }
         
         [HttpPost]
         [Route("UpdateCapabilityInterface")]
-        public Task<int> UpdateCapabilityInterface([FromBody] CapabilityInterface capabilityInterface,  [FromHeader] string userKey)
+        public async Task<int> UpdateCapabilityInterface([FromBody] CapabilityInterface capabilityInterface,  [FromHeader] string userKey)
         {
-            return _masterDataBL.UpdateCapabilityInterface(capabilityInterface, userKey);
+            return await _masterDataBL.UpdateCapabilityInterface(capabilityInterface, userKey);
         }
         
         [HttpDelete]
         [Route("DeleteCapabilityInterface")]        
-        public Task<int> DeleteCapabilityInterface([FromQuery] int capabilityInterfaceId,  [FromHeader] string userKey)
+        public async Task<int> DeleteCapabilityInterface([FromQuery] int capabilityInterfaceId,  [FromHeader] string userKey)
         {
-            return _masterDataBL.DeleteCapabilityInterface(capabilityInterfaceId, userKey);
+            return await _masterDataBL.DeleteCapabilityInterface(capabilityInterfaceId, userKey);
         }
         
         [HttpGet]
         [Route("GetCapabilityInterfaceDropdownData")]
-        public IEnumerable<DropdownDataModel> GetCapabilityInterfaceDropdownData( [FromHeader] string userKey, [FromQuery] int id)
+        public async Task<List<DropdownDataModel>> GetCapabilityInterfaceDropdownData( [FromHeader] string userKey, [FromQuery] int id)
         {
-            return _masterDataBL.GetCapabilityInterfaceDropdownData(userKey,id);
+            return await _masterDataBL.GetCapabilityInterfaceDropdownData(userKey,id);
         }
         [HttpGet]
         [Route("GetCapabilityInterface")]
-        public dynamic GetCapabilityInterface([FromHeader] string userKey, [FromQuery] int id, [FromQuery] int pageNo, [FromQuery] int pageSize)
+        public async Task<dynamic> GetCapabilityInterface([FromHeader] string userKey, [FromQuery] int id, [FromQuery] int pageNo, [FromQuery] int pageSize)
         {
-            return _masterDataBL.GetCapabilityInterface(userKey, id,pageNo,pageSize);
+            return await _masterDataBL.GetCapabilityInterface(userKey, id,pageNo,pageSize);
         }
 
         [HttpPost]
         [Route("AddCapabilitySupportedProperty")]
-        public Task<int> AddCapabilitySupportedProperty([FromBody] CapabilitySupportedProperty capabilitySupportedProperty,  [FromHeader] string userKey)
+        public async Task<int> AddCapabilitySupportedProperty([FromBody] CapabilitySupportedProperty capabilitySupportedProperty,  [FromHeader] string userKey)
         {
-            return _masterDataBL.AddCapabilitySupportedProperty(capabilitySupportedProperty, userKey);
+            return await _masterDataBL.AddCapabilitySupportedProperty(capabilitySupportedProperty, userKey);
         }
         
         [HttpPost]
         [Route("UpdateCapabilitySupportedProperty")]
-        public Task<int> UpdateCapabilitySupportedProperty([FromBody] CapabilitySupportedProperty capabilitySupportedProperty,  [FromHeader] string userKey)
+        public async Task<int> UpdateCapabilitySupportedProperty([FromBody] CapabilitySupportedProperty capabilitySupportedProperty,  [FromHeader] string userKey)
         {
-            return _masterDataBL.UpdateCapabilitySupportedProperty(capabilitySupportedProperty, userKey);
+            return await _masterDataBL.UpdateCapabilitySupportedProperty(capabilitySupportedProperty, userKey);
         }
         
         [HttpDelete]
         [Route("DeleteCapabilitySupportedProperty")]
-        public Task<int> DeleteCapabilitySupportedProperty([FromQuery] int capabilitySupportedPropertyId,  [FromHeader] string userKey)
+        public async Task<int> DeleteCapabilitySupportedProperty([FromQuery] int capabilitySupportedPropertyId,  [FromHeader] string userKey)
         {
-            return _masterDataBL.DeleteCapabilitySupportedProperty(capabilitySupportedPropertyId, userKey);
+            return await _masterDataBL.DeleteCapabilitySupportedProperty(capabilitySupportedPropertyId, userKey);
         }
         
         [HttpGet]
         [Route("GetCapabilitySupportedPropertyDropdownData")]
-        public IEnumerable<DropdownDataModel> GetCapabilitySupportedPropertyDropdownData( [FromHeader] string userKey, [FromQuery] int id)
+        public async Task<List<DropdownDataModel>> GetCapabilitySupportedPropertyDropdownData( [FromHeader] string userKey, [FromQuery] int id)
         {
-            return _masterDataBL.GetCapabilitySupportedPropertyDropdownData(userKey,id);
+            return await _masterDataBL.GetCapabilitySupportedPropertyDropdownData(userKey,id);
         }
         [HttpGet]
         [Route("GetCapabilitySupportedProperty")]
-        public IEnumerable<CapabilitySupportedProperty> GetCapabilitySupportedProperty([FromHeader] string userKey, [FromQuery] int id)
+        public async Task<List<CapabilitySupportedProperty>> GetCapabilitySupportedProperty([FromHeader] string userKey, [FromQuery] int id)
         {
-            return _masterDataBL.GetCapabilitySupportedProperty(userKey, id);
+            return await _masterDataBL.GetCapabilitySupportedProperty(userKey, id);
         }
 
         [HttpGet]
         [Route("GetAllCapabilityDropdownData")]
-        public AllCapabilityMasterModel GetAllCapabilityDropdownData( [FromHeader] string userKey, [FromQuery] string searchTerm)
+        public async Task<AllCapabilityMasterModel> GetAllCapabilityDropdownData( [FromHeader] string userKey, [FromQuery] string searchTerm)
         {
-            return _masterDataBL.GetAllCapabilityDropdownData(userKey,searchTerm);
+            return await _masterDataBL.GetAllCapabilityDropdownData(userKey,searchTerm);
         }
 
         [HttpGet]
         [Route("SearchCapabilitySupportedProperty")]
-        public IEnumerable<CapabilitySupportedProperty> SearchCapabilitySupportedProperty([FromHeader] string userKey, [FromQuery] string searchTerm)
+        public async Task<List<CapabilitySupportedProperty>> SearchCapabilitySupportedProperty([FromHeader] string userKey, [FromQuery] string searchTerm)
         {
-            return _masterDataBL.SearchCapabilitySupportedProperty(userKey, searchTerm);
+            return await _masterDataBL.SearchCapabilitySupportedProperty(userKey, searchTerm);
         }
         [HttpGet]
         [Route("SearchCapabilityInterface")]
-        public IEnumerable<CapabilityInterface> SearchCapabilityInterface([FromHeader] string userKey, [FromQuery] string searchTerm)
+        public async Task<List<CapabilityInterface>> SearchCapabilityInterface([FromHeader] string userKey, [FromQuery] string searchTerm)
         {
-            return _masterDataBL.SearchCapabilityInterface(userKey, searchTerm);
+            return await _masterDataBL.SearchCapabilityInterface(userKey, searchTerm);
         }
         [HttpGet]
         [Route("SearchDisplayCategory")]
-        public IEnumerable<DisplayCategory> SearchDisplayCategory([FromHeader] string userKey, [FromQuery] string searchTerm)
+        public async Task<List<DisplayCategory>> SearchDisplayCategory([FromHeader] string userKey, [FromQuery] string searchTerm)
         {
-            return _masterDataBL.SearchDisplayCategory(userKey, searchTerm);
+            return await _masterDataBL.SearchDisplayCategory(userKey, searchTerm);
         }
         [HttpGet]
         [Route("SearchCapabilityVersion")]
-        public IEnumerable<CapabilityVersion> SearchCapabilityVersion([FromHeader] string userKey, [FromQuery] string searchTerm)
+        public async Task<List<CapabilityVersion>> SearchCapabilityVersion([FromHeader] string userKey, [FromQuery] string searchTerm)
         {
-            return _masterDataBL.SearchCapabilityVersion(userKey, searchTerm);
+            return await _masterDataBL.SearchCapabilityVersion(userKey, searchTerm);
         }
         [HttpGet]
         [Route("SearchCapabilityType")]
-        public IEnumerable<CapabilityType> SearchCapabilityType([FromHeader] string userKey, [FromQuery] string searchTerm)
+        public async Task<List<CapabilityType>> SearchCapabilityType([FromHeader] string userKey, [FromQuery] string searchTerm)
         {
-          return  _masterDataBL.SearchCapabilityType(userKey, searchTerm);
+          return await  _masterDataBL.SearchCapabilityType(userKey, searchTerm);
         }
     }
 }

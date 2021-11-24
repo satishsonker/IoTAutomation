@@ -23,7 +23,7 @@ namespace IoT.DataLayer.Repository
             ResponseModel responseModel = new ResponseModel();
             if (context.Users.Where(x => x.UserKey == userKey).Count() > 0)
             {
-                var Device = context.Devices.Where(x => x.DeviceName == newDevice.DeviceName || x.FriendlyName == newDevice.FriendlyName).FirstOrDefault();
+                var Device =await context.Devices.Where(x => x.DeviceName == newDevice.DeviceName || x.FriendlyName == newDevice.FriendlyName).FirstOrDefaultAsync();
                 if (Device == null)
                 {
                     newDevice.CreatedDate = DateTime.Now;
@@ -39,18 +39,18 @@ namespace IoT.DataLayer.Repository
             return CommonRepository.GetResponseModel("Invalid userkey", MessageTypes.Unauthorized);
         }
 
-        public Device Delete(string DeviceKey, string userKey)
+        public async Task<Device> Delete(string DeviceKey, string userKey)
         {
-            var deleteDevice = context.Devices.Where(x => x.DeviceKey == DeviceKey && x.UserKey == userKey).FirstOrDefault();
+            var deleteDevice =await context.Devices.Where(x => x.DeviceKey == DeviceKey && x.UserKey == userKey).FirstOrDefaultAsync();
             var Device = context.Devices.Attach(deleteDevice);
             Device.State = Microsoft.EntityFrameworkCore.EntityState.Deleted;
-            context.SaveChangesAsync();
+            await context.SaveChangesAsync();
             return deleteDevice;
         }
 
-        public IEnumerable<DeviceExt> GetAllDevices(string userKey, string deviceKey = "")
+        public async Task<List<DeviceExt>> GetAllDevices(string userKey, string deviceKey = "")
         {
-            return context.Devices.Include(x => x.DeviceType).Where(x => x.UserKey == userKey && (deviceKey == string.Empty || x.DeviceKey == deviceKey)).Select(x => new DeviceExt
+            return await context.Devices.Include(x => x.DeviceType).Where(x => x.UserKey == userKey && (deviceKey == string.Empty || x.DeviceKey == deviceKey)).Select(x => new DeviceExt
             {
                 ConnectionCount = x.ConnectionCount,
                 DeviceDesc = x.DeviceDesc,
@@ -65,12 +65,12 @@ namespace IoT.DataLayer.Repository
                 DeviceTypeName = x.DeviceType.DeviceTypeName,
                 RoomId = x.RoomId,
                 RoomKey = x.Room.RoomKey
-            }).ToList().OrderBy(x => x.DeviceName).ThenBy(x => x.RoomName);
+            }).OrderBy(x => x.DeviceName).ThenBy(x => x.RoomName).ToListAsync();
         }
 
-        public DeviceExt GetDevice(string userKey, int DeviceId)
+        public async Task<DeviceExt> GetDevice(string userKey, int DeviceId)
         {
-            return context.Devices.Where(x => x.UserKey == userKey && x.DeviceId == DeviceId).Select(x => new DeviceExt
+            return await context.Devices.Where(x => x.UserKey == userKey && x.DeviceId == DeviceId).Select(x => new DeviceExt
             {
                 ConnectionCount = x.ConnectionCount,
                 DeviceDesc = x.DeviceDesc,
@@ -82,37 +82,29 @@ namespace IoT.DataLayer.Repository
                 DeviceTypeName = x.DeviceType.DeviceTypeName,
                 RoomId = x.RoomId,
                 RoomKey = x.Room.RoomKey
-            }).FirstOrDefault();
+            }).FirstOrDefaultAsync();
         }
 
-        public IEnumerable<object> GetDeviceDropdown(string userKey)
+        public async Task<List<dynamic>> GetDeviceDropdown(string userKey)
         {
-            return context.Devices.Where(x => x.UserKey == userKey).Select(x => new { x.DeviceId, x.DeviceName, x.DeviceKey, x.DeviceType.DeviceTypeName }).OrderBy(x => x.DeviceName).ToList();
+            return await Task.Factory.StartNew(()=> context.Devices.Where(x => x.UserKey == userKey).Select(x => new { x.DeviceId, x.DeviceName, x.DeviceKey, x.DeviceType.DeviceTypeName }).OrderBy(x => x.DeviceName).AsEnumerable().Cast<dynamic>().ToList());
         }
 
-        public IEnumerable<DeviceType> GetDeviceTypeAction()
+        public async Task<List<DeviceType>> GetDeviceTypeAction()
         {
-            var deviceTypes = context.DeviceTypes.Include(x => x.DeviceActions).ToList();
-            foreach (var deviceType in deviceTypes)
-            {
-                foreach (var deviceAction in deviceType.DeviceActions)
-                {
-                    deviceAction.DeviceType = null;
-                }
-            }
-            return deviceTypes;
+            return await context.DeviceTypes.Include(x => x.DeviceActions).ToListAsync();
         }
 
-        public IEnumerable<object> GetDeviceTypeDropdown(int pageNo, int pageSize)
+        public async Task<List<dynamic>> GetDeviceTypeDropdown(int pageNo, int pageSize)
         {
             int skipRecords = (pageNo - 1) * pageSize;
-            return context.DeviceTypes.Select(x => new { x.DeviceTypeId, x.DeviceTypeName }).OrderBy(x => x.DeviceTypeName).ToList().Skip(skipRecords).Take(pageSize);
+            return await Task.Factory.StartNew(() => context.DeviceTypes.Select(x => new { x.DeviceTypeId, x.DeviceTypeName }).OrderBy(x => x.DeviceTypeName).Skip(skipRecords).Take(pageSize).AsEnumerable().Cast<dynamic>().ToList());
         }
 
-        public IEnumerable<Device> SearchDevices(string searchTerm, string userKey)
+        public async Task<List<DeviceExt>> SearchDevices(string searchTerm, string userKey)
         {
             searchTerm = searchTerm.ToUpper();
-            var result = context.Devices.Include(x => x.DeviceType).Where(x => x.UserKey == userKey && (searchTerm == "ALL" || x.DeviceName.ToUpper().Contains(searchTerm) || x.DeviceKey.ToUpper().Contains(searchTerm) || x.DeviceType.DeviceTypeName.ToUpper().Contains(searchTerm) || x.DeviceDesc.ToUpper().Contains(searchTerm) || x.FriendlyName.ToUpper().Contains(searchTerm))).Select(x => new DeviceExt
+            return await context.Devices.Include(x => x.DeviceType).Where(x => x.UserKey == userKey && (searchTerm == "ALL" || x.DeviceName.ToUpper().Contains(searchTerm) || x.DeviceKey.ToUpper().Contains(searchTerm) || x.DeviceType.DeviceTypeName.ToUpper().Contains(searchTerm) || x.DeviceDesc.ToUpper().Contains(searchTerm) || x.FriendlyName.ToUpper().Contains(searchTerm))).Select(x => new DeviceExt
             {
                 ConnectionCount = x.ConnectionCount,
                 DeviceDesc = x.DeviceDesc,
@@ -127,34 +119,28 @@ namespace IoT.DataLayer.Repository
                 DeviceTypeName = x.DeviceType.DeviceTypeName,
                 RoomId = x.RoomId,
                 RoomKey = x.Room.RoomKey
-            }).ToList().OrderBy(x => x.DeviceName).ThenBy(x => x.RoomName);
-            return result;
-            //.Where(x => x.UserKey == userKey)
-            //.Include(x => x.Room)
-            //.Include(x => x.DeviceType).ToList().Where(x => ).OrderBy(x => x.DeviceName);
-            //return result;
-
+            }).OrderBy(x => x.DeviceName).ThenBy(x => x.RoomName).ToListAsync();
         }
 
-        public Device Update(Device updateDevice, string userKey)
+        public async Task<Device> Update(Device updateDevice, string userKey)
         {
-            if (context.Devices.Where(x => x.UserKey == userKey).Count() > 0)
+            if (await context.Devices.Where(x => x.UserKey == userKey).CountAsync() > 0)
             {
                 updateDevice.ModifiedDate = DateTime.Now;
                 updateDevice.ManufacturerName = "Areana-IoT";
                 var Device = context.Devices.Attach(updateDevice);
-                Device.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
-                context.SaveChangesAsync();
+                Device.State = EntityState.Modified;
+                await context.SaveChangesAsync();
             }
             return updateDevice;
         }
 
-        public bool UpdateDeviceHistory(string userKey, string deviceKey, bool isConnected)
+        public async Task<bool> UpdateDeviceHistory(string userKey, string deviceKey, bool isConnected)
         {
             bool isUpdated = false;
-            if (userKey == "ByPassApiKey" || context.Users.Where(x => x.UserKey == userKey).Count() > 0)
+            if (userKey == "ByPassApiKey" || await context.Users.Where(x => x.UserKey == userKey).CountAsync() > 0)
             {
-                var oldDevice = context.Devices.Where(x => x.DeviceKey == deviceKey).FirstOrDefault();
+                var oldDevice =await context.Devices.Where(x => x.DeviceKey == deviceKey).FirstOrDefaultAsync();
                 if (oldDevice != null)
                 {
                     oldDevice.ModifiedDate = DateTime.Now;
@@ -163,7 +149,7 @@ namespace IoT.DataLayer.Repository
                     oldDevice.LastConnected = DateTime.Now;
                     var attachedDevice = context.Attach(oldDevice);
                     attachedDevice.State = EntityState.Modified;
-                    if (context.SaveChanges() > 0)
+                    if (await context.SaveChangesAsync() > 0)
                         isUpdated = true;
                 }
             }

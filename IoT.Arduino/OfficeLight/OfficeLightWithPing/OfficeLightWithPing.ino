@@ -29,58 +29,58 @@ WiFiClient espClient;
 PubSubClient client(espClient);
 StaticJsonDocument<400> mqttData;
 
-void turnOn(String deviceId) {
+void turnOff(String deviceId) {
   if (deviceId == Light1)
   {
     Serial.println("Turn on Device ID: OfficeLight1: ");
     digitalWrite(L1, HIGH);  // turn on relay with voltage HIGH
-    connectionStatusOnServer(deviceId, "ON");
+    connectionStatusOnServer(deviceId, "OFF");
   }
   if (deviceId == Light2)
   {
     Serial.println("Turn on Device ID: OfficeLight2: ");
     digitalWrite(L2, HIGH);  // turn on relay with voltage HIGH
-    connectionStatusOnServer(deviceId, "ON");
+    connectionStatusOnServer(deviceId, "OFF");
   }
   if (deviceId == Light3)
   {
     Serial.println("Turn on Device ID: TvLight: ");
     digitalWrite(L3, HIGH);  // turn on relay with voltage HIGH
-    connectionStatusOnServer(deviceId, "ON");
+    connectionStatusOnServer(deviceId, "OFF");
   }
   if (deviceId == Light4)
   {
     Serial.println("Turn on Device ID: TvUnitLight: ");
     digitalWrite(L4, HIGH);  // turn on relay with voltage HIGH
-    connectionStatusOnServer(deviceId, "ON");
+    connectionStatusOnServer(deviceId, "OFF");
   }
 }
 
-void turnOff(String deviceId)
+void turnOn(String deviceId)
 {
   if (deviceId == Light1)
   {
     Serial.println("Turn on Device ID: Light1: ");
     digitalWrite(L1, LOW);  // turn on relay with voltage HIGH
-    connectionStatusOnServer(deviceId, "OFF");
+    connectionStatusOnServer(deviceId, "ON");
   }
   if (deviceId == Light2)
   {
     Serial.println("Turn on Device ID: OfficeLight2: ");
     digitalWrite(L2, LOW);  // turn on relay with voltage HIGH
-    connectionStatusOnServer(deviceId, "OFF");
+    connectionStatusOnServer(deviceId, "ON");
   }
   if (deviceId == Light3)
   {
     Serial.println("Turn on Device ID: Light3: ");
     digitalWrite(L3, LOW);  // turn on relay with voltage HIGH
-    connectionStatusOnServer(deviceId, "OFF");
+    connectionStatusOnServer(deviceId, "ON");
   }
   if (deviceId == Light4)
   {
     Serial.println("Turn on Device ID: Light4: ");
     digitalWrite(L4, LOW);  // turn on relay with voltage HIGH
-    connectionStatusOnServer(deviceId, "OFF");
+    connectionStatusOnServer(deviceId, "ON");
   }
 }
 
@@ -96,9 +96,6 @@ void setup() {
   digitalWrite(L2, HIGH);
   digitalWrite(L3, HIGH);
   digitalWrite(L4, HIGH);
-   digitalWrite(Red, HIGH);
-  digitalWrite(Blue, HIGH);
-  digitalWrite(Green, HIGH);
   Serial.begin(9600);
   delay(10);
   Serial.println("Connecting to ");
@@ -164,7 +161,7 @@ void reconnect() {
   {
     Serial.print("\n Connecting To ");
     Serial.println(broker);
-    if (client.connect("Web_Iot_1234", "", ""))
+    if (client.connect("Web_Iot_"+millis()))
     {
       Serial.print("\n Connected To ");
       Serial.println(broker);
@@ -220,10 +217,10 @@ void callback(char* topic, byte* payload, unsigned int length)
     wifiStatus("Green",true);
    
     if (value == "true") {
-      turnOff(deviceId);
+      turnOn(deviceId);
     }
     else {
-      turnOn(deviceId);
+      turnOff(deviceId);
     }
      delay(100);
     wifiStatus("Red",true);

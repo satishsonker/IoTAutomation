@@ -4,6 +4,7 @@ using IoT.ModelLayer;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace IoT.WebAPI.Controllers
@@ -22,96 +23,91 @@ namespace IoT.WebAPI.Controllers
 
         [HttpPost]
         [Route("AddDevice")]
-        public async Task<IActionResult> AddDevice([FromBody] Device device, [FromHeader] string userKey)
+        public async Task<ResponseModel> AddDevice([FromBody] Device device, [FromHeader] string userKey)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    var newdevice = await _deviceBL.AddDevice(device, userKey);
-                    if (newdevice.MessageType==MessageTypes.NotSaved)
-                        return Ok(newdevice);
-                    if(newdevice.MessageType==MessageTypes.Saved)
-                        return Ok(newdevice);
-                    return BadRequest(newdevice);
+                    return await _deviceBL.AddDevice(device, userKey);
                 }
-                return BadRequest(ModelState);
+                return new ResponseModel();
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error occured while Adding Device {0}", device.DeviceName);
-                return BadRequest(ModelState);
+                return new ResponseModel();
             }
         }
 
         [HttpGet]
         [Route("GetAllDevice")]
-        public IActionResult GetAllDevice([FromHeader] string userKey, [FromQuery] string deviceKey = "")
+        public async Task<List<DeviceExt>> GetAllDevice([FromHeader] string userKey, [FromQuery] string deviceKey = "")
         {
             try
             {
-                return Ok(_deviceBL.GetAllDevice(userKey, deviceKey));
+                return await _deviceBL.GetAllDevice(userKey, deviceKey);
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error occured while getting all Devices");
-                return BadRequest(ex.Message);
+                return new List<DeviceExt>();
             }
         }
 
         [HttpGet]
         [Route("SearchDevice")]
-        public IActionResult SearchDevice([FromQuery] string searchTerm, [FromHeader] string userKey)
+        public async Task<List<DeviceExt>> SearchDevice([FromQuery] string searchTerm, [FromHeader] string userKey)
         {
             try
             {
-                return Ok(_deviceBL.SearchDevice(searchTerm, userKey));
+                return await _deviceBL.SearchDevice(searchTerm, userKey);
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error occured while serching Device with keyword {0}", searchTerm);
-                return BadRequest(ex.Message);
+                return new List<DeviceExt>();
             }
         }
 
         [HttpGet]
         [Route("GetDeviceDropdown")]
-        public IActionResult GetDeviceDropdown([FromHeader] string userKey)
+        public async Task<List<dynamic>> GetDeviceDropdown([FromHeader] string userKey)
         {
             try
             {
-                return Ok(_deviceBL.GetDeviceDropdown(userKey));
+                return await _deviceBL.GetDeviceDropdown(userKey);
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error occured while getting device dropdown data");
-                return BadRequest(ex.Message);
+                return new List<object>();
             }
         }
 
         [HttpGet]
         [Route("GetDeviceTypeDropdown")]
-        public IActionResult GetDeviceTypeDropdown([FromQuery] int pageNo=1,[FromQuery] int pageSize=100)
+        public async Task<List<dynamic>> GetDeviceTypeDropdown([FromQuery] int pageNo=1,[FromQuery] int pageSize=100)
         {
             try
             {
-                return Ok(_deviceBL.GetDeviceTypeDropdown(pageNo,pageSize));
+                return await _deviceBL.GetDeviceTypeDropdown(pageNo,pageSize);
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error occured while getting device type dropdown data");
-                return BadRequest(ex.Message);
+                return new List<object>();
             }
         }
 
         [HttpPost]
         [Route("UpdateDevice")]
-        public Device UpdateDevice([FromBody] Device device, [FromHeader] string userKey)
+        public async Task<Device> UpdateDevice([FromBody] Device device, [FromHeader] string userKey)
         {
             try
             {
                 device.UserKey = userKey;
-                return _deviceBL.UpdateDevice(device, userKey);
+                return await _deviceBL.UpdateDevice(device, userKey);
             }
             catch (Exception ex)
             {
@@ -121,11 +117,11 @@ namespace IoT.WebAPI.Controllers
         }
         [HttpPost]
         [Route("UpdateDeviceHistory")]
-        public bool UpdateDeviceHistory([FromQuery] string deviceKey,[FromQuery] bool isConnected, [FromHeader] string userKey)
+        public async Task<bool> UpdateDeviceHistory([FromQuery] string deviceKey,[FromQuery] bool isConnected, [FromHeader] string userKey)
         {
             try
             {                
-                return _deviceBL.UpdateDeviceHistory(userKey,deviceKey,isConnected);
+                return await _deviceBL.UpdateDeviceHistory(userKey,deviceKey,isConnected);
             }
             catch (Exception ex)
             {
@@ -136,30 +132,31 @@ namespace IoT.WebAPI.Controllers
 
         [HttpDelete]
         [Route("DeleteDevice")]
-        public IActionResult Deletedevice([FromQuery] string deviceKey, [FromHeader] string userKey)
+        public async Task<Device> DeleteDevice([FromQuery] string deviceKey, [FromHeader] string userKey)
         {
             try
             {
-                return Ok(_deviceBL.DeleteDevice(deviceKey, userKey));
+                return await _deviceBL.DeleteDevice(deviceKey, userKey);
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error occured while deleting device with key{0}", deviceKey);
-                return BadRequest(ex.Message);
+                return new Device();
             }
         }
         [HttpGet]
+
         [Route("GetDeviceTypeAction")]
-        public IActionResult GetDeviceAction()
+        public async Task<List<DeviceType>> GetDeviceAction()
         {
             try
             {
-                return Ok(_deviceBL.GetDeviceTypeAction());
+                return await _deviceBL.GetDeviceTypeAction();
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error occured while getting device action");
-                return BadRequest(ex.Message);
+               return new List<DeviceType>();
             }
         }
     }

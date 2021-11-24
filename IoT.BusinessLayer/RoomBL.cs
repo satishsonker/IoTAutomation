@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 using IoT.DataLayer.Interface;
 using IoT.ModelLayer;
 
@@ -14,40 +15,40 @@ namespace IoT.BusinessLayer
             _rooms = room;
         }
 
-        public Room AddRoom(Room room, string userKey)
+        public async Task<Room> AddRoom(Room room, string userKey)
         {
             if (room != null)
             {
                 room.CreatedDate = DateTime.Now;
                 room.RoomKey = Guid.NewGuid().ToString().Replace("-","").ToUpper();
             }
-            _rooms.Add(room,userKey);
+            await _rooms.Add(room,userKey);
             return room;
         }
-        public Room GetRoom(string roomKey, string userKey)
+        public async Task<Room> GetRoom(string roomKey, string userKey)
         {
-            return _rooms.GetRoom(roomKey, userKey);
+            return await _rooms.GetRoom(roomKey, userKey);
         }
-        public IEnumerable<Room> GetAllRoom(string userKey)
+        public async Task<List<Room>> GetAllRoom(string userKey)
         {
-          return  _rooms.GetAllRooms(userKey);
+          return await  _rooms.GetAllRooms(userKey);
         }
 
-        public IEnumerable<object> GetRoomDropdown(string userKey)
+        public async Task<List<object>> GetRoomDropdown(string userKey)
         {
-            return _rooms.GetRoomDropdown(userKey);
+            return await _rooms.GetRoomDropdown(userKey);
         }
-        public IEnumerable<Room> SearchRoom(string searchTerm, string userKey)
+        public async Task<List<Room>> SearchRoom(string searchTerm, string userKey)
         {
-            return _rooms.SearchRooms(searchTerm, userKey);
+            return await _rooms.SearchRooms(searchTerm, userKey);
         }
-        public Room DeleteRoom(string roomKey, string userKey)
+        public async Task<Room> DeleteRoom(string roomKey, string userKey)
         {
-            return _rooms.Delete(roomKey,userKey);
+            return await _rooms.Delete(roomKey,userKey);
         }
-        public Room UpdateRoom(Room room, string userKey)
+        public async Task<Room> UpdateRoom(Room room, string userKey)
         {
-            return _rooms.Update(room, userKey);
+            return await _rooms.Update(room, userKey);
         }
     }
 }

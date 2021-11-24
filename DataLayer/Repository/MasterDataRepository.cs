@@ -17,147 +17,150 @@ namespace IoT.DataLayer.Repository
             this.context = context;
         }
 
-        public Task<int> AddCapabilityInterface(CapabilityInterface capabilityInterface, string userKey)
+        public async Task<int> AddCapabilityInterface(CapabilityInterface capabilityInterface, string userKey)
         {
             if (!isUserExist(userKey))
-                return Task.Factory.StartNew(()=>0);
+                return 0;
             else
             {
                 context.CapabilityInterfaces.Add(capabilityInterface);
-                return context.SaveChangesAsync();
+                return await context.SaveChangesAsync();
             }
         }
 
-        public Task<int> AddCapabilitySupportedProperty(CapabilitySupportedProperty capabilitySupportedProperty, string userKey)
+        public async Task<int> AddCapabilitySupportedProperty(CapabilitySupportedProperty capabilitySupportedProperty, string userKey)
         {
             if (!isUserExist(userKey))
-                return Task.Factory.StartNew(() => 0);
+                return 0;
             else
             {
                 context.CapabilitySupportedProperties.Add(capabilitySupportedProperty);
-                return context.SaveChangesAsync();
+                return await context.SaveChangesAsync();
             }
         }
 
-        public Task<int> AddCapabilityType(CapabilityType capabilityType, string userKey)
+        public async Task<int> AddCapabilityType(CapabilityType capabilityType, string userKey)
         {
             if (!isUserExist(userKey))
-                return Task.Factory.StartNew(() => 0);
+                return 0;
             else
             {
                 context.CapabilityTypes.Add(capabilityType);
-                return context.SaveChangesAsync();
+                return await context.SaveChangesAsync();
             }
         }
 
-        public Task<int> AddCapabilityVersion(CapabilityVersion capabilityVersion, string userKey)
+        public async Task<int> AddCapabilityVersion(CapabilityVersion capabilityVersion, string userKey)
         {
             if (!isUserExist(userKey))
-                return Task.Factory.StartNew(() => 0);
+                return 0;
             else
             {
                 context.CapabilityVersions.Add(capabilityVersion);
-                return context.SaveChangesAsync();
+                return await context.SaveChangesAsync();
             }
         }
 
-        public Task<int> AddDisplayCategory(DisplayCategory displayCategory, string userKey)
+        public async Task<int> AddDisplayCategory(DisplayCategory displayCategory, string userKey)
         {
             if (!isUserExist(userKey))
-                return Task.Factory.StartNew(() => 0);
+                return 0;
             else
             {
                 context.DisplayCategorys.Add(displayCategory);
-                return context.SaveChangesAsync();
+                return await context.SaveChangesAsync();
             }
         }
 
-        public Task<int> DeleteCapabilityInterface(int capabilityInterfaceId, string userKey)
+        public async Task<int> DeleteCapabilityInterface(int capabilityInterfaceId, string userKey)
         {
             if (!isUserExist(userKey))
-                 return Task.Factory.StartNew(()=>0);
+                 return 0;
             else
             {
-                var oldData = context.CapabilityInterfaces.Where(x => x.CapabilityInterfaceId == capabilityInterfaceId).FirstOrDefault();
+                var oldData = context.CapabilityInterfaces.Where(x => x.CapabilityInterfaceId == capabilityInterfaceId).FirstOrDefaultAsync();
                 if(oldData!=null)
                 {
                     var entity = context.Entry(oldData);
                     entity.State = EntityState.Deleted;
-                    return context.SaveChangesAsync();
+                    return await context.SaveChangesAsync();
                 }
-                return Task.Factory.StartNew(() => 0);
+                return 0;
             }
         }
 
-        public Task<int> DeleteCapabilitySupportedProperty(int capabilitySupportedPropertyId, string userKey)
+        public async Task<int> DeleteCapabilitySupportedProperty(int capabilitySupportedPropertyId, string userKey)
         {
             if (!isUserExist(userKey))
-                return Task.Factory.StartNew(() => 0);
+                return 0;
             else
             {
-                var oldData = context.CapabilitySupportedProperties.Where(x => x.CapabilitySupportedPropertyId == capabilitySupportedPropertyId).FirstOrDefault();
+                var oldData =await context.CapabilitySupportedProperties
+                    .Where(x => x.CapabilitySupportedPropertyId == capabilitySupportedPropertyId)
+                    .FirstOrDefaultAsync();
                 if (oldData != null)
                 {
                     var entity = context.Entry(oldData);
                     entity.State = EntityState.Deleted;
-                    return context.SaveChangesAsync();
+                    return await context.SaveChangesAsync();
                 }
-                return Task.Factory.StartNew(() => 0);
+                return 0;
             }
         }
 
-        public Task<int> DeleteCapabilityType(int capabilityTypeId, string userKey)
+        public async Task<int> DeleteCapabilityType(int capabilityTypeId, string userKey)
         {
             if (!isUserExist(userKey))
-                 return Task.Factory.StartNew(()=>0);
+                 return 0;
             else
             {
-                var oldData = context.CapabilityTypes.Where(x => x.CapabilityTypeId == capabilityTypeId).FirstOrDefault();
+                var oldData =await context.CapabilityTypes.Where(x => x.CapabilityTypeId == capabilityTypeId)
+                    .FirstOrDefaultAsync();
                 if (oldData != null)
                 {
                     var entity = context.Entry(oldData);
                     entity.State = EntityState.Deleted;
-                    return context.SaveChangesAsync();
+                    return await context.SaveChangesAsync();
                 }
-                return Task.Factory.StartNew(() => 0);
+                return 0;
             }
         }
 
-        public Task<int> DeleteCapabilityVersion(int capabilityVersionId, string userKey)
+        public async Task<int> DeleteCapabilityVersion(int capabilityVersionId, string userKey)
         {
             if (!isUserExist(userKey))
-                return Task.Factory.StartNew(() => 0);
+                return 0;
             else
             {
-                var oldData = context.CapabilityVersions.Where(x => x.CapabilityVersionId == capabilityVersionId).FirstOrDefault();
+                var oldData =await context.CapabilityVersions.Where(x => x.CapabilityVersionId == capabilityVersionId).FirstOrDefaultAsync();
                 if (oldData != null)
                 {
                     var entity = context.Entry(oldData);
                     entity.State = EntityState.Deleted;
-                    return context.SaveChangesAsync();
+                    return await context.SaveChangesAsync();
                 }
-                return Task.Factory.StartNew(() => 0);
+                return 0;
             }
         }
 
-        public Task<int> DeleteDisplayCategory(int displayCategoryId, string userKey)
+        public async Task<int> DeleteDisplayCategory(int displayCategoryId, string userKey)
         {
             if (!isUserExist(userKey))
-                return Task.Factory.StartNew(() => 0);
+                return 0;
             else
             {
-                var oldData = context.DisplayCategorys.Where(x => x.DisplayCategoryId == displayCategoryId).FirstOrDefault();
+                var oldData =await context.DisplayCategorys.Where(x => x.DisplayCategoryId == displayCategoryId).FirstOrDefaultAsync();
                 if (oldData != null)
                 {
                     var entity = context.Entry(oldData);
                     entity.State = EntityState.Deleted;
-                    return context.SaveChangesAsync();
+                    return await context.SaveChangesAsync();
                 }
-                return Task.Factory.StartNew(() => 0);
+                return 0;
             }
         }
 
-        public AllCapabilityMasterModel GetAllCapabilityDropdownData(string userKey, string searchTerm = "All")
+        public async Task<AllCapabilityMasterModel> GetAllCapabilityDropdownData(string userKey, string searchTerm = "All")
         {
             searchTerm =string.IsNullOrEmpty(searchTerm)?"all": searchTerm.ToLower();
             AllCapabilityMasterModel allCapabilityMasterModel = new AllCapabilityMasterModel();
@@ -165,7 +168,7 @@ namespace IoT.DataLayer.Repository
                 return allCapabilityMasterModel;
             else
             {
-                allCapabilityMasterModel.CapabilityInterfaces = context.
+                allCapabilityMasterModel.CapabilityInterfaces =await context.
                                                                 CapabilityInterfaces
                                                                 .Where(x => searchTerm == "all" || x.CapabilityInterfaceName.ToLower().Contains(searchTerm))
                                                                 .Select(x =>
@@ -176,8 +179,8 @@ namespace IoT.DataLayer.Repository
                                                                                 Value = x.CapabilityInterfaceName
                                                                             })
                                                                 .OrderBy(x=>x.Value)
-                                                                .ToList();
-                allCapabilityMasterModel.CapabilitySupportedProperties = context.
+                                                                .ToListAsync();
+                allCapabilityMasterModel.CapabilitySupportedProperties =await context.
                                                                 CapabilitySupportedProperties
                                                                 .Where(x => searchTerm == "all" || x.CapabilitySupportedPropertyName.ToLower().Contains(searchTerm))
                                                                 .Select(x =>
@@ -188,8 +191,8 @@ namespace IoT.DataLayer.Repository
                                                                                 Value = x.CapabilitySupportedPropertyName
                                                                             })
                                                                 .OrderBy(x=>x.Value)
-                                                                .ToList();
-                allCapabilityMasterModel.CapabilityTypes = context.
+                                                                .ToListAsync();
+                allCapabilityMasterModel.CapabilityTypes =await context.
                                                                 CapabilityTypes
                                                                 .Where(x => searchTerm == "all" || x.CapabilityTypeName.ToLower().Contains(searchTerm))
                                                                 .Select(x =>
@@ -199,8 +202,8 @@ namespace IoT.DataLayer.Repository
                                                                                 Value = x.CapabilityTypeName
                                                                             })
                                                                 .OrderBy(x=>x.Value)
-                                                                .ToList();
-                allCapabilityMasterModel.CapabilityVersions = context.
+                                                                .ToListAsync();
+                allCapabilityMasterModel.CapabilityVersions =await context.
                                                                 CapabilityVersions
                                                                 .Where(x => searchTerm == "all" || x.CapabilityVersionName.ToLower().Contains(searchTerm))
                                                                 .Select(x =>
@@ -210,8 +213,8 @@ namespace IoT.DataLayer.Repository
                                                                                 Value = x.CapabilityVersionName
                                                                             })
                                                                 .OrderBy(x=>x.Value)
-                                                                .ToList();
-                allCapabilityMasterModel.DisplayCategories = context.
+                                                                .ToListAsync();
+                allCapabilityMasterModel.DisplayCategories =await context.
                                                                 DisplayCategorys
                                                                 .Where(x => searchTerm == "all" || x.DisplayCategoryLabel.ToLower().Contains(searchTerm))
                                                                 .Select(x =>
@@ -221,12 +224,12 @@ namespace IoT.DataLayer.Repository
                                                                                 Value = x.DisplayCategoryLabel
                                                                             })
                                                                 .OrderBy(x=>x.Value)
-                                                                .ToList();
+                                                                .ToListAsync();
                 return allCapabilityMasterModel;
             }
         }
 
-        public dynamic GetCapabilityInterface(string userKey, int id, int pageNo, int pageSize)
+        public async Task<dynamic> GetCapabilityInterface(string userKey, int id, int pageNo, int pageSize)
         {
             var result = new List<CapabilityInterface>();
             if (!isUserExist(userKey))
@@ -234,61 +237,61 @@ namespace IoT.DataLayer.Repository
             else
             {
                 int skipRecords = (pageNo - 1) * pageSize;
-                result = context.CapabilityInterfaces
+                result =await context.CapabilityInterfaces
                     .Where(x => id == 0 || x.CapabilityInterfaceId == id)
                     .OrderBy(x => x.CapabilityInterfaceName)
-                    .ToList();
+                    .ToListAsync();
                 return new { Data = result.Skip(skipRecords).Take(pageSize), TotalRecords = result.Count };
             }
         }
 
-        public IEnumerable<DropdownDataModel> GetCapabilityInterfaceDropdownData(string userKey, int id = 0)
+        public async Task<List<DropdownDataModel>> GetCapabilityInterfaceDropdownData(string userKey, int id = 0)
         {
             var result= new List<DropdownDataModel>();
             if (!isUserExist(userKey))
                 return result;
             else
             {
-                result = context.CapabilityInterfaces
+                result =await context.CapabilityInterfaces
                     .Where(x => id == 0 || x.CapabilityInterfaceId == id)
                     .Select(x=>new DropdownDataModel() {Key=x.CapabilityInterfaceId.ToString(),Value=x.CapabilityInterfaceName })
                     .OrderBy(x => x.Value)
-                    .ToList();
+                    .ToListAsync();
                 return result;
             }
         }
 
-        public IEnumerable<CapabilitySupportedProperty> GetCapabilitySupportedProperty(string userKey, int id)
+        public async Task<List<CapabilitySupportedProperty>> GetCapabilitySupportedProperty(string userKey, int id)
         {
             var result = new List<CapabilitySupportedProperty>();
             if (!isUserExist(userKey))
                 return result;
             else
             {
-                result = context.CapabilitySupportedProperties
+                result =await context.CapabilitySupportedProperties
                     .Where(x => id == 0 || x.CapabilitySupportedPropertyId == id).OrderBy(x => x.CapabilitySupportedPropertyName)
-                    .ToList();
+                    .ToListAsync();
                 return result;
             }
         }
 
-        public IEnumerable<DropdownDataModel> GetCapabilitySupportedPropertyDropdownData(string userKey, int id = 0)
+        public async Task<List<DropdownDataModel>> GetCapabilitySupportedPropertyDropdownData(string userKey, int id = 0)
         {
             var result = new List<DropdownDataModel>();
             if (!isUserExist(userKey))
                 return result;
             else
             {
-                result = context.CapabilitySupportedProperties
+                result =await context.CapabilitySupportedProperties
                     .Where(x => id == 0 || x.CapabilitySupportedPropertyId == id)
                     .Select(x => new DropdownDataModel() { Key = x.CapabilitySupportedPropertyId.ToString(), Value = x.CapabilitySupportedPropertyName })
                     .OrderBy(x => x.Value)
-                    .ToList();
+                    .ToListAsync();
                 return result;
             }
         }
 
-        public IEnumerable<CapabilityType> GetCapabilityType(string userKey, int id, int pageNo, int pageSize)
+        public async Task<List<CapabilityType>> GetCapabilityType(string userKey, int id, int pageNo, int pageSize)
         {
             var result = new List<CapabilityType>();
             if (!isUserExist(userKey))
@@ -296,190 +299,190 @@ namespace IoT.DataLayer.Repository
             else
             {
                 int skipRecords = (pageNo - 1) * pageSize;
-                result = context.CapabilityTypes
+                result =await context.CapabilityTypes
                     .Where(x => id == 0 || x.CapabilityTypeId == id).OrderBy(x => x.CapabilityTypeName).Skip(skipRecords).Take(pageSize)
-                    .ToList();
+                    .ToListAsync();
                 return result;
             }
         }
 
-        public IEnumerable<DropdownDataModel> GetCapabilityTypeDropdownData(string userKey, int id = 0)
+        public async Task<List<DropdownDataModel>> GetCapabilityTypeDropdownData(string userKey, int id = 0)
         {
             var result = new List<DropdownDataModel>();
             if (!isUserExist(userKey))
                 return result;
             else
             {
-                result = context.CapabilityTypes
+                result =await context.CapabilityTypes
                     .Where(x => id == 0 || x.CapabilityTypeId == id)
                     .Select(x => new DropdownDataModel() { Key = x.CapabilityTypeId.ToString(), Value = x.CapabilityTypeName })
                     .OrderBy(x => x.Value)
-                    .ToList();
+                    .ToListAsync();
                 return result;
             }
         }
 
-        public IEnumerable<CapabilityVersion> GetCapabilityVersion(string userKey, int id)
+        public async Task<List<CapabilityVersion>> GetCapabilityVersion(string userKey, int id)
         {
             var result = new List<CapabilityVersion>();
             if (!isUserExist(userKey))
                 return result;
             else
             {
-                result = context.CapabilityVersions
+                result =await context.CapabilityVersions
                     .Where(x => id == 0 || x.CapabilityVersionId == id).OrderBy(x => x.CapabilityVersionName)
-                    .ToList();
+                    .ToListAsync();
                 return result;
             }
         }
 
-        public IEnumerable<DropdownDataModel> GetCapabilityVersionDropdownData(string userKey, int id = 0)
-        {var result = new List<DropdownDataModel>();
-            if (!isUserExist(userKey))
-                return result;
-            else
-            {
-                result = context.CapabilityInterfaces
-                    .Where(x => id == 0 || x.CapabilityInterfaceId == id)
-                    .Select(x => new DropdownDataModel() { Key = x.CapabilityInterfaceId.ToString(), Value = x.CapabilityInterfaceName })
-                    .OrderBy(x => x.Value)
-                    .ToList();
-                return result;
-            }
-        }
-
-        public IEnumerable<DisplayCategory> GetDisplayCategory(string userKey, int id)
-        {
-            var result = new List<DisplayCategory>();
-            if (!isUserExist(userKey))
-                return result;
-            else
-            {
-                result = context.DisplayCategorys
-                    .Where(x => id == 0 || x.DisplayCategoryId == id).OrderBy(x => x.DisplayCategoryLabel)
-                    .ToList();
-                return result;
-            }
-        }
-
-        public IEnumerable<DropdownDataModel> GetDisplayCategoryDropdownData(string userKey, int id = 0)
+        public async Task<List<DropdownDataModel>> GetCapabilityVersionDropdownData(string userKey, int id = 0)
         {
             var result = new List<DropdownDataModel>();
             if (!isUserExist(userKey))
                 return result;
             else
             {
-                result = context.DisplayCategorys
-                    .Where(x=>id==0 ||x.DisplayCategoryId==id)
-                    .Select(x => new DropdownDataModel() { Key = x.DisplayCategoryValue, Value = x.DisplayCategoryLabel })
+                result =await context.CapabilityInterfaces
+                    .Where(x => id == 0 || x.CapabilityInterfaceId == id)
+                    .Select(x => new DropdownDataModel() { Key = x.CapabilityInterfaceId.ToString(), Value = x.CapabilityInterfaceName })
                     .OrderBy(x => x.Value)
-                    .ToList();
+                    .ToListAsync();
                 return result;
             }
         }
 
-        public IEnumerable<CapabilityInterface> SearchCapabilityInterface(string userKey, string searchTerm)
+        public async Task<List<DisplayCategory>> GetDisplayCategory(string userKey, int id)
+        {
+            var result = new List<DisplayCategory>();
+            if (!isUserExist(userKey))
+                return result;
+            else
+            {
+                result =await context.DisplayCategorys
+                    .Where(x => id == 0 || x.DisplayCategoryId == id).OrderBy(x => x.DisplayCategoryLabel)
+                    .ToListAsync();
+                return result;
+            }
+        }
+
+        public async Task<List<DropdownDataModel>> GetDisplayCategoryDropdownData(string userKey, int id = 0)
+        {
+            var result = new List<DropdownDataModel>();
+            if (!isUserExist(userKey))
+                return result;
+            else
+            {
+                result =await context.DisplayCategorys
+                    .Where(x=>id==0 ||x.DisplayCategoryId==id)
+                    .Select(x => new DropdownDataModel() { Key = x.DisplayCategoryValue, Value = x.DisplayCategoryLabel })
+                    .OrderBy(x => x.Value)
+                    .ToListAsync();
+                return result;
+            }
+        }
+
+        public async Task<List<CapabilityInterface>> SearchCapabilityInterface(string userKey, string searchTerm)
         {
             searchTerm = string.IsNullOrEmpty(searchTerm) ? "all" : searchTerm.ToLower();
-            return context.CapabilityInterfaces
+            return await context.CapabilityInterfaces
                 .Where(x => searchTerm == "all" || x.CapabilityInterfaceName.ToLower().Contains(searchTerm))
-                .ToList()
-                .OrderBy(x=>x.CapabilityInterfaceName);
+                .OrderBy(x=>x.CapabilityInterfaceName)
+                .ToListAsync();
         }
 
-        public IEnumerable<CapabilitySupportedProperty> SearchCapabilitySupportedProperty(string userKey, string searchTerm)
+        public async Task<List<CapabilitySupportedProperty>> SearchCapabilitySupportedProperty(string userKey, string searchTerm)
         {
             searchTerm = string.IsNullOrEmpty(searchTerm) ? "all" : searchTerm.ToLower();
-            return context.CapabilitySupportedProperties
+            return await context.CapabilitySupportedProperties
                 .Where(x => searchTerm == "all" || x.CapabilitySupportedPropertyName.ToLower().Contains(searchTerm))
-                .ToList()
-                .OrderBy(x => x.CapabilitySupportedPropertyName);
+                .OrderBy(x => x.CapabilitySupportedPropertyName)
+                .ToListAsync();                
         }
 
-        public IEnumerable<CapabilityType> SearchCapabilityType(string userKey, string searchTerm)
+        public async Task<List<CapabilityType>> SearchCapabilityType(string userKey, string searchTerm)
         {
             searchTerm = string.IsNullOrEmpty(searchTerm) ? "all" : searchTerm.ToLower();
-            return context.CapabilityTypes
+            return await context.CapabilityTypes
                 .Where(x => searchTerm == "all" || x.CapabilityTypeName.ToLower().Contains(searchTerm))
-                .ToList()
-                .OrderBy(x => x.CapabilityTypeName);
+                .OrderBy(x => x.CapabilityTypeName)
+                .ToListAsync();
         }
 
-        public IEnumerable<CapabilityVersion> SearchCapabilityVersion(string userKey, string searchTerm)
+        public async Task<List<CapabilityVersion>> SearchCapabilityVersion(string userKey, string searchTerm)
         {
             searchTerm = string.IsNullOrEmpty(searchTerm) ? "all" : searchTerm.ToLower();
-            return context.CapabilityVersions
+            return await context.CapabilityVersions
                 .Where(x => searchTerm == "all" || x.CapabilityVersionName.ToLower().Contains(searchTerm))
-                .ToList()
-                .OrderBy(x => x.CapabilityVersionName);
+                .OrderBy(x => x.CapabilityVersionName)
+                .ToListAsync();
         }
 
-        public IEnumerable<DisplayCategory> SearchDisplayCategory(string userKey, string searchTerm)
+        public async Task<List<DisplayCategory>> SearchDisplayCategory(string userKey, string searchTerm)
         {
             searchTerm = string.IsNullOrEmpty(searchTerm) ? "all" : searchTerm.ToLower();
-            return context.DisplayCategorys
+            return await context.DisplayCategorys
                 .Where(x => searchTerm == "all" || x.DisplayCategoryValue.ToLower().Contains(searchTerm) || x.DisplayCategoryLabel.ToLower().Contains(searchTerm))
-                .ToList()
-                .OrderBy(x => x.DisplayCategoryLabel);
+                .OrderBy(x => x.DisplayCategoryLabel).ToListAsync();
         }
 
-        public Task<int> UpdateCapabilityInterface(CapabilityInterface capabilityInterface, string userKey)
+        public async Task<int> UpdateCapabilityInterface(CapabilityInterface capabilityInterface, string userKey)
         { 
             if (!isUserExist(userKey))
-                 return Task.Factory.StartNew(()=>0);
+                 return 0;
             else
             {
                 var entity = context.Attach(capabilityInterface);
                 entity.State = EntityState.Modified;
-                return context.SaveChangesAsync();
+                return await context.SaveChangesAsync();
             }
         }
 
-        public Task<int> UpdateCapabilitySupportedProperty(CapabilitySupportedProperty capabilitySupportedProperty, string userKey)
+        public async Task<int> UpdateCapabilitySupportedProperty(CapabilitySupportedProperty capabilitySupportedProperty, string userKey)
         {
             if (!isUserExist(userKey))
-                return Task.Factory.StartNew(() => 0);
+                return 0;
             else
             {
                 var entity = context.Attach(capabilitySupportedProperty);
                 entity.State = EntityState.Modified;
-                return context.SaveChangesAsync();
+                return await context.SaveChangesAsync();
             }
         }
 
-        public Task<int> UpdateCapabilityType(CapabilityType capabilityType, string userKey)
+        public async Task<int> UpdateCapabilityType(CapabilityType capabilityType, string userKey)
         {
             if (!isUserExist(userKey))
-                return Task.Factory.StartNew(() => 0);
+                return 0;
             else
             {
                 var entity = context.Attach(capabilityType);
                 entity.State = EntityState.Modified;
-                return context.SaveChangesAsync();
+                return await context.SaveChangesAsync();
             }
         }
 
-        public Task<int> UpdateCapabilityVersion(CapabilityVersion capabilityVersion, string userKey)
+        public async Task<int> UpdateCapabilityVersion(CapabilityVersion capabilityVersion, string userKey)
         {
             if (!isUserExist(userKey))
-                return Task.Factory.StartNew(() => 0);
+                return 0;
             else
             {
                 var entity = context.Attach(capabilityVersion);
                 entity.State = EntityState.Modified;
-                return context.SaveChangesAsync();
+                return await context.SaveChangesAsync();
             }
         }
 
-        public Task<int> UpdateDisplayCategory(DisplayCategory displayCategory, string userKey)
+        public async Task<int> UpdateDisplayCategory(DisplayCategory displayCategory, string userKey)
         {
             if (!isUserExist(userKey))
-                return Task.Factory.StartNew(() => 0);
+                return 0;
             else
             {
                 var entity = context.Attach(displayCategory);
                 entity.State = EntityState.Modified;
-                return context.SaveChangesAsync();
+                return await context.SaveChangesAsync();
             }
         }
 

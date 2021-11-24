@@ -12,18 +12,50 @@ namespace IoT.DataLayer
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Device>()
+            modelBuilder
+                .Entity<DeviceGroup>()
+                .HasMany<DeviceGroupDetail>(x => x.DeviceGroupDetails)
+                .WithOne(x => x.DeviceGroup)
+                .HasForeignKey(x => x.GroupDetailId);
+
+            modelBuilder
+                .Entity<DeviceGroupDetail>()
+                .HasOne<Device>(x => x.Device)
+                .WithMany(x => x.DeviceGroupDetails)
+                .HasForeignKey(x => x.DeviceId);
+
+            modelBuilder
+                .Entity<Device>()
                 .HasOne<DeviceType>(s => s.DeviceType);
-            modelBuilder.Entity<DeviceType>().HasMany<DeviceCapability>(x => x.DeviceCapabilities);
-            modelBuilder.Entity<DeviceCapability>().HasOne<DeviceType>(x => x.DeviceType).WithMany(x => x.DeviceCapabilities).HasForeignKey(x => x.DeviceTypeId);
+
+            modelBuilder
+                .Entity<DeviceType>()
+                .HasMany<DeviceCapability>(x => x.DeviceCapabilities);
+
+            modelBuilder
+                .Entity<DeviceCapability>()
+                .HasOne<DeviceType>(x => x.DeviceType)
+                .WithMany(x => x.DeviceCapabilities)
+                .HasForeignKey(x => x.DeviceTypeId);
+
             modelBuilder.Entity<Device>()
                 .HasOne<Room>(s => s.Room)
                 .WithMany(g => g.Devices)
                 .HasForeignKey(s => s.RoomId);
-            modelBuilder.Entity<UserPermission>().HasOne<User>(x => x.User);
-            modelBuilder.Entity<Scene>()
-                 .HasMany<SceneAction>(s => s.SceneActions);
-            modelBuilder.Entity<DeviceAction>().HasOne<DeviceType>(x => x.DeviceType).WithMany(x => x.DeviceActions).HasForeignKey(x => x.DeviceTypeId);
+
+            modelBuilder
+                .Entity<UserPermission>()
+                .HasOne<User>(x => x.User);
+
+            modelBuilder
+                .Entity<Scene>()
+                .HasMany<SceneAction>(s => s.SceneActions);
+
+            modelBuilder
+                .Entity<DeviceAction>()
+                .HasOne<DeviceType>(x => x.DeviceType)
+                .WithMany(x => x.DeviceActions)
+                .HasForeignKey(x => x.DeviceTypeId);
         }
         public DbSet<User> Users { get; set; }
         public DbSet<DeviceType> DeviceTypes { get; set; }

@@ -9,15 +9,15 @@ namespace IoT.DataLayer.Interface
   public  interface IDevices
     {
         Task<ResponseModel> Add(Device newDevice, string userKey);
-        Device Update(Device updateDevice,string userKey);
-        Device Delete(string DeviceKey, string userKey);
-        IEnumerable<DeviceExt> GetAllDevices(string userKey,string deviceKey="");
-        DeviceExt GetDevice(string userKey,int DeviceId);
-        bool UpdateDeviceHistory(string userKey, string deviceKey,bool isConnected);
-        IEnumerable<Device> SearchDevices(string searchTerm, string userKey);
-        IEnumerable<object> GetDeviceDropdown(string userKey);
-        IEnumerable<object> GetDeviceTypeDropdown(int pageNo, int pageSize);
-        IEnumerable<DeviceType> GetDeviceTypeAction();
+        Task<Device> Update(Device updateDevice,string userKey);
+        Task<Device> Delete(string DeviceKey, string userKey);
+        Task<List<DeviceExt>> GetAllDevices(string userKey,string deviceKey="");
+        Task<DeviceExt> GetDevice(string userKey,int DeviceId);
+        Task<bool> UpdateDeviceHistory(string userKey, string deviceKey,bool isConnected);
+        Task<List<DeviceExt>> SearchDevices(string searchTerm, string userKey);
+        Task<List<dynamic>> GetDeviceDropdown(string userKey);
+        Task<List<dynamic>> GetDeviceTypeDropdown(int pageNo, int pageSize);
+        Task<List<DeviceType>> GetDeviceTypeAction();
 
     }
 }

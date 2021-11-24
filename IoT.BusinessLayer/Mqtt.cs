@@ -53,7 +53,7 @@ namespace IoT.BusinessLayer
             }
             if(!string.IsNullOrEmpty(ConvertedMessage.WiFi) && string.IsNullOrEmpty(ConvertedMessage.Status) && e.Topic.ToLower().Contains("/server"))
             {
-                deviceBL.UpdateDeviceHistory("ByPassApiKey", ConvertedMessage.Devices[0], true);
+              await  deviceBL.UpdateDeviceHistory("ByPassApiKey", ConvertedMessage.Devices[0], true);
             }
         }
     }

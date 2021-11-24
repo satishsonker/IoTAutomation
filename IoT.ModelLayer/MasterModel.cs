@@ -58,11 +58,11 @@ namespace IoT.ModelLayer
 
     public class AllCapabilityMasterModel
     {
-        public IEnumerable<DropdownDataModel> CapabilitySupportedProperties { get; set; }
-        public IEnumerable<DropdownDataModel> CapabilityInterfaces { get; set; }
-        public IEnumerable<DropdownDataModel> DisplayCategories { get; set; }
-        public IEnumerable<DropdownDataModel> CapabilityVersions { get; set; }
-        public IEnumerable<DropdownDataModel> CapabilityTypes { get; set; }
+        public List<DropdownDataModel> CapabilitySupportedProperties { get; set; }
+        public List<DropdownDataModel> CapabilityInterfaces { get; set; }
+        public List<DropdownDataModel> DisplayCategories { get; set; }
+        public List<DropdownDataModel> CapabilityVersions { get; set; }
+        public List<DropdownDataModel> CapabilityTypes { get; set; }
     }
 
     public class DropdownDataModel

@@ -28,39 +28,39 @@ namespace IoT.BusinessLayer
             }
            return await _device.Add(device,userKey);
         }
-        public IEnumerable<Device> GetAllDevice(string userKey,string deviceKey="")
+        public async Task<List<DeviceExt>> GetAllDevice(string userKey,string deviceKey="")
         {
-            return _device.GetAllDevices(userKey,deviceKey);
+            return await _device.GetAllDevices(userKey,deviceKey);
         }
 
-        public IEnumerable<object> GetDeviceDropdown( string userKey)
+        public async Task<List<dynamic>> GetDeviceDropdown( string userKey)
         {
-            return _device.GetDeviceDropdown(userKey);
+            return await _device.GetDeviceDropdown(userKey);
         }
 
-        public IEnumerable<object> GetDeviceTypeDropdown(int pageNo, int pageSize)
+        public async Task<List<dynamic>> GetDeviceTypeDropdown(int pageNo, int pageSize)
         {
-            return _device.GetDeviceTypeDropdown(pageNo,pageSize);
+            return await _device.GetDeviceTypeDropdown(pageNo,pageSize);
         }
-        public IEnumerable<Device> SearchDevice(string searchTerm, string userKey)
+        public async Task<List<DeviceExt>> SearchDevice(string searchTerm, string userKey)
         {
-            return _device.SearchDevices(searchTerm,userKey);
+            return await _device.SearchDevices(searchTerm,userKey);
         }
-        public Device DeleteDevice(string DeviceKey, string userKey)
+        public async Task<Device> DeleteDevice(string DeviceKey, string userKey)
         {
-            return _device.Delete(DeviceKey,userKey);
+            return await _device.Delete(DeviceKey,userKey);
         }
-        public Device UpdateDevice(Device device, string userKey)
+        public async Task<Device> UpdateDevice(Device device, string userKey)
         {
-            return _device.Update(device,userKey);
+            return await _device.Update(device,userKey);
         }
-        public IEnumerable<DeviceType> GetDeviceTypeAction()
+        public async Task<List<DeviceType>> GetDeviceTypeAction()
         {
-            return _device.GetDeviceTypeAction();
+            return await _device.GetDeviceTypeAction();
         }
-        public bool UpdateDeviceHistory(string userKey,string deviceKey,bool isConnected)
+        public async Task<bool> UpdateDeviceHistory(string userKey,string deviceKey,bool isConnected)
         {
-            return _device.UpdateDeviceHistory(userKey,deviceKey,isConnected);
+            return await _device.UpdateDeviceHistory(userKey,deviceKey,isConnected);
         }
     }
 }

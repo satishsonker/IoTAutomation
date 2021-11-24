@@ -23,110 +23,109 @@ namespace IoT.WebAPI.Controllers
 
         [HttpPost]
         [Route("AddRoom")]
-        public IActionResult AddRoom([FromBody] Room room, [FromHeader] string userKey)
+        public async Task<Room> AddRoom([FromBody] Room room, [FromHeader] string userKey)
         {
+            Room newRoom = new Room();
             try
             {
                 if (ModelState.IsValid)
                 {
-                    var newRoom = _roomBL.AddRoom(room,userKey);
+                    newRoom =await _roomBL.AddRoom(room,userKey);
                     if (newRoom.RoomId > 0)
-                        return Ok();
-                    return BadRequest(ModelState);
+                        return newRoom;
+                    return newRoom;
                 }
-                return BadRequest(ModelState);
+                return newRoom;
             }
             catch (Exception)
             {
-
-                throw;
-            }
-           
+                return newRoom;
+            }     
 
         }
 
         [HttpGet]
         [Route("GetAllRoom")]
-        public IActionResult GetAllRoom([FromHeader]string userKey)
+        public async Task<List<Room>> GetAllRoom([FromHeader]string userKey)
         {
             try
             {
-                return Ok(_roomBL.GetAllRoom(userKey));
+                return await _roomBL.GetAllRoom(userKey);
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return new List<Room>();
             }
 
         }
         [HttpGet]
         [Route("GetRoom")]
-        public IActionResult GetAllRoom([FromQuery]string roomKey, [FromHeader] string userKey)
+        public async Task<Room> GetAllRoom([FromQuery]string roomKey, [FromHeader] string userKey)
         {
             try
             {
-                return Ok(_roomBL.GetRoom(roomKey,userKey));
+                return await _roomBL.GetRoom(roomKey,userKey);
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return new Room();
             }
 
         }
         [HttpGet]
         [Route("SearchRoom")]
-        public IActionResult SearchRoom([FromQuery] string searchTerm, [FromHeader] string userKey)
+        public async Task<List<Room>> SearchRoom([FromQuery] string searchTerm, [FromHeader] string userKey)
         {
             try
             {
-                return Ok(_roomBL.SearchRoom(searchTerm, userKey));
+                return await _roomBL.SearchRoom(searchTerm, userKey);
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return new List<Room>();
             }
 
         }
         [HttpGet]
         [Route("GetRoomDropdown")]
-        public IActionResult GetRoomDropdown([FromHeader] string userKey)
+        public async Task<List<object>> GetRoomDropdown([FromHeader] string userKey)
         {
             try
             {
-                return Ok(_roomBL.GetRoomDropdown(userKey));
+                return await _roomBL.GetRoomDropdown(userKey);
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return new List<object>();
             }
 
         }
         [HttpDelete]
         [Route("DeleteRoom")]
-        public IActionResult DeleteRoom([FromQuery] string roomKey, [FromHeader] string userKey)
+        public async Task<Room> DeleteRoom([FromQuery] string roomKey, [FromHeader] string userKey)
         {
             try
             {
-                return Ok(_roomBL.DeleteRoom(roomKey, userKey));
+                return await _roomBL.DeleteRoom(roomKey, userKey);
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return new Room();
             }
 
         }
 
         [HttpPost]
         [Route("UpdateRoom")]
-        public IActionResult UpdateRoom([FromBody] Room room, [FromHeader] string userKey)
+        public async Task<Room> UpdateRoom([FromBody] Room room, [FromHeader] string userKey)
         {
             try
             {
-                return Ok(_roomBL.UpdateRoom(room, userKey));
+                return await _roomBL.UpdateRoom(room, userKey);
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return new Room();
             }
 
         }

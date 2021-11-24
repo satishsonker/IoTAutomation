@@ -321,6 +321,63 @@ namespace IoT.DataLayer.Migrations
                     b.ToTable("DeviceCapability");
                 });
 
+            modelBuilder.Entity("IoT.ModelLayer.DeviceGroup", b =>
+                {
+                    b.Property<int>("GroupId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("GroupKey")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("GroupName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("ModifiedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UserKey")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("GroupId");
+
+                    b.ToTable("DeviceDroup");
+                });
+
+            modelBuilder.Entity("IoT.ModelLayer.DeviceGroupDetail", b =>
+                {
+                    b.Property<int>("GroupDetailId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("DeviceId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("GroupId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("GroupName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("ModifiedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UserKey")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("GroupDetailId");
+
+                    b.HasIndex("DeviceId");
+
+                    b.ToTable("DeviceDroupDetails");
+                });
+
             modelBuilder.Entity("IoT.ModelLayer.DeviceType", b =>
                 {
                     b.Property<int>("DeviceTypeId")
@@ -604,6 +661,25 @@ namespace IoT.DataLayer.Migrations
                     b.Navigation("DeviceType");
                 });
 
+            modelBuilder.Entity("IoT.ModelLayer.DeviceGroupDetail", b =>
+                {
+                    b.HasOne("IoT.ModelLayer.Device", "Device")
+                        .WithMany("DeviceGroupDetails")
+                        .HasForeignKey("DeviceId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("IoT.ModelLayer.DeviceGroup", "DeviceGroup")
+                        .WithMany("DeviceGroupDetails")
+                        .HasForeignKey("GroupDetailId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Device");
+
+                    b.Navigation("DeviceGroup");
+                });
+
             modelBuilder.Entity("IoT.ModelLayer.SceneAction", b =>
                 {
                     b.HasOne("IoT.ModelLayer.Device", "Device")
@@ -630,6 +706,16 @@ namespace IoT.DataLayer.Migrations
                         .IsRequired();
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("IoT.ModelLayer.Device", b =>
+                {
+                    b.Navigation("DeviceGroupDetails");
+                });
+
+            modelBuilder.Entity("IoT.ModelLayer.DeviceGroup", b =>
+                {
+                    b.Navigation("DeviceGroupDetails");
                 });
 
             modelBuilder.Entity("IoT.ModelLayer.DeviceType", b =>

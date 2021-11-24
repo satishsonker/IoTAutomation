@@ -38,5 +38,7 @@ namespace IoT.ModelLayer
         public string UserKey { get; set; }
         [JsonIgnore]
         public Room Room { get; set; }
+        [JsonIgnore]
+        public ICollection<DeviceGroupDetail> DeviceGroupDetails { get; set; }
     }
 }
