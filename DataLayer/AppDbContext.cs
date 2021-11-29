@@ -16,7 +16,7 @@ namespace IoT.DataLayer
                 .Entity<DeviceGroup>()
                 .HasMany<DeviceGroupDetail>(x => x.DeviceGroupDetails)
                 .WithOne(x => x.DeviceGroup)
-                .HasForeignKey(x => x.GroupDetailId);
+                .HasForeignKey(x => x.GroupId);
 
             modelBuilder
                 .Entity<DeviceGroupDetail>()
@@ -71,6 +71,8 @@ namespace IoT.DataLayer
         public DbSet<CapabilityVersion> CapabilityVersions { get; set; }
         public DbSet<DisplayCategory> DisplayCategorys { get; set; }
         public DbSet<SkillToken> SkillTokens { get; set; }
+        public DbSet<DeviceGroup> DeviceGroups { get; set; }
+        public DbSet<DeviceGroupDetail> DeviceGroupDetails { get; set; }
         public DbSet<CapabilityInterface> CapabilityInterfaces { get; set; }
         public DbSet<CapabilitySupportedProperty> CapabilitySupportedProperties { get; set; }
     }

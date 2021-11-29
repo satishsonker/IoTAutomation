@@ -23,5 +23,9 @@ namespace IoT.BusinessLayer
         {
             return GetResponseModel(string.Empty);
         }
+        internal static string GetGuid()
+        {
+            return Guid.NewGuid().ToString().ToUpper().Replace("-", "");
+        }
     }
 }

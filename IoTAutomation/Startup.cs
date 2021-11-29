@@ -53,6 +53,7 @@ namespace IoT.WebAPI
             services.AddScoped<IMasterData, MasterDataRepository>();
             services.AddScoped<IAlexaEventSource, AlexaEventSourceRepository>();
             services.AddScoped<IMqtt, MqttRepository>();
+            services.AddScoped<IDeviceGroup, DeviceGroupRepository>();
             services.Configure<AppSettingConfig>(option => Configuration.GetSection("AppConfig").Bind(option));
             services.Configure<CookiePolicyOptions>(options =>
             {

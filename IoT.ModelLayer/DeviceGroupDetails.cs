@@ -7,7 +7,7 @@ using System.Text.Json.Serialization;
 
 namespace IoT.ModelLayer
 {
-    [Table("DeviceDroupDetails")]
+    [Table("DeviceGroupDetails")]
     public class DeviceGroupDetail
     {
         [Key]
@@ -15,12 +15,11 @@ namespace IoT.ModelLayer
         public int GroupDetailId { get; set; }
         [JsonIgnore]
         public int GroupId { get; set; }
-        [JsonIgnore]
+       
         public int DeviceId { get; set; }
         public Device Device { get; set; }
         [JsonIgnore]
         public DeviceGroup DeviceGroup { get; set; }
-        public string GroupName { get; set; }
         [JsonIgnore]
         public string UserKey { get; set; }
         [JsonIgnore]
