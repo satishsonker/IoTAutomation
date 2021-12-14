@@ -27,7 +27,7 @@ namespace IoT.ModelLayer
         public string CapabilityVersionName { get; set; }
     }
     [Table("DisplayCategory")]
-    public class DisplayCategory : SharedTableModelNoUserKey
+    public class DisplayCategory :SharedTableModelNoUserKey, ICloneable
     {
         [Key]
         [Range(minimum: 0, maximum: int.MaxValue, ErrorMessage = "DisplayCategoryId is required")]
@@ -36,6 +36,11 @@ namespace IoT.ModelLayer
         public string DisplayCategoryValue { get; set; }
         [Required(AllowEmptyStrings = false, ErrorMessage = "DisplayCategoryLabel is required")]
         public string DisplayCategoryLabel { get; set; }
+
+        public object Clone()
+        {
+            return (DisplayCategory)MemberwiseClone();
+        }
     }
     [Table("CapabilityInterface")]
     public class CapabilityInterface : SharedTableModelNoUserKey

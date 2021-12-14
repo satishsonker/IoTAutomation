@@ -28,4 +28,11 @@ namespace IoT.BusinessLayer
             return Guid.NewGuid().ToString().ToUpper().Replace("-", "");
         }
     }
+    public static class BLExtensions
+    {
+        public static string Capatalize(this string str)
+        {
+            return char.ToUpper(str[0]) + str[1..];
+        }
+    }
 }

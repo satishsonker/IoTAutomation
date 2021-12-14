@@ -61,13 +61,13 @@ namespace IoT.DataLayer.Repository
             }
         }
 
-        public async Task<int> AddDisplayCategory(DisplayCategory displayCategory, string userKey)
+        public async Task<int> AddDisplayCategory(List<DisplayCategory> displayCategory, string userKey)
         {
             if (!isUserExist(userKey))
                 return 0;
             else
-            {
-                context.DisplayCategorys.Add(displayCategory);
+            {               
+               await context.DisplayCategorys.AddRangeAsync(displayCategory);
                 return await context.SaveChangesAsync();
             }
         }

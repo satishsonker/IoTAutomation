@@ -30,14 +30,24 @@ namespace IoT.ModelLayer
         public int ConnectionCount { get; set; }
         public DeviceType DeviceType { get; set; }
         public string Status { get; set; }
+        public string Model { get; set; }
+        public string SerialNumber { get; set; }
+        public string FirmwareVersion { get; set; }
+        public string SoftwareVersion { get; set; }
+        public string CustomIdentifier { get; set; }
+
         [JsonIgnore]
         public DateTime CreatedDate { get; set; }
+
         [JsonIgnore]
         public DateTime ModifiedDate { get; set; }
+
         [JsonIgnore]
         public string UserKey { get; set; }
+
         [JsonIgnore]
         public Room Room { get; set; }
+
         [JsonIgnore]
         public ICollection<DeviceGroupDetail> DeviceGroupDetails { get; set; }
     }

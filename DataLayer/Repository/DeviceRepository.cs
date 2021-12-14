@@ -64,7 +64,13 @@ namespace IoT.DataLayer.Repository
                 RoomName = x.Room.RoomName,
                 DeviceTypeName = x.DeviceType.DeviceTypeName,
                 RoomId = x.RoomId,
-                RoomKey = x.Room.RoomKey
+                RoomKey = x.Room.RoomKey,
+                CustomIdentifier=x.CustomIdentifier,
+                FirmwareVersion=x.FirmwareVersion,
+                Model=x.Model,
+                SerialNumber=x.SerialNumber,
+                SoftwareVersion=x.SoftwareVersion,
+                Status=x.Status
             }).OrderBy(x => x.DeviceName).ThenBy(x => x.RoomName).ToListAsync();
         }
 
@@ -72,16 +78,26 @@ namespace IoT.DataLayer.Repository
         {
             return await context.Devices.Where(x => x.UserKey == userKey && x.DeviceId == DeviceId).Select(x => new DeviceExt
             {
+
                 ConnectionCount = x.ConnectionCount,
                 DeviceDesc = x.DeviceDesc,
                 DeviceName = x.DeviceName,
                 DeviceKey = x.DeviceKey,
                 DeviceId = x.DeviceId,
+                DeviceTypeId = x.DeviceType.DeviceTypeId,
                 LastConnected = x.LastConnected,
+                FriendlyName = x.FriendlyName,
+                ManufacturerName = x.ManufacturerName,
                 RoomName = x.Room.RoomName,
                 DeviceTypeName = x.DeviceType.DeviceTypeName,
                 RoomId = x.RoomId,
-                RoomKey = x.Room.RoomKey
+                RoomKey = x.Room.RoomKey,
+                CustomIdentifier = x.CustomIdentifier,
+                FirmwareVersion = x.FirmwareVersion,
+                Model = x.Model,
+                SerialNumber = x.SerialNumber,
+                SoftwareVersion = x.SoftwareVersion,
+                Status = x.Status
             }).FirstOrDefaultAsync();
         }
 
@@ -106,6 +122,7 @@ namespace IoT.DataLayer.Repository
             searchTerm = searchTerm.ToUpper();
             return await context.Devices.Include(x => x.DeviceType).Where(x => x.UserKey == userKey && (searchTerm == "ALL" || x.DeviceName.ToUpper().Contains(searchTerm) || x.DeviceKey.ToUpper().Contains(searchTerm) || x.DeviceType.DeviceTypeName.ToUpper().Contains(searchTerm) || x.DeviceDesc.ToUpper().Contains(searchTerm) || x.FriendlyName.ToUpper().Contains(searchTerm))).Select(x => new DeviceExt
             {
+
                 ConnectionCount = x.ConnectionCount,
                 DeviceDesc = x.DeviceDesc,
                 DeviceName = x.DeviceName,
@@ -118,7 +135,13 @@ namespace IoT.DataLayer.Repository
                 RoomName = x.Room.RoomName,
                 DeviceTypeName = x.DeviceType.DeviceTypeName,
                 RoomId = x.RoomId,
-                RoomKey = x.Room.RoomKey
+                RoomKey = x.Room.RoomKey,
+                CustomIdentifier = x.CustomIdentifier,
+                FirmwareVersion = x.FirmwareVersion,
+                Model = x.Model,
+                SerialNumber = x.SerialNumber,
+                SoftwareVersion = x.SoftwareVersion,
+                Status = x.Status
             }).OrderBy(x => x.DeviceName).ThenBy(x => x.RoomName).ToListAsync();
         }
 

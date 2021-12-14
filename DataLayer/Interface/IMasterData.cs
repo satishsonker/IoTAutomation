@@ -18,7 +18,7 @@ namespace IoT.DataLayer.Interface
         Task<int> DeleteCapabilityVersion(int capabilityVersionId, string userKey);
         Task<List<DropdownDataModel>> GetCapabilityVersionDropdownData( string userKey, int id = 0);
 
-        Task<int> AddDisplayCategory(DisplayCategory displayCategory, string userKey);
+        Task<int> AddDisplayCategory(List<DisplayCategory> displayCategory, string userKey);
         Task<int> UpdateDisplayCategory(DisplayCategory displayCategory, string userKey);
         Task<int> DeleteDisplayCategory(int displayCategoryId, string userKey);
         Task<List<DropdownDataModel>> GetDisplayCategoryDropdownData(string userKey, int id = 0);

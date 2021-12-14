@@ -192,6 +192,9 @@ namespace IoT.DataLayer.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("CustomIdentifier")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("DeviceDesc")
                         .HasColumnType("nvarchar(max)");
 
@@ -205,6 +208,9 @@ namespace IoT.DataLayer.Migrations
                     b.Property<int>("DeviceTypeId")
                         .HasColumnType("int");
 
+                    b.Property<string>("FirmwareVersion")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("FriendlyName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -216,11 +222,20 @@ namespace IoT.DataLayer.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Model")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime>("ModifiedDate")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("RoomId")
                         .HasColumnType("int");
+
+                    b.Property<string>("SerialNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SoftwareVersion")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Status")
                         .HasColumnType("nvarchar(max)");

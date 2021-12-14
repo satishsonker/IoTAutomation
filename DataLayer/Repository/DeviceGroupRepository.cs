@@ -59,18 +59,18 @@ namespace IoT.DataLayer.Repository
             return 0;
         }
 
-        public async Task<int> DeleteGroup(int groupId, string userKey)
+        public async Task<int> DeleteGroup(string groupKey, string userKey)
         {
-            var oldData =await context.DeviceGroups.Where(x => x.GroupId == groupId && x.UserKey==userKey).FirstOrDefaultAsync();
+            var oldData =await context.DeviceGroups.Where(x => x.GroupKey == groupKey && x.UserKey==userKey).FirstOrDefaultAsync();
             var entity = context.DeviceGroups.Attach(oldData);
             entity.State = EntityState.Deleted;
             return await context.SaveChangesAsync();
         }
 
-        public async Task<DeviceGroup> GetGroup(int groupId,string userKey)
+        public async Task<DeviceGroup> GetGroup(string groupKey,string userKey)
         {
             return await context.DeviceGroups
-                .Where(x => x.GroupId == groupId && x.UserKey==userKey)
+                .Where(x => x.GroupKey == groupKey && x.UserKey==userKey)
                 .FirstOrDefaultAsync();
         }
 
@@ -81,6 +81,7 @@ namespace IoT.DataLayer.Repository
             var data= await context.DeviceGroups
                 .Include(x => x.DeviceGroupDetails)
                 .ThenInclude(x => x.Device)
+                .ThenInclude(x=>x.DeviceType)
                 .Where(x => x.GroupKey == groupKey && x.UserKey == userKey)
                 .FirstOrDefaultAsync();
             if(data!=null && data.DeviceGroupDetails!=null)

@@ -36,24 +36,31 @@ namespace IoT.BusinessLayer
                 var newTopic = new string[subscribeTopic.Length + serverTopics.Length];
                 subscribeTopic.CopyTo(newTopic, 0);
                 serverTopics.CopyTo(newTopic, subscribeTopic.Length);
-               //client.Subscribe(newTopic, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
+               client.Subscribe(subscribeTopic, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
             }
         }
         public async static void client_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs e)
         {
-            string ReceivedMessage = Encoding.UTF8.GetString(e.Message);
-            var ConvertedMessage = JsonConvert.DeserializeObject<MqttMessageModel>(ReceivedMessage);
-            if (ConvertedMessage != null && ConvertedMessage.Action.ToLower() == config.Value.DeviceAction.Doorbell)
+            try
             {
-                await alexaEventSourceBL.PressDoorbell(ConvertedMessage.DeviceId, "ByPassApiKey");
+                string ReceivedMessage = Encoding.UTF8.GetString(e.Message);
+                var ConvertedMessage = JsonConvert.DeserializeObject<MqttMessageModel>(ReceivedMessage);
+                if (ConvertedMessage != null && ConvertedMessage.Action.ToLower() == config.Value.DeviceAction.Doorbell)
+                {
+                    await alexaEventSourceBL.PressDoorbell(ConvertedMessage.DeviceId, "ByPassApiKey");
+                }
+                if (ConvertedMessage != null && ConvertedMessage.Action.ToLower() == config.Value.DeviceAction.MotionSensor)
+                {
+                    await alexaEventSourceBL.MotionDetect(ConvertedMessage.DeviceId, "ByPassApiKey");
+                }
+                if (!string.IsNullOrEmpty(ConvertedMessage.WiFi) && string.IsNullOrEmpty(ConvertedMessage.Status) && e.Topic.ToLower().Contains("/server"))
+                {
+                    await deviceBL.UpdateDeviceHistory("ByPassApiKey", ConvertedMessage.Devices[0], true);
+                }
             }
-            if (ConvertedMessage != null && ConvertedMessage.Action.ToLower() == config.Value.DeviceAction.MotionSensor)
+            catch (Exception ex)
             {
-                await alexaEventSourceBL.MotionDetect(ConvertedMessage.DeviceId, "ByPassApiKey");
-            }
-            if(!string.IsNullOrEmpty(ConvertedMessage.WiFi) && string.IsNullOrEmpty(ConvertedMessage.Status) && e.Topic.ToLower().Contains("/server"))
-            {
-              await  deviceBL.UpdateDeviceHistory("ByPassApiKey", ConvertedMessage.Devices[0], true);
+
             }
         }
     }

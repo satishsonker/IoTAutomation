@@ -12,9 +12,9 @@ namespace IoT.DataLayer.Interface
         Task<int> AddGroupDetail(List<DeviceGroupDetail> deviceGroupDetails, string groupKey, string userKey);
         Task<List<DeviceGroupDetail>> GetGroupDetails(string groupKey, string userKey);
         Task<int> UpdateGroup(DeviceGroup deviceGroup, string userKey);
-        Task<int> DeleteGroup(int groupId, string userKey);
+        Task<int> DeleteGroup(string groupKey, string userKey);
         Task<List<DeviceGroup>> SearchGroup(string searchTerm, string userKey);
         Task<List<DeviceGroup>> GetGroups(string userKey);
-        Task<DeviceGroup> GetGroup(int groupId,string userKey);
+        Task<DeviceGroup> GetGroup(string groupKey,string userKey);
     }
 }

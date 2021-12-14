@@ -35,8 +35,6 @@ namespace IoT.ModelLayer
         public bool ProactivelyReported { get; set; } = true;
 
         public bool Retrievable { get; set; } = true;
-
-        [JsonIgnore]
         public DeviceType DeviceType { get; set; }
     }
 }

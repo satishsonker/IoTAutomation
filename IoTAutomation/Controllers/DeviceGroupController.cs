@@ -90,8 +90,8 @@ namespace IoT.WebAPI.Controllers
         }
 
         [HttpPost]
-        [Route("Update")]
-        public async Task<int> Update([FromBody] DeviceGroup deviceGroup, [FromHeader] string userKey)
+        [Route("UpdateGroup")]
+        public async Task<int> UpdateGroup([FromBody] DeviceGroup deviceGroup, [FromHeader] string userKey)
         {
             try
             {
@@ -115,13 +115,13 @@ namespace IoT.WebAPI.Controllers
             }
         }
 
-        [HttpPost]
-        [Route("Delete/{groupId}")]
-        public async Task<int> Delete([FromRoute] int groupId, [FromHeader] string userKey)
+        [HttpDelete]
+        [Route("DeleteGroup/{groupKey}")]
+        public async Task<int> DeleteGroup([FromRoute] string groupKey, [FromHeader] string userKey)
         {
             try
             {
-                    var newdevice = await deviceGroupBL.DeleteGroup(groupId, userKey);
+                    var newdevice = await deviceGroupBL.DeleteGroup(groupKey, userKey);
                     if (newdevice > 0)
                     {
                         return newdevice;
@@ -152,12 +152,12 @@ namespace IoT.WebAPI.Controllers
         }
 
         [HttpGet]
-        [Route("GetGroup/{groupId}")]
-        public async Task<DeviceGroup> GetGroup([FromRoute] int groupId, [FromHeader] string userKey)
+        [Route("GetGroup/{groupKey}")]
+        public async Task<DeviceGroup> GetGroup([FromRoute] string groupKey, [FromHeader] string userKey)
         {
             try
             {
-                return await deviceGroupBL.GetGroup(groupId, userKey);
+                return await deviceGroupBL.GetGroup(groupKey, userKey);
             }
             catch (Exception ex)
             {

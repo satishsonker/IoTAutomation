@@ -30,14 +30,14 @@ namespace IoT.BusinessLayer
             return await _deviceGroup.AddGroupDetail(deviceGroupDetails, groupKey, userKey);
         }
 
-        public async Task<int> DeleteGroup(int groupId, string userKey)
+        public async Task<int> DeleteGroup(string groupKey, string userKey)
         {
-            return await _deviceGroup.DeleteGroup(groupId, userKey);
+            return await _deviceGroup.DeleteGroup(groupKey, userKey);
         }
 
-        public async Task<DeviceGroup> GetGroup(int groupId, string userKey)
+        public async Task<DeviceGroup> GetGroup(string groupKey, string userKey)
         {
-            return await _deviceGroup.GetGroup(groupId, userKey);
+            return await _deviceGroup.GetGroup(groupKey, userKey);
         }
 
         public async Task<List<DeviceGroup>> GetGroups(string userKey)

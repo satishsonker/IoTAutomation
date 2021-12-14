@@ -8,15 +8,14 @@ const char* pass = "1234567890";
 const char* broker = "broker.hivemq.com";
 const char* inTopic = "7C123F6551FB49E0A2DF99402906DFF81EF2632D12424DA88229EA6D431C8CFC"; //API Key
 const char* conTopic = "7C123F6551FB49E0A2DF99402906DFF81EF2632D12424DA88229EA6D431C8CFC/server";
-#define L1 D0
+#define L1 D8
 #define L2 D1
 #define L3 D2
 #define L4 D3
 #define L5 D4
 #define L6 D5
 #define L7 D6
-#define L8 D7
-#define buzzer D8
+#define L8 D0
 #define HallLight1 "4BBE91702F5F4BDB9C3DE49EDF13BEDC"  //Device Id/Key
 #define HallLight2 "A33B479D92F0486D8943BE9A8F87B02D"  //Device Id/Key
 #define HallLight3 "383E08641AB4400993B56DBD3A57F0AD"  //Device Id/Key
@@ -120,8 +119,6 @@ void setup() {
     digitalWrite(L7, HIGH);
     pinMode(L8, OUTPUT);
     digitalWrite(L8, HIGH);
-     pinMode(buzzer, OUTPUT);
-    digitalWrite(buzzer, LOW);
     Serial.begin(9600);
     delay(10);
     Serial.println("Connecting to ");
@@ -130,12 +127,9 @@ void setup() {
     WiFi.begin(ssid, pass);
     while (WiFi.status() != WL_CONNECTED)
     {
-      digitalWrite(buzzer, HIGH);
         delay(500);
         Serial.print(".");
-        digitalWrite(buzzer, LOW);
     }
-    digitalWrite(buzzer, LOW);
     Serial.println("");
     Serial.println("WiFi connected");
     client.setServer(broker, 1883);
