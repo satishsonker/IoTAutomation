@@ -9,5 +9,7 @@ namespace IoT.ModelLayer
         public string RoomName { get; set; }
         public string RoomKey { get; set; }
         public string DeviceTypeName { get; set; }
+        public bool IsAlexaCompatible { get; set; }
+        public bool IsGoogleCompatible { get; set; }
     }
 }

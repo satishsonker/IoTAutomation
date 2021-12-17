@@ -150,7 +150,7 @@ namespace IoT.WebAPI.Mock
         [Test]
         public async Task Search_DeviceCapability()
         {
-            iAdmin.Setup(x => x.SearchDeviceCapability(It.IsAny<string>(), Helper.UserKey)).Returns(returnDeviceCapabilityList);
+            iAdmin.Setup(x => x.SearchDeviceCapability(It.IsAny<string>(), Helper.UserKey)).Returns(Task.Factory.StartNew(()=>new List<DeviceCapability>() {new DeviceCapability() }));
             var result = (await adminController.SearchDeviceCapability(Helper.SearchTerm, Helper.UserKey)) as ObjectResult;
             Assert.IsTrue(((List<DeviceCapability>)result.Value).Count > 0);
         }
@@ -165,8 +165,8 @@ namespace IoT.WebAPI.Mock
         [Test]
         public async Task GetAll_DeviceCapability()
         {
-            iAdmin.Setup(x => x.GetAllDeviceCapability(Helper.UserKey)).Returns(returnDeviceCapabilityList);
-            var result = (await adminController.GetAllDeviceCapability(Helper.UserKey)) as ObjectResult;
+            iAdmin.Setup(x => x.GetAllDeviceCapability(Helper.UserKey,1,10)).Returns(Task.Factory.StartNew(()=>new PagingRecord()));
+            var result = (await adminController.GetAllDeviceCapability(Helper.UserKey,1,10)) as ObjectResult;
             Assert.IsTrue(((List<DeviceCapability>)result.Value).Count > 0);
         }
         [Test]

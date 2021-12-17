@@ -5,6 +5,13 @@ using System.Text.Json.Serialization;
 
 namespace IoT.ModelLayer
 {
+    public class PagingRecord
+    {
+        public int TotalRecord { get; set; }
+        public int PageSize { get; set; }
+        public int PageNo { get; set; }
+        public List<object> Data { get; set; }
+    }
     public class SharedTableModel:SharedTableModelNoUserKey
     {
         public string UserKey { get; set; }

@@ -350,11 +350,11 @@ namespace IoT.WebAPI.Controllers
 
         [HttpGet]
         [Route("GetAllDeviceCapability")]
-        public async Task<IActionResult> GetAllDeviceCapability([FromHeader] string userKey)
+        public async Task<IActionResult> GetAllDeviceCapability([FromHeader] string userKey,[FromQuery] int PageNo, [FromQuery] int PageSize)
         {
             try
             {
-                return Ok(await _adminBL.GetAllDeviceCapability(userKey));
+                return Ok(await _adminBL.GetAllDeviceCapability(userKey,PageNo,PageSize));
             }
             catch (Exception ex)
             {

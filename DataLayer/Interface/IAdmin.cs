@@ -26,6 +26,6 @@ namespace IoT.DataLayer.Interface
         Task<int> DeleteDeviceCapability(int deviceCapabilityId, string userKey);
         Task<List<DeviceCapability>> SearchDeviceCapability(string searchTerm, string userKey);
         Task<DeviceCapability> GetDeviceCapability(int deviceCapabilityId, string userKey);
-        Task<List<DeviceCapability>> GetAllDeviceCapability(string userKey);
+        Task<PagingRecord> GetAllDeviceCapability(string userKey, int PageNo, int PageSize);
     }
 }

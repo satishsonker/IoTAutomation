@@ -118,9 +118,9 @@ namespace IoT.BusinessLayer
             return await _adminBL.GetDeviceCapability(deviceCapabilityId, userKey);
         }
 
-        public async Task<IEnumerable<DeviceCapability>> GetAllDeviceCapability(string userKey)
+        public async Task<PagingRecord> GetAllDeviceCapability(string userKey,int PageNo, int PageSize)
         {
-            return await _adminBL.GetAllDeviceCapability(userKey);
+            return await _adminBL.GetAllDeviceCapability(userKey,PageNo,PageSize);
         }
     }
 }

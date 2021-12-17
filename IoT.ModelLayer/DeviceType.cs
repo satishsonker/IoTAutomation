@@ -14,6 +14,8 @@ namespace IoT.ModelLayer
         public int DeviceTypeId { get; set; }
         [Required(AllowEmptyStrings =false,ErrorMessage ="Device Type Name is required")]
         public string DeviceTypeName { get; set; }
+        public bool IsAlexaCompatible { get; set; }
+        public bool IsGoogleCompatible { get; set; }
         [JsonIgnore]
         public ICollection<DeviceAction> DeviceActions { get; set; }
         public ICollection<DeviceCapability> DeviceCapabilities { get; set; }

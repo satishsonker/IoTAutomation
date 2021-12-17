@@ -20,7 +20,11 @@ namespace IoT.DataLayer.Repository
 
         public async Task<List<Device>> GetAlexaDiscoveryPayload(string userKey)
         {
-            return await context.Devices.Include(x => x.DeviceType).ThenInclude(x => x.DeviceCapabilities).ToListAsync();
+            return await context.Devices
+                .Include(x => x.DeviceType)
+                .ThenInclude(x => x.DeviceCapabilities)
+                .Where(x=>x.DeviceType.IsAlexaCompatible)
+                .ToListAsync();
         }
 
         public async Task<string> GetDeviceStatus(string deviceKey, string userKey)

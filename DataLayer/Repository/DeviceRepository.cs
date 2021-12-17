@@ -116,7 +116,17 @@ namespace IoT.DataLayer.Repository
             int skipRecords = (pageNo - 1) * pageSize;
             return await Task.Factory.StartNew(() => context.DeviceTypes.Select(x => new { x.DeviceTypeId, x.DeviceTypeName }).OrderBy(x => x.DeviceTypeName).Skip(skipRecords).Take(pageSize).AsEnumerable().Cast<dynamic>().ToList());
         }
-
+        public async Task<PagingRecord> GetDeviceTypePaging(int pageNo, int pageSize)
+        {
+            PagingRecord pagingRecord = new PagingRecord();
+            int skipRecords = (pageNo - 1) * pageSize;
+            var totalRecord = await context.DeviceTypes.ToListAsync();
+            pagingRecord.PageNo = pageNo;
+            pagingRecord.PageSize = pageSize;
+            pagingRecord.TotalRecord = totalRecord.Count;
+            pagingRecord.Data = totalRecord.OrderBy(x => x.DeviceTypeName).Skip(skipRecords).Take(pageSize).AsEnumerable().Cast<object>().ToList();
+            return pagingRecord;
+        }
         public async Task<List<DeviceExt>> SearchDevices(string searchTerm, string userKey)
         {
             searchTerm = searchTerm.ToUpper();

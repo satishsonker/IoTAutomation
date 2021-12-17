@@ -8,6 +8,7 @@ namespace IoT.DataLayer.Interface
 {
   public  interface IDevices
     {
+        Task<PagingRecord> GetDeviceTypePaging(int pageNo, int pageSize);
         Task<ResponseModel> Add(Device newDevice, string userKey);
         Task<Device> Update(Device updateDevice,string userKey);
         Task<Device> Delete(string DeviceKey, string userKey);

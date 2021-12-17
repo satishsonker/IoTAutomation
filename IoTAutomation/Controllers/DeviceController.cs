@@ -99,6 +99,20 @@ namespace IoT.WebAPI.Controllers
                 return new List<object>();
             }
         }
+        [HttpGet]
+        [Route("GetDeviceTypePaging")]
+        public async Task<PagingRecord> GetDeviceTypePaging([FromQuery] int pageNo = 1, [FromQuery] int pageSize = 100)
+        {
+            try
+            {
+                return await _deviceBL.GetDeviceTypePaging(pageNo, pageSize);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error occured while getting device type dropdown data");
+                return new PagingRecord();
+            }
+        }
 
         [HttpPost]
         [Route("UpdateDevice")]

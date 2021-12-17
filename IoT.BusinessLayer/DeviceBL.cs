@@ -42,6 +42,10 @@ namespace IoT.BusinessLayer
         {
             return await _device.GetDeviceTypeDropdown(pageNo,pageSize);
         }
+        public async Task<PagingRecord> GetDeviceTypePaging(int pageNo, int pageSize)
+        {
+            return await _device.GetDeviceTypePaging(pageNo, pageSize);
+        }
         public async Task<List<DeviceExt>> SearchDevice(string searchTerm, string userKey)
         {
             return await _device.SearchDevices(searchTerm,userKey);

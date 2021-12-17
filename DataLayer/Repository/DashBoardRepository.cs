@@ -20,7 +20,7 @@ namespace IoT.DataLayer.Repository
         {
             DashboardModel dashModel = new DashboardModel
             {
-                Devices =await context.Devices.Where(x => x.UserKey == userKey).Select(x => new DeviceExt
+                Devices = await context.Devices.Where(x => x.UserKey == userKey).Select(x => new DeviceExt
                 {
                     ConnectionCount = x.ConnectionCount,
                     DeviceDesc = x.DeviceDesc,
@@ -34,7 +34,9 @@ namespace IoT.DataLayer.Repository
                     RoomName = x.Room.RoomName,
                     DeviceTypeName = x.DeviceType.DeviceTypeName,
                     RoomId = x.RoomId,
-                    RoomKey = x.Room.RoomKey
+                    RoomKey = x.Room.RoomKey,
+                    IsAlexaCompatible = x.DeviceType.IsAlexaCompatible,
+                    IsGoogleCompatible = x.DeviceType.IsGoogleCompatible
                 }).ToListAsync(),
                 Rooms =await context.Rooms.Where(x => x.UserKey == userKey).OrderBy(x => x.RoomName).ToListAsync()
             };

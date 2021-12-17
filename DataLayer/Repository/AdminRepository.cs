@@ -21,7 +21,7 @@ namespace IoT.DataLayer.Repository
         {
             if (await isUserExist(userKey))
             {
-                context.DeviceActions.AddAsync(deviceAction);
+               await context.DeviceActions.AddAsync(deviceAction);
                 return context.SaveChanges();
             }
             return 0;
@@ -109,21 +109,30 @@ namespace IoT.DataLayer.Repository
             return data;
         }
 
-        public async Task<List<DeviceCapability>> GetAllDeviceCapability(string userKey)
+        public async Task<PagingRecord> GetAllDeviceCapability(string userKey,int PageNo,int PageSize)
         {
-            var data = new List<DeviceCapability>();
+            var result = new PagingRecord();  
             if (await isUserExist(userKey))
             {
-                data =await context.DeviceCapabilities.Include(x => x.DeviceType).OrderBy(x => x.CapabilityType).ToListAsync();
-                if (data != null)
+               var totalRecord =await context.DeviceCapabilities
+                    .Include(x => x.DeviceType)
+                    .OrderBy(x => x.CapabilityType)
+                    .ToListAsync();
+                if (totalRecord != null)
                 {
-                    foreach (var item in data)
+                    foreach (var item in totalRecord)
                     {
                         item.DeviceType.DeviceCapabilities = null;
                     }
+                    result.PageNo = PageNo;
+                    result.PageSize = PageSize;
+                    result.TotalRecord = totalRecord.Count;
+                    result.Data = totalRecord.Skip((PageNo - 1) * PageSize).Take(PageSize).AsEnumerable().Cast<object>().ToList();
+                    return result;
                 }
+                return result;
             }
-            return data;
+            return result;
         }
 
         public async Task<DeviceAction> GetDeviceAction(int deviceActionId, string userKey)

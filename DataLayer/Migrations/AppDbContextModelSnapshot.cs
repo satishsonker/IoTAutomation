@@ -409,6 +409,12 @@ namespace IoT.DataLayer.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("IsAlexaCompatible")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsGoogleCompatible")
+                        .HasColumnType("bit");
+
                     b.Property<DateTime>("ModifiedDate")
                         .HasColumnType("datetime2");
 
