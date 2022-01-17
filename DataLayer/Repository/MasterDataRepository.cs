@@ -291,17 +291,21 @@ namespace IoT.DataLayer.Repository
             }
         }
 
-        public async Task<List<CapabilityType>> GetCapabilityType(string userKey, int id, int pageNo, int pageSize)
+        public async Task<PagingRecord> GetCapabilityType(string userKey, int id, int pageNo, int pageSize)
         {
-            var result = new List<CapabilityType>();
+            PagingRecord result = new PagingRecord();
             if (!isUserExist(userKey))
                 return result;
             else
             {
                 int skipRecords = (pageNo - 1) * pageSize;
-                result =await context.CapabilityTypes
-                    .Where(x => id == 0 || x.CapabilityTypeId == id).OrderBy(x => x.CapabilityTypeName).Skip(skipRecords).Take(pageSize)
+                var data =await context.CapabilityTypes
+                    .Where(x => id == 0 || x.CapabilityTypeId == id).OrderBy(x => x.CapabilityTypeName)
                     .ToListAsync();
+                result.Data = data.Skip(skipRecords).Take(pageSize).AsEnumerable().Cast<object>().ToList(); ;
+                result.PageNo = pageNo;
+                result.PageSize = pageSize;
+                result.TotalRecord = data.Count;
                 return result;
             }
         }
@@ -352,18 +356,22 @@ namespace IoT.DataLayer.Repository
             }
         }
 
-        public async Task<List<DisplayCategory>> GetDisplayCategory(string userKey, int id)
+        public async Task<PagingRecord> GetDisplayCategory(string userKey, int id, int pageNo, int pageSize)
         {
-            var result = new List<DisplayCategory>();
-            if (!isUserExist(userKey))
-                return result;
-            else
+            var result = new PagingRecord();
+            if (isUserExist(userKey))
             {
-                result =await context.DisplayCategorys
+                var totalRecord = await context.DisplayCategorys
                     .Where(x => id == 0 || x.DisplayCategoryId == id).OrderBy(x => x.DisplayCategoryLabel)
+                    .OrderBy(x => x.DisplayCategoryLabel)
                     .ToListAsync();
+                result.PageNo = pageNo;
+                result.PageSize = pageSize;
+                result.TotalRecord = totalRecord.Count;
+                result.Data = totalRecord.Skip((pageNo - 1) * pageSize).Take(pageSize).AsEnumerable().Cast<object>().ToList();
                 return result;
             }
+                return result;
         }
 
         public async Task<List<DropdownDataModel>> GetDisplayCategoryDropdownData(string userKey, int id = 0)

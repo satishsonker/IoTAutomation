@@ -35,9 +35,9 @@ namespace IoT.DataLayer.Interface
         Task<AllCapabilityMasterModel> GetAllCapabilityDropdownData(string userKey,string searchTerm="All");
         Task<List<CapabilitySupportedProperty>> GetCapabilitySupportedProperty(string userKey, int id);
         Task<dynamic> GetCapabilityInterface(string userKey, int id, int pageNo, int pageSize);
-        Task<List<DisplayCategory>> GetDisplayCategory(string userKey, int id);
+        Task<PagingRecord> GetDisplayCategory(string userKey, int id, int pageNo, int pageSize);
         Task<List<CapabilityVersion>> GetCapabilityVersion(string userKey, int id);
-        Task<List<CapabilityType>> GetCapabilityType(string userKey, int id,int pageNo,int pageSize);
+        Task<PagingRecord> GetCapabilityType(string userKey, int id,int pageNo,int pageSize);
         Task<List<CapabilitySupportedProperty>> SearchCapabilitySupportedProperty(string userKey, string searchTerm);
         Task<List<CapabilityInterface>> SearchCapabilityInterface(string userKey, string searchTerm);
         Task<List<DisplayCategory>> SearchDisplayCategory(string userKey, string searchTerm);

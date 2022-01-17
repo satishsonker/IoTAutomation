@@ -52,7 +52,7 @@ namespace IoT.WebAPI.Controllers
         }
         [HttpGet]
         [Route("GetCapabilityType")]
-        public async Task<List<CapabilityType>> GetCapabilityType([FromHeader] string userKey, [FromQuery] int id, [FromQuery] int pageNo, [FromQuery] int pageSize)
+        public async Task<PagingRecord> GetCapabilityType([FromHeader] string userKey, [FromQuery] int id, [FromQuery] int pageNo, [FromQuery] int pageSize)
         {
             return await _masterDataBL.GetCapabilityType(userKey, id,pageNo,pageSize);
         }
@@ -121,9 +121,9 @@ namespace IoT.WebAPI.Controllers
 
         [HttpGet]
         [Route("GetDisplayCategory")]
-        public async Task<List<DisplayCategory>> GetDisplayCategory([FromHeader] string userKey, [FromQuery] int id)
+        public async Task<PagingRecord> GetDisplayCategory([FromHeader] string userKey, [FromQuery] int id, [FromQuery] int pageNo, [FromQuery] int pageSize)
         {
-            return await _masterDataBL.GetDisplayCategory(userKey, id);
+            return await _masterDataBL.GetDisplayCategory(userKey, id,pageNo,pageSize);
         }
 
         [HttpPost]
