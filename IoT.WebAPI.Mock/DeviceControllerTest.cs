@@ -49,9 +49,9 @@ namespace IoT.WebAPI.Mock
         [Test]
         public async Task GetAllDevices()
         {
-            iDeviceMock.Setup(_ => _.GetAllDevices(It.IsAny<string>(), Helper.UserKey)).Returns(Task.Factory.StartNew(() => new List<DeviceExt>() { new DeviceExt() {DeviceId=10 }  }));
-            var result = await deviceController.GetAllDevice(Helper.EndpointId, Helper.UserKey);
-            Assert.IsTrue(result.Count > 0);
+            iDeviceMock.Setup(_ => _.GetAllDevices(It.IsAny<string>(),1,10, Helper.UserKey)).Returns(Task.Factory.StartNew(() => new PagingRecord()));
+            var result = await deviceController.GetAllDevice(Helper.EndpointId,1,10, Helper.UserKey);
+            Assert.IsTrue(result.PageNo > 0);
         }
         [Test]
         public async Task SearchDevices()
@@ -78,9 +78,9 @@ namespace IoT.WebAPI.Mock
         [Test]
         public async Task GetDeviceActionType()
         {
-            iDeviceMock.Setup(_ => _.GetDeviceTypeAction()).Returns(Task.Factory.StartNew(() =>new List<DeviceType>() {new DeviceType()}));
+            iDeviceMock.Setup(_ => _.GetDeviceTypeAction()).Returns(Task.Factory.StartNew(() =>new PagingRecord()));
             var result = await deviceController.GetDeviceAction();
-            Assert.IsTrue(result.Count>0);
+            Assert.IsNotEmpty(result.ToString());
         }
     }
 }

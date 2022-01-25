@@ -28,9 +28,9 @@ namespace IoT.BusinessLayer
             }
            return await _device.Add(device,userKey);
         }
-        public async Task<List<DeviceExt>> GetAllDevice(string userKey,string deviceKey="")
+        public async Task<PagingRecord> GetAllDevice(string userKey, int pageNo, int pageSize, string deviceKey="")
         {
-            return await _device.GetAllDevices(userKey,deviceKey);
+            return await _device.GetAllDevices(userKey,pageNo,pageSize,deviceKey);
         }
 
         public async Task<List<dynamic>> GetDeviceDropdown( string userKey)
@@ -58,13 +58,15 @@ namespace IoT.BusinessLayer
         {
             return await _device.Update(device,userKey);
         }
-        public async Task<List<DeviceType>> GetDeviceTypeAction()
+        public async Task<object> GetDeviceTypeAction()
         {
-            return await _device.GetDeviceTypeAction();
+            var result = await _device.GetDeviceTypeAction();
+            return result;
         }
         public async Task<bool> UpdateDeviceHistory(string userKey,string deviceKey,bool isConnected)
         {
             return await _device.UpdateDeviceHistory(userKey,deviceKey,isConnected);
+          
         }
     }
 }

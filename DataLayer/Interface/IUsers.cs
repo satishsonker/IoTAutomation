@@ -18,5 +18,6 @@ namespace IoT.DataLayer.Interface
         IEnumerable<User> SearchUsers(string searchTerm);
         Task<UserPermission> GetUserPermission(string userKey);
         Task<List<UserPermission>> GetAllUserPermissions(string userKey);
+        Task<bool> CheckUser(string userName, string password);
     }
 }

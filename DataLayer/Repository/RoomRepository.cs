@@ -43,12 +43,18 @@ namespace IoT.DataLayer.Repository
             return deleteRoom;
         }
 
-        public async Task<List<Room>> GetAllRooms(string userKey)
+        public async Task<PagingRecord> GetAllRooms(string userKey, int pageNo, int pageSize)
         {
-            return await context.Rooms
+            var result = new PagingRecord();
+            var data= await context.Rooms
                 .Where(x => x.UserKey == userKey)
                 .OrderBy(x => x.RoomName)
                 .ToListAsync();
+            result.Data = data.Skip((pageNo - 1) * pageSize).Take(pageSize).AsEnumerable().Cast<object>().ToList(); ;
+            result.PageNo = pageNo;
+            result.PageSize = pageSize;
+            result.TotalRecord = data.Count;
+            return result;
         }
 
         public async Task<Room> GetRoom(string roomKey, string userKey)

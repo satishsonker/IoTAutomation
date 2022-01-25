@@ -17,6 +17,7 @@ namespace IoT.ModelLayer
         public string Email { get; set; }
         [Required(AllowEmptyStrings =false,ErrorMessage ="Firstname is required")]
         public string FirstName { get; set; }
+        public string Password { get; set; }
         public string Lastname { get; set; }
         public string APIKey { get; set; }
         public string Language { get; set; }

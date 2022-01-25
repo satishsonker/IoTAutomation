@@ -118,9 +118,9 @@ namespace IoT.WebAPI.Mock
         [Test]
         public async Task GetAll_DeviceAction()
         {
-            iAdmin.Setup(x => x.GetAllDeviceAction(Helper.UserKey)).Returns(returnDeviceActionList);
-            var result = (await adminController.GetAllDeviceAction(Helper.UserKey)) as ObjectResult;
-            Assert.IsTrue(((List<DeviceAction>)result.Value).Count>0);
+            iAdmin.Setup(x => x.GetAllDeviceAction(Helper.UserKey,1,10)).Returns(Task.Factory.StartNew(()=>new PagingRecord()));
+            var result = (await adminController.GetAllDeviceAction(Helper.UserKey,1,10)) ;
+            Assert.IsTrue(result.PageNo>0);
         }
 
         [Test]

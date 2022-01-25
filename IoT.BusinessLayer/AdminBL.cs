@@ -38,9 +38,9 @@ namespace IoT.BusinessLayer
         {
             return await _adminBL.GetDeviceType(deviceTypeId, userKey);
         }
-        public async Task<IEnumerable<DeviceAction>> GetAllDeviceType(string userKey)
+        public async Task<PagingRecord> GetAllDeviceType(string userKey,int pageNo, int pageSize)
         {
-            return await _adminBL.GetAllDeviceAction(userKey);
+            return await _adminBL.GetAllDeviceAction(userKey,pageNo,pageSize);
         }
 
         public async Task<int> AddDeviceAction(DeviceAction deviceAction, string userKey)

@@ -47,5 +47,14 @@ namespace IoT.BusinessLayer
         {
             return await _users.GetAllUserPermissions(userKey);
         }
+
+        public async Task<bool> CheckUser(string userName,string password)
+        {
+
+            if (string.IsNullOrEmpty(userName) || string.IsNullOrEmpty(password))
+                return false;
+            else
+                return await _users.CheckUser(userName, password);
+        }
     }
 }

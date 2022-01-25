@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace IoT.DataLayer.Repository
 {
@@ -15,26 +16,28 @@ namespace IoT.DataLayer.Repository
         {
             this.context = _context;
         }
-        public Scene Add(Scene newScene, string userKey)
+        public async Task<Scene> Add(Scene newScene, string userKey)
         {
-            if (context.Users.Where(x => x.UserKey == userKey).Count() > 0)
+            if (await context.Users.Where(x => x.UserKey == userKey).CountAsync() > 0)
             {
-                var scene = context.Scenes.Where(x => x.SceneId == newScene.SceneId).FirstOrDefault();
+                var scene = await context.Scenes.Where(x => x.SceneId == newScene.SceneId).FirstOrDefaultAsync();
                 if (scene == null)
                 {
                     newScene.CreatedDate = DateTime.Now;
-                    newScene.SceneKey = Guid.NewGuid().ToString();
+                    newScene.ModifiedDate = DateTime.Now;
+                    newScene.SceneKey = Guid.NewGuid().ToString().Replace("-", "").ToUpper();
                     newScene.UserKey = userKey;
                     foreach (SceneAction item in newScene.SceneActions)
                     {
                         item.CreatedDate = DateTime.Now;
+                        item.ModifiedDate = DateTime.Now;
                         item.UserKey = userKey;
                         item.SceneActionKey = Guid.NewGuid().ToString().Replace("-", "").ToUpper();
                         item.SceneActionId = 0;
                     }
                     context.Scenes.Add(newScene);
-                    context.SaveChanges();
-                   
+                    await context.SaveChangesAsync();
+
                     return newScene;
                 }
                 return new Scene();
@@ -42,57 +45,91 @@ namespace IoT.DataLayer.Repository
             return new Scene();
         }
 
-        public Scene Delete(string SceneKey, string userKey)
+        public async Task<Scene> Delete(string SceneKey, string userKey)
         {
-            var deleteScene = context.Scenes.Where(x => x.SceneKey == SceneKey && x.UserKey == userKey).FirstOrDefault();
+            var deleteScene = await context.Scenes.Where(x => x.SceneKey == SceneKey && x.UserKey == userKey).FirstOrDefaultAsync();
             if (deleteScene != null)
             {
                 var oldScene = context.Scenes.Attach(deleteScene);
-                oldScene.State = Microsoft.EntityFrameworkCore.EntityState.Deleted;
-                context.SaveChangesAsync();
+                oldScene.State = EntityState.Deleted;
+                await context.SaveChangesAsync();
                 return deleteScene;
             }
             return new Scene();
         }
 
-        public IEnumerable<Scene> GetAll(string userKey)
+        public async Task<PagingRecord> GetAll(string userKey, int pageNo, int pageSize)
         {
-            return context.Scenes.Where(x => x.UserKey == userKey).Include(x => x.SceneActions).Select(x => x).ToList().OrderBy(x => x.SceneName);
+            PagingRecord result = new PagingRecord();
+            var totalRecord = await context.Scenes
+            .Where(x => x.UserKey == userKey)
+            .Include(x => x.SceneActions)
+            .OrderBy(x => x.SceneName)
+            .ToListAsync();
+            result.Data = totalRecord.Skip((pageNo - 1) * pageSize).Take(pageSize).AsEnumerable().Cast<object>().ToList();
+            result.PageNo = pageNo;
+            result.PageSize = pageSize;
+            result.TotalRecord = totalRecord.Count;
+            return result;
+
         }
 
-        public Scene Get(string userKey, string sceneKey)
+        public async Task<Scene> Get(string userKey, string sceneKey)
         {
-            return context.Scenes.Where(x => x.UserKey == userKey && x.SceneKey==sceneKey).Include(x=>x.SceneActions).ThenInclude(x=>x.Device).ThenInclude(x=>x.DeviceType).Select(x => x).FirstOrDefault();
+            return await context.Scenes
+                .Where(x => x.UserKey == userKey && x.SceneKey == sceneKey)
+                .Include(x => x.SceneActions)
+                .ThenInclude(x => x.Device)
+                .ThenInclude(x => x.DeviceType)
+                .FirstOrDefaultAsync();
         }
 
-        public IEnumerable<Scene> Search(string searchTerm, string userKey)
+        public async Task<IEnumerable<Scene>> Search(string searchTerm, string userKey)
         {
             searchTerm = searchTerm.ToUpper();
-            return context.Scenes
-                .Where(x => x.UserKey == userKey)
-                .Select(x => x).ToList().Where(x => searchTerm == "All" || x.SceneKey.ToUpper().Contains(searchTerm) || x.SceneName.ToUpper().Contains(searchTerm) || x.SceneDesc.Contains(searchTerm) ).OrderBy(x => x.SceneName);
+            return await context.Scenes
+                .Where(x =>
+                            (searchTerm == "All" ||
+                                x.SceneKey.ToUpper().Contains(searchTerm) ||
+                                x.SceneName.ToUpper().Contains(searchTerm) ||
+                                x.SceneDesc.Contains(searchTerm)
+                            ) && x.UserKey == userKey)
+                .OrderBy(x => x.SceneName)
+                .ToListAsync();
 
 
         }
 
-        public Scene Update(Scene updateScene,Scene newScene, string userKey)
+        public async Task<Scene> Update(Scene updateScene, Scene newScene, string userKey)
         {
-            if (context.Users.Where(x => x.UserKey == userKey).Count() > 0)
+            try
+            {
+                context.Database.OpenConnection();
+                if ( context.Users.Where(x => x.UserKey == userKey).Count() > 0)
+                {
+
+                    var scene = context.Scenes.Attach(updateScene);
+                    var oldAction = context.SceneActions
+                        .Where(x => updateScene.SceneActions.Select(y => y.SceneId)
+                        .Contains(x.SceneId))
+                        .ToList();
+
+                    context.SceneActions.RemoveRange(oldAction);
+
+                    await context.SaveChangesAsync();
+                    updateScene.SceneActions = null;
+                    context.Scenes.Remove(updateScene);
+
+                    await context.SaveChangesAsync();
+                    newScene.SceneId = 0;
+                    context.Scenes.Add(newScene);
+                    await context.SaveChangesAsync();
+                }
+            }
+            catch (Exception ex)
             {
 
-                var scene = context.Scenes.Attach(updateScene);
-                var oldAction = context.SceneActions.Where(x => updateScene.SceneActions.Select(y=>y.SceneId).ToList().Contains(x.SceneId)).ToList();
-                
-                context.SceneActions.RemoveRange(oldAction);
-
-                context.SaveChanges();
-                updateScene.SceneActions = null;
-                context.Scenes.Remove(updateScene);
-
-                context.SaveChanges();
-                newScene.SceneId = 0;
-                context.Scenes.Add(newScene);
-                context.SaveChanges();
+                throw;
             }
             return updateScene;
         }

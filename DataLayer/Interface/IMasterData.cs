@@ -33,10 +33,10 @@ namespace IoT.DataLayer.Interface
         Task<int> DeleteCapabilitySupportedProperty(int capabilitySupportedPropertyId, string userKey);
         Task<List<DropdownDataModel>> GetCapabilitySupportedPropertyDropdownData(string userKey, int id = 0);
         Task<AllCapabilityMasterModel> GetAllCapabilityDropdownData(string userKey,string searchTerm="All");
-        Task<List<CapabilitySupportedProperty>> GetCapabilitySupportedProperty(string userKey, int id);
-        Task<dynamic> GetCapabilityInterface(string userKey, int id, int pageNo, int pageSize);
+        Task<PagingRecord> GetCapabilitySupportedProperty(string userKey, int id, int pageNo, int pageSize);
+        Task<PagingRecord> GetCapabilityInterface(string userKey, int id, int pageNo, int pageSize);
         Task<PagingRecord> GetDisplayCategory(string userKey, int id, int pageNo, int pageSize);
-        Task<List<CapabilityVersion>> GetCapabilityVersion(string userKey, int id);
+        Task<PagingRecord> GetCapabilityVersion(string userKey, int id, int pageNo, int pageSize);
         Task<PagingRecord> GetCapabilityType(string userKey, int id,int pageNo,int pageSize);
         Task<List<CapabilitySupportedProperty>> SearchCapabilitySupportedProperty(string userKey, string searchTerm);
         Task<List<CapabilityInterface>> SearchCapabilityInterface(string userKey, string searchTerm);

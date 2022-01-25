@@ -86,9 +86,9 @@ namespace IoT.WebAPI.Controllers
         }
         [HttpGet]
         [Route("GetCapabilityVersion")]
-        public async Task<List<CapabilityVersion>> GetCapabilityVersion([FromHeader] string userKey, [FromQuery] int id)
+        public async Task<PagingRecord> GetCapabilityVersion([FromHeader] string userKey, [FromQuery] int id,[FromQuery] int pageNo,[FromQuery] int pageSize)
         {
-            return await _masterDataBL.GetCapabilityVersion(userKey, id);
+            return await _masterDataBL.GetCapabilityVersion(userKey, id,pageNo,pageSize);
         }
 
         [HttpPost]
@@ -189,9 +189,9 @@ namespace IoT.WebAPI.Controllers
         }
         [HttpGet]
         [Route("GetCapabilitySupportedProperty")]
-        public async Task<List<CapabilitySupportedProperty>> GetCapabilitySupportedProperty([FromHeader] string userKey, [FromQuery] int id)
+        public async Task<PagingRecord> GetCapabilitySupportedProperty([FromHeader] string userKey, [FromQuery] int id, [FromQuery] int pageNo, [FromQuery] int pageSize)
         {
-            return await _masterDataBL.GetCapabilitySupportedProperty(userKey, id);
+            return await _masterDataBL.GetCapabilitySupportedProperty(userKey, id,pageNo,pageSize);
         }
 
         [HttpGet]

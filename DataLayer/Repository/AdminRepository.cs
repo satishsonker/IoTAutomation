@@ -92,21 +92,22 @@ namespace IoT.DataLayer.Repository
             return 0;
         }
 
-        public async Task<List<DeviceAction>> GetAllDeviceAction(string userKey)
+        public async Task<PagingRecord> GetAllDeviceAction(string userKey,int PageNo,int PageSize)
         {
-            var data = new List<DeviceAction>();
+            var result = new PagingRecord();
             if (await isUserExist(userKey))
             {
-                data = await context.DeviceActions.Include(x => x.DeviceType).OrderBy(x => x.DeviceActionName).ToListAsync();
-                if (data != null)
-                {
-                    foreach (var item in data)
-                    {
-                        item.DeviceType.DeviceActions = null;
-                    }
-                }
+                var totalRecord = await context.DeviceActions
+                    .Include(x => x.DeviceType)
+                    .OrderBy(x => x.DeviceActionName)
+                    .ToListAsync();
+                result.PageNo = PageNo;
+                result.PageSize = PageSize;
+                result.TotalRecord = totalRecord.Count;
+                result.Data = totalRecord.Skip((PageNo - 1) * PageSize).Take(PageSize).AsEnumerable().Cast<object>().ToList();
+                return result;
             }
-            return data;
+            return result;
         }
 
         public async Task<PagingRecord> GetAllDeviceCapability(string userKey,int PageNo,int PageSize)
@@ -173,7 +174,10 @@ namespace IoT.DataLayer.Repository
             if (await isUserExist(userKey) && !string.IsNullOrEmpty(searchTerm))
             {
                 searchTerm = searchTerm.ToLower();
-                return await context.DeviceActions.Where(x => searchTerm == "all" || x.DeviceActionName.ToLower().Contains(searchTerm) || x.DeviceActionValue.ToLower().Contains(searchTerm)).OrderBy(x => x.DeviceActionName).ToListAsync();
+                return await context.DeviceActions.Include(x=>x.DeviceType)
+                    .Where(x => searchTerm == "all" || x.DeviceActionName.ToLower().Contains(searchTerm) || x.DeviceActionValue.ToLower().Contains(searchTerm))
+                    .OrderBy(x => x.DeviceActionName)
+                    .ToListAsync();
             }
             return new List<DeviceAction>();
         }

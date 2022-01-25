@@ -231,16 +231,16 @@ namespace IoT.WebAPI.Controllers
 
         [HttpGet]
         [Route("GetAllDeviceAction")]
-        public async Task<IActionResult> GetAllDeviceAction([FromHeader] string userKey)
+        public async Task<PagingRecord> GetAllDeviceAction([FromHeader] string userKey,[FromQuery] int PageNo,[FromQuery] int PageSize)
         {
             try
             {
-                return Ok(await _adminBL.GetAllDeviceType(userKey));
+                return await _adminBL.GetAllDeviceType(userKey,PageNo,PageSize);
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error occured while getting the Device Actions, UserKey : {0}", userKey);
-                return BadRequest("Unable to get the Device Actions");
+                return new PagingRecord();
             }
         }
 

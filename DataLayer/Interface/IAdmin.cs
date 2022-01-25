@@ -19,7 +19,7 @@ namespace IoT.DataLayer.Interface
         Task<int> DeleteDeviceAction(int deviceActionId, string userKey);
         Task<List<DeviceAction>> SearchDeviceAction(string searchTerm, string userKey);
         Task<DeviceAction> GetDeviceAction(int deviceActionId, string userKey);
-        Task<List<DeviceAction>> GetAllDeviceAction(string userKey);
+        Task<PagingRecord> GetAllDeviceAction(string userKey, int pageNo, int pageSize);
         Task<bool> UpdateAdminPermission(List<UserPermission> userPermissions, string userKey);
         Task<int> AddDeviceCapability(DeviceCapability deviceCapability, string userKey);
         Task<int> UpdateDeviceCapability(DeviceCapability deviceCapability, string userKey);

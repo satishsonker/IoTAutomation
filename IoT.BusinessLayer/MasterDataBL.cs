@@ -111,9 +111,9 @@ namespace IoT.BusinessLayer
             return await _masterData.GetCapabilityInterfaceDropdownData(userKey, id);
         }
 
-        public async Task<List<CapabilitySupportedProperty>> GetCapabilitySupportedProperty(string userKey, int id)
+        public async Task<PagingRecord> GetCapabilitySupportedProperty(string userKey, int id,int pageNo,int pageSize)
         {
-            return await _masterData.GetCapabilitySupportedProperty(userKey, id);
+            return await _masterData.GetCapabilitySupportedProperty(userKey, id,pageNo,pageSize);
         }
 
         public async Task<List<DropdownDataModel>> GetCapabilitySupportedPropertyDropdownData(string userKey, int id)
@@ -133,9 +133,9 @@ namespace IoT.BusinessLayer
             return await _masterData.GetCapabilityTypeDropdownData(userKey, id);
         }
 
-        public async Task<List<CapabilityVersion>> GetCapabilityVersion(string userKey, int id)
+        public async Task<PagingRecord> GetCapabilityVersion(string userKey, int id, int pageNo, int pageSize)
         {
-            return await _masterData.GetCapabilityVersion(userKey, id);
+            return await _masterData.GetCapabilityVersion(userKey, id,pageNo,pageSize);
         }
 
         public async Task<List<DropdownDataModel>> GetCapabilityVersionDropdownData(string userKey, int id)

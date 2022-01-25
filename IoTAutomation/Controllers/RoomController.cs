@@ -46,15 +46,15 @@ namespace IoT.WebAPI.Controllers
 
         [HttpGet]
         [Route("GetAllRoom")]
-        public async Task<List<Room>> GetAllRoom([FromHeader]string userKey)
+        public async Task<PagingRecord> GetAllRoom([FromHeader]string userKey, [FromQuery] int pageNo,[FromQuery] int pageSize)
         {
             try
             {
-                return await _roomBL.GetAllRoom(userKey);
+                return await _roomBL.GetAllRoom(userKey,pageNo,pageSize);
             }
             catch (Exception ex)
             {
-                return new List<Room>();
+                return new PagingRecord();
             }
 
         }

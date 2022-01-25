@@ -42,16 +42,16 @@ namespace IoT.WebAPI.Controllers
 
         [HttpGet]
         [Route("GetAllDevice")]
-        public async Task<List<DeviceExt>> GetAllDevice([FromHeader] string userKey, [FromQuery] string deviceKey = "")
+        public async Task<PagingRecord> GetAllDevice([FromHeader] string userKey,[FromQuery] int pageNo,[FromQuery] int pageSize, [FromQuery] string deviceKey = "")
         {
             try
             {
-                return await _deviceBL.GetAllDevice(userKey, deviceKey);
+                return await _deviceBL.GetAllDevice(userKey,pageNo,pageSize, deviceKey);
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error occured while getting all Devices");
-                return new List<DeviceExt>();
+                return new PagingRecord();
             }
         }
 
@@ -161,7 +161,7 @@ namespace IoT.WebAPI.Controllers
         [HttpGet]
 
         [Route("GetDeviceTypeAction")]
-        public async Task<List<DeviceType>> GetDeviceAction()
+        public async Task<object> GetDeviceAction()
         {
             try
             {
@@ -170,7 +170,7 @@ namespace IoT.WebAPI.Controllers
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error occured while getting device action");
-               return new List<DeviceType>();
+               return new PagingRecord();
             }
         }
     }

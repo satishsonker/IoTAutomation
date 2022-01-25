@@ -94,6 +94,11 @@ namespace IoT.DataLayer.Repository
             return new User();
         }
 
+        public async Task<bool> CheckUser(string userName, string password)
+        {
+             return await context.Users.Where(x => x.Email.ToLower() == userName.ToLower() && x.Password == password).CountAsync() > 0 ? true : false;
+        }
+
         public User Delete(string userKey)
         {
             var user = context.Users.FirstOrDefault(x => x.UserKey == userKey);

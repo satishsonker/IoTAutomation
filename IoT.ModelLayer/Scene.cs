@@ -10,7 +10,6 @@ namespace IoT.ModelLayer
     public class Scene:SharedTableModel
     {
         [Key]
-        [Range(minimum: 0, maximum: int.MaxValue, ErrorMessage = "SceneId is required")]
         public int SceneId { get; set; }
         public string SceneKey { get; set; }
         [StringLength(maximumLength: 50, MinimumLength = 3, ErrorMessage = "Scene name required min 3 and max 50 char(s)")]

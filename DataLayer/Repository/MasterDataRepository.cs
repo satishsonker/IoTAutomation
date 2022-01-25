@@ -229,19 +229,23 @@ namespace IoT.DataLayer.Repository
             }
         }
 
-        public async Task<dynamic> GetCapabilityInterface(string userKey, int id, int pageNo, int pageSize)
+        public async Task<PagingRecord> GetCapabilityInterface(string userKey, int id, int pageNo, int pageSize)
         {
-            var result = new List<CapabilityInterface>();
+            var result = new PagingRecord();
             if (!isUserExist(userKey))
                 return result;
             else
             {
                 int skipRecords = (pageNo - 1) * pageSize;
-                result =await context.CapabilityInterfaces
+                var totalRecord = await context.CapabilityInterfaces
                     .Where(x => id == 0 || x.CapabilityInterfaceId == id)
                     .OrderBy(x => x.CapabilityInterfaceName)
                     .ToListAsync();
-                return new { Data = result.Skip(skipRecords).Take(pageSize), TotalRecords = result.Count };
+                result.PageNo = pageNo;
+                result.PageSize = pageSize;
+                result.TotalRecord = totalRecord.Count;
+                result.Data = totalRecord.Skip(skipRecords).Take(pageSize).AsEnumerable().Cast<object>().ToList();
+                return result;
             }
         }
 
@@ -261,16 +265,21 @@ namespace IoT.DataLayer.Repository
             }
         }
 
-        public async Task<List<CapabilitySupportedProperty>> GetCapabilitySupportedProperty(string userKey, int id)
+        public async Task<PagingRecord> GetCapabilitySupportedProperty(string userKey, int id,int pageNo,int pageSize)
         {
-            var result = new List<CapabilitySupportedProperty>();
+            var result = new PagingRecord();
             if (!isUserExist(userKey))
                 return result;
             else
             {
-                result =await context.CapabilitySupportedProperties
+                int skipRecords = (pageNo - 1) * pageSize;
+                var totalRecord =await context.CapabilitySupportedProperties
                     .Where(x => id == 0 || x.CapabilitySupportedPropertyId == id).OrderBy(x => x.CapabilitySupportedPropertyName)
                     .ToListAsync();
+                result.PageNo = pageNo;
+                result.PageSize = pageSize;
+                result.TotalRecord = totalRecord.Count;
+                result.Data = totalRecord.Skip(skipRecords).Take(pageSize).AsEnumerable().Cast<object>().ToList();
                 return result;
             }
         }
@@ -326,16 +335,20 @@ namespace IoT.DataLayer.Repository
             }
         }
 
-        public async Task<List<CapabilityVersion>> GetCapabilityVersion(string userKey, int id)
+        public async Task<PagingRecord> GetCapabilityVersion(string userKey, int id,int pageNo,int pageSize)
         {
-            var result = new List<CapabilityVersion>();
+            var result = new PagingRecord();
             if (!isUserExist(userKey))
                 return result;
             else
             {
-                result =await context.CapabilityVersions
+                var allRecords =await context.CapabilityVersions
                     .Where(x => id == 0 || x.CapabilityVersionId == id).OrderBy(x => x.CapabilityVersionName)
                     .ToListAsync();
+                result.PageNo = pageNo;
+                result.PageSize = pageSize;
+                result.TotalRecord = allRecords.Count;
+                result.Data = allRecords.Skip((pageNo - 1) * pageSize).Take(pageSize).AsEnumerable().Cast<object>().ToList();
                 return result;
             }
         }

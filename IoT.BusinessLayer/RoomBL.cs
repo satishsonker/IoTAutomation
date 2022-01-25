@@ -29,9 +29,9 @@ namespace IoT.BusinessLayer
         {
             return await _rooms.GetRoom(roomKey, userKey);
         }
-        public async Task<List<Room>> GetAllRoom(string userKey)
+        public async Task<PagingRecord> GetAllRoom(string userKey,int pageNo, int pageSize)
         {
-          return await  _rooms.GetAllRooms(userKey);
+          return await  _rooms.GetAllRooms(userKey,pageNo,pageSize);
         }
 
         public async Task<List<object>> GetRoomDropdown(string userKey)

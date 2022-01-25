@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace IoT.ModelLayer
 {
@@ -21,8 +22,9 @@ namespace IoT.ModelLayer
         [Required(AllowEmptyStrings =false,ErrorMessage ="Action is required")]
         public string Action{ get; set; }
         public string? Value { get; set; }
-
-        [Range(minimum: 1, maximum: int.MaxValue, ErrorMessage = "SceneId is required")]
+        [JsonIgnore]
+        public Scene Scene { get; set; }
+        [Range(minimum: 0, maximum: int.MaxValue, ErrorMessage = "SceneId is required")]
         public int SceneId { get; set; }
     }
 }

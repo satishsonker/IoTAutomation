@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using IoT.ModelLayer;
+using System.Threading.Tasks;
 
 namespace IoT.WebAPI.Controllers
 {
@@ -19,13 +20,13 @@ namespace IoT.WebAPI.Controllers
 
         [HttpPost]
         [Route("AddScene")]
-        public IActionResult AddScene([FromBody] Scene Scene, [FromHeader] string userKey)
+        public async Task<IActionResult> AddScene([FromBody] Scene Scene, [FromHeader] string userKey)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    var newScene = _sceneBL.Add(Scene, userKey);
+                    var newScene =await _sceneBL.Add(Scene, userKey);
                     if (newScene.SceneId > 0)
                         return Ok();
                     return BadRequest(ModelState);
@@ -42,26 +43,26 @@ namespace IoT.WebAPI.Controllers
 
         [HttpGet]
         [Route("GetAllScene")]
-        public IEnumerable<Scene> GetAllScene([FromHeader] string userKey)
+        public async Task<PagingRecord> GetAllScene([FromHeader] string userKey,[FromQuery] int pageNo,[FromQuery] int pageSize)
         {
             try
             {
-              return  _sceneBL.GetAll(userKey);
+              return await _sceneBL.GetAll(userKey,pageNo,pageSize);
             }
             catch (Exception ex)
             {
-                return new List<Scene>();
+                return new PagingRecord();
             }
 
         }
 
         [HttpGet]
         [Route("GetScene")]
-        public Scene GetScene([FromQuery] string SceneKey, [FromHeader] string userKey)
+        public async Task<Scene> GetScene([FromQuery] string SceneKey, [FromHeader] string userKey)
         {
             try
             {
-                return _sceneBL.Get(userKey,SceneKey);
+                return await _sceneBL.Get(userKey,SceneKey);
             }
             catch (Exception ex)
             {

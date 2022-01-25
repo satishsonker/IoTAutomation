@@ -14,6 +14,10 @@ using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using IoT.BusinessLayer;
 using IoT.ModelLayer;
 using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using System.Threading.Tasks;
 
 namespace IoT.WebAPI
 {
@@ -36,6 +40,41 @@ namespace IoT.WebAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddAuthentication(config =>
+            {
+                config.DefaultAuthenticateScheme = "ClientCookie";
+                config.DefaultSignInScheme = "ClientCookie";
+                config.DefaultChallengeScheme = "OurServer";
+            })
+               .AddCookie("ClientCookie")
+               .AddOAuth("OurServer", config =>
+               {
+                   config.CallbackPath = "/oauth/token";
+                   config.ClientId = "client_Id";
+                   config.ClientSecret = "client_secret";
+                   config.AuthorizationEndpoint = "https://localhost:44342/oauth/authorize";
+                   config.TokenEndpoint = "https://localhost:44342/oauth/token";
+               });
+            services.AddAuthentication("OAuth").AddJwtBearer("OAuth", config => {
+                config.TokenValidationParameters = new TokenValidationParameters()
+                {
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["OAuth.Secret"])),
+                    ValidIssuer = Configuration["OAuth.Issuer"],
+                    ValidAudience = Configuration["OAuth.Audiance"]
+                };
+                config.Events = new JwtBearerEvents()
+                {
+                    OnMessageReceived = context =>
+                    {
+                        if (context.Request.Query.ContainsKey("access_token"))
+                        {
+                            context.Token = context.Request.Query["access_token"];
+                        }
+                        return Task.CompletedTask;
+                    }
+                };
+            });
+            services.AddControllersWithViews();
             services.AddDbContextPool<AppDbContext>(options =>
             {
                 options.UseSqlServer(Configuration.GetConnectionString("IotDbConnectionString"));
@@ -101,7 +140,7 @@ namespace IoT.WebAPI
             app.UseStaticFiles();
             app.UseCookiePolicy();
             app.UseRouting();
-
+            app.UseAuthorization();
             app.UseEndpoints(
             endpoints =>
             {
