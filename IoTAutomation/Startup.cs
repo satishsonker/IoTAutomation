@@ -114,6 +114,7 @@ namespace IoT.WebAPI
             var iDevice = serviceProvider.GetService<IDevices>();
             var config = serviceProvider.GetService<IOptions<AppSettingConfig>>();
             var mqtt = new Mqtt(mqttRepository, AlexaEventRepository, config, iDevice);
+            services.AddControllersWithViews().AddRazorRuntimeCompilation();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -144,7 +145,7 @@ namespace IoT.WebAPI
             app.UseEndpoints(
             endpoints =>
             {
-                endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}");
+                endpoints.MapControllerRoute("default", "{controller=home}/{action=secret}");
             });
         }
     }

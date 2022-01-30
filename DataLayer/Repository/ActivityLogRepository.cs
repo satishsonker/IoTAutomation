@@ -52,9 +52,34 @@ namespace IoT.DataLayer.Repository
         //    return 0;
         //}
 
-        public async Task<List<ActivityLog>> GetAll(string userKey)
+        public async Task<PagingRecord> GetAll(string userKey, int pageNo, int pageSize)
         {
-            return await context.ActivityLogs.Where(x => x.UserKey == userKey).OrderByDescending(x => x.CreatedDate).ToListAsync();
+            var totalRecord = await context.ActivityLogs.Where(x => x.UserKey == userKey).OrderByDescending(x => x.CreatedDate).ToListAsync();
+            var result = new PagingRecord()
+            {
+                PageNo = pageNo,
+                PageSize = pageSize,
+                TotalRecord = totalRecord.Count,
+                Data = totalRecord.Skip((pageNo - 1) * pageSize).Take(pageSize).AsEnumerable().Cast<object>().ToList()
+            };
+            return result;
+        }
+
+        public async Task<PagingRecord> Search(string userKey, string searchTerm, int pageNo, int pageSize)
+        {
+            searchTerm = searchTerm.ToLower();
+            var totalRecord = await context.ActivityLogs
+                .Where(x => x.UserKey == userKey && (x.Location.ToLower().Contains(searchTerm) || x.IPAddress.ToLower().Contains(searchTerm) ||  x.Activity.ToLower().Contains(searchTerm) || x.AppName.ToLower().Contains(searchTerm)))
+                .OrderByDescending(x => x.CreatedDate)
+                .ToListAsync();
+            var result = new PagingRecord()
+            {
+                PageNo = pageNo,
+                PageSize = pageSize,
+                TotalRecord = totalRecord.Count,
+                Data = totalRecord.Skip((pageNo - 1) * pageSize).Take(pageSize).AsEnumerable().Cast<object>().ToList()
+            };
+            return result;
         }
     }
 }

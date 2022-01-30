@@ -24,9 +24,13 @@ namespace IoT.BusinessLayer
           return  _áctivityLogs.Add(activityLog,userKey);
         }
        
-        public Task<List<ActivityLog>> GetAll(string userKey)
+        public Task<PagingRecord> GetAll(string userKey, int pageNo, int pageSize)
         {
-            return _áctivityLogs.GetAll(userKey);
+            return _áctivityLogs.GetAll(userKey,pageNo,pageSize);
+        }
+        public async Task<PagingRecord> Search(string userKey, string searchTerm, int pageNo, int pageSize)
+        {
+            return await _áctivityLogs.Search(userKey, searchTerm, pageNo, pageSize);
         }
     }
 }

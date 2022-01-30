@@ -36,7 +36,8 @@ namespace IoT.DataLayer.Repository
                     RoomId = x.RoomId,
                     RoomKey = x.Room.RoomKey,
                     IsAlexaCompatible = x.DeviceType.IsAlexaCompatible,
-                    IsGoogleCompatible = x.DeviceType.IsGoogleCompatible
+                    IsGoogleCompatible = x.DeviceType.IsGoogleCompatible,
+                    IsFavourite=x.IsFavourite
                 }).ToListAsync(),
                 Rooms =await context.Rooms.Where(x => x.UserKey == userKey).OrderBy(x => x.RoomName).ToListAsync()
             };

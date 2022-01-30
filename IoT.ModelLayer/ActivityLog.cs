@@ -18,6 +18,7 @@ namespace IoT.ModelLayer
         public string AppName { get; set; }
         [Required(AllowEmptyStrings = false, ErrorMessage = "Activity is required")]
         public string Activity { get; set; }
+        new public DateTime CreatedDate { get; set; }
 
     }
 }

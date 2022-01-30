@@ -42,11 +42,11 @@ namespace IoT.WebAPI.Controllers
 
         [HttpGet]
         [Route("GetAllDevice")]
-        public async Task<PagingRecord> GetAllDevice([FromHeader] string userKey,[FromQuery] int pageNo,[FromQuery] int pageSize, [FromQuery] string deviceKey = "")
+        public async Task<PagingRecord> GetAllDevice([FromHeader] string userKey, [FromQuery] int pageNo, [FromQuery] int pageSize, [FromQuery] string deviceKey = "")
         {
             try
             {
-                return await _deviceBL.GetAllDevice(userKey,pageNo,pageSize, deviceKey);
+                return await _deviceBL.GetAllDevice(userKey, pageNo, pageSize, deviceKey);
             }
             catch (Exception ex)
             {
@@ -87,11 +87,11 @@ namespace IoT.WebAPI.Controllers
 
         [HttpGet]
         [Route("GetDeviceTypeDropdown")]
-        public async Task<List<dynamic>> GetDeviceTypeDropdown([FromQuery] int pageNo=1,[FromQuery] int pageSize=100)
+        public async Task<List<dynamic>> GetDeviceTypeDropdown([FromQuery] int pageNo = 1, [FromQuery] int pageSize = 100)
         {
             try
             {
-                return await _deviceBL.GetDeviceTypeDropdown(pageNo,pageSize);
+                return await _deviceBL.GetDeviceTypeDropdown(pageNo, pageSize);
             }
             catch (Exception ex)
             {
@@ -125,21 +125,21 @@ namespace IoT.WebAPI.Controllers
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Error occured while updating device {0}",device.DeviceName);
+                _logger.LogError(ex, "Error occured while updating device {0}", device.DeviceName);
                 return new Device();
             }
         }
         [HttpPost]
         [Route("UpdateDeviceHistory")]
-        public async Task<bool> UpdateDeviceHistory([FromQuery] string deviceKey,[FromQuery] bool isConnected, [FromHeader] string userKey)
+        public async Task<bool> UpdateDeviceHistory([FromQuery] string deviceKey, [FromQuery] bool isConnected, [FromHeader] string userKey)
         {
             try
-            {                
-                return await _deviceBL.UpdateDeviceHistory(userKey,deviceKey,isConnected);
+            {
+                return await _deviceBL.UpdateDeviceHistory(userKey, deviceKey, isConnected);
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Error occured while updating device history with device Key {0}, Userkey {1}", deviceKey,userKey);
+                _logger.LogError(ex, "Error occured while updating device history with device Key {0}, Userkey {1}", deviceKey, userKey);
                 return false;
             }
         }
@@ -158,8 +158,8 @@ namespace IoT.WebAPI.Controllers
                 return new Device();
             }
         }
-        [HttpGet]
 
+        [HttpGet]
         [Route("GetDeviceTypeAction")]
         public async Task<object> GetDeviceAction()
         {
@@ -170,7 +170,37 @@ namespace IoT.WebAPI.Controllers
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error occured while getting device action");
-               return new PagingRecord();
+                return new PagingRecord();
+            }
+        }
+
+        [HttpPost]
+        [Route("UpdateFavourite/{deviceKey}/{isFavourite}")]
+        public async Task<bool> UpdateFavourite([FromHeader] string userKey,[FromRoute] string deviceKey,[FromRoute] bool isFavourite)
+        {
+            try
+            {
+                return await _deviceBL.UpdateFavourite(userKey,deviceKey,isFavourite);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error occured while updateing favourite device");
+                return false;
+            }
+        }
+
+        [HttpGet]
+        [Route("GetFavourite")]
+        public async Task<List<Device>> GetFavourite([FromHeader] string userKey, [FromRoute] string deviceKey, [FromRoute] bool isFavourite)
+        {
+            try
+            {
+                return await _deviceBL.GetFavourite(userKey);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error occured while getting favourite device");
+                return new List<Device>();
             }
         }
     }

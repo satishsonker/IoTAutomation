@@ -54,7 +54,7 @@ namespace IoT.WebAPI.Controllers
             };
             if (await _user.CheckUser(userName,password))
             return Redirect($"{redirectUri}{query}");
-            return View(model: query);
+            return View(model: query.ToString());
         }
 
 

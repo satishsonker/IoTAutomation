@@ -35,11 +35,11 @@ namespace IoT.WebAPI.Mock
         [Test]
         public async Task GetAll_Activity_Log()
         {
-            IActivityLogsMock.Setup(x => x.GetAll(It.IsAny<string>())).Returns(Task.Factory.StartNew(() =>new List<ActivityLog>() {new ActivityLog() }));
+            IActivityLogsMock.Setup(x => x.GetAll(It.IsAny<string>(),1,10)).Returns(Task.Factory.StartNew(() =>new PagingRecord()));
 
             var result = await activityLogController.GetAll(Helper.UserKey);
 
-            Assert.IsTrue(result.Count>0);
+            Assert.IsTrue(result.PageNo>0);
         }
     }
 }

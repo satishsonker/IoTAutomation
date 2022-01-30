@@ -51,16 +51,31 @@ namespace IoT.WebAPI.Controllers
 
         [HttpGet]
         [Route("GetAll")]
-        public async Task<List<ActivityLog>> GetAll([FromHeader] string userKey)
+        public async Task<PagingRecord> GetAll([FromHeader] string userKey, int pageNo=1, int pageSize=10)
         {
             try
             {
-                return await activityLogsBL.GetAll(userKey);
+                return await activityLogsBL.GetAll(userKey,pageNo,pageSize);
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error Occured while getting all Activity log: User Key {0}", userKey);
-                return new List<ActivityLog>();
+                return new PagingRecord();
+            }
+        }
+
+        [HttpGet]
+        [Route("SearchLog")]
+        public async Task<PagingRecord> SearchLog([FromHeader] string userKey, [FromHeader] string searchTerm, int pageNo = 1, int pageSize = 10)
+        {
+            try
+            {
+                return await activityLogsBL.Search(userKey,searchTerm, pageNo, pageSize);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error Occured while searching Activity log: User Key {0}", userKey);
+                return new PagingRecord();
             }
         }
     }

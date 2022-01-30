@@ -45,6 +45,8 @@ namespace IoT.ModelLayer
         [JsonIgnore]
         public string UserKey { get; set; }
 
+        public bool IsFavourite { get; set; }
+
         [JsonIgnore]
         public Room Room { get; set; }
 

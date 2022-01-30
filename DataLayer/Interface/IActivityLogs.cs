@@ -9,6 +9,7 @@ namespace IoT.DataLayer.Interface
     public interface IActivityLogs
     {
         Task<int> Add(ActivityLog entity, string userKey);
-        Task<List<ActivityLog>> GetAll(string userKey);
+        Task<PagingRecord> GetAll(string userKey,int pageNo,int pageSize);
+        Task<PagingRecord> Search(string userKey,string searchTerm, int pageNo, int pageSize);
     }
 }

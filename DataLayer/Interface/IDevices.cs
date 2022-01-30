@@ -8,6 +8,8 @@ namespace IoT.DataLayer.Interface
 {
   public  interface IDevices
     {
+        Task<bool> UpdateFavourite(string userKey, string deviceKey, bool isFavourite);
+        Task<List<Device>> GetFavourite(string userKey);
         Task<PagingRecord> GetDeviceTypePaging(int pageNo, int pageSize);
         Task<ResponseModel> Add(Device newDevice, string userKey);
         Task<Device> Update(Device updateDevice,string userKey);

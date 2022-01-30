@@ -159,6 +159,15 @@ namespace IoT.DataLayer.Repository
             pagingRecord.Data = totalRecord.OrderBy(x => x.DeviceTypeName).Skip(skipRecords).Take(pageSize).AsEnumerable().Cast<object>().ToList();
             return pagingRecord;
         }
+
+        public async Task<List<Device>> GetFavourite(string userKey)
+        {
+            return await context.Devices
+                  .Include(x => x.DeviceType)
+                  .Include(x => x.Room)
+                  .Where(x => x.UserKey == userKey && x.IsFavourite).ToListAsync();
+        }
+
         public async Task<List<DeviceExt>> SearchDevices(string searchTerm, string userKey)
         {
             searchTerm = searchTerm.ToUpper();
@@ -219,6 +228,29 @@ namespace IoT.DataLayer.Repository
                 }
             }
             return isUpdated;
+        }
+
+        public async Task<bool> UpdateFavourite(string userKey, string deviceKey, bool isFavourite)
+        {
+            try
+            {
+                bool result = false;
+                var oldData = await context.Devices.Where(x => x.UserKey == userKey && x.DeviceKey == deviceKey).FirstOrDefaultAsync();
+                if (oldData != null)
+                {
+                    oldData.ModifiedDate = DateTime.Now;
+                    oldData.IsFavourite = isFavourite;
+                    var attachedDevice = context.Attach(oldData);
+                    attachedDevice.State = EntityState.Modified;
+                    return await context.SaveChangesAsync() > 0;
+                }
+                return result;
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
         }
     }
 }
