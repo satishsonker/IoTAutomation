@@ -93,6 +93,7 @@ namespace IoT.WebAPI
             services.AddScoped<IAlexaEventSource, AlexaEventSourceRepository>();
             services.AddScoped<IMqtt, MqttRepository>();
             services.AddScoped<IDeviceGroup, DeviceGroupRepository>();
+            services.AddTransient<IEmailTemplate, EmailTemplateRepository>();
             services.Configure<AppSettingConfig>(option => Configuration.GetSection("AppConfig").Bind(option));
             services.Configure<CookiePolicyOptions>(options =>
             {

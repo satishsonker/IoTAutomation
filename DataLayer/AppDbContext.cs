@@ -72,6 +72,7 @@ namespace IoT.DataLayer
         public DbSet<DisplayCategory> DisplayCategorys { get; set; }
         public DbSet<SkillToken> SkillTokens { get; set; }
         public DbSet<DeviceGroup> DeviceGroups { get; set; }
+        public DbSet<EmailTemplate> EmailTemplates { get; set; }
         public DbSet<DeviceGroupDetail> DeviceGroupDetails { get; set; }
         public DbSet<CapabilityInterface> CapabilityInterfaces { get; set; }
         public DbSet<CapabilitySupportedProperty> CapabilitySupportedProperties { get; set; }

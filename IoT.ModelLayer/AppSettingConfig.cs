@@ -9,6 +9,7 @@ namespace IoT.ModelLayer
         public string AlexaEventUrl { get; set; }
         public string AlexaTokenUrl { get; set; }
         public string MqttBroker { get; set; }
+        public string AppName { get; set; }
         public DeviceActionModel DeviceAction { get; set; }
         public OAuthModel OAuth { get; set; }
     }
