@@ -94,6 +94,7 @@ namespace IoT.WebAPI
             services.AddScoped<IMqtt, MqttRepository>();
             services.AddScoped<IDeviceGroup, DeviceGroupRepository>();
             services.AddTransient<IEmailTemplate, EmailTemplateRepository>();
+            services.AddTransient<IEmailSetting, EmailSettingRepository>();
             services.Configure<AppSettingConfig>(option => Configuration.GetSection("AppConfig").Bind(option));
             services.Configure<CookiePolicyOptions>(options =>
             {

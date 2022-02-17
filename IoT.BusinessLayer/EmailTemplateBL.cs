@@ -33,6 +33,11 @@ namespace IoT.BusinessLayer
             return await emailTemplateRepo.GetTemplates(pageNo,pageSize,userKey);
         }
 
+        public async Task<EmailTemplate> GetTemplate(int templateId, string userKey)
+        {
+            return await emailTemplateRepo.GetTemplate(templateId, userKey);
+        }
+
         public async Task<PagingRecord> SearchTemplates(string searchTerm, int pageNo, int pageSize, string userKey)
         {
             return await emailTemplateRepo.SearchTemplates(searchTerm,pageNo,pageSize,userKey);

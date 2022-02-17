@@ -12,9 +12,9 @@ using IoT.ModelLayer;
 
 namespace IoT.WebAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/v1/[controller]")]
     [ApiController]
-    [UserKey]
+    //[UserKey]
     public class EmailTemplateController : ControllerBase
     {
         private EmailTemplateBL templateBL;
@@ -51,6 +51,12 @@ namespace IoT.WebAPI.Controllers
         public async Task<PagingRecord> GetTemplates([FromRoute]int pageNo, [FromRoute] int pageSize, [FromHeader] string userKey)
         {
             return await templateBL.GetTemplates(pageNo, pageSize, userKey);                                                                                                                                                       
+        }
+        [HttpGet]
+        [Route("GetEmailTemplate/{templateId:int}")]
+        public async Task<EmailTemplate> GetTemplate([FromRoute] int templateId, [FromHeader] string userKey)
+        {
+            return await templateBL.GetTemplate(templateId, userKey);
         }
 
         [HttpGet]

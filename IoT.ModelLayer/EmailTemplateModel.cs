@@ -13,7 +13,7 @@ namespace IoT.ModelLayer
         public int TemplateId { get; set; }
         public string TemplateName { get; set; }
         public string Body { get; set; }
-        public string Subjest { get; set; }
+        public string Subject { get; set; }
         public bool IsHTML { get; set; }
         public bool HasAttachment { get; set; }
         public string AttachmentPath { get; set; }

@@ -46,7 +46,11 @@ namespace IoT.DataLayer.Repository
         public async Task<PagingRecord> GetTemplates(int pageNo, int pageSize, string userKey)
         {
             PagingRecord pagingRecord = new PagingRecord();
-            var records = await context.EmailTemplates.Where(x => x.UserKey == userKey).ToListAsync();
+            var records = await context.EmailTemplates
+                .Where(x => x.UserKey == userKey)
+                .OrderBy(x=>x.TemplateName)
+                .ThenByDescending(x=>x.CreatedDate)
+                .ToListAsync();
             if (records.Count > 0)
             {
                 pagingRecord.Data = records.Skip((pageNo - 1) * pageSize).Take(pageSize).AsEnumerable().Cast<object>().ToList();
@@ -55,6 +59,11 @@ namespace IoT.DataLayer.Repository
                 pagingRecord.TotalRecord = records.Count;
             }
             return pagingRecord;
+        }
+
+        public async Task<EmailTemplate> GetTemplate(int templateId, string userKey)
+        {
+            return await context.EmailTemplates.Where(x => x.UserKey == userKey && x.TemplateId==templateId).FirstOrDefaultAsync();
 
         }
 
@@ -66,11 +75,11 @@ namespace IoT.DataLayer.Repository
             x.UserKey == userKey &&
                 (
                     x.TemplateName.ToLower().Contains(searchTerm) ||
-                    x.Subjest.ToLower().Contains(searchTerm) ||
+                    x.Subject.ToLower().Contains(searchTerm) ||
                     x.Keywords.ToLower().Contains(searchTerm) ||
                     x.AttachmentPath.ToLower().Contains(searchTerm) ||
                     x.Body.ToLower().Contains(searchTerm))
-                ).ToListAsync();
+                ).OrderBy(x => x.TemplateName).ThenByDescending(x => x.CreatedDate).ToListAsync();
             if (records.Count > 0)
             {
                 pagingRecord.Data = records.Skip((pageNo - 1) * pageSize).Take(pageSize).AsEnumerable().Cast<object>().ToList();
@@ -81,9 +90,16 @@ namespace IoT.DataLayer.Repository
             return pagingRecord;
         }
 
-        public Task<int> UpdateTemplate(EmailTemplate emailTemplate, string userKey)
+        public async Task<int> UpdateTemplate(EmailTemplate emailTemplate, string userKey)
         {
-            throw new NotImplementedException();
+            if (await isUserExist(userKey) && emailTemplate != null)
+            {
+                emailTemplate.ModifiedDate = DateTime.Now;
+                    var eTemplates = context.EmailTemplates.Attach(emailTemplate);
+                    eTemplates.State = EntityState.Modified;
+                    return await context.SaveChangesAsync();
+            }
+            return 0;
         }
     }
 }
