@@ -452,6 +452,36 @@ namespace IoT.DataLayer.Migrations
                     b.ToTable("DisplayCategory");
                 });
 
+            modelBuilder.Entity("IoT.ModelLayer.DropdownMaster", b =>
+                {
+                    b.Property<int>("DropdownDataId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("DataText")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DataType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DataValue")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("ModifiedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UserKey")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("DropdownDataId");
+
+                    b.ToTable("DropdownMaster");
+                });
+
             modelBuilder.Entity("IoT.ModelLayer.EmailSetting", b =>
                 {
                     b.Property<int>("SettingId")
@@ -475,6 +505,9 @@ namespace IoT.DataLayer.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("SMTP")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SenderName")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UserKey")

@@ -27,12 +27,11 @@ namespace IoT.WebAPI.Controllers
 
         [HttpPost]
         [Route("AddUser")]
-        public User AddUser([FromBody] User user)
+        public async Task<User> AddUser([FromBody] User user)
         {
-            // if (user != null)
-            //     user.CreatedDate = DateTime.Now;
-            //return _userBL.AddUser(user);
-            return user;
+            if (user != null)
+                user.CreatedDate = DateTime.Now;
+            return await _userBL.AddUser(user);
         }
 
         [HttpPost]
@@ -53,10 +52,10 @@ namespace IoT.WebAPI.Controllers
         }
         [HttpGet]
         [Route("ResetAPIKey")]
-        public User ResetAPIKey([FromHeader] string userKey)
+        public async Task<User> ResetAPIKey([FromHeader] string userKey)
         {
 
-           return _userBL.ResetAPIKey(userKey);
+           return await _userBL.ResetAPIKey(userKey);
         }
         [HttpGet]
         [Route("GetUserPermission")]
@@ -66,10 +65,24 @@ namespace IoT.WebAPI.Controllers
         }
 
         [HttpGet]
-        [Route("GetAllUserPermissions")]
-        public async Task<List<UserPermission>> GetAllUserPermissions([FromHeader] string userKey)
+        [Route("GetAllUserPermissions/{pageno:int}/{pagesize:int}")]
+        public async Task<PagingRecord> GetAllUserPermissions([FromRoute]int pageNo,[FromRoute] int pageSize,[FromHeader] string userKey)
         {
-            return await _userBL.GetAllUserPermissions(userKey);
+            return await _userBL.GetAllUserPermissions(pageNo,pageSize, userKey);
+        }
+
+        [HttpGet]
+        [Route("SearchUsers/{searchTerm}/{pageno:int}/{pagesize:int}")]
+        public async Task<PagingRecord> SearchUsers([FromRoute] string searchTerm, [FromRoute] int pageNo, [FromRoute] int pageSize,[FromHeader] string userKey)
+        {
+            return await _userBL.SearchUsers(searchTerm, pageNo, pageSize, userKey);
+        }
+
+        [HttpGet]
+        [Route("SearchPermissions/{searchTerm}/{pageno:int}/{pagesize:int}")]
+        public async Task<PagingRecord> SearchPermissions([FromRoute] string searchTerm, [FromRoute] int pageNo, [FromRoute] int pageSize, [FromHeader] string userKey)
+        {
+            return await _userBL.SearchPermissions(searchTerm, pageNo, pageSize, userKey);
         }
     }
 }

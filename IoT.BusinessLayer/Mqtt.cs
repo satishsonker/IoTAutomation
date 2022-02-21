@@ -17,7 +17,7 @@ namespace IoT.BusinessLayer
         private static DeviceBL deviceBL;
         private static AlexaEventSourceBL alexaEventSourceBL;
         private static IOptions<AppSettingConfig> config;
-        public Mqtt(IMqtt mqtt, IAlexaEventSource ialexaEventSource, IOptions<AppSettingConfig> _config,IDevices _devices)
+        public Mqtt(IMqtt mqtt, IAlexaEventSource ialexaEventSource, IOptions<AppSettingConfig> _config, IDevices _devices)
         {
             mqttBL = new MqttBL(mqtt);
             deviceBL = new DeviceBL(_devices);
@@ -25,7 +25,7 @@ namespace IoT.BusinessLayer
             alexaEventSourceBL = new AlexaEventSourceBL(ialexaEventSource, config);
             MqttClient client = new MqttClient(config.Value.MqttBroker);
             client.MqttMsgPublishReceived += client_MqttMsgPublishReceived;
-            var clientId = Guid.NewGuid().ToString().Replace("-","").ToUpper();
+            var clientId = Guid.NewGuid().ToString().Replace("-", "").ToUpper();
 
             client.Connect(clientId);
             // subscribe to the topic "/home/temperature" with QoS 2 
@@ -36,7 +36,7 @@ namespace IoT.BusinessLayer
                 var newTopic = new string[subscribeTopic.Length + serverTopics.Length];
                 subscribeTopic.CopyTo(newTopic, 0);
                 serverTopics.CopyTo(newTopic, subscribeTopic.Length);
-               client.Subscribe(subscribeTopic, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
+                client.Subscribe(newTopic, GenerateQoS(newTopic.Length, MqttMsgBase.QOS_LEVEL_AT_LEAST_ONCE));
             }
         }
         public async static void client_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs e)
@@ -62,6 +62,16 @@ namespace IoT.BusinessLayer
             {
 
             }
+        }
+
+        private byte[] GenerateQoS(int length, byte qosType)
+        {
+            byte[] qos = new byte[length];
+            for (int i = 0; i < length; i++)
+            {
+                qos.Append(qosType);
+            }
+            return qos;
         }
     }
 }

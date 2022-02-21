@@ -22,7 +22,6 @@ namespace IoT.ModelLayer
         public string APIKey { get; set; }
         public string Language { get; set; }
         public string Timezone { get; set; }
-        [JsonIgnore]
         public ICollection<UserPermission> UserPermissions  { get; set; }
         public string Temperature { get; set; }
         public DateTime LastLogin { get; set; }

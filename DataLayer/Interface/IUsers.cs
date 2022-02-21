@@ -9,15 +9,16 @@ namespace IoT.DataLayer.Interface
   public interface IUsers
     {
         Task<User> Add(User newUser);
-        User Update(User updateUser);
+        Task<User> Update(User updateUser);
         User Delete(string userKey);
         IEnumerable<User> GetAllUsers();
         User GetUser(string userKey);
         User APIKeyGet(string userKey);
-        User APIKeyReset(string userKey);
-        IEnumerable<User> SearchUsers(string searchTerm);
+        Task<User> APIKeyReset(string userKey);
+        Task<PagingRecord> SearchUsers(string searchTerm,int pageNo, int pageSize, string userKey);
+        Task<PagingRecord> SearchPermissions(string searchTerm, int pageNo, int pageSize, string userKey);
         Task<UserPermission> GetUserPermission(string userKey);
-        Task<List<UserPermission>> GetAllUserPermissions(string userKey);
+        Task<PagingRecord> GetAllUserPermissions(int pageNo,int pageSize, string userKey);
         Task<bool> CheckUser(string userName, string password);
         Task<bool> CheckUserAsync(string userKey);
         bool CheckUser(string userKey);

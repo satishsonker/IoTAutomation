@@ -210,17 +210,33 @@ namespace IoT.DataLayer.Repository
         public async Task<bool> UpdateAdminPermission(List<UserPermission> userPermissions, string userKey)
         {
             bool result = false;
-            if (await isUserExist(userKey) && userPermissions != null && userPermissions.Count > 0 && !string.IsNullOrEmpty(userKey))
+            try
             {
-                if (await context.Users.Include(x => x.UserPermissions).Where(x => x.UserKey == userKey && x.UserPermissions.FirstOrDefault().IsAdmin).CountAsync() > 0)
+                if (await isUserExist(userKey) && userPermissions != null && userPermissions.Count > 0 && !string.IsNullOrEmpty(userKey))
                 {
-                    foreach (UserPermission userPermission in userPermissions)
+                    if (await context.Users.Include(x => x.UserPermissions).Where(x => x.UserKey == userKey && x.UserPermissions.FirstOrDefault().IsAdmin).CountAsync() > 0)
                     {
-                        context.UserPermissions.Attach(userPermission).State = EntityState.Modified;
+                        foreach (UserPermission userPermission in userPermissions.Where(x => x.UserPermissionId > 0).ToList())
+                        {
+                            context.UserPermissions.Attach(userPermission).State = EntityState.Modified;
+                        }
+                        if (await context.SaveChangesAsync() > 0)
+                            result = true;
+                        foreach (var item in userPermissions.Where(x => x.UserPermissionId == 0).ToList())
+                        {
+                            item.ModifiedDate = DateTime.Now;
+                            item.CreatedDate = DateTime.Now;
+                            context.UserPermissions.Add(item);
+                        }
+
+                        if (await context.SaveChangesAsync() > 0)
+                            result = true;
                     }
-                    if (await context.SaveChangesAsync() > 0)
-                        result = true;
                 }
+            }
+            catch (Exception ex)
+            {
+                return result;
             }
             return result;
         }
